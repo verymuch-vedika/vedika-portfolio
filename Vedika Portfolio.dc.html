@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Vedika | Service &amp; Experience Designer</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script src="peekaboo.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes portraitIn{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M4.5 8.5c2 .3 3 1.4 3.3 3 .3 1.5 1.6 2 2.7 2.5 1 .5 1.2 1.8.6 3.2-.4 1-.3 2 .4 3M14 3.4c-.6 1.2-.4 2.4.7 3 1.4.8 2.8.2 3.8 1.2.8.8.4 2.2 1.2 3 .5.4 1.2.5 1.8.4M15 20.2c-.2-1.6.4-2.8 1.6-3.4 1-.5 1.4-1.6 1-2.6"></path></g></symbol>
+<symbol id="i-ask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.4 9.2a2.7 2.7 0 0 1 5.2 1c0 1.8-2.6 2.4-2.6 4"></path><circle cx="12" cy="17.2" r=".4" fill="currentColor"></circle></g></symbol>
+<symbol id="i-quote" viewBox="0 0 32 24"><path d="M0 24V14C0 6 4 1.3 12 0l1.3 3.4C8.7 4.8 6.6 7.6 6.4 11.3H12V24H0Zm19 0V14c0-8 4-12.7 12-14l1 3.4c-4.6 1.4-6.7 4.2-6.9 7.9H31V24H19Z" fill="currentColor"></path></symbol>
+<symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff;overflow-x:clip">
+
+<header id="top" data-screen-label="Hero" style="position:relative;min-height:max(100svh, 760px);max-height:{{ heroMaxH }};background:#f3f3f3;overflow:hidden;isolation:isolate">
+  <nav aria-label="Primary" style="position:relative;z-index:5;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="#top" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="#work" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="#journey" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true" style="position:absolute;z-index:2;left:calc(clamp(20px, 4.3vw, 62px) - 2px);top:168px;bottom:60px;display:flex;flex-direction:column;align-items:center;gap:26px;color:#a3a3a3;font-size:14px">
+      <span style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap">Service and Experience designer</span>
+      <span style="flex:1;width:1px;background:#dcdcdc"></span>
+      <span style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap">2026</span>
+    </div>
+  </sc-if>
+
+  <div style="position:relative;z-index:2;padding-left:{{ heroPadL }};padding-right:clamp(20px, 4.3vw, 62px);padding-top:{{ heroPadT }};min-height:{{ heroContentMinH }};display:flex;flex-direction:column">
+    <div style="display:flex;gap:{{ statGap }}">
+      <div data-reveal="">
+        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><sup style="font-size: 0.5em; line-height: 1; margin-right: 2px; margin-top: 0.05em; font-weight: 400;">+</sup><span data-count="6">6</span></p>
+        <p style="margin-top:8px;padding-left:18px;font-size:14px;color:#5e5e5e">Years designing</p>
+      </div>
+      <div data-reveal="" data-d=".1">
+        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><sup style="font-size: 0.5em; line-height: 1; margin-right: 2px; margin-top: 0.05em; font-weight: 400;">+</sup><span data-count="100">100</span>M</p>
+        <p style="margin-top:8px;padding-left:18px;font-size:14px;color:#5e5e5e">Users impacted</p>
+      </div>
+    </div>
+    <h1 style="margin-top:{{ titleMt }};font-weight:300">
+      <span data-reveal="" data-d=".1" style="display:block;margin-bottom:6px;font-size:22px;font-weight:400;letter-spacing:-0.01em">Hi, I’m</span>
+      <span data-reveal="" data-d=".15" style="display:block;font-size:{{ helloSize }};line-height:.86;letter-spacing:-0.022em;margin-left:-.06em;font-weight:300">Vedika</span>
+      <span data-reveal="" data-d=".3" style="display:block;margin-top:{{ subMt }};font-size:18px;font-weight:400;letter-spacing:-0.01em">Optimist | Realist | Workist</span>
+    </h1>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <a href="#about" style="margin-top:auto;margin-bottom:64px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:15px">Scroll down <svg style="width:15px;height:15px;animation:nudge 2.2s cubic-bezier(.22,.61,.36,1) infinite"><use href="#i-down"></use></svg></a>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <figure style="position:absolute;z-index:1;margin:0;right:9vw;bottom:0;height:min(86%, 860px);aspect-ratio:876 / 1119">
+      <img src="images/hero.webp" width="876" height="1119" alt="Portrait of Vedika with arms crossed" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center top;animation:portraitIn 1.6s cubic-bezier(.16,1,.3,1) both .1s">
+    </figure>
+  </sc-if>
+  <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+    <figure style="position:relative;z-index:1;margin:{{ portraitMt }} 0 0 auto;width:{{ portraitW }};aspect-ratio:876 / 1119">
+      <img src="images/hero.webp" width="876" height="1119" alt="Portrait of Vedika with arms crossed" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+    </figure>
+  </sc-if>
+</header>
+
+<main>
+  <section id="about" data-screen-label="About" style="background:#f3f3f3;display:flex;flex-wrap:wrap;gap:48px clamp(32px, 4vw, 92px);padding:{{ aboutPad }} clamp(20px, 4.3vw, 62px) 60px;align-items:flex-start">
+    <div data-reveal="" style="flex:1 1 320px;padding-top:20px;max-width:{{ introMax }}">
+      <h2 style="font-size:clamp(34px, 3.2vw, 46px);font-weight:400;line-height:1.12;letter-spacing:-0.012em;text-wrap:balance">About Me</h2>
+      <p style="margin-top:22px;font-size:17px;line-height:1.75;color:#7b7b7b">I’m a service and experience designer and researcher with 6+ years of work experience. Since 2019 I’ve helped teams in energy, automotive, finance and banking turn tangled, offline processes into calm digital services, from research and workshops all the way to pixel-level UI.</p>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 220 230" aria-hidden="true" style="width:clamp(170px, 15vw, 220px);height:auto;margin:76px 0 0 clamp(60px, 9vw, 140px);color:#e3e3e3">
+          <path d="M14 222C2 150 44 64 196 36" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"></path>
+          <path d="M150 8c18 10 34 18 50 28-16 9-28 22-38 40" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </sc-if>
+    </div>
+
+    <article data-peek="about" data-reveal="" data-d=".1" style="flex:0 1 315px;max-width:400px;background:#fff;border-radius:8px;padding:24px">
+      <span style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff 0, #f2f2f2 55%, #e3e3e3 100%);box-shadow:inset 0 0 0 1px #efefef, 0 2px 6px rgba(0,0,0,.06)"><svg style="width:32px;height:32px"><use href="#i-ask"></use></svg></span>
+      <p style="margin-top:18px;font-size:64px;font-weight:300;line-height:1;letter-spacing:-0.035em"><span data-count="98">98</span>%</p>
+      <p style="margin-top:18px;font-size:17px;line-height:1.7;color:#7b7b7b">Chance I’ll ask a “why?” or “how?” one more time</p>
+      <div style="margin-top:52px;border-radius:6px;aspect-ratio:270 / 320;background:#efefef;overflow:hidden">
+        <img src="images/journey/thumbs-up.jpg" alt="Vedika giving two thumbs up" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;scale:1.32;transform-origin:50% 18%;filter:grayscale(1) sepia(.08) contrast(1.18) brightness(1.08);transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.05)">
+      </div>
+    </article>
+
+    <div data-reveal="" data-d=".2" style="flex:1 1 320px;display:flex;flex-direction:{{ sideDir }}">
+      <a href="#journey" aria-label="See my journey" onMouseEnter="{{ thumbIn }}" onMouseLeave="{{ thumbOut }}" style="position:relative;align-self:flex-start;margin-left:{{ thumbMl }};width:{{ thumbW }};max-width:400px;aspect-ratio:{{ thumbRatio }};border-radius:6px;background:#7b7b7b;overflow:hidden">
+        <img src="images/journey/freelance-crop-v2.jpg" alt="Vedika working on her laptop" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) sepia(.08) contrast(1.18) brightness(1.08);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ thumbScale }}">
+        <span style="position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></span>
+      </a>
+      <ul aria-label="How I work" style="margin:{{ pointsMargin }};display:grid;gap:40px;max-width:460px">
+        <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
+          <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I'm high on empathy and identifying strength's of people around me. I make sense of complexity quickly, whether it’s a workshop room or a web of systems.</p>
+        </li>
+        <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
+          <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I bring structure, strategic and analytical thinking, whilst picking up new domains early and implimenting timely.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <sc-if value="{{ showTrusted }}" hint-placeholder-val="{{ true }}">
+    <section aria-label="Trusted by teams at" style="background:#f3f3f3;display:flex;flex-wrap:wrap;align-items:center;gap:24px 48px;padding:36px clamp(20px, 4.3vw, 62px) 72px">
+      <p style="flex:none;font-size:15px;color:#7b7b7b;max-width:{{ trustedLabelW }};line-height:1.35">Trusted by teams at</p>
+      <ul style="flex:1 1 600px;display:flex;align-items:center;justify-content:{{ logosJustify }};gap:28px 40px;flex-wrap:wrap">
+        <li><img src="images/logos/accenture.png" alt="Accenture" style="height:{{ logoWide }};width:auto"></li>
+        <li><img src="images/logos/bmw.png" alt="BMW" style="height:{{ logoBase }};width:auto"></li>
+        <li><img src="images/logos/virgin-money.png" alt="Virgin Money" style="height:{{ logoVm }};width:auto"></li>
+        <li><img src="images/logos/deutsche-boerse.png" alt="Deutsche Börse Group" style="height:{{ logoTall }};width:auto"></li>
+        <li><img src="images/logos/bpcl.png" alt="Bharat Petroleum" style="height:{{ logoBp }};width:auto"></li>
+        <li><img src="images/logos/roche.png" alt="Roche" style="height:{{ logoBase }};width:auto"></li>
+        <li><img src="images/logos/adnoc.png" alt="ADNOC" style="height:{{ logoTall }};width:auto"></li>
+      </ul>
+    </section>
+  </sc-if>
+
+  <section id="work" data-screen-label="Case Studies" style="background:#f3f3f3;padding:{{ workPad }}">
+    <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto">
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal="" style="margin-bottom:28px">
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Selected Work</span>
+          <h2 style="margin-top:14px;font-size:clamp(34px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.012em">Case Studies</h2>
+        </div>
+      </sc-if>
+      <div style="display:grid;grid-template-columns:{{ stackCols }};gap:{{ stackColGap }};align-items:start">
+        <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Case studies" style="position:sticky;top:96px">
+            <div style="margin-bottom:44px">
+              <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Selected Work</span>
+              <h2 style="margin-top:14px;font-size:clamp(34px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.012em">Case Studies</h2>
+            </div>
+            <ol style="display:grid;gap:4px;border-left:1px solid #dcdcdc">
+              <sc-for list="{{ cases }}" as="c" hint-placeholder-count="4">
+                <li><a href="#{{ c.id }}" onClick="{{ c.go }}" aria-current="{{ c.current }}" style="position:relative;display:grid;grid-template-columns:34px 1fr;column-gap:6px;padding:12px 0 12px 20px;color:{{ c.navColor }};transition:color .35s cubic-bezier(.22,.61,.36,1)">
+                  <span style="position:absolute;left:-1px;top:10px;bottom:10px;width:2px;background:#222;transform-origin:center;transition:transform .45s cubic-bezier(.16,1,.3,1);transform:{{ c.navBar }}"></span>
+                  <span style="font-size:13px;padding-top:5px;font-variant-numeric:tabular-nums">{{ c.num }}</span>
+                  <span style="font-size:22px;letter-spacing:-0.012em;line-height:1.25">{{ c.name }}</span>
+                  <span style="grid-column:2;font-size:13px;opacity:.8">{{ c.sector }}</span>
+                </a></li>
+              </sc-for>
+            </ol>
+          </nav>
+        </sc-if>
+        <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+          <nav aria-label="Case studies" style="position:sticky;top:0;z-index:5;margin-inline:calc(clamp(20px, 4.3vw, 62px) * -1);padding:10px clamp(20px, 4.3vw, 62px);background:rgba(243,243,243,.92);backdrop-filter:blur(8px)">
+            <ol style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none">
+              <sc-for list="{{ cases }}" as="c" hint-placeholder-count="4">
+                <li><a href="#{{ c.id }}" onClick="{{ c.go }}" style="display:flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:999px;white-space:nowrap;background:{{ c.pillBg }};color:{{ c.pillColor }};transition:background-color .3s, color .3s">
+                  <span style="font-size:11px">{{ c.num }}</span><span style="font-size:15px">{{ c.name }}</span>
+                </a></li>
+              </sc-for>
+            </ol>
+          </nav>
+        </sc-if>
+
+        <div ref="{{ listRef }}" style="display:flex;flex-direction:column;gap:{{ cardGap }};min-width:0">
+          <sc-for list="{{ cases }}" as="c" hint-placeholder-count="4">
+            <a id="{{ c.id }}" data-case-card="" href="{{ c.href }}" aria-disabled="{{ c.soon }}" onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="position:{{ c.pos }};top:{{ c.top }};margin-top:{{ c.mt }};margin-bottom:{{ c.mb }};height:{{ c.h }};display:flex;flex-wrap:wrap;background:#fff;border:1px solid {{ c.border }};border-radius:20px;padding:12px;box-shadow:{{ c.shadow }};cursor:{{ c.cursor }};transition:border-color .5s cubic-bezier(.22,.61,.36,1)">
+              <div style="position:relative;flex:1.25 1 340px;min-height:{{ mediaMinH }};border-radius:12px;background:#efefef;overflow:hidden">
+                <img src="{{ c.img }}" alt="{{ c.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:{{ c.filter }};transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ c.imgScale }}">
+                <sc-if value="{{ c.live }}" hint-placeholder-val="{{ true }}">
+                  <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ c.btnOpacity }};transform:{{ c.btnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+                </sc-if>
+                <sc-if value="{{ c.soon }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;padding:10px 20px;border-radius:999px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);font-size:15px">Coming soon</span>
+                </sc-if>
+              </div>
+              <div style="flex:1 1 300px;display:flex;flex-direction:column;padding:{{ bodyPad }}">
+                <p style="font-size:13px;font-variant-numeric:tabular-nums">{{ c.num }} <span style="color:#7b7b7b">/ 04</span></p>
+                <h3 style="margin-top:auto;padding-top:24px;font-size:clamp(26px, 2.4vw, 36px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">{{ c.name }} <span style="display:block;margin-top:6px;font-size:15px;letter-spacing:0;color:#7b7b7b">{{ c.sector }}</span></h3>
+                <p style="margin-top:14px;font-size:15.5px;line-height:1.6;color:#7b7b7b">{{ c.desc }}</p>
+                <ul style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="3">
+                    <li style="display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:4px 12px;border:1px solid #dcdcdc;border-radius:999px;font-size:13.5px"><span style="color:#7b7b7b">{{ f.k }}</span>{{ f.v }}</li>
+                  </sc-for>
+                </ul>
+                <span style="margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;color:{{ c.linkColor }};text-decoration:{{ c.linkDeco }};text-underline-offset:4px;text-decoration-thickness:1px">{{ c.linkText }}<sc-if value="{{ c.live }}" hint-placeholder-val="{{ true }}"><svg style="width:16px;height:16px;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ c.arrowShift }}"><use href="#i-arrow"></use></svg></sc-if></span>
+              </div>
+            </a>
+          </sc-for>
+          <sc-if value="{{ sticky }}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="height:22vh"></div></sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" data-screen-label="Journey" style="position:relative;padding:{{ journeyPad }};background:radial-gradient(60% 50% at 100% 15%, rgba(244, 232, 210, .45), transparent 70%), radial-gradient(55% 45% at 0% 70%, rgba(220, 240, 226, .5), transparent 70%), #fafafa;overflow-x:clip">
+    <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 40px;align-items:flex-start;margin-bottom:{{ splitMb }}">
+        <div data-reveal="">
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Highlights</span>
+          <h2 style="margin-top:14px;font-size:clamp(34px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.012em">My Journey</h2>
+        </div>
+        <div data-reveal="" data-d=".1" style="flex:0 1 515px">
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">From design school to service design in Glasgow and back. These are the moments that shaped how I work.</p>
+          <a href="#contact" style="margin-top:34px;display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <p style="font-size:15px;color:#7b7b7b">Flick the cards or drag the timeline.</p>
+        <div role="slider" tabindex="0" aria-label="Journey timeline" aria-valuemin="0" aria-valuemax="{{ tlMax }}" aria-valuenow="{{ active }}" aria-valuetext="{{ activeText }}" onKeyDown="{{ barKey }}" onPointerDown="{{ barDown }}" onPointerMove="{{ barMove }}" onPointerUp="{{ barUp }}" onPointerCancel="{{ barUp }}" style="position:relative;height:72px;margin:18px 0 26px;cursor:grab;touch-action:none;user-select:none">
+          <div style="position:absolute;left:0;right:0;top:18px;height:1px;background:#dcdcdc"><div style="height:100%;background:#222;transition:width .5s cubic-bezier(.16,1,.3,1);width:{{ handleLeft }}"></div></div>
+          <ol style="position:absolute;inset:0">
+            <sc-for list="{{ years }}" as="y" hint-placeholder-count="6">
+              <li style="position:absolute;top:0;translate:-50% 0;left:{{ y.left }}">
+                <button type="button" aria-label="{{ y.label }}" onClick="{{ y.go }}" style="display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:13px;font-size:14px;color:{{ y.color }};transition:color .3s">
+                  <span style="width:11px;height:11px;border-radius:50%;background:{{ y.dotBg }};border:1px solid {{ y.dotBorder }};transition:background-color .3s, border-color .3s"></span>{{ y.year }}
+                </button>
+                <sc-if value="{{ y.hasPips }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:absolute;left:50%;top:58px;translate:-50% 0;display:flex;gap:4px">
+                    <sc-for list="{{ y.pips }}" as="p" hint-placeholder-count="2"><i style="width:5px;height:5px;border-radius:50%;background:{{ p.bg }};transition:background-color .3s"></i></sc-for>
+                  </span>
+                </sc-if>
+              </li>
+            </sc-for>
+          </ol>
+          <span style="position:absolute;top:18px;width:22px;height:22px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 5px #fafafa, 0 4px 10px rgba(0,0,0,.2);pointer-events:none;transition:left .5s cubic-bezier(.16,1,.3,1);left:{{ handleLeft }}"></span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 20px">
+          <button type="button" aria-label="Previous milestone" onClick="{{ prev }}" disabled="{{ atStart }}" style="flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ prevOpacity }}"><svg style="width:18px;height:18px"><use href="#i-left"></use></svg></button>
+          <div aria-live="polite" style="flex:1;text-align:center">
+            <p style="font-size:28px;letter-spacing:-0.02em;line-height:1">{{ activeYear }}</p>
+            <p style="margin-top:4px;font-size:12px;color:#7b7b7b">{{ stepCount }}</p>
+          </div>
+          <button type="button" aria-label="Next milestone" onClick="{{ next }}" disabled="{{ atEnd }}" style="flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ nextOpacity }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+        </div>
+      </sc-if>
+
+      <div ref="{{ trackRef }}" onScroll="{{ trackScroll }}" onPointerDown="{{ trackDown }}" onPointerMove="{{ trackMove }}" onPointerUp="{{ trackUp }}" onPointerCancel="{{ trackUp }}" style="position:relative;display:flex;gap:{{ tlGap }};align-items:flex-start;overflow-x:auto;scrollbar-width:none;margin-inline:calc((100% - 100vw) / 2);padding:8px calc((100vw - 100%) / 2) 56px;margin-bottom:-40px;cursor:grab;user-select:none">
+        <sc-for list="{{ journey }}" as="j" hint-placeholder-count="4">
+          <article data-tl-card="" style="flex:none;width:{{ tlCardW }};background:#fff;border-radius:14px;overflow:hidden;transition:box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .5s;opacity:{{ j.opacity }};box-shadow:{{ j.shadow }}">
+            <div style="aspect-ratio:{{ tlRatio }};overflow:hidden;background:#efefef"><img src="{{ j.img }}" alt="{{ j.alt }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;pointer-events:none"></div>
+            <div style="padding:{{ tlBodyPad }}">
+              <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ j.year }}</span>{{ j.place }}</p>
+              <h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.012em;line-height:1.25">{{ j.title }}</h3>
+              <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#7b7b7b">{{ j.text }}</p>
+            </div>
+          </article>
+        </sc-for>
+        <div aria-hidden="true" style="flex:none;height:1px;width:{{ spacerW }}"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" style="background:#fff;padding:{{ promoPad }}">
+    <figure data-peek="banner" data-reveal="" onMouseEnter="{{ promoIn }}" onMouseLeave="{{ promoOut }}" style="position:relative;max-width:1336px;margin-inline:auto;min-height:{{ promoMinH }};border-radius:clamp(14px, 1.2vw, 18px);overflow:hidden;background:#151515;color:#fff;display:flex;flex-direction:{{ promoDir }};align-items:center;justify-content:center;text-align:{{ promoAlign }};isolation:isolate">
+      <div style="position:{{ promoMediaPos }};inset:0;z-index:-1;overflow:hidden;width:100%;aspect-ratio:{{ promoRatio }}">
+        <img src="images/banner-workshop.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness({{ promoBright }});transition:transform 2s cubic-bezier(.16,1,.3,1);transform:{{ promoScale }}">
+        <div style="position:absolute;inset:0;background:{{ promoShade }}"></div>
+      </div>
+      <div style="position:relative;padding:{{ promoContentPad }};max-width:860px;margin-top:{{ promoContentMt }}">
+        <blockquote style="font-size:{{ promoTitleSize }};font-weight:500;line-height:1.1;letter-spacing:-0.03em;text-wrap:balance">“Your work can be trusted without the need for micromanagement.”</blockquote>
+        <figcaption style="margin-top:clamp(16px, 1.8vw, 26px);font-size:clamp(15px, 1.2vw, 17px);color:rgba(255,255,255,.8)">Design lead · ZMW</figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <section data-screen-label="Testimonials" style="background:#f2f2f2;padding:{{ blogsPad }}">
+    <div style="width:min(1200px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto">
+      <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;margin-bottom:50px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>In their words</span>
+        <h2 style="font-size:clamp(40px, 4.6vw, 66px);font-weight:400;line-height:1.12;letter-spacing:-0.016em;text-wrap:balance">What people I’ve worked with say</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap:{{ quoteGap }}">
+        <figure style="display:flex;flex-direction:column;background:#fff;border-radius:14px;padding:30px 28px 32px;transition:transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-6px);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)">
+          <svg aria-hidden="true" style="width:34px;height:26px;color:#e3e3e3;margin-bottom:26px"><use href="#i-quote"></use></svg>
+          <p><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Leading a team</span></p>
+          <blockquote style="margin-top:16px;font-size:{{ quoteSize }};line-height:1.5;color:#444;letter-spacing:-0.01em">“She effectively guided the team through the synthesis process … and delivered the final output on time.”</blockquote>
+          <figcaption style="margin-top:auto;padding-top:28px;font-size:14px;color:#7b7b7b">Workshop lead · Energy client</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;background:#fff;border-radius:14px;padding:30px 28px 32px;transition:transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-6px);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)">
+          <svg aria-hidden="true" style="width:34px;height:26px;color:#e3e3e3;margin-bottom:26px"><use href="#i-quote"></use></svg>
+          <p><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Collaboration</span></p>
+          <blockquote style="margin-top:16px;font-size:{{ quoteSize }};line-height:1.5;color:#444;letter-spacing:-0.01em">“…created space for brainstorming, which helped team members working on different flows finalize design decisions quickly.”</blockquote>
+          <figcaption style="margin-top:auto;padding-top:28px;font-size:14px;color:#7b7b7b">Experience designer · DPCL</figcaption>
+        </figure>
+        <figure data-peek="quotes" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;padding:30px 28px 32px;transition:transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-6px);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)">
+          <svg aria-hidden="true" style="width:34px;height:26px;color:#e3e3e3;margin-bottom:26px"><use href="#i-quote"></use></svg>
+          <p><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Leadership</span></p>
+          <blockquote style="margin-top:16px;font-size:{{ quoteSize }};line-height:1.5;color:#444;letter-spacing:-0.01em">“Her leadership stands out through your ownership, clarity in direction, and ability to keep the team aligned.”</blockquote>
+          <figcaption style="margin-top:auto;padding-top:28px;font-size:14px;color:#7b7b7b">New joiner · Internal initiative</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-peek="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="#top" style="padding:8px 24px;border-radius:999px;background:#333">Home</a>
+      <a href="#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="#work" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Work</a>
+      <a href="#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+  </div>
+  <div data-peek="footer" style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stickyStack&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}, &quot;showTrusted&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}, &quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}, &quot;peekaboo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const CASES = [
+  { id: 'case-dpcl', num: '01', name: 'DPCL', sector: 'Oil & Gas Company', href: 'DPCL%20Case%20Study.dc.html', img: 'images/cover-dpcl.jpg', alt: 'Illustration of a team brainstorming with sticky notes',
+    desc: 'Digitising an offline process for India’s second-largest government-owned downstream oil producer',
+    facts: [{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Industry', v: 'Oil and natural gas' }, { k: 'Duration', v: '6 months' }] },
+  { id: 'case-zmw', num: '02', name: 'ZMW', sector: 'Automobile Company', href: 'ZMW%20Case%20Study.dc.html', img: 'images/cover-zmw-v2.webp', alt: 'Isometric illustration of connected dealership workflow screens',
+    desc: 'A redesign of legacy systems for a German multinational, impacting workflows of 650+ dealerships and 50,000+ direct users',
+    facts: [{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Industry', v: 'Automotive' }, { k: 'Duration', v: '6 months' }] },
+  { id: 'case-pearstream', num: '03', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.jpg', alt: 'Xact Web Portal user details and login screens',
+    desc: 'Redesigning the Xact Web Portal, a post-trade connectivity channel for a financial infrastructure provider',
+    facts: [{ k: 'Role', v: 'UX Research & UI UX' }, { k: 'Area', v: 'Finance' }, { k: 'Duration', v: '6 months' }] },
+  { id: 'case-mature-money', num: '04', name: 'Mature Money', sector: 'Banking', soon: true, img: 'images/placeholder-mature-money.jpg', alt: '',
+    desc: 'A complete user-testing flow that helps teams spot friction and make informed improvements',
+    facts: [{ k: 'Focus', v: 'Service Design' }, { k: 'Industry', v: 'Banking' }, { k: 'Duration', v: '5 months' }] },
+];
+const JOURNEY = [
+  { year: '2015', place: 'Pearl Academy', title: 'Started design school', text: 'Joined Pearl Academy for a BA (Hons) in Communication Design.', img: 'images/journey/pearl-class.jpg', alt: 'Pearl Academy classmates' },
+  { year: '2019', place: 'Graduation', title: 'Graduated in Interaction Design', text: 'Finished the BA specialising in Interaction Design (UI/UX).', img: 'images/journey/convocation.jpg', alt: 'Vedika at her convocation' },
+  { year: '2019', place: 'Accenture', title: 'First job', text: 'Joined Accenture as an Experience Design Analyst and got promoted to Senior Analyst in 2021.', img: 'images/journey/accenture-first-job.jpg', alt: 'Accenture team photo' },
+  { year: '2022', place: 'Glasgow School of Art', title: 'Started an MDes in Service Design', text: 'Left Accenture for an MDes in Service Design and Innovation at the GSA, UK.', img: 'images/journey/glasgow.jpg', alt: 'Vedika in Glasgow' },
+  { year: '2023', place: 'Freelance', title: 'Came back, went solo', text: 'Came back and worked as a freelance designer.', img: 'images/journey/freelance-salon.jpg', alt: 'Vedika interviewing salon staff' },
+  { year: '2024', place: 'Accenture', title: 'Back at Accenture', text: 'Rejoined as a Service and Experience Designer.', img: 'images/journey/back-at-accenture-v2.jpg', alt: 'Vedika with the Accenture team at a Diwali celebration' },
+];
+const YEARS = [...new Set(JOURNEY.map((j) => j.year))];
+const YEAR_OF = JOURNEY.map((j) => YEARS.indexOf(j.year));
+const FIRST_OF = YEARS.map((_, yi) => YEAR_OF.indexOf(yi));
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, h: window.innerHeight, active: 0, activeCase: 0, hoverCase: -1, menuOpen: false, cardH: null, spacer: 0, thumbHover: false, promoHover: false };
+  trackRef = React.createRef();
+  listRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth, h: window.innerHeight }, () => this.measure());
+    this.onScroll = () => requestAnimationFrame(() => this.updateCase());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onLoad = () => this.measure();
+    window.addEventListener('load', this.onLoad);
+    document.fonts && document.fonts.ready.then(() => this.measure());
+    setTimeout(() => this.measure(), 60);
+    this.setupMotion();
+    if (this.props.peekaboo ?? true) {
+      const start = () => window.initPeekaboo ? window.initPeekaboo() : setTimeout(start, 200);
+      setTimeout(start, 300);
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('load', this.onLoad);
+    this.io && this.io.disconnect();
+    this.co && this.co.disconnect();
+    clearTimeout(this.failT);
+  }
+  isSticky() {
+    return (this.props.stickyStack ?? true) && this.state.w > 960 && this.state.h > 760;
+  }
+  setupMotion() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    this.io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = 'none';
+      this.io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    this.co = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = Number(el.dataset.count), start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / 1600, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      this.co.unobserve(el);
+    }), { threshold: 0.6 });
+    const counts = document.querySelectorAll('[data-count]');
+    counts.forEach((el) => { el.textContent = '0'; this.co.observe(el); });
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    requestAnimationFrame(() => els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) show(el);
+    }));
+    // Fail-safe: never leave content hidden if the observer doesn't fire
+    this.failT = setTimeout(() => {
+      document.querySelectorAll('[data-reveal]').forEach((el) => { if (el.style.opacity === '0') show(el); });
+      counts.forEach((el) => { if (el.textContent === '0') el.textContent = el.dataset.count; });
+    }, 1800);
+  }
+  measure() {
+    const next = {};
+    const list = this.listRef.current;
+    if (list) {
+      const cards = [...list.querySelectorAll('[data-case-card]')];
+      const prev = cards.map((c) => c.style.height);
+      cards.forEach((c) => { c.style.height = 'auto'; });
+      next.cardH = Math.max(...cards.map((c) => c.offsetHeight));
+      cards.forEach((c, i) => { c.style.height = prev[i]; });
+    }
+    const tr = this.trackRef.current;
+    if (tr) {
+      const cs = getComputedStyle(tr);
+      const cards = [...tr.querySelectorAll('[data-tl-card]')];
+      const last = cards[cards.length - 1];
+      if (last) next.spacer = Math.max(tr.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0) - last.offsetWidth - (parseFloat(cs.columnGap) || 0), 0);
+    }
+    this.setState(next, () => { this.goTo(this.state.active, false); this.updateCase(); });
+  }
+  caseTops() {
+    const list = this.listRef.current;
+    if (!list) return [];
+    const cards = [...list.querySelectorAll('[data-case-card]')];
+    const base = list.getBoundingClientRect().top;
+    if (this.isSticky()) {
+      const H = this.state.cardH || cards[0].offsetHeight;
+      return cards.map((c, i) => ({ top: base + i * (H + 40), stick: 96 + i * 18 }));
+    }
+    const off = this.state.w <= 960 ? 72 : 24;
+    return cards.map((c) => ({ top: c.getBoundingClientRect().top, stick: off }));
+  }
+  updateCase() {
+    const tops = this.caseTops();
+    let act = 0;
+    tops.forEach((t, i) => { if (t.top - t.stick <= window.innerHeight * 0.35) act = i; });
+    if (act !== this.state.activeCase) this.setState({ activeCase: act });
+  }
+  goCase(i, e) {
+    e && e.preventDefault();
+    const t = this.caseTops()[i];
+    if (!t) return;
+    window.scrollTo({ top: t.top + window.scrollY - t.stick - 4, behavior: reduced() ? 'auto' : 'smooth' });
+  }
+  cardPos(i) {
+    const tr = this.trackRef.current;
+    if (!tr) return 0;
+    const cards = tr.querySelectorAll('[data-tl-card]');
+    return cards[i] ? cards[i].offsetLeft - cards[0].offsetLeft : 0;
+  }
+  nearest() {
+    const tr = this.trackRef.current;
+    if (!tr) return 0;
+    let best = 0, d = Infinity;
+    JOURNEY.forEach((_, i) => { const dd = Math.abs(this.cardPos(i) - tr.scrollLeft); if (dd < d) { d = dd; best = i; } });
+    return best;
+  }
+  goTo(i, smooth = true) {
+    const tr = this.trackRef.current;
+    if (!tr) return;
+    i = Math.max(0, Math.min(JOURNEY.length - 1, i));
+    tr.scrollTo({ left: this.cardPos(i), behavior: smooth && !reduced() ? 'smooth' : 'auto' });
+    if (i !== this.state.active) this.setState({ active: i });
+  }
+  onTrackScroll() {
+    if (this.drag || this.barDrag) { const n = this.nearest(); if (n !== this.state.active) this.setState({ active: n }); return; }
+    const n = this.nearest();
+    if (n !== this.state.active && !this.programmatic) this.setState({ active: n });
+    clearTimeout(this.settleT);
+    this.settleT = setTimeout(() => {
+      const tr = this.trackRef.current;
+      if (!tr || this.drag || this.barDrag) return;
+      const k = this.nearest();
+      if (Math.abs(tr.scrollLeft - this.cardPos(k)) > 1) this.goTo(k, true);
+      else if (k !== this.state.active) this.setState({ active: k });
+    }, 140);
+  }
+  barFromPointer(e) {
+    const r = e.currentTarget.getBoundingClientRect();
+    const q = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
+    const yi = Math.round(q * (YEARS.length - 1));
+    const tr = this.trackRef.current;
+    if (tr) tr.scrollLeft = this.cardPos(FIRST_OF[yi]);
+  }
+
+  renderVals() {
+    const { w, active, activeCase, hoverCase, menuOpen, cardH } = this.state;
+    const narrow = w <= 960, phone = w <= 640, tablet = narrow && !phone;
+    const sticky = this.isSticky();
+    const m = YEARS.length, ay = YEAR_OF[active];
+    const handlePct = `${(m > 1 ? ay / (m - 1) : 0) * 100}%`;
+
+    const cases = CASES.map((c, i) => {
+      const hov = hoverCase === i && !c.soon;
+      const on = activeCase === i;
+      return {
+        ...c, live: !c.soon, soon: !!c.soon,
+        href: c.soon ? undefined : c.href,
+        go: (e) => this.goCase(i, e),
+        enter: () => this.setState({ hoverCase: i }),
+        leave: () => this.setState({ hoverCase: -1 }),
+        current: on ? 'true' : undefined,
+        navColor: on ? '#222' : '#a3a3a3',
+        navBar: on ? 'scaleY(1)' : 'scaleY(0)',
+        pillBg: on ? '#222' : 'transparent',
+        pillColor: on ? '#fff' : '#a3a3a3',
+        pos: sticky ? 'sticky' : 'relative',
+        top: sticky ? `${96 + i * 18}px` : 'auto',
+        mt: sticky && i > 0 ? `${40 - (CASES.length - i) * 18}px` : '0px',
+        mb: sticky ? `${(CASES.length - 1 - i) * 18}px` : '0px',
+        h: sticky && cardH ? `${cardH}px` : 'auto',
+        shadow: sticky && i > 0 ? '0 -12px 24px -20px rgba(0,0,0,.14)' : 'none',
+        border: hov ? '#dcdcdc' : '#e3e3e3',
+        cursor: c.soon ? 'default' : 'pointer',
+        filter: c.soon ? 'saturate(.5) contrast(.9) brightness(1.05)' : 'saturate(.85) contrast(.95)',
+        imgScale: hov ? 'scale(1.05)' : 'none',
+        btnOpacity: hov || narrow ? 1 : 0,
+        btnScale: hov ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+        arrowShift: hov ? 'translate(3px,-3px)' : 'none',
+        linkText: c.soon ? 'Coming soon' : 'View case study',
+        linkColor: c.soon ? '#7b7b7b' : '#222',
+        linkDeco: c.soon ? 'none' : 'underline',
+      };
+    });
+
+    const journey = JOURNEY.map((j, i) => ({
+      ...j,
+      opacity: i === active ? 1 : narrow ? 0.5 : 0.55,
+      shadow: i === active ? '0 18px 40px -26px rgba(0,0,0,.3)' : 'none',
+    }));
+    const years = YEARS.map((y, yi) => {
+      const idx = JOURNEY.map((_, ci) => ci).filter((ci) => YEAR_OF[ci] === yi);
+      return {
+        year: y,
+        left: `${(m > 1 ? yi / (m - 1) : 0) * 100}%`,
+        label: `${y}: ${idx.map((ci) => JOURNEY[ci].title).join(', ')}`,
+        go: () => this.goTo(FIRST_OF[yi], true),
+        color: yi === ay ? '#222' : '#7b7b7b',
+        dotBg: yi <= ay ? '#222' : '#fafafa',
+        dotBorder: yi <= ay ? '#222' : '#dcdcdc',
+        hasPips: idx.length > 1,
+        pips: idx.map((ci) => ({ bg: ci === active ? '#222' : '#dcdcdc' })),
+      };
+    });
+
+    return {
+      wide: !narrow, narrow, notPhone: !phone, sticky,
+      showTrusted: this.props.showTrusted ?? true,
+      // nav + hero
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      heroMaxH: narrow ? 'none' : '1100px',
+      heroPadL: narrow ? 'clamp(20px, 4.3vw, 62px)' : 'calc(clamp(20px, 4.3vw, 62px) + 121px)',
+      heroPadT: narrow ? (phone ? '16px' : '28px') : '108px',
+      heroContentMinH: narrow ? '0' : 'calc(max(100svh, 760px) - 100px)',
+      statGap: phone ? '36px' : '58px',
+      statSize: phone ? '38px' : '46px',
+      titleMt: narrow ? '40px' : 'clamp(32px, 8.5vh, 96px)',
+      helloSize: narrow ? 'clamp(96px, 27vw, 200px)' : 'clamp(104px, 14.4vw, 220px)',
+      subMt: narrow ? '18px' : '30px',
+      portraitMt: tablet ? '-170px' : '-12px',
+      portraitW: tablet ? 'min(62%, 560px)' : '100%',
+      // about
+      aboutPad: phone ? '56px' : narrow ? '72px' : '60px',
+      introMax: narrow ? '640px' : '470px',
+      sideDir: phone ? 'column-reverse' : 'column',
+      thumbMl: w > 1200 ? 'clamp(0px, 9vw, 132px)' : '0px',
+      thumbW: phone ? '100%' : '214px',
+      thumbRatio: phone ? '4 / 3' : '214 / 188',
+      thumbScale: this.state.thumbHover ? 'scale(1.05)' : 'none',
+      thumbIn: () => this.setState({ thumbHover: true }),
+      thumbOut: () => this.setState({ thumbHover: false }),
+      pointsMargin: phone ? '0 0 36px' : narrow ? '48px 0 0' : '122px 0 0',
+      // trusted
+      trustedLabelW: narrow ? 'none' : '90px',
+      logosJustify: narrow ? 'flex-start' : 'space-between',
+      logoBase: phone ? '30px' : '40px', logoWide: phone ? '22px' : '30px', logoTall: phone ? '36px' : '50px',
+      logoBp: phone ? '34px' : '48px', logoVm: phone ? '32px' : '42px',
+      // work
+      workPad: phone ? '24px 0 72px' : '40px 0 110px',
+      stackCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '220px minmax(0, 1fr)' : '290px minmax(0, 1fr)',
+      stackColGap: narrow ? '20px' : w <= 1100 ? '32px' : 'clamp(32px, 5vw, 88px)',
+      cardGap: sticky ? '0px' : '40px',
+      mediaMinH: phone ? '240px' : '300px',
+      bodyPad: narrow ? '20px 10px 10px' : '18px 18px 14px 30px',
+      cases, listRef: this.listRef,
+      // journey
+      journeyPad: phone ? '80px 0 48px' : '136px 0 72px',
+      splitMb: narrow ? '40px' : '72px',
+      journey, years, active,
+      tlMax: JOURNEY.length - 1,
+      activeText: `${JOURNEY[active].year}: ${JOURNEY[active].title}`,
+      activeYear: JOURNEY[active].year,
+      stepCount: `${active + 1} of ${JOURNEY.length}`,
+      atStart: active === 0, atEnd: active === JOURNEY.length - 1,
+      prevOpacity: active === 0 ? 0.35 : 1, nextOpacity: active === JOURNEY.length - 1 ? 0.35 : 1,
+      prev: () => this.goTo(active - 1), next: () => this.goTo(active + 1),
+      handleLeft: handlePct,
+      tlGap: narrow ? '12px' : '24px',
+      tlCardW: narrow ? 'calc(100vw - 2 * clamp(20px, 4.3vw, 62px) - 40px)' : 'clamp(270px, 28vw, 380px)',
+      tlRatio: narrow ? '16 / 10' : '4 / 3',
+      tlBodyPad: narrow ? '16px 18px 20px' : '22px 24px 28px',
+      spacerW: `${this.state.spacer}px`,
+      trackRef: this.trackRef,
+      trackScroll: () => requestAnimationFrame(() => this.onTrackScroll()),
+      trackDown: (e) => {
+        if (e.pointerType !== 'mouse') return;
+        const tr = this.trackRef.current;
+        this.drag = { x: e.clientX, left: tr.scrollLeft, start: this.nearest(), last: e.clientX, v: 0 };
+        tr.setPointerCapture(e.pointerId);
+      },
+      trackMove: (e) => {
+        if (!this.drag) return;
+        this.trackRef.current.scrollLeft = this.drag.left - (e.clientX - this.drag.x);
+        this.drag.v = e.clientX - this.drag.last; this.drag.last = e.clientX;
+      },
+      trackUp: () => {
+        if (!this.drag) return;
+        const { start, v, x, last } = this.drag;
+        this.drag = null;
+        let t = this.nearest();
+        if ((Math.abs(v) > 4 || Math.abs(last - x) > 60) && t === start) t = start + ((v || last - x) < 0 ? 1 : -1);
+        this.goTo(t, true);
+      },
+      barKey: (e) => {
+        const map = { ArrowRight: active + 1, ArrowDown: active + 1, ArrowLeft: active - 1, ArrowUp: active - 1, Home: 0, End: JOURNEY.length - 1 };
+        if (e.key in map) { e.preventDefault(); this.goTo(map[e.key]); }
+      },
+      barDown: (e) => {
+        if (e.target.closest('button')) return;
+        this.barDrag = true;
+        e.currentTarget.setPointerCapture(e.pointerId);
+        this.barFromPointer(e);
+      },
+      barMove: (e) => { if (this.barDrag) this.barFromPointer(e); },
+      barUp: () => { if (!this.barDrag) return; this.barDrag = false; this.goTo(this.nearest(), true); },
+      // promo
+      promoPad: phone ? '12px 12px 32px' : 'clamp(24px, 3.6vw, 52px) clamp(20px, 4.3vw, 62px)',
+      promoMinH: w <= 720 ? '0' : 'clamp(400px, 36vw, 500px)',
+      promoDir: w <= 720 ? 'column' : 'row',
+      promoAlign: w <= 720 ? 'left' : 'center',
+      promoMediaPos: w <= 720 ? 'relative' : 'absolute',
+      promoRatio: w <= 720 ? '16 / 10' : 'auto',
+      promoBright: w <= 720 ? '.8' : '.55',
+      promoShade: w <= 720 ? 'linear-gradient(to bottom, transparent 35%, rgba(21,21,21,.85) 78%, #151515)' : 'radial-gradient(70% 90% at 50% 50%, rgba(10,10,10,.72), rgba(10,10,10,.35) 75%)',
+      promoScale: this.state.promoHover ? 'scale(1)' : 'scale(1.04)',
+      promoIn: () => this.setState({ promoHover: true }),
+      promoOut: () => this.setState({ promoHover: false }),
+      promoContentPad: w <= 720 ? '0 22px 30px' : 'clamp(40px, 5vw, 72px) clamp(24px, 4vw, 48px)',
+      promoContentMt: w <= 720 ? '-36px' : '0',
+      promoTitleSize: w <= 720 ? 'clamp(24px, 7vw, 32px)' : 'clamp(32px, 4.2vw, 50px)',
+      // testimonials, cta, footer
+      blogsPad: phone ? '64px 0 88px' : '92px 0 126px',
+      quoteGap: phone ? '20px' : '32px',
+      quoteSize: phone ? '17px' : '19px',
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>

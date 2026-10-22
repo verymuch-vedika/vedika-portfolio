@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Pearstream case study | Vedika</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@keyframes psScroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(-58%)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+<symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff">
+
+<div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px"><span style="display:block;height:100%;background:#222;transform-origin:left;transform:{{ progress }}"></span></div>
+</div>
+
+<header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
+    <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 480px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>UX Research Case Study</span>
+        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">Pearstream</h1>
+        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning identity and access management for Web Portal, a certificate-based post-trade connectivity channel</p>
+      </div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">UX Researcher, UI UX</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Financial services, B2B</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">6 months, Mar to Aug 2026</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. 1 design manager, FA, dev team</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Semi-structured interviews, synthesis, prototyping</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
+      </dl>
+    </div>
+    <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};padding:clamp(4px, .5vw, 6px);border-radius:{{ coverRadius }};background:#222">
+      <div style="position:relative;aspect-ratio:16 / 9;border-radius:12px;overflow:hidden;background:#fff">{{ coverScroll }}</div>
+    </figure>
+  </div>
+</header>
+
+<main style="background:#fff">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;display:grid;grid-template-columns:{{ layoutCols }};gap:clamp(40px, 6vw, 110px);padding:{{ layoutPadT }} 0 40px">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="On this page" style="position:sticky;top:136px;align-self:start">
+        <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
+        <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
+          <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:7px 0 7px 18px;font-size:14.5px;color:{{ t.color }};transition:color .3s">
+              <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
+            </a></li>
+          </sc-for>
+        </ol>
+      </nav>
+    </sc-if>
+
+    <div ref="{{ bodyRef }}" style="min-width:0;max-width:880px">
+      <p style="margin-bottom:56px;padding:18px 22px;border-radius:14px;border:1px solid #e6e6e6;font-size:14px;line-height:1.65;color:#7b7b7b"><span style="color:#222">Disclaimer.</span> To comply with my non-disclosure agreement, I’ve omitted confidential information and disguised the client’s name. The insights shared here are my own and don’t necessarily represent the views of the client.</p>
+
+      <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">01</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
+          <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Complaints were rising from Web Portal clients, and login, certificate and credential issues were the number one support ticket driver.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Interviewed the support team, synthesised what they deal with every day, then redesigned login, self-service credentials and admin user management.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">The redesign is planned to release in parts between November 2026 and February 2027.</p></div>
+        </div>
+      </section>
+
+      <section id="problem" data-sec="" data-screen-label="02 The problem" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">02</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The problem</h2>
+        <div data-reveal="" style="display:grid;gap:18px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The project was triggered by a rise in complaints from Pearstream’s existing Web Portal clients. Within that, my focus was three connected areas: how users log in, how they manage their own credentials, and how support staff step in when something goes wrong.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Web Portal wasn’t a simple login. It was a certificate-based system built for institutional clients in custody and settlement banking, where every client organisation can be configured with different security requirements.</p>
+        </div>
+        <div data-reveal="" style="margin-top:32px">
+          <p style="font-size:13px;color:#7b7b7b">Each client organisation sets its own rules</p>
+          <dl style="margin-top:12px;border-bottom:1px solid #dcdcdc">
+            <div style="display:grid;grid-template-columns:minmax(0, 200px) minmax(0, 1fr);gap:8px 24px;padding:16px 0;border-top:1px solid #dcdcdc"><dt style="font-size:14px;color:#7b7b7b">Factors to sign in</dt><dd style="margin:0;font-size:17px;line-height:1.45">Two <span style="color:#7b7b7b">or</span> three</dd></div>
+            <div style="display:grid;grid-template-columns:minmax(0, 200px) minmax(0, 1fr);gap:8px 24px;padding:16px 0;border-top:1px solid #dcdcdc"><dt style="font-size:14px;color:#7b7b7b">First factor</dt><dd style="margin:0;font-size:17px;line-height:1.45">A certificate <span style="color:#7b7b7b">or</span> a user ID and password</dd></div>
+            <div style="display:grid;grid-template-columns:minmax(0, 200px) minmax(0, 1fr);gap:8px 24px;padding:16px 0;border-top:1px solid #dcdcdc"><dt style="font-size:14px;color:#7b7b7b">Later steps</dt><dd style="margin:0;font-size:17px;line-height:1.45">Optional, so users can skip ahead, <span style="color:#7b7b7b">or</span> locked as mandatory</dd></div>
+          </dl>
+        </div>
+        <blockquote data-reveal="" style="margin-top:36px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+          <p style="font-size:13px;color:rgba(255,255,255,.6)">The constraint</p>
+          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em">The interface had to hold all of these variations in the same small set of screens, without the user ever seeing the configuration logic underneath. Only the right next step.</p>
+        </blockquote>
+      </section>
+
+      <section id="research" data-sec="" data-screen-label="03 Research and synthesis" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">03</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Research, synthesis and application</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">I synthesised our interview findings and carried that thinking into the flows below. Every design decision here was grounded in interviews, discussions with the FA or dev team, or industry best practice.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px;margin-top:32px">
+          <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Method</p><p style="font-size:15px;line-height:1.6;color:#7b7b7b">Semi-structured interviews, remote over Teams. I led the questions and my design manager took notes; several sessions were recorded.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Participants</p><p style="font-size:15px;line-height:1.6;color:#7b7b7b">4 members of the Web Portal support team, anonymised here.</p>
+            <ul style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+              <li style="padding:4px 10px;border-radius:999px;background:#fff;font-size:13px">Bella · 2.5 yrs</li><li style="padding:4px 10px;border-radius:999px;background:#fff;font-size:13px">Daniel · 5 months</li><li style="padding:4px 10px;border-radius:999px;background:#fff;font-size:13px">Ksenia · ~3 yrs</li><li style="padding:4px 10px;border-radius:999px;background:#fff;font-size:13px">Luca · 5 yrs</li>
+            </ul></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Synthesis</p>
+            <ol style="display:grid;gap:6px;font-size:14px;line-height:1.45;color:#7b7b7b">
+              <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">1</span>Question bank</li>
+              <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">2</span>Transcribed Q&amp;A and raw notes</li>
+              <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">3</span>Key insights per interview</li>
+              <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">4</span>High-confidence insights across all four</li>
+              <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">5</span>Opportunity areas</li>
+            </ol></div>
+        </div>
+        <figure data-reveal="" onClick="{{ openBoard }}" style="margin-top:36px;cursor:zoom-in">
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#f8f8f8"><img src="images/pearstream/research-board.png" alt="Synthesis board: question banks, raw notes and key insights for each of the four interviews" loading="lazy" style="width:100%;height:auto"></div>
+          <figcaption style="margin-top:12px;font-size:13px;line-height:1.6;color:#7b7b7b">The full support team interview board, one column set per interview, ending in combined high-confidence insights and opportunity areas. It’s here to show the working board behind the scenes. Click to zoom.</figcaption>
+        </figure>
+        <figure data-reveal="" onClick="{{ openInterview }}" style="margin-top:32px;cursor:zoom-in">
+          <div style="position:relative;max-height:520px;overflow:hidden;border-radius:14px;border:1px solid #e6e6e6;background:#f8f8f8">
+            <img src="images/pearstream/research-interview-detail.png" alt="One interview in detail: question bank, answers, raw notes and key insights" loading="lazy" style="display:block;width:185%;max-width:none;height:auto;margin-left:-4%">
+            <div style="position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);pointer-events:none"></div>
+          </div>
+          <figcaption style="margin-top:12px;font-size:13px;line-height:1.6;color:#7b7b7b">A single interview, unpacked: questions grouped by theme, answers, raw notes, and the key insights pulled out at the end. Click to zoom.</figcaption>
+        </figure>
+      </section>
+      <section id="login" data-sec="" data-screen-label="04 Adaptive login" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">04 · What I designed</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Adaptive multi-factor login</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The core login flow had to move on from the legacy method and adapt to each client organisation’s setup: two-factor and three-factor paths through the same screens, with “Try another way” and “Use next verification method” links that only appear when a step is actually optional, and disappear entirely when an organisation has made a factor mandatory.</p>
+        <figure data-reveal="" onClick="{{ openOldNew }}" style="margin-top:32px;cursor:zoom-in">
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#f8f8f8"><img src="images/pearstream/old-vs-new.png" alt="Web Portal login: the legacy 2016 screen behind the 2026 redesign, with numbered callouts and a What changed legend" loading="lazy" style="width:100%;height:auto"></div>
+          <figcaption style="margin-top:12px;font-size:13px;color:#7b7b7b">Web Portal login, legacy (2016) and redesign (2026). Click to zoom.</figcaption>
+        </figure>
+
+        <p style="margin-top:48px;font-size:13px;color:#7b7b7b">What we heard</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:16px;margin-top:14px">
+          <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="4">
+            <figure data-reveal="" style="display:flex;flex-direction:column;justify-content:flex-start;padding:26px 24px 24px;border-radius:14px;background:#f3f3f3">
+              <svg aria-hidden="true" viewBox="0 0 32 24" style="flex:none;width:30px;height:22px;color:#dcdcdc"><path d="M0 24V14C0 6 4 1.3 12 0l1.3 3.4C8.7 4.8 6.6 7.6 6.4 11.3H12V24H0Zm19 0V14c0-8 4-12.7 12-14l1 3.4c-4.6 1.4-6.7 4.2-6.9 7.9H31V24H19Z" fill="currentColor"></path></svg>
+              <blockquote style="margin:16px 0 0;font-size:17px;line-height:1.55;color:#444;letter-spacing:-0.01em">{{ q.text }}</blockquote>
+              <figcaption style="padding-top:20px;display:flex;align-items:center;gap:10px;font-size:14px;color:#7b7b7b"><img src="{{ q.img }}" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;filter:grayscale(1) sepia(.08) contrast(1.18) brightness(1.08)">{{ q.who }} · {{ q.yrs }}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+
+        <p style="margin-top:48px;font-size:13px;color:#7b7b7b">From insight to decision</p>
+        <ol style="display:grid;gap:16px;margin-top:14px">
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Login, certificate and credential issues are the number one ticket driver</h3><p style="margin-top:8px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">4 of 4 interviews</span></p></div></div>
+            <div style="padding:22px 26px 26px">
+              <p style="font-size:13px;color:#7b7b7b">What I did</p>
+              <p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">Rebuilt the login around the failure points support kept describing: certificate import and selection made explicit, expiry surfaced as a status rather than a date to interpret, and every error state given a next step instead of a dead end. Password and authenticator resets moved into self-service, so a five-day manual queue with the support team stops being the only route back in.</p>
+              <button type="button" onClick="{{ openProto }}" style="margin-top:20px;display:flex;align-items:center;gap:18px;width:100%;max-width:540px;padding:12px;border-radius:14px;border:1px solid #e3e3e3;background:#fff;transition:border-color .4s" style-hover="border-color:#cfcfcf">
+                <span style="flex:none;width:160px;aspect-ratio:3 / 2;border-radius:10px;overflow:hidden;background:#f3f3f3"><img src="images/pearstream/pn-01.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></span>
+                <span style="flex:1;min-width:0"><span style="display:block;font-size:16px">Try the first-time login flow</span><span style="display:block;margin-top:4px;font-size:13px;color:#7b7b7b">Click through the new flow, or switch to the old one</span></span>
+                <span style="flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></span>
+              </button>
+            </div>
+          </li>
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Support can’t grant access; they can only diagnose and redirect</h3><p style="margin-top:8px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">4 of 4 interviews</span></p></div></div>
+            <div style="padding:22px 26px 26px">
+              <p style="font-size:13px;color:#7b7b7b">What I did</p>
+              <p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">Designed for diagnosis as a first-class task: consolidated credential status on the user record, a visible history of who changed what and when, and scoped impersonation so support can see a client’s exact view instead of working from a secondhand description, then hand the action back to the admin who owns it.</p>
+              <div style="margin-top:20px">
+                <div onWheel="{{ diagFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+                  <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ diagFlow.track }}">
+                    <sc-for list="{{ diagFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:12px;padding:14px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                        <div style="border-radius:10px;overflow:hidden;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.title }}" draggable="false" style="display:block;width:100%;height:auto"></div>
+                        <figcaption><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:2px;font-size:16px">{{ st.title }}</p><p style="margin-top:2px;font-size:14px;line-height:1.5;color:#7b7b7b">{{ st.desc }}</p></figcaption>
+                      </figure>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:14px">
+                  <button type="button" aria-label="Previous screen" onClick="{{ diagFlow.prev }}" disabled="{{ diagFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ diagFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+                  <button type="button" aria-label="Next screen" onClick="{{ diagFlow.next }}" disabled="{{ diagFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ diagFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Business users don’t know their own admin is their first point of contact, so they write to support instead</h3><p style="margin-top:8px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">3 of 4 interviews</span></p></div></div>
+            <div style="padding:22px 26px 26px">
+              <p style="font-size:13px;color:#7b7b7b">What I did</p>
+              <p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">Made the admin relationship visible in the product, rather than something a user has to be told. Credential screens name who can act on a request, and the admin’s own user-management views were designed to make that request answerable in a few clicks, so the shortest path is the correct one.</p>
+            </div>
+          </li>
+        </ol>
+        <div data-reveal="" style="display:grid;gap:18px;margin-top:36px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">This extended to certificate handling itself: first-time certificate import, choosing between multiple stored certificates, and a “Restart verification” path that warns the user before clearing any progress they’d already made.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Error states were layered too: a wrong password with the number of attempts remaining, a temporary cooldown after too many failed attempts, and a resend limit that pushes the user to another sign-in method rather than a dead end.</p>
+        </div>
+      </section>
+      <section id="credentials" data-sec="" data-screen-label="05 Credential management" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">05 · What I designed</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Self-service credential management</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">A consolidated “My profile” view brings certificate, password and authenticator app status into one place, each with a clear status tag (active, expiring, expired, blocked or action needed), so a user can see at a glance what needs attention.</p>
+        <div style="margin-top:28px">
+          <div onWheel="{{ credFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+            <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ credFlow.track }}">
+              <sc-for list="{{ credFlow.steps }}" as="st" hint-placeholder-count="2">
+                <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                  <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:17px">{{ st.title }}</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b">{{ st.desc }}</p></figcaption>
+                  <div style="border-radius:10px;overflow:hidden;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.title }}" draggable="false" style="display:block;width:100%;height:auto"></div>
+                </figure>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+            <div data-thumbs="cred" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+              <sc-for list="{{ credFlow.steps }}" as="st" hint-placeholder-count="4">
+                <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" style="flex:none;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s"><img src="{{ st.web }}" alt="" style="display:block;width:76px;height:48px;object-fit:cover;object-position:top;border-radius:6px"></button>
+              </sc-for>
+            </div>
+            <div style="flex:none;display:flex;gap:8px">
+              <button type="button" aria-label="Previous screen" onClick="{{ credFlow.prev }}" disabled="{{ credFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ credFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+              <button type="button" aria-label="Next screen" onClick="{{ credFlow.next }}" disabled="{{ credFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ credFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+            </div>
+          </div>
+        </div>
+        <p data-reveal="" style="margin-top:32px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">From there, users can generate, rename or delete their own certificate, reset their password, and link or unlink an authenticator device, all without raising a support ticket.</p>
+        <div data-reveal="" onClick="{{ openGap }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 32px;margin-top:32px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff;cursor:zoom-in">
+          <div style="flex:1 1 260px"><p style="font-size:13px;color:rgba(255,255,255,.6)">A gap I noticed</p><p style="margin-top:10px;font-size:clamp(20px, 2vw, 26px);line-height:1.35;letter-spacing:-0.012em">Designing module by module, as the client wanted, meant no one had traced how one module’s decisions ripple into another’s.</p></div>
+          <div style="flex:1 1 280px;border-radius:10px;overflow:hidden;background:#fff"><img src="images/pearstream/gap-diagram.png" alt="Diagram: certificate and OTP verification don’t inform password reset, which still asks for the old password" loading="lazy" style="width:100%;height:auto"></div>
+        </div>
+      </section>
+
+      <section id="admin" data-sec="" data-screen-label="06 Admin user management" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">06 · What I designed</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Admin user management</h2>
+        <div data-reveal="" style="display:grid;gap:18px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Beyond login and credentials, I worked across the full user-lifecycle toolkit admins use to manage other users: creating, modifying, suspending, reactivating, deleting, recovering and duplicating an account.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Each of these seven actions had to support a compliance requirement handed to us. The existing way of approving under both models was inefficient and confusing, forcing a learning curve and a lot of “I’m used to this now”.</p>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr));gap:12px;margin-top:32px">
+          <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff">
+            <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">2 eyes</span>One admin</p>
+            <p style="margin-top:12px;font-size:16px;line-height:1.6;color:#7b7b7b">Confirming an action completes it immediately.</p>
+          </div>
+          <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff">
+            <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#fff;color:#222;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">4 eyes</span>Two admins</p>
+            <p style="margin-top:12px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.8)">The same action submits a request. The record shows “Pending”, and a second admin approves or rejects, with a reason required to reject.</p>
+          </div>
+        </div>
+        <p data-reveal="" style="margin-top:24px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Rather than design each action’s approval logic from scratch, we applied that one pattern across all seven. Every action, whichever path it took, is logged to a visible history on the user’s record: who did what, when, and its current status.</p>
+
+        <div data-reveal="" style="display:grid;grid-template-columns:{{ adminTabCols }};margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+          <div role="tablist" aria-label="Admin improvements" style="display:flex;flex-direction:{{ tabsDir }};overflow-x:{{ tabsOverflow }};gap:2px;padding:10px;background:#f3f3f3;scrollbar-width:none">
+            <sc-for list="{{ adminTabs }}" as="t" hint-placeholder-count="8">
+              <button type="button" role="tab" aria-selected="{{ t.current }}" onClick="{{ t.go }}" style="position:relative;flex:none;display:flex;align-items:baseline;gap:10px;padding:10px 12px;border-radius:10px;text-align:left;background:{{ t.bg }};color:{{ t.color }};transition:background-color .3s, color .3s">
+                <span style="font-size:12px;font-variant-numeric:tabular-nums">{{ t.n }}</span><span style="font-size:14px;line-height:1.35">{{ t.short }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:18px;padding:22px;min-width:0">
+            <div onMouseEnter="{{ adminEnter }}" onMouseLeave="{{ adminLeave }}" onClick="{{ adminOpen }}" style="position:relative;aspect-ratio:{{ adminRatio }};overflow-y:{{ adminOverflowY }};border-radius:10px;border:1px solid #e6e6e6;background:#fff;cursor:zoom-in">
+              <div style="position:relative">
+                <img src="{{ adminSrc }}" alt="{{ adminAlt }}" style="display:block;width:100%;height:auto">
+                <div style="position:absolute;left:{{ spotL }};top:{{ spotT }};width:{{ spotW }};height:{{ spotH }};border:2px solid #222;border-radius:6px;box-shadow:0 0 0 3px rgba(255,255,255,.9), 0 4px 16px rgba(0,0,0,.25);pointer-events:none;transition:opacity .35s;opacity:{{ spotOp }}"></div>
+              </div>
+            </div>
+            <div><p style="font-size:17px">{{ adminShort }}</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">{{ adminText }}</p></div>
+            <p style="font-size:13px;color:#7b7b7b">Hover the screen to highlight what changed. Click to zoom.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="where" data-sec="" data-screen-label="07 Where it stands" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">07</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Where it stands</h2>
+        <div data-reveal="" style="padding:{{ hmwPad }};border-radius:16px;background:#f3f3f3">
+          <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Ongoing</span>Releasing in parts</p>
+          <p style="margin-top:16px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Ongoing at Pearstream, planned to release in parts between November 2026 and February 2027.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
+    <a data-reveal="" href="DPCL%20Case%20Study.dc.html" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+      <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
+        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">DPCL</p>
+        <p style="margin-top:8px;color:#7b7b7b">Oil &amp; Gas Company</p>
+      </div>
+      <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
+        <img src="images/cover-dpcl.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
+      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
+      <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+
+<sc-if value="{{ protoOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="First-time login prototype" onClick="{{ closeProto }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;align-items:center;justify-content:center;padding:24px">
+    <div onClick="{{ protoStop }}" style="width:min(1100px, 94vw);max-height:92vh;display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#fff">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid #e4e4e4">
+        <div role="tablist" aria-label="Design version" style="display:flex;gap:4px;padding:4px;border-radius:999px;background:#f3f3f3">
+          <button type="button" role="tab" onClick="{{ setNew }}" style="padding:8px 16px;border-radius:999px;font-size:14px;background:{{ newBg }};color:{{ newColor }};transition:background-color .3s, color .3s">New design (2026)</button>
+          <button type="button" role="tab" onClick="{{ setOld }}" style="padding:8px 16px;border-radius:999px;font-size:14px;background:{{ oldBg }};color:{{ oldColor }};transition:background-color .3s, color .3s">Old design (2016)</button>
+        </div>
+        <button type="button" aria-label="Close prototype" onClick="{{ closeProto }}" style="display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid #dcdcdc;font-size:20px;line-height:1">×</button>
+      </div>
+      <div style="position:relative;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;background:#f3f3f3">
+        <div style="position:relative;display:inline-block;max-width:100%">
+          <img src="{{ protoSrc }}" alt="Login flow step" style="display:block;max-width:100%;max-height:calc(92vh - 150px);width:auto;height:auto">
+          <sc-for list="{{ hotspots }}" as="hs" hint-placeholder-count="0">
+            <button type="button" aria-label="Continue" onClick="{{ hs.go }}" style="position:absolute;left:{{ hs.l }};top:{{ hs.t }};width:{{ hs.w }};height:{{ hs.h }};translate:-50% -50%;border-radius:8px;cursor:pointer" style-hover="box-shadow:0 0 0 2px #222"></button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-top:1px solid #e4e4e4">
+        <button type="button" onClick="{{ protoBack }}" disabled="{{ protoAtStart }}" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;border:1px solid #dcdcdc;font-size:14px;opacity:{{ backOp }}"><svg style="width:15px;height:15px;transform:rotate(180deg)"><use href="#i-right"></use></svg>Back</button>
+        <span style="font-size:13px;color:#7b7b7b">{{ protoLabel }} · click the highlighted actions in the screen</span>
+        <button type="button" onClick="{{ protoNext }}" disabled="{{ protoAtEnd }}" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#222;color:#fff;font-size:14px;opacity:{{ nextOp }}">Next<svg style="width:15px;height:15px"><use href="#i-right"></use></svg></button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:72px 72px 24px">
+    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:1">×</button>
+    <sc-if value="{{ lbSingle }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbToggleZoom }}" style="max-width:100%;max-height:calc(100vh - 240px);overflow:auto;border-radius:12px;background:#fff">
+        <sc-if value="{{ lbFit }}" hint-placeholder-val="{{ true }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain;cursor:zoom-in"></sc-if>
+        <sc-if value="{{ lbZoomed }}" hint-placeholder-val="{{ false }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:min(240vw, 3200px);max-width:none;cursor:zoom-out"></sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="display:flex;gap:20px;align-items:flex-start;max-width:100%">
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">Web</p><div style="width:min(58vw, 900px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}, web" style="display:block;width:100%;height:auto"></div></div>
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
+      </div>
+    </sc-if>
+    <div onClick="{{ lbStop }}" style="max-width:640px;text-align:center;color:#fff">
+      <p style="font-size:16px;line-height:1.4">{{ lbTitle }}</p>
+      <p style="margin-top:6px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.7)">{{ lbDesc }}</p>
+      <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <sc-for list="{{ lbThumbs }}" as="t" hint-placeholder-count="0">
+            <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
+          </sc-for>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }} · Use ← → to navigate · Esc to close</p>
+      </sc-if>
+    </div>
+    <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Previous" onClick="{{ lbPrev }}" style="position:fixed;left:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+      <button type="button" aria-label="Next" onClick="{{ lbNext }}" style="position:fixed;right:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+    </sc-if>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const TOC = [
+  ['overview', 'Overview'], ['problem', 'The problem'], ['research', 'Research and synthesis'],
+  ['login', 'Adaptive login'], ['credentials', 'Credential management'], ['admin', 'Admin user management'],
+  ['where', 'Where it stands'],
+];
+const D = 'images/pearstream/';
+const QUOTES = [
+  { who: 'Bella', yrs: '2.5 yrs', img: 'avatar-bella.png', text: '“There is no such day when we don’t get user management login problem issue.”' },
+  { who: 'Luca', yrs: '5 yrs', img: 'avatar-luca.png', text: '“Takes 5 days to be reset, simply because of the fact that the reset is done manually by a human, and there’s three of them, on 6,000 clients.”' },
+  { who: 'Ksenia', yrs: '~3 yrs', img: 'avatar-ksenia.png', text: '“It’s nothing facilitated from our end. Admin users have all the access… It’s their role to enable all the right permissions.”' },
+  { who: 'Daniel', yrs: '5 months', img: 'avatar-daniel.png', text: '“Definitely like a list of like their admins that they can reach out to in case of like any missing accesses or resetting passwords or generating new credentials.”' },
+];
+const DIAG = [['diag-1', 'Help menu', 'The login screen’s Help menu, with Browser Diagnostics and Troubleshooting'], ['diag-2', 'Browser diagnoses', 'Passed, warning and failed checks, with a downloadable report'], ['diag-3', 'Troubleshooting guide', 'Supported browsers and common compatibility issues']]
+  .map(([k, t, d], i) => ({ n: i, title: t, desc: d, web: `${D}${k}.png`, hasApp: false }));
+const FLOW = [['flow-1', 'My profile', 'Certificate, password and authenticator status in one place'], ['flow-2', 'Verify identity', 'A quick re-check before any credential change'], ['flow-3', 'Generate certificate', 'Password requirements shown upfront'], ['flow-4', 'Certificate generated', 'A clear success state, with no ticket raised']]
+  .map(([k, t, d], i) => ({ n: i, title: t, desc: d, web: `${D}${k}.png`, hasApp: false }));
+const ADMIN = [
+  { short: 'Suspend and delete merged', ratio: 2448 / 3840, region: { x: 79, y: 23, w: 20, h: 6 }, text: 'In the legacy portal, users had to suspend before they could delete anything. In the new design we pushed to remove the redundant step, because both acted like a soft delete.' },
+  { short: 'Reactivate with impact info', ratio: 1900 / 3840, region: { x: 33, y: 30, w: 34, h: 45 }, text: 'Admins were shown 7 to 8 primary buttons without knowing the impact. We added that information under a “View impact” accordion to support all scenarios, making the impact evident for customers dealing in large transactions.' },
+  { short: 'Approve deletion, status pills', ratio: 2454 / 3840, region: { x: 5, y: 22, w: 93, h: 15 }, text: 'Admin 2, the one approving, needed two crucial pieces of information: the current status of the user and the action expected from them. We resurfaced that information, making the work more efficient.' },
+  { short: 'Reject recover request', ratio: 2334 / 3840, region: { x: 33, y: 32, w: 34, h: 38 }, text: 'Giving a reason for rejecting a request was always mandatory, but admins had to scroll a lot or go to a different page to see who raised the request and when. We brought the relevant information together.' },
+  { short: 'Access and permissions revamp', ratio: 4450 / 3840, region: { x: 6, y: 40, w: 92, h: 35 }, text: 'Admins had to go through a very long scroll and multiple collapsible sections to modify access, making granting permissions tedious. We revamped this section: less information, brought in progressively, with infrequent actions moved into a modal.' },
+  { short: 'Review changes summary', ratio: 946 / 1920, region: { x: 26, y: 12, w: 48, h: 81 }, text: 'A final modal gives a crisp summary, so the admin can check everything before proceeding.' },
+  { short: 'Upfront validation banner', ratio: 2308 / 1920, region: { x: 5, y: 14, w: 85, h: 6 }, text: 'Inline validation wasn’t possible for the dev team, so we pushed to show errors upfront. Earlier there was a stack of alerts at the bottom of the page. We found a middle ground: one alert summary, with each field visually flagging the error to fix.' },
+  { short: 'Copy setup from another user', ratio: 2382 / 3840, region: { x: 33, y: 23, w: 34, h: 56 }, text: 'Duplicating meant filling in every detail again. We gave admins the option to search for a user and copy their setup right there, while creating or viewing another user.' },
+].map((a, i) => ({ ...a, src: `${D}admin-${i + 1}.png` }));
+const PROTO = {
+  new: [
+    ['pn-01', [[74, 40, 34, 10, 1]]], ['pn-03', [[74, 38, 34, 20, 3], [65, 53, 26, 6, 2]]], ['pn-04', [[61, 33, 10, 8, 1]]], ['pn-05', [[70, 84, 12, 8, 4]]],
+    ['pn-06', [[74, 45, 34, 10, 5]]], ['pn-07', [[74, 79, 34, 8, 6]]], ['pn-08', [[74, 45, 34, 10, 7]]], ['pn-09', [[74, 84, 34, 8, 8]]],
+    ['pn-10', [[74, 44, 34, 10, 9]]], ['pn-11', [[74, 84, 34, 8, 10]]], ['pn-12', []],
+  ],
+  old: [['po-01', [[44, 45, 14, 8, 1]]], ['po-02', [[56, 65, 14, 8, 2]]], ['po-03', []]],
+};
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: 0, p: 0, menuOpen: false, nextHover: false };
+  bodyRef = React.createRef();
+  personaRef = React.createRef();
+  chRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => this.update());
+    this.onScroll = () => requestAnimationFrame(() => this.update());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.update();
+    this.setupReveal();
+    this.onKey = (e) => {
+      if (this.state.protoOpen && e.key === 'Escape') { document.body.style.overflow = ''; return this.setState({ protoOpen: false }); }
+      if (!this.state.lb) return;
+      if (e.key === 'Escape') this.closeLb();
+      if (e.key === 'ArrowRight') this.stepLb(1);
+      if (e.key === 'ArrowLeft') this.stepLb(-1);
+    };
+    document.addEventListener('keydown', this.onKey);
+    const watch = (ref, fn, th) => {
+      if (!ref.current || !('IntersectionObserver' in window)) return fn();
+      const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); fn(); } }, { threshold: th });
+      io.observe(ref.current);
+      (this.ios = this.ios || []).push(io);
+    };
+
+  }
+  openLb(items, i = 0) {
+    document.body.style.overflow = 'hidden';
+    this.setState({ lb: items, lbI: i, lbZoom: false });
+  }
+  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false }); }
+  stepLb(d) {
+    const n = (this.state.lb || []).length;
+    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false }));
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    clearTimeout(this.failT);
+    clearTimeout(this.pT); clearTimeout(this.chT);
+    (this.ios || []).forEach((io) => io.disconnect());
+    document.removeEventListener('keydown', this.onKey);
+    document.body.style.overflow = '';
+  }
+  update() {
+    const line = window.innerHeight * 0.3;
+    let active = 0;
+    TOC.forEach(([id], i) => { const s = document.getElementById(id); if (s && s.getBoundingClientRect().top <= line) active = i; });
+    let p = 0;
+    const b = this.bodyRef.current;
+    if (b) { const r = b.getBoundingClientRect(); p = Math.min(Math.max((line - r.top) / r.height, 0), 1); }
+    if (active !== this.state.active || Math.abs(p - this.state.p) > 0.002) this.setState({ active, p });
+  }
+  setupReveal() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && show(e.target)), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
+    this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
+  }
+  mkFlow(key, arr) {
+    const idx = (this.state.flow || {})[key] || 0, n = arr.length;
+    const lb = arr.map((x) => ({ src: x.web, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const setI = (i) => {
+      i = Math.max(0, Math.min(n - 1, i));
+      this.setState((s) => ({ flow: { ...(s.flow || {}), [key]: i } }));
+      const strip = document.querySelector(`[data-thumbs="${key}"]`);
+      const el = strip && strip.children[i];
+      if (el) strip.scrollTo({ left: el.offsetLeft - (strip.clientWidth - el.offsetWidth) / 2, behavior: reduced() ? 'auto' : 'smooth' });
+    };
+    return {
+      steps: arr.map((x, i) => ({
+        ...x, counter: `${String(i + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`,
+        op: i === idx ? 1 : 0.45,
+        click: () => (i === idx ? this.openLb(lb, i) : setI(i)),
+        go: () => setI(i),
+        thumbBorder: i === idx ? '#222' : '#e3e3e3', thumbOp: i === idx ? 1 : 0.6,
+        current: i === idx ? 'true' : undefined,
+      })),
+      track: `translateX(calc(${-idx} * (88% + 16px)))`,
+      prev: () => setI(idx - 1), next: () => setI(idx + 1),
+      prevOp: idx === 0 ? 0.35 : 1, nextOp: idx === n - 1 ? 0.35 : 1,
+      atStart: idx === 0, atEnd: idx === n - 1,
+      wheel: (e) => {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 12) return;
+        const now = Date.now(); if (now - (this.wheelT || 0) < 650) return; this.wheelT = now;
+        setI(idx + (e.deltaX > 0 ? 1 : -1));
+      },
+    };
+  }
+  interactiveVals(phone) {
+    const s = this.state;
+    const ai = s.adminI || 0, a = ADMIN[ai], r = a.region;
+    const mode = s.protoMode || 'new', steps = PROTO[mode], ps = s.protoStep || 0, hist = s.protoHist || [];
+    const [pSrc, pHs] = steps[ps];
+    const goProto = (i) => this.setState((st) => ({ protoStep: i, protoHist: [...(st.protoHist || []), st.protoStep || 0] }));
+    const single = (src, title, desc = '') => () => this.openLb([{ src, app: null, title, desc }], 0);
+    const adminLb = ADMIN.map((x) => ({ src: x.src, app: null, title: x.short, desc: x.text }));
+    const reducedMotion = reduced();
+    return {
+      quotes: QUOTES.map((q) => ({ ...q, img: D + q.img })),
+      diagFlow: this.mkFlow('diag', DIAG), credFlow: this.mkFlow('cred', FLOW),
+      openBoard: single(`${D}research-board.png`, 'Support team interview board', 'One column set per interview, ending in combined high-confidence insights and opportunity areas.'),
+      openInterview: single(`${D}research-interview-detail.png`, 'A single interview, unpacked', 'Questions grouped by theme, answers, raw notes, and the key insights pulled out at the end.'),
+      openOldNew: single(`${D}old-vs-new.png`, 'Web Portal login: legacy (2016) and redesign (2026)'),
+      openGap: single(`${D}gap-diagram.png`, 'A gap I noticed', 'Certificate and OTP verification don’t inform password reset, which still asks for the old password.'),
+      coverScroll: React.createElement('img', { src: `${D}admin-user-details.png`, alt: 'Web Portal admin: user details page', style: { display: 'block', width: '100%', height: 'auto', animation: reducedMotion ? 'none' : 'psScroll 26s ease-in-out infinite alternate' } }),
+      adminTabs: ADMIN.map((x, i) => ({ n: String(i + 1).padStart(2, '0'), short: x.short, go: () => this.setState({ adminI: i, adminSpot: false }),
+        bg: i === ai ? '#fff' : 'transparent', color: i === ai ? '#222' : '#7b7b7b', bar: i === ai ? 'scaleY(1)' : 'scaleY(0)', pillBg: i === ai ? '#222' : 'transparent', pillColor: i === ai ? '#fff' : '#7b7b7b', current: i === ai ? 'true' : undefined })),
+      adminSrc: a.src, adminAlt: a.short, adminText: a.text, adminShort: a.short,
+      adminRatio: `1 / ${Math.min(a.ratio, 9 / 16)}`, adminOverflowY: a.ratio > 9 / 16 ? 'auto' : 'hidden',
+      spotL: r.x + '%', spotT: r.y + '%', spotW: r.w + '%', spotH: r.h + '%', spotOp: s.adminSpot ? 1 : 0,
+      adminEnter: () => this.setState({ adminSpot: true }), adminLeave: () => this.setState({ adminSpot: false }),
+      adminOpen: () => this.openLb(adminLb, ai),
+      adminTabCols: phone ? 'minmax(0, 1fr)' : '240px minmax(0, 1fr)',
+      tabsDir: phone ? 'row' : 'column', tabsOverflow: phone ? 'auto' : 'visible',
+      protoOpen: !!s.protoOpen,
+      openProto: () => { document.body.style.overflow = 'hidden'; this.setState({ protoOpen: true, protoMode: 'new', protoStep: 0, protoHist: [] }); },
+      closeProto: () => { document.body.style.overflow = ''; this.setState({ protoOpen: false }); },
+      protoStop: (e) => e.stopPropagation(),
+      setNew: () => this.setState({ protoMode: 'new', protoStep: 0, protoHist: [] }),
+      setOld: () => this.setState({ protoMode: 'old', protoStep: 0, protoHist: [] }),
+      newBg: mode === 'new' ? '#222' : 'transparent', newColor: mode === 'new' ? '#fff' : '#7b7b7b',
+      oldBg: mode === 'old' ? '#222' : 'transparent', oldColor: mode === 'old' ? '#fff' : '#7b7b7b',
+      protoSrc: `${D}${pSrc}.png`,
+      hotspots: pHs.map(([x, y, w, hh, g]) => ({ l: x + '%', t: y + '%', w: w + '%', h: hh + '%', go: () => goProto(g) })),
+      protoLabel: `Step ${ps + 1} of ${steps.length}`,
+      protoAtStart: hist.length === 0, protoAtEnd: pHs.length === 0,
+      backOp: hist.length === 0 ? 0.35 : 1, nextOp: pHs.length === 0 ? 0.35 : 1,
+      protoBack: () => this.setState((st) => { const hs = (st.protoHist || []).slice(); if (!hs.length) return null; const p = hs.pop(); return { protoStep: p, protoHist: hs }; }),
+      protoNext: () => { if (pHs.length) goProto(pHs[0][4]); },
+    };
+  }
+  renderVals() {
+    const { w, active, p, menuOpen, nextHover } = this.state;
+    const narrow = w <= 960, phone = w <= 640;
+    return {
+      wide: !narrow, narrow, notPhone: !phone,
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      progress: `scaleX(${p})`,
+      topPadB: phone ? '48px' : '72px',
+      headMt: phone ? '28px' : '44px',
+      coverMt: phone ? '36px' : '56px',
+      coverRadius: phone ? '12px' : '16px',
+      coverRatio: phone ? '4 / 3' : '16 / 8',
+      layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
+      layoutPadT: phone ? '48px' : narrow ? '64px' : '96px',
+      toc: TOC.map(([id, label], i) => ({
+        id, label,
+        color: i === active ? '#222' : '#a3a3a3',
+        bar: i === active ? 'scaleY(1)' : 'scaleY(0)',
+        current: i === active ? 'true' : undefined,
+      })),
+      bodyRef: this.bodyRef,
+      ...this.interactiveVals(phone),
+      pairCols: phone ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))',
+      recCols: phone ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      secPad: phone ? '64px' : narrow ? '80px' : '112px',
+      titleMb: phone ? '22px' : '32px',
+      proseSize: phone ? '16px' : '18px',
+      hmwPad: phone ? '24px' : '30px 34px',
+      statN: phone ? '36px' : '44px',
+      insightCols: phone ? '1fr' : '56px 1fr',
+      flipDir: phone ? 'row' : 'row-reverse',
+      wideRatio: phone ? '4 / 3' : '16 / 8',
+      nextPadB: phone ? '72px' : '110px',
+      nextCardPad: phone ? '24px 12px 12px' : '14px 14px 14px 40px',
+      nextTextPad: phone ? '12px' : '0',
+      nextBorder: nextHover ? '#dcdcdc' : '#e3e3e3',
+      nextScale: nextHover ? 'scale(1.05)' : 'none',
+      nextBtnOpacity: nextHover || narrow ? 1 : 0,
+      nextBtnScale: nextHover ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+      nextIn: () => this.setState({ nextHover: true }),
+      nextOut: () => this.setState({ nextHover: false }),
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>

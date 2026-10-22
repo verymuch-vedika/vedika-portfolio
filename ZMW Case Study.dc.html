@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>ZMW case study | Vedika</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@keyframes psScroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(-58%)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+<symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff">
+
+<div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px"><span style="display:block;height:100%;background:#222;transform-origin:left;transform:{{ progress }}"></span></div>
+</div>
+
+<header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
+    <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 480px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Service &amp; UX Design Case Study</span>
+        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">ZMW</h1>
+        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning and redefining legacy systems: three workflows for dealers, reviewers and specialists at a German automotive multinational</p>
+      </div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">UI UX and Service Designer</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Automotive</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">About 9 months across four workstreams</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">A design manager, 3 designers, a dev lead and a scrum master</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service blueprinting, journey mapping, stakeholder mapping</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
+      </dl>
+    </div>
+    <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
+      <img src="images/cover-zmw-v2.webp" alt="Isometric illustration of connected dealership workflows" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(.85) contrast(.95)">
+    </figure>
+  </div>
+</header>
+
+<main style="background:#fff">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;display:grid;grid-template-columns:{{ layoutCols }};gap:clamp(40px, 6vw, 110px);padding:{{ layoutPadT }} 0 40px">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="On this page" style="position:sticky;top:136px;align-self:start">
+        <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
+        <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
+          <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:{{ t.pad }};font-size:{{ t.size }};color:{{ t.color }};transition:color .3s">
+              <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
+            </a></li>
+          </sc-for>
+        </ol>
+      </nav>
+    </sc-if>
+
+    <div ref="{{ bodyRef }}" style="min-width:0;max-width:880px">
+      <p style="margin-bottom:56px;padding:18px 22px;border-radius:14px;border:1px solid #e6e6e6;font-size:14px;line-height:1.65;color:#7b7b7b"><span style="color:#222">Disclaimer.</span> To comply with my non-disclosure agreement, I’ve omitted confidential information and renamed the client. The insights shared here are my own and don’t necessarily represent the views of the client.</p>
+
+      <section id="overview" data-sec="" data-screen-label="Workstreams" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">Overview</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Four workstreams</h2>
+        <div style="display:grid;grid-template-columns:{{ wsCols }};gap:12px">
+          <sc-for list="{{ wsCards }}" as="w" hint-placeholder-count="4">
+            <a href="#ws-{{ w.id }}" onClick="{{ w.go }}" style="display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:14px;border:1px solid {{ w.border }};background:#fff;transition:border-color .4s, transform .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-4px)">
+              <span style="align-self:flex-start;display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:{{ w.pillBg }};color:{{ w.pillColor }};font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ w.status }}</span>
+              <span style="font-size:24px;letter-spacing:-0.015em;line-height:1.1">{{ w.name }}</span>
+              <span style="flex:1;font-size:14px;line-height:1.5;color:#7b7b7b">{{ w.summary }}</span>
+              <span style="display:flex;justify-content:space-between;gap:8px;padding-top:12px;border-top:1px solid #efefef;font-size:13px;color:#7b7b7b"><span>{{ w.duration }}</span><span style="color:#222">{{ w.cta }}</span></span>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="ws-rdr" data-sec="" data-screen-label="01 RDR" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">01 · Workstream</p>
+        <h2 style="margin:10px 0 16px;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">RDR <span style="color:#7b7b7b">Retail Delivery Reporting</span></h2>
+        <p data-reveal="" style="margin-bottom:32px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The system ZMW dealers use to report every vehicle sale, capturing retail and program type for warranty enablement, compliance and pricing.</p>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:12px">
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Design</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Swapnita <span style="color:#7b7b7b">Design Manager</span></li><li>Vedika <span style="color:#7b7b7b">UI UX and Service Designer</span></li><li>Aroma <span style="color:#7b7b7b">UI UX Designer</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Delivery</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Chiru <span style="color:#7b7b7b">Project and Dev Lead</span></li><li>Amartya <span style="color:#7b7b7b">Scrum Master</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Stephan <span style="color:#7b7b7b">Senior stakeholder</span></li><li>Butiu Jun <span style="color:#7b7b7b">Client stakeholder</span></li><li>Sanjeev <span style="color:#7b7b7b">ZMW point of contact</span></li></ul></div>
+        </div>
+        <div id="rdr-role" data-sec="" data-screen-label="RDR · My role" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">My role</h3>
+          <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">UI UX and Service Designer, co-owning the RDR workstream and reporting to Swapnita, the Design Manager. I owned and shared design work across:</p></div>
+          <figure data-reveal="" onClick="{{ openRole }}" style="margin-top:24px;border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#fff;cursor:zoom-in"><img src="images/zmw/rdr-role.png" alt="My role: creating RDR service blueprints, documenting discovery and KT sessions, as-is flow documentation across B2D and B2E, to-be flow and screen design, and direct stakeholder discussions on flow logic" loading="lazy" style="width:100%;height:auto"></figure>
+        </div>
+        <div id="rdr-challenge" data-sec="" data-screen-label="RDR · Challenges" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Challenges and how we solved them</h3>
+          <ol style="display:grid;gap:16px">
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:8px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h4 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">A daily-use system built on manual entry, inside a partially automated pipeline</h4><p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">Sale data arrives automatically from each dealer’s system, but the fields that matter most for compliance and pricing, retail type and program type, are still typed in by hand, often dozens of times a day.</p></div></div>
+            <div style="padding:22px 26px 26px"><p style="font-size:13px;color:#7b7b7b">What we did</p><div style="display:grid;gap:24px;margin-top:14px"><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Flagged that most manual data already existed, and proposed a gradual first step</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Chassis number, sale details and customer information already lived in dealership systems; they just weren’t connected to RDR. Dealers needed a gradual path and the legacy architecture wasn’t ready for full integration, so the business took a smaller first step: merging pre-owned (POIS) and new-vehicle inventory into RDR. A step toward fuller automation, not the automation itself.</p><div style="margin-top:20px">
+                <div onWheel="{{ invFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+                  <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ invFlow.track }}">
+                    <sc-for list="{{ invFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                        <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:16px">{{ st.title }}</p></figcaption>
+                        <div style="aspect-ratio:{{ st.ar }};overflow-x:{{ st.ox }};overflow-y:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.alt }}" draggable="false" style="display:block;width:{{ st.iw }};height:{{ st.ih }};max-width:none"></div>
+                      </figure>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+                  <div data-thumbs="inv" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+                    <sc-for list="{{ invFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" style="flex:none;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s"><img src="{{ st.web }}" alt="" style="display:block;width:76px;height:48px;object-fit:cover;object-position:left top;border-radius:6px"></button>
+                    </sc-for>
+                  </div>
+                  <div style="flex:none;display:flex;gap:8px">
+                    <button type="button" aria-label="Previous screen" onClick="{{ invFlow.prev }}" disabled="{{ invFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ invFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+                    <button type="button" aria-label="Next screen" onClick="{{ invFlow.next }}" disabled="{{ invFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ invFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+                  </div>
+                </div>
+              </div></div></div></div></div>
+          </li>
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:8px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h4 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Two very different users sharing one system</h4><figure onClick="{{ openUsers }}" style="margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e6e6e6;background:#fff;cursor:zoom-in"><img src="images/zmw/two-users.png" alt="Dealer (B2D) and ZMW employee (B2E) compared by role, frequency, need and pressure point" loading="lazy" style="width:100%;height:auto"></figure></div></div>
+            <div style="padding:22px 26px 26px"><p style="font-size:13px;color:#7b7b7b">What we did</p><div style="display:grid;gap:24px;margin-top:14px"><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Designed for B2D and B2E as genuinely different needs</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Dealer flows were optimised for a routine, repeatable task. Employee flows carried the oversight layer (search across all dealerships, approve or reject, override) without slowing the dealer down.</p><div style="margin-top:20px">
+                <div onWheel="{{ ovFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+                  <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ ovFlow.track }}">
+                    <sc-for list="{{ ovFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                        <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:16px">{{ st.title }}</p></figcaption>
+                        <div style="aspect-ratio:{{ st.ar }};overflow-x:{{ st.ox }};overflow-y:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.alt }}" draggable="false" style="display:block;width:{{ st.iw }};height:{{ st.ih }};max-width:none"></div>
+                      </figure>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+                  <div data-thumbs="ov" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+                    <sc-for list="{{ ovFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" style="flex:none;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s"><img src="{{ st.web }}" alt="" style="display:block;width:76px;height:48px;object-fit:cover;object-position:left top;border-radius:6px"></button>
+                    </sc-for>
+                  </div>
+                  <div style="flex:none;display:flex;gap:8px">
+                    <button type="button" aria-label="Previous screen" onClick="{{ ovFlow.prev }}" disabled="{{ ovFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ ovFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+                    <button type="button" aria-label="Next screen" onClick="{{ ovFlow.next }}" disabled="{{ ovFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ ovFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+                  </div>
+                </div>
+              </div></div></div></div></div>
+          </li>
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:8px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h4 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Complexity that multiplies fast, with no map of it</h4><p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">7 retail types × up to 20 program types create a large number of paths, each with different disclaimers, required fields and downstream triggers. None of it was documented in one place. No service blueprint existed, and we had to piece the legacy system together from developer knowledge.</p></div></div>
+            <div style="padding:22px 26px 26px"><p style="font-size:13px;color:#7b7b7b">What we did</p><div style="display:grid;gap:24px;margin-top:14px"><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Documented both scenarios end to end before touching the redesign</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Two journey maps, a corporate fleet purchase and a personal pre-owned trade-in, mapped step by step. They became the baseline every retail-type and program-type variation was designed against.</p><div style="margin-top:20px">
+                <div onWheel="{{ bpFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+                  <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ bpFlow.track }}">
+                    <sc-for list="{{ bpFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                        <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:16px">{{ st.title }}</p></figcaption>
+                        <div style="aspect-ratio:{{ st.ar }};overflow-x:{{ st.ox }};overflow-y:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.alt }}" draggable="false" style="display:block;width:{{ st.iw }};height:{{ st.ih }};max-width:none"></div>
+                      </figure>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+                  <div data-thumbs="bp" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+                    <sc-for list="{{ bpFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" style="flex:none;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s"><img src="{{ st.web }}" alt="" style="display:block;width:76px;height:48px;object-fit:cover;object-position:left top;border-radius:6px"></button>
+                    </sc-for>
+                  </div>
+                  <div style="flex:none;display:flex;gap:8px">
+                    <button type="button" aria-label="Previous screen" onClick="{{ bpFlow.prev }}" disabled="{{ bpFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ bpFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+                    <button type="button" aria-label="Next screen" onClick="{{ bpFlow.next }}" disabled="{{ bpFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ bpFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+                  </div>
+                </div>
+              </div></div></div><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Made retail-type and program-type selection legible instead of a blind dropdown</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">The redesign showed how each combination changes the disclaimer and which fields appear next, instead of leaving dealers to guess.</p><div style="margin-top:20px">
+                <div onWheel="{{ rtFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+                  <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ rtFlow.track }}">
+                    <sc-for list="{{ rtFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s;opacity:{{ st.op }}">
+                        <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:16px">{{ st.title }}</p></figcaption>
+                        <div style="aspect-ratio:{{ st.ar }};overflow-x:{{ st.ox }};overflow-y:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="{{ st.web }}" alt="{{ st.alt }}" draggable="false" style="display:block;width:{{ st.iw }};height:{{ st.ih }};max-width:none"></div>
+                      </figure>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+                  <div data-thumbs="rt" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+                    <sc-for list="{{ rtFlow.steps }}" as="st" hint-placeholder-count="2">
+                      <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" style="flex:none;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s"><img src="{{ st.web }}" alt="" style="display:block;width:76px;height:48px;object-fit:cover;object-position:left top;border-radius:6px"></button>
+                    </sc-for>
+                  </div>
+                  <div style="flex:none;display:flex;gap:8px">
+                    <button type="button" aria-label="Previous screen" onClick="{{ rtFlow.prev }}" disabled="{{ rtFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ rtFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+                    <button type="button" aria-label="Next screen" onClick="{{ rtFlow.next }}" disabled="{{ rtFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ rtFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+                  </div>
+                </div>
+              </div></div></div></div></div>
+          </li>
+          </ol>
+        </div>
+        <div id="rdr-learnings" data-sec="" data-screen-label="RDR · Learnings" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Learnings</h3>
+          <ul style="display:grid;gap:16px"><sc-for list="{{ learnRdr }}" as="l" hint-placeholder-count="3">
+            <li data-reveal="" style="display:grid;grid-template-columns:{{ recCols }};gap:12px">
+              <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><p style="font-size:13px;color:#7b7b7b">Going in</p><p style="margin-top:10px;font-size:16px;line-height:1.6;color:#7b7b7b">{{ l.before }}</p></div>
+              <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff"><p style="font-size:13px;color:rgba(255,255,255,.6)">Coming out · {{ l.tag }}</p><p style="margin-top:10px;font-size:17px;line-height:1.45">{{ l.head }}</p><p style="margin-top:8px;font-size:15px;line-height:1.65;color:rgba(255,255,255,.75)">{{ l.after }}</p></div>
+            </li></sc-for></ul>
+        </div>
+      </section>
+      <section id="ws-bvd" data-sec="" data-screen-label="02 BVD" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">02 · Workstream</p>
+        <h2 style="margin:10px 0 32px;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">BVD <span style="color:#7b7b7b">Branded Vehicle Disclosure</span></h2>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:12px">
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Design</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Swapnita <span style="color:#7b7b7b">Design Manager</span></li><li>Vedika <span style="color:#7b7b7b">UI UX and Service Designer</span></li><li>Aroma <span style="color:#7b7b7b">UI UX Designer</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Delivery</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Chiru <span style="color:#7b7b7b">Project and Dev Lead</span></li><li>Amartya <span style="color:#7b7b7b">Scrum Master</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Stephan <span style="color:#7b7b7b">Senior stakeholder</span></li><li>3 others from the BVD team <span style="color:#7b7b7b">BRAMs</span></li><li>Sanjeev <span style="color:#7b7b7b">ZMW point of contact</span></li></ul></div>
+        </div>
+        <div id="bvd-context" data-sec="" data-screen-label="BVD · Context" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Context</h3>
+          <div data-reveal="" style="display:grid;gap:18px">
+            <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">BVD governs what happens when a customer returns a vehicle to a dealership within a threshold window and the dealership marks it as trade-assisted: a vehicle with a disclosable history (damage, repair, or a Lemon Law brand) that has to be formally disclosed and financially reconciled before resale.</p>
+            <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Before this project, the entire process lived in Excel, passed back and forth between dealers (B2D), AAM and BRAM. A dealer would search a retail, create a Trade Assist request, upload documents, and work through a calculation worksheet and settlement agreement with no dedicated interface, just a linear paper trail wrapped around spreadsheets.</p>
+            <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The brief was to move this onto the web as its own module, with a defined three-tier approval chain.</p>
+          </div>
+          <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px"><div style="flex:1 1 160px;padding:18px 20px;border-radius:14px;background:#f3f3f3"><p style="font-size:17px">Dealer</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b">Creates the request</p></div><span aria-hidden="true" style="align-self:center;color:#a3a3a3;font-size:18px">→</span><div style="flex:1 1 160px;padding:18px 20px;border-radius:14px;background:#f3f3f3"><p style="font-size:17px">AAM</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b">First-level reviewer</p></div><span aria-hidden="true" style="align-self:center;color:#a3a3a3;font-size:18px">→</span><div style="flex:1 1 160px;padding:18px 20px;border-radius:14px;background:#f3f3f3"><p style="font-size:17px">BRAM</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b">Second-level reviewer, can edit the calculation sheet</p></div></div>
+          <figure data-reveal="" onClick="{{ openScenarios }}" style="margin-top:24px;cursor:zoom-in"><div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-scenarios.png" alt="BVD approval flow: happy path plus four scenarios where BRAM edits the calculation sheet or disclosure notice, with status at each step" loading="lazy" style="width:100%;height:auto"></div><figcaption style="margin-top:12px;font-size:13px;color:#7b7b7b">BVD approval flow: the happy path plus four scenarios. Click to zoom.</figcaption></figure>
+          <figure data-reveal="" onClick="{{ openNewFlow }}" style="margin-top:24px;cursor:zoom-in"><div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-new-flow.png" alt="New BVD flow: TA program form through final agreement across Dealer, AAM and BRAM, with happy path and scenarios 1A to 5" loading="lazy" style="width:100%;height:auto"></div><figcaption style="margin-top:12px;font-size:13px;color:#7b7b7b">New BVD flow across Dealer, AAM and BRAM. Click to zoom.</figcaption></figure>
+        </div>
+        <div id="bvd-role" data-sec="" data-screen-label="BVD · My role" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">My role</h3>
+          <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">UI UX and Service Designer, co-owning the BVD workstream within the team above. I owned:</p></div>
+          <ul data-reveal="" style="display:grid;gap:12px;margin-top:20px"><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Working through the calculation-sheet permission logic with the product owner, starting from their first pass, then substantial back and forth to resolve exactly what each approval tier could and couldn’t edit</p></li><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Mapping the full BRAM revision scenarios: five distinct paths depending on what BRAM edits and when</p></li><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Designing the module’s flow from Trade Assist request creation through to final ZMWNA approval</p></li></ul>
+        </div>
+        <div id="bvd-challenge" data-sec="" data-screen-label="BVD · Challenges" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Challenges and how we solved them</h3>
+          <div data-reveal="" style="margin-bottom:24px"><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The core job was turning a spreadsheet-and-email process into a defined digital workflow, making implicit steps (who reviews what, in what order, what happens on rejection) explicit and enforceable for the first time.</p></div>
+          <ol style="display:grid;gap:16px">
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:8px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h4 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">A financial approval chain with no single source of truth</h4><p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">The calculation sheet alone carries over 20 line items (new-car funding, used-car ACV, wholesale value, tax, title and licence fees), reconciled across three approval tiers by hand. On top of that sit hard compliance rules: ZMWNA sign-off before resale, open recalls fixed before payout, and one of three approved legal reasons for every buyback.</p></div></div>
+            <div style="padding:22px 26px 26px"><p style="font-size:13px;color:#7b7b7b">What we did</p><div style="display:grid;gap:24px;margin-top:14px"><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Made the approval chain itself visible as a status</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Every request carries an explicit stage, so a dealer always knows where their request sits and who’s holding it.</p><figure onClick="{{ openStatus }}" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in"><figcaption style="text-align:center;font-size:16px">Trade Assist Requests: every row shows its stage</figcaption><div style="aspect-ratio:16 / 10;overflow:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-status.png" alt="Trade Assist Requests list with a status per request" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:left top"></div></figure></div></div><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Built the document package as a defined, trackable set</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Program Form, Calculation Sheet, Settlement Agreement, Disclosure Notice, Buyer’s Order, supporting documentation and repair orders, each with upload limits and clear ownership, replacing a loosely tracked spreadsheet-and-attachment process.</p><figure onClick="{{ openForm }}" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in"><figcaption style="text-align:center;font-size:16px">Program Form: supporting documents with upload limits</figcaption><div style="aspect-ratio:2882 / 1762;overflow:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-program-form.png" alt="Create Trade Assist Request program form with stepper, repair information, supporting document upload and retailer signature" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:left top"></div></figure></div></div></div></div>
+          </li>
+          <li data-reveal="" style="border-radius:14px;border:1px solid #e6e6e6;overflow:hidden">
+            <div style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:8px;padding:24px 26px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h4 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.35">Multiple people editing the same numbers, with no record of who changed what</h4><p style="margin-top:8px;font-size:16px;line-height:1.7;color:#7b7b7b">BRAM can revise the calculation sheet or disclosure notice even after a dealer has completed the settlement agreement, which sends it back to the AAM to review, re-sign and resubmit. The old process had to handle this, but not gracefully.</p></div></div>
+            <div style="padding:22px 26px 26px"><p style="font-size:13px;color:#7b7b7b">What we did</p><div style="display:grid;gap:24px;margin-top:14px"><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Distinguished “BRAM comments” from “BRAM rejects”</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">At the calculation-sheet stage, BRAM can request changes and comment directly on the dealer’s worksheet, but can’t reject the request outright. We worked this logic through with the product owner and reflected it in the flow, so the interface only offers actions that are allowed at that stage.</p><figure onClick="{{ openCalc }}" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in"><figcaption style="text-align:center;font-size:16px">Edit Calculation Sheet: BRAM can edit and approve, not reject</figcaption><div style="aspect-ratio:16 / 10;overflow:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-calc-sheet.png" alt="Edit Calculation Sheet in review with BRAM, with Back, Save as Draft and Save and Approve actions" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:left top"></div></figure></div></div><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Designed for five distinct revision scenarios, not just the happy path</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">The straightforward approval flow; BRAM editing and self-approving the calculation sheet; BRAM revising the calculation sheet after the settlement agreement (triggering a re-sign); BRAM revising the disclosure notice post-agreement; and both happening together.</p><figure onClick="{{ openDocs }}" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in"><figcaption style="text-align:center;font-size:16px">Review Documents: revised documents flagged with dates</figcaption><div style="aspect-ratio:16 / 10;overflow:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-review-docs.png" alt="Review Documents screen with calculation sheet and disclosure notice tagged Revised" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:left top"></div></figure></div></div><div style="display:grid;grid-template-columns:14px minmax(0, 1fr);gap:10px"><span style="width:6px;height:6px;margin-top:9px;border-radius:50%;background:#222"></span><div><p style="font-size:16px;line-height:1.5">Locked submitted requests against silent edits</p><p style="margin-top:6px;font-size:16px;line-height:1.7;color:#7b7b7b">Once a Trade Assist request is submitted or rejected, the dealer can’t modify it; they start a new request instead. That closes a gap where an approved-then-changed record could previously go untracked.</p><figure onClick="{{ openLocked }}" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#f3f3f3;cursor:zoom-in"><figcaption style="text-align:center;font-size:16px">Trade Assist Requests: submitted requests are view-only</figcaption><div style="aspect-ratio:16 / 10;overflow:hidden;border-radius:10px;border:1px solid #e6e6e6;background:#fff"><img src="images/zmw/bvd-locked.png" alt="Dealer Trade Assist Requests list with edit icons on drafts and view-only icons on submitted requests" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:left top"></div></figure></div></div></div></div>
+          </li>
+          </ol>
+        </div>
+        <div id="bvd-learnings" data-sec="" data-screen-label="BVD · Learnings" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Learnings</h3>
+          <ul style="display:grid;gap:16px"><sc-for list="{{ learnBvd }}" as="l" hint-placeholder-count="3">
+            <li data-reveal="" style="display:grid;grid-template-columns:{{ recCols }};gap:12px">
+              <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><p style="font-size:13px;color:#7b7b7b">Going in</p><p style="margin-top:10px;font-size:16px;line-height:1.6;color:#7b7b7b">{{ l.before }}</p></div>
+              <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff"><p style="font-size:13px;color:rgba(255,255,255,.6)">Coming out · {{ l.tag }}</p><p style="margin-top:10px;font-size:17px;line-height:1.45">{{ l.head }}</p><p style="margin-top:8px;font-size:15px;line-height:1.65;color:rgba(255,255,255,.75)">{{ l.after }}</p></div>
+            </li></sc-for></ul>
+        </div>
+      </section>
+      <section id="ws-va" data-sec="" data-screen-label="03 VA" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">03 · Workstream</p>
+        <h2 style="margin:10px 0 8px;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">VA <span style="color:#7b7b7b">Vehicle Administration</span></h2>
+        <div id="va-context" data-sec="" data-screen-label="VA · Context" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Context</h3>
+          <div data-reveal="" style="display:grid;gap:18px">
+            <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">VA is the system through which ZMW employees lease a company vehicle. It involves a wide cast of stakeholders: the employee (lessee), HR, the VA Specialist who administers the process, the DMV and other registration bodies, auction houses handling end-of-lease vehicles, title agencies, and a governance committee reviewing risk. A closely linked initiative, OOO (Online Ordering Overseas), connects when an employee’s vehicle is ordered internationally.</p>
+            <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The engagement ran 10 days. The brief: understand the process well enough to identify where agentic AI could meaningfully change it, and produce something concrete enough to show the client what that could look like.</p>
+          </div>
+        </div>
+        <div id="va-challenge" data-sec="" data-screen-label="VA · Challenge" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">The challenge</h3>
+          <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b"><span style="color:#222">A process with real structural imbalance.</span> Mapping the stakeholders showed that the people the process is actually for sit in the lowest power quadrant: deeply impacted, minimal control, most friction. The VA Specialist, by contrast, holds very high operational control.</p></div>
+          <div data-reveal="" style="display:grid;grid-template-columns:{{ recCols }};gap:12px;margin-top:24px">
+            <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><p style="font-size:13px;color:#7b7b7b">Low power, high impact</p><ul style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid #dcdcdc">Employee</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid #dcdcdc">Additional User</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid #dcdcdc">Retiree</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid #dcdcdc">Department User</li></ul></div>
+            <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff"><p style="font-size:13px;color:rgba(255,255,255,.6)">High control · VA Specialist</p><ul style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Eligibility validation</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Licence confirmation</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Plate assignment</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Exception handling</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Damage logging</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Auction coordination</li><li style="padding:6px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(255,255,255,.25)">Compliance flagging</li></ul></div>
+          </div>
+          <div data-reveal="" style="margin-top:32px"><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b"><span style="color:#222">Documentation existed, but none of it was usable.</span> One document wasn’t readable at all; the other was outdated, and no designer on the project knew what it had mapped. The developers had some working knowledge, but nothing consolidated. Understanding VA meant piecing it together from scratch across systems, each interfacing with the VA Specialist manually, with no reliable map of how they connected.</p></div>
+          <ul data-reveal="" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px"><li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">HR · entitlement, employment status</li><li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">DMV · registration, plates</li><li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Title agencies · Certificate of Origin</li><li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Auction houses · end-of-lease disposition</li><li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Governance committee · risk and suspension</li></ul>
+          <p style="margin-top:36px;font-size:13px;color:#7b7b7b">How the 10 days went</p>
+          <ol data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:12px;margin-top:14px">
+            <li style="padding:20px;border-radius:14px;background:#f3f3f3"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Days 1–7</span><p style="margin-top:12px;font-size:15px;line-height:1.55;color:#7b7b7b">Making sense of what existed: reconciling documentation, confirming the current version, getting terminology straight.</p></li>
+            <li style="padding:20px;border-radius:14px;background:#f3f3f3"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Days 8–9</span><p style="margin-top:12px;font-size:15px;line-height:1.55;color:#7b7b7b">Building AutoMate.</p></li>
+            <li style="padding:20px;border-radius:14px;background:#f3f3f3"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Day 10</span><p style="margin-top:12px;font-size:15px;line-height:1.55;color:#7b7b7b">Preparing for the client.</p></li>
+          </ol>
+        </div>
+        <div id="va-role" data-sec="" data-screen-label="VA · My role" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">My role</h3>
+          <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">UI UX and Service Designer, owning the VA workstream for a focused 10-day span within the wider engagement. I owned:</p></div>
+          <ul data-reveal="" style="display:grid;gap:12px;margin-top:20px"><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Reconciling the existing but unusable documentation into a current, trustworthy picture of the process and its terminology</p></li><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Building the power and interest matrix that placed each stakeholder group and made the imbalance visible</p></li><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Documenting persona interactions and dependencies across the full stakeholder set</p></li><li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="padding-top:7px;font-size:16px;line-height:1.65;color:#7b7b7b">Designing AutoMate, a concept for a conversational AI assistant for the VA Specialist, built in 2 of the 10 days</p></li></ul>
+          <p data-reveal="" style="margin-top:20px;font-size:14px;line-height:1.65;color:#7b7b7b">The agentic-AI framing was proposed to the ZMW team by a senior Accenture colleague as a direction worth exploring. The stakeholder mapping, opportunity analysis and AutoMate concept underneath it were mine.</p>
+        </div>
+        <div id="va-finding" data-sec="" data-screen-label="VA · Finding" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">The finding</h3>
+          <blockquote data-reveal="" style="padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+            <p style="font-size:13px;color:rgba(255,255,255,.6)">Not a technology gap, a structural one</p>
+            <p style="margin-top:10px;font-size:clamp(20px, 2vw, 26px);line-height:1.4;letter-spacing:-0.012em">Employees, the people the entire process exists to serve, have low operational power and depend on a single role to move anything forward: requesting a vehicle, validating a licence, getting a plate, arranging pickup.</p>
+          </blockquote>
+          <div data-reveal="" style="margin-top:24px"><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Building the stakeholder map and power and interest matrix wasn’t just documentation; it surfaced the case for where to focus. That dependency is what AutoMate was built to address.</p></div>
+        </div>
+        <div id="va-solution" data-sec="" data-screen-label="VA · AutoMate" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">The solution: AutoMate</h3>
+          <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">AutoMate is a conversational AI concept, “Your everyday automotive companion at ZMW”, designed around the VA Specialist, the single role the whole process depends on. Rather than pitch the idea in the abstract, it was built out as a set of concept screens to show the client what agent-assisted VA administration could look like in practice.</p></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:12px;margin-top:28px">
+            <sc-for list="{{ automate }}" as="a" hint-placeholder-count="6">
+              <div data-reveal="" style="padding:22px;border-radius:14px;border:1px solid #e6e6e6"><p style="font-size:13px;color:#7b7b7b">{{ a.n }}</p><h4 style="margin:14px 0 0;font-size:19px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">{{ a.t }}</h4><p style="margin-top:8px;font-size:15px;line-height:1.6;color:#7b7b7b">{{ a.d }}</p></div>
+            </sc-for>
+          </div>
+          <figure data-reveal="" style="display:grid;place-items:center;aspect-ratio:{{ wideRatio }};margin-top:24px;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace;text-align:center">AutoMate concept screens</span></figure>
+          <p data-reveal="" style="margin-top:24px;font-size:14px;line-height:1.65;color:#7b7b7b">Built and presented as a concept: a proposal of what agentic AI could do for VA, not a production-ready design. It’s what made the opportunity mapping tangible in front of the client.</p>
+        </div>
+        <div id="va-constraint" data-sec="" data-screen-label="VA · Constraint" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">The honest constraint</h3>
+          <div data-reveal="" style="display:grid;grid-template-columns:{{ recCols }};gap:12px">
+            <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><p style="font-size:13px;color:#7b7b7b">The ambition</p><p style="margin-top:10px;font-size:16px;line-height:1.6;color:#7b7b7b">An agent owning the full process end to end: requesting, assigning a vehicle with a licence plate, and ordering, for both the employee and the department.</p></div>
+            <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff"><p style="font-size:13px;color:rgba(255,255,255,.6)">What AutoMate demonstrated</p><p style="margin-top:10px;font-size:16px;line-height:1.6">Assistance with vehicle pickup preparation, plate assignment and checkout, not full autonomous assignment.</p></div>
+          </div>
+          <div data-reveal="" style="margin-top:24px"><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Full assignment, with the agent choosing and assigning a vehicle and the VA Specialist stepping in only at physical handover, was identified as achievable but not built here. The handover step (marking a vehicle delivered inside the VA system) needed more time and guidance than a 10-day concept sprint allowed. I present this as a finding, not a shipped outcome.</p></div>
+        </div>
+      </section>
+
+      <section id="ws-ms" data-sec="" data-screen-label="04 Motorsport" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">04 · Workstream</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Motorsport</h2>
+        <div data-reveal="" style="display:grid;place-items:center;gap:8px;padding:48px 28px;border-radius:16px;border:1px dashed #dcdcdc;background:#fafafa;text-align:center"><span style="padding:10px 20px;border-radius:999px;background:#fff;font-size:15px">Coming soon</span><p style="font-size:15px;color:#7b7b7b">This workstream is being written up.</p></div>
+      </section>
+    </div>
+  </div>
+
+  <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
+    <a data-reveal="" href="Pearstream%20Case%20Study.dc.html" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+      <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
+        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">Pearstream</p>
+        <p style="margin-top:8px;color:#7b7b7b">Financial infrastructure</p>
+      </div>
+      <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
+        <img src="images/cover-pearstream.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
+      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
+      <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:72px 72px 24px">
+    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:1">×</button>
+    <sc-if value="{{ lbSingle }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbToggleZoom }}" style="max-width:100%;max-height:calc(100vh - 240px);overflow:auto;border-radius:12px;background:#fff">
+        <sc-if value="{{ lbFit }}" hint-placeholder-val="{{ true }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain;cursor:zoom-in"></sc-if>
+        <sc-if value="{{ lbZoomed }}" hint-placeholder-val="{{ false }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:min(240vw, 3200px);max-width:none;cursor:zoom-out"></sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="display:flex;gap:20px;align-items:flex-start;max-width:100%">
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">Web</p><div style="width:min(58vw, 900px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}, web" style="display:block;width:100%;height:auto"></div></div>
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
+      </div>
+    </sc-if>
+    <div onClick="{{ lbStop }}" style="max-width:640px;text-align:center;color:#fff">
+      <p style="font-size:16px;line-height:1.4">{{ lbTitle }}</p>
+      <p style="margin-top:6px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.7)">{{ lbDesc }}</p>
+      <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <sc-for list="{{ lbThumbs }}" as="t" hint-placeholder-count="0">
+            <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
+          </sc-for>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }} · Use ← → to navigate · Esc to close</p>
+      </sc-if>
+    </div>
+    <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Previous" onClick="{{ lbPrev }}" style="position:fixed;left:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+      <button type="button" aria-label="Next" onClick="{{ lbNext }}" style="position:fixed;right:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+    </sc-if>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const TOC = [
+  ['overview', 'Workstreams', null], ['ws-rdr', 'RDR', 'rdr'], ['rdr-role', 'My role', 'rdr', 1], ['rdr-challenge', 'Challenges and solutions', 'rdr', 1], ['rdr-learnings', 'Learnings', 'rdr', 1],
+  ['ws-bvd', 'BVD', 'bvd'], ['bvd-context', 'Context', 'bvd', 1], ['bvd-role', 'My role', 'bvd', 1], ['bvd-challenge', 'Challenges and solutions', 'bvd', 1], ['bvd-learnings', 'Learnings', 'bvd', 1],
+  ['ws-va', 'VA', 'va'], ['va-context', 'Context', 'va', 1], ['va-challenge', 'The challenge', 'va', 1], ['va-role', 'My role', 'va', 1], ['va-finding', 'The finding', 'va', 1], ['va-solution', 'AutoMate', 'va', 1], ['va-constraint', 'The honest constraint', 'va', 1],
+  ['ws-ms', 'Motorsport', 'ms'],
+];
+const D = 'images/zmw/';
+const WS = [
+  { id: 'rdr', name: 'RDR', full: 'Retail Delivery Reporting', status: 'Shipped', summary: 'Redesigning a daily-use, manual-entry system for ZMW dealers and employees.', duration: '5 months' },
+  { id: 'bvd', name: 'BVD', full: 'Branded Vehicle Disclosure', status: 'On hold', summary: 'Moving a spreadsheet-and-email disclosure process onto the web.', duration: '3 months' },
+  { id: 'va', name: 'VA', full: 'Vehicle Administration', status: 'Concept', summary: 'Mapping vehicle leasing and prototyping an agentic AI assistant.', duration: '10 days' },
+  { id: 'ms', name: 'Motorsport', full: '', status: 'Coming soon', summary: 'Case study in progress.', duration: '1.5 months', soon: true },
+];
+const shot = (k, t, alt) => ({ title: t, desc: '', alt, web: `${D}${k}.png`, hasApp: false });
+const INV = [shot('inv-b2d-new', 'B2D · New vehicles', 'Dealer vehicle inventory, New tab'), shot('inv-b2d-used', 'B2D · Used vehicles', 'Dealer vehicle inventory, Used tab with CPO column'), shot('inv-b2e-center', 'B2E · Search by centre', 'Employee vehicle inventory filtered by product type, brand and centre'), shot('inv-b2e-security', 'B2E · Security vehicles', 'Employee vehicle inventory showing only security vehicles')];
+const OV = [shot('ov-b2d', 'B2D · Retails overview', 'Dealer retails overview with rejected and draft counts'), shot('ov-b2e', 'B2E · Retails overview', 'Employee retails overview with advanced filters open')];
+const BP = [{ ...shot('bp-corporate', 'Corporate fleet purchase', 'Service blueprint: a new corporate customer buys a fleet at a dealership'), wide: true }, { ...shot('bp-preowned', 'Pre-owned trade-in', 'Service blueprint: a customer exchanges their vehicle for a pre-owned one'), wide: true }];
+const RT = [shot('rt-personal', 'Personal retail · Personal program', 'Enter a retail with Personal retail type and Personal program type'), shot('rt-corporate', 'Personal retail · Program changed to Corporate Sales', 'Program update from Personal to Corporate Sales with claims certificate number')];
+const LEARN = {
+  rdr: [
+    { tag: 'Complexity and the common path', before: 'A simple car sale is a simple backend process.', head: 'It has to work on three levels at once: easy for someone new, efficient for daily users, quick for someone stepping in on an edge case.', after: 'Unless it solves for edge cases, the friction shows up downstream, in customer experience, or in employees quietly adapting to a cumbersome process without realising how much time it’s costing them.' },
+    { tag: 'A good idea and a fundable one', before: 'The right idea is the one that matches every UX best practice.', head: 'Change needs to be gradual. The right idea is the one people can adopt without much retraining.', after: 'Understanding business and user needs, while still pushing for the best long-term UX decision, is what actually moves things forward.' },
+    { tag: 'Daily B2D and low-frequency B2E', before: 'B2D and B2E are separate users with separate workflows.', head: 'Interns, regular dealers and employees often share the same dealership computer.', after: 'Knowing the frequency, use cases and everyday behaviour behind each user type changes how you think about session handling, permissions and screen design, not just the workflow.' },
+  ],
+  bvd: [
+    { tag: 'Rules not yet agreed', before: 'Rules can be designed while the business is still deciding them.', head: 'Business clarity on workflows and KPIs isn’t optional.', after: 'Without it, decisions get debated and effort goes into building the wrong thing. The product owner backed first-hand research with dealers, AAMs and BRAMs, but the person who held the budget didn’t approve it. With that testing, BVD would likely land on a flow that works for everyone, faster.' },
+    { tag: 'Past the happy path', before: 'Financial-approval tools break at the interface.', head: 'They break where stakeholders lack a shared vocabulary.', after: 'Different stakeholders had different visibility into the legal and financial process, with no shared vocabulary for what things were called across the Excel sheets.' },
+    { tag: 'Compliance-heavy flows', before: 'A worksheet of items and costs is enough.', head: 'Constraints work best as visible markers in the form itself, not tribal knowledge.', after: 'Data needs grouping for quick scanning: what’s editable, what’s mandatory, what depends on another field. Sometimes that means staged or limited edit access; sometimes a clear channel for saying what changed and why.' },
+  ],
+};
+const AUTOMATE = [
+  ['A chat-first entry point', 'Greets the VA Specialist by name with context already loaded, and surfaces likely next actions as suggested prompts, so the Specialist doesn’t need to know what to ask for.'],
+  ['A step-by-step vehicle pickup guide', 'Walks the Specialist through preparing pickup details, generating the official checkout sheet, meeting the employee and logging the handover, with a nudge to front-load steps the day before.'],
+  ['A licence plate assignment flow', 'Pulls up order confirmation data and a plate submission form, then confirms registration and flags when the employee is due for pickup, collapsing a multi-system manual task into one flow.'],
+  ['An auto-generated vehicle checkout sheet', 'Populates employee and vehicle information, pickup details and a condition and damage checklist automatically, with signature fields for the employee and the Specialist.'],
+  ['Fleet and leasing analytics on demand', 'Answers questions like “see monthly and quarterly leasing vehicle data” with a live status breakdown and per-vehicle detail, instead of the Specialist compiling it by hand.'],
+  ['Generated leasing campaign ideas', 'Produces specific, incentive-backed campaign concepts grounded in current fleet data, showing what the agent could contribute beyond task execution.'],
+].map(([t, d], i) => ({ n: String(i + 1).padStart(2, '0'), t, d }));
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: 0, p: 0, menuOpen: false, nextHover: false };
+  bodyRef = React.createRef();
+  personaRef = React.createRef();
+  chRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => this.update());
+    this.onScroll = () => requestAnimationFrame(() => this.update());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.update();
+    this.setupReveal();
+    this.onKey = (e) => {
+      if (this.state.protoOpen && e.key === 'Escape') { document.body.style.overflow = ''; return this.setState({ protoOpen: false }); }
+      if (!this.state.lb) return;
+      if (e.key === 'Escape') this.closeLb();
+      if (e.key === 'ArrowRight') this.stepLb(1);
+      if (e.key === 'ArrowLeft') this.stepLb(-1);
+    };
+    document.addEventListener('keydown', this.onKey);
+    const watch = (ref, fn, th) => {
+      if (!ref.current || !('IntersectionObserver' in window)) return fn();
+      const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); fn(); } }, { threshold: th });
+      io.observe(ref.current);
+      (this.ios = this.ios || []).push(io);
+    };
+
+  }
+  openLb(items, i = 0) {
+    document.body.style.overflow = 'hidden';
+    this.setState({ lb: items, lbI: i, lbZoom: false });
+  }
+  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false }); }
+  stepLb(d) {
+    const n = (this.state.lb || []).length;
+    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false }));
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    clearTimeout(this.failT);
+    clearTimeout(this.pT); clearTimeout(this.chT);
+    (this.ios || []).forEach((io) => io.disconnect());
+    document.removeEventListener('keydown', this.onKey);
+    document.body.style.overflow = '';
+  }
+  update() {
+    const line = window.innerHeight * 0.3;
+    let active = 0;
+    TOC.forEach(([id], i) => { const s = document.getElementById(id); if (s && s.getBoundingClientRect().top <= line) active = i; });
+    let p = 0;
+    const b = this.bodyRef.current;
+    if (b) { const r = b.getBoundingClientRect(); p = Math.min(Math.max((line - r.top) / r.height, 0), 1); }
+    if (active !== this.state.active || Math.abs(p - this.state.p) > 0.002) this.setState({ active, p });
+  }
+  setupReveal() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && show(e.target)), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
+    this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
+  }
+  mkFlow(key, arr) {
+    const idx = (this.state.flow || {})[key] || 0, n = arr.length;
+    const lb = arr.map((x) => ({ src: x.web, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const setI = (i) => {
+      i = Math.max(0, Math.min(n - 1, i));
+      this.setState((s) => ({ flow: { ...(s.flow || {}), [key]: i } }));
+      const strip = document.querySelector(`[data-thumbs="${key}"]`);
+      const el = strip && strip.children[i];
+      if (el) strip.scrollTo({ left: el.offsetLeft - (strip.clientWidth - el.offsetWidth) / 2, behavior: reduced() ? 'auto' : 'smooth' });
+    };
+    return {
+      steps: arr.map((x, i) => ({
+        ...x, counter: `${String(i + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`,
+        op: i === idx ? 1 : 0.45,
+        click: () => (i === idx ? this.openLb(lb, i) : setI(i)),
+        go: () => setI(i),
+        thumbBorder: i === idx ? '#222' : '#e3e3e3', thumbOp: i === idx ? 1 : 0.6,
+        current: i === idx ? 'true' : undefined,
+      })),
+      track: `translateX(calc(${-idx} * (88% + 16px)))`,
+      prev: () => setI(idx - 1), next: () => setI(idx + 1),
+      prevOp: idx === 0 ? 0.35 : 1, nextOp: idx === n - 1 ? 0.35 : 1,
+      atStart: idx === 0, atEnd: idx === n - 1,
+      wheel: (e) => {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 12) return;
+        const now = Date.now(); if (now - (this.wheelT || 0) < 650) return; this.wheelT = now;
+        setI(idx + (e.deltaX > 0 ? 1 : -1));
+      },
+    };
+  }
+  tocVals() {
+    const act = this.state.active || 0, ws = TOC[act][2];
+    return TOC.map(([id, label, w, sub], i) => ({ id, label, w, sub, i })).filter((t) => !t.sub || t.w === ws).map((t) => {
+      const on = t.i === act || (!t.sub && t.w && t.w === ws);
+      return { id: t.id, label: t.label, pad: t.sub ? '5px 0 5px 32px' : '8px 0 8px 18px', size: t.sub ? '13.5px' : '15px',
+        color: on ? '#222' : t.sub ? '#7b7b7b' : '#a3a3a3', bar: on && !t.sub ? 'scaleY(1)' : 'scaleY(0)', current: t.i === act ? 'true' : undefined };
+    });
+  }
+  interactiveVals(phone) {
+    const s = this.state;
+    const act = s.active || 0, actWs = TOC[act][2];
+    const single = (src, title, desc = '') => () => this.openLb([{ src, app: null, title, desc }], 0);
+    const flow = (key, arr) => { const f = this.mkFlow(key, arr); f.steps = f.steps.map((st) => ({ ...st, iw: st.wide ? 'auto' : '100%', ih: st.wide ? '100%' : 'auto', ar: st.wide ? '16 / 9' : 'auto', ox: st.wide ? 'auto' : 'hidden' })); return f; };
+    return {
+      wsCards: WS.map((w) => ({ ...w, on: actWs === w.id, go: (e) => { e.preventDefault(); const el = document.getElementById('ws-' + w.id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: reduced() ? 'auto' : 'smooth' }); },
+        border: actWs === w.id ? '#222' : '#e3e3e3', pillBg: w.soon ? '#f3f3f3' : '#222', pillColor: w.soon ? '#7b7b7b' : '#fff', cta: w.soon ? 'Soon' : actWs === w.id ? 'Reading' : 'Read', cursor: 'pointer' })),
+      invFlow: flow('inv', INV), ovFlow: flow('ov', OV), bpFlow: flow('bp', BP), rtFlow: flow('rt', RT),
+      learnRdr: LEARN.rdr, learnBvd: LEARN.bvd, automate: AUTOMATE,
+      openRole: single(`${D}rdr-role.png`, 'My role on RDR'),
+      openUsers: single(`${D}two-users.png`, 'Two very different users sharing one system'),
+      openScenarios: single(`${D}bvd-scenarios.png`, 'BVD approval flow', 'The happy path plus four scenarios where BRAM edits the calculation sheet or disclosure notice.'),
+      openNewFlow: single(`${D}bvd-new-flow.png`, 'New BVD flow', 'From TA program form to final agreement, across Dealer, AAM and BRAM.'),
+      openStatus: single(`${D}bvd-status.png`, 'Trade Assist Requests: every row shows its stage'),
+      openForm: single(`${D}bvd-program-form.png`, 'Program Form: supporting documents with upload limits'),
+      openCalc: single(`${D}bvd-calc-sheet.png`, 'Edit Calculation Sheet: BRAM can edit and approve, not reject'),
+      openDocs: single(`${D}bvd-review-docs.png`, 'Review Documents: revised documents flagged with dates'),
+      openLocked: single(`${D}bvd-locked.png`, 'Trade Assist Requests: submitted requests are view-only'),
+      wsCols: phone ? 'repeat(2, minmax(0, 1fr))' : 'repeat(auto-fit, minmax(min(100%, 170px), 1fr))',
+    };
+  }
+  renderVals() {
+    const { w, active, p, menuOpen, nextHover } = this.state;
+    const narrow = w <= 960, phone = w <= 640;
+    return {
+      wide: !narrow, narrow, notPhone: !phone,
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      progress: `scaleX(${p})`,
+      topPadB: phone ? '48px' : '72px',
+      headMt: phone ? '28px' : '44px',
+      coverMt: phone ? '36px' : '56px',
+      coverRadius: phone ? '12px' : '16px',
+      coverRatio: phone ? '4 / 3' : '16 / 8',
+      layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
+      layoutPadT: phone ? '48px' : narrow ? '64px' : '96px',
+      toc: this.tocVals(),
+      bodyRef: this.bodyRef,
+      ...this.interactiveVals(phone),
+      pairCols: phone ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))',
+      recCols: phone ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      secPad: phone ? '64px' : narrow ? '80px' : '112px',
+      titleMb: phone ? '22px' : '32px',
+      proseSize: phone ? '16px' : '18px',
+      hmwPad: phone ? '24px' : '30px 34px',
+      statN: phone ? '36px' : '44px',
+      insightCols: phone ? '1fr' : '56px 1fr',
+      flipDir: phone ? 'row' : 'row-reverse',
+      wideRatio: phone ? '4 / 3' : '16 / 8',
+      nextPadB: phone ? '72px' : '110px',
+      nextCardPad: phone ? '24px 12px 12px' : '14px 14px 14px 40px',
+      nextTextPad: phone ? '12px' : '0',
+      nextBorder: nextHover ? '#dcdcdc' : '#e3e3e3',
+      nextScale: nextHover ? 'scale(1.05)' : 'none',
+      nextBtnOpacity: nextHover || narrow ? 1 : 0,
+      nextBtnScale: nextHover ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+      nextIn: () => this.setState({ nextHover: true }),
+      nextOut: () => this.setState({ nextHover: false }),
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>

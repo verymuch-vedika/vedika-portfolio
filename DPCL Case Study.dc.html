@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>DPCL case study | Vedika</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+<symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff">
+
+<div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px"><span style="display:block;height:100%;background:#222;transform-origin:left;transform:{{ progress }}"></span></div>
+</div>
+
+<header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
+    <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 480px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Service Design Case Study</span>
+        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">DPCL</h1>
+        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Bringing a five-hand process under one roof: digitising a PNG ecosystem for 1.7 lakh+ households in 62 districts</p>
+      </div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Project Design Lead</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Oil and natural gas</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">7 months, Oct to Apr</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">5 designers, a BA and a dev manager</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service blueprinting, user flow mapping, benchmarking</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
+      </dl>
+    </div>
+    <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
+      <img src="images/dpcl/banner-team.png" alt="Illustration of a design team planning around a table, with gas pipelines running through a town behind them" style="width:100%;height:100%;object-fit:cover;object-position:50% 70%;filter:saturate(.85) contrast(.95)">
+    </figure>
+  </div>
+</header>
+
+<main style="background:#fff">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;display:grid;grid-template-columns:{{ layoutCols }};gap:clamp(40px, 6vw, 110px);padding:{{ layoutPadT }} 0 40px">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="On this page" style="position:sticky;top:136px;align-self:start">
+        <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
+        <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
+          <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:7px 0 7px 18px;font-size:14.5px;color:{{ t.color }};transition:color .3s">
+              <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
+            </a></li>
+          </sc-for>
+        </ol>
+      </nav>
+    </sc-if>
+
+    <div ref="{{ bodyRef }}" style="min-width:0;max-width:880px">
+      <p style="margin-bottom:56px;padding:18px 22px;border-radius:14px;border:1px solid #e6e6e6;font-size:14px;line-height:1.65;color:#7b7b7b"><span style="color:#222">Disclaimer.</span> To comply with my non-disclosure agreement, I’ve omitted confidential information and disguised the client’s name. The insights shared here are my own and don’t necessarily represent the views of the client.</p>
+
+      <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">01</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
+          <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Getting piped gas meant one application passing through five roles, entirely offline. Nobody in the chain could see the whole picture.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Turned the BRD into to-be service blueprints, mapped current against to-be flows, then designed one connected web and app system for customers and partners.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Every module was signed off by the client. Registration and the admin dashboard reached dev completion before the project was put on hold.</p></div>
+        </div>
+      </section>
+
+      <section id="problem" data-sec="" data-screen-label="02 Business problem" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">02</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Business problem</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Piped natural gas reaches a home through a chain, not a transaction. Before gas ever flows, a single application passes through five different roles.</p>
+        <figure data-reveal="" ref="{{ personaRef }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fafafa;aspect-ratio:1615 / 974">
+          <img src="images/dpcl/process-personas.png" alt="Illustration of the current PNG application and installation process, passing from agent to inspector to installer to field officer and back to the customer" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+          <sc-for list="{{ personaZones }}" as="z" hint-placeholder-count="0">
+            <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
+              <img src="{{ z.img }}" alt="" style="width:100%;height:100%;display:block;clip-path:{{ z.clip }};transition:transform .45s cubic-bezier(.16,1,.3,1), filter .45s;transform:{{ z.scale }};filter:{{ z.shadow }}">
+              <p style="position:absolute;top:{{ z.labelTop }};left:0;right:0;text-align:center;font-size:clamp(10px, .95vw, 13px);line-height:1.3;pointer-events:none;transition:opacity .25s;opacity:{{ z.labelOp }}">{{ z.name }}</p>
+              <div style="position:absolute;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #e3e3e3;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
+                <span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ z.tag }}</span>
+                <p style="margin-top:10px;font-size:15px;line-height:1.3">{{ z.name }}</p>
+                <p style="margin-top:4px;font-size:13px;line-height:1.5;color:#7b7b7b">{{ z.desc }}</p>
+              </div>
+            </div>
+          </sc-for>
+          <button type="button" aria-label="Expand image" onClick="{{ openPersonas }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+        </figure>
+        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap each role to see what they do.</p>
+        <div data-reveal="" style="display:grid;gap:18px;margin-top:36px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">For DPCL’s piped-gas expansion into tier 2 and 3 cities, every one of those handoffs happened offline: over phone calls, in local offices, and with hard-copy documents walked from desk to desk. The official process time was 2–4 weeks. <span style="color:#222">But because nothing was connected, no one in the chain could see the whole picture.</span></p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">It was an ecosystem that had to be thought through as a whole: customers who may never have filled in a form online, agents enrolling on their behalf, inspectors and installers coordinating physical work, and admins managing all of it across geographies. The redesign had to hold all of it at once.</p>
+        </div>
+      </section>
+
+      <section id="challenge" data-sec="" data-screen-label="03 Design challenge" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">03</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Design challenge</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The brief was to replace the offline process with one connected digital system. The harder, unspoken part was doing it for the people the offline process actually served, in places where bandwidth and digital literacy can’t be assumed.</p>
+        <figure data-reveal="" ref="{{ chRef }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1536 / 1024">
+          <img src="images/dpcl/challenge.png" alt="Illustration of a designer turning a requirements document into a connected map of flows and a service blueprint" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+          <div style="position:absolute;inset:0;border-radius:14px;background:rgba(250,250,250,.72);pointer-events:none;transition:opacity .45s;opacity:{{ chVeil }}"></div>
+          <sc-for list="{{ chSpots }}" as="c" hint-placeholder-count="0">
+            <div style="position:absolute;left:{{ c.l }};top:{{ c.t }};width:{{ c.w }};height:{{ c.h }};border-radius:16px;background-image:{{ c.bg }};background-size:{{ c.bgSize }};background-position:{{ c.bgPos }};background-repeat:no-repeat;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;transition:opacity .45s, transform .5s cubic-bezier(.16,1,.3,1);opacity:{{ c.op }};transform:{{ c.tf }}"></div>
+          </sc-for>
+          <button type="button" aria-label="Expand image" onClick="{{ openChallenge }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+        </figure>
+        <blockquote data-reveal="" style="margin-top:36px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+          <p style="font-size:13px;color:rgba(255,255,255,.6)">How might we</p>
+          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em;color:rgba(255,255,255,.85);text-decoration:underline dotted rgba(255,255,255,.3);text-underline-offset:5px">…make [process] simple and transparent for [users] while keeping [constraint] intact?</p>
+        </blockquote>
+        <p style="margin-top:36px;font-size:13px;color:#7b7b7b">Three goals shaped everything</p>
+        <ol style="display:grid;gap:12px;margin-top:14px">
+          <li data-reveal="" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Connect the five-role chain</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Give the whole approval process a single digital backbone, so no handoff happens blind.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Let people in, whichever way they arrive</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Let a customer start, save and track an application themselves, or hand it to an agent.</p></div></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Fit the real context</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Keep the whole thing usable in low-bandwidth, low-literacy conditions.</p></div></li>
+        </ol>
+      </section>
+
+      <section id="role" data-sec="" data-screen-label="04 My role" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">04</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">My role</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Project Design Lead, owning the service design layer and leading a team of five designers. Most of my hands-on work sat on the layer that held the project together, and most of my time went into coordination: clarifying requirements and timelines with the business analyst (BA), and prioritising delivery with the dev manager as priorities shifted and deadlines tightened.</p>
+        <figure data-reveal="" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1672 / 941">
+          <img src="images/dpcl/role-timeline.png" alt="Project timeline from October to April, showing the design team growing from two to four designers" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+          <img src="images/dpcl/cursor-affordance.png" alt="" style="position:absolute;left:13.5%;top:62%;width:5%;height:auto;pointer-events:none;z-index:3">
+          <sc-for list="{{ monthZones }}" as="z" hint-placeholder-count="0">
+            <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:6.58%;height:11.69%;z-index:{{ z.z }};cursor:pointer">
+              <div style="position:absolute;inset:0;border-radius:50%;transition:transform .35s cubic-bezier(.16,1,.3,1), background-color .3s;background:{{ z.haloBg }};transform:{{ z.halo }}"></div>
+              <img src="{{ z.img }}" alt="" style="position:relative;width:100%;height:100%;object-fit:contain;border-radius:50%;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ z.iconScale }}">
+              <div style="position:absolute;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #e3e3e3;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
+                <span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ z.m }}</span>
+                <ul style="margin-top:10px;display:grid;gap:4px;font-size:13px;line-height:1.45;color:#7b7b7b">
+                  <sc-for list="{{ z.items }}" as="it" hint-placeholder-count="2"><li>{{ it }}</li></sc-for>
+                </ul>
+                <p style="margin-top:10px;font-size:13px">{{ z.team }}</p>
+              </div>
+            </div>
+          </sc-for>
+          <button type="button" aria-label="Expand image" onClick="{{ openTimeline }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+        </figure>
+        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap a month to see what happened.</p>
+        <p style="margin-top:36px;font-size:13px;color:#7b7b7b">What I owned end to end</p>
+        <ul data-reveal="" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The service design layer: end-to-end journeys and user flow documentation</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The team’s daily coordination logs</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Design QA reviews with developers</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The full customer registration flow, plus parts of partner and admin flows</li>
+        </ul>
+      </section>
+      <section id="approach" data-sec="" data-screen-label="05 Work and approach" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">05</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Work and approach</h2>
+        <div style="display:grid;gap:40px">
+          <sc-for list="{{ approach }}" as="a" hint-placeholder-count="6">
+            <div style="display:flex;flex-wrap:wrap;flex-direction:{{ a.dir }};gap:18px 40px;align-items:center">
+              <figure onClick="{{ a.open }}" style="flex:1.2 1 320px;min-width:0;border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#fff;cursor:zoom-in;transition:border-color .4s" style-hover="border-color:#dcdcdc">
+                <div style="position:relative;aspect-ratio:4 / 3;background:#f8f8f8;overflow:hidden"><img src="{{ a.img }}" alt="{{ a.label }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></div>
+                <figcaption style="padding:10px 14px;border-top:1px solid #efefef;font-size:13px;color:#7b7b7b">{{ a.label }}</figcaption>
+              </figure>
+              <div style="flex:1 1 260px">
+                <p style="font-size:13px;color:#7b7b7b">Step {{ a.n }}</p>
+                <h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.2">{{ a.title }}</h3>
+                <p style="margin-top:10px;font-size:16px;line-height:1.65;color:#7b7b7b">{{ a.text }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="users" data-sec="" data-screen-label="06 The users" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">06</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The users</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The core design tension wasn’t a screen. It was that “the customer” was never one person. Working from the business requirements and the team’s open-questions board, we designed deliberately for the real range.</p>
+        <figure data-reveal="" onMouseLeave="{{ usersLeave }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1536 / 1024">
+          <img src="images/dpcl/users-ecosystem.png" alt="The PNG ecosystem: partner roles and customer types arranged around one connection" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+          <div style="position:absolute;inset:0;z-index:3;border-radius:14px;background:rgba(250,250,250,.66);pointer-events:none;transition:opacity .3s;opacity:{{ usersVeil }}"></div>
+          <sc-for list="{{ userZones }}" as="z" hint-placeholder-count="0">
+            <div onMouseEnter="{{ z.enter }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
+              <div style="position:absolute;inset:0;z-index:4;border-radius:20px;background-image:{{ z.bg }};background-size:{{ z.bgSize }};background-position:{{ z.bgPos }};background-repeat:no-repeat;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);transition:opacity .25s, transform .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.cropOp }};transform:{{ z.cropT }}"></div>
+              <div style="position:absolute;z-index:6;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #e3e3e3;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
+                <p style="font-size:15px;line-height:1.3">{{ z.name }}</p>
+                <p style="margin-top:4px;font-size:13px;line-height:1.5;color:#7b7b7b">{{ z.desc }}</p>
+              </div>
+            </div>
+          </sc-for>
+          <button type="button" aria-label="Expand image" onClick="{{ openUsers }}" style="position:absolute;right:12px;top:12px;z-index:7;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+        </figure>
+        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap anyone in the ecosystem.</p>
+
+        <h3 style="margin-top:48px;font-size:26px;font-weight:400;letter-spacing:-0.015em">Customers</h3>        <div style="margin-top:16px">
+          <div onWheel="{{ custFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+            <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ custFlow.track }}">
+              <sc-for list="{{ custFlow.steps }}" as="st" hint-placeholder-count="2">
+                <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s cubic-bezier(.22,.61,.36,1);opacity:{{ st.op }}">
+                  <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:17px;line-height:1.35">{{ st.title }}</p></figcaption>
+                  <div style="display:flex;gap:16px;align-items:stretch">
+                    <div style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
+                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
+                  </div>
+                </figure>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+            <div data-thumbs="cust" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+              <sc-for list="{{ custFlow.steps }}" as="st" hint-placeholder-count="5">
+                <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" title="{{ st.title }}" style="flex:none;display:flex;gap:4px;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s">
+                  <img src="{{ st.web }}" alt="" style="display:block;width:72px;height:48px;object-fit:cover;object-position:top;border-radius:6px">
+                  <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><img src="{{ st.app }}" alt="" style="display:block;width:24px;height:48px;object-fit:cover;object-position:top;border-radius:6px"></sc-if>
+                </button>
+              </sc-for>
+            </div>
+            <div style="flex:none;display:flex;gap:8px">
+              <button type="button" aria-label="Previous screen" onClick="{{ custFlow.prev }}" disabled="{{ custFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;transition:opacity .25s;opacity:{{ custFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+              <button type="button" aria-label="Next screen" onClick="{{ custFlow.next }}" disabled="{{ custFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;transition:opacity .25s;opacity:{{ custFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:48px;font-size:26px;font-weight:400;letter-spacing:-0.015em">Other users in the ecosystem</h3>
+        <div style="margin-top:16px">
+          <div onWheel="{{ ecoFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
+            <div style="display:flex;gap:16px;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:{{ ecoFlow.track }}">
+              <sc-for list="{{ ecoFlow.steps }}" as="st" hint-placeholder-count="2">
+                <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s cubic-bezier(.22,.61,.36,1);opacity:{{ st.op }}">
+                  <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:17px;line-height:1.35">{{ st.title }}</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b;text-wrap:pretty">{{ st.desc }}</p></figcaption>
+                  <div style="display:flex;gap:16px;align-items:stretch">
+                    <div style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
+                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
+                  </div>
+                </figure>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+            <div data-thumbs="eco" style="position:relative;flex:1 1 auto;min-width:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px">
+              <sc-for list="{{ ecoFlow.steps }}" as="st" hint-placeholder-count="5">
+                <button type="button" onClick="{{ st.go }}" aria-label="{{ st.title }}" aria-current="{{ st.current }}" title="{{ st.title }}" style="flex:none;display:flex;gap:4px;padding:4px;border-radius:10px;background:#fff;border:2px solid {{ st.thumbBorder }};opacity:{{ st.thumbOp }};transition:opacity .25s, border-color .25s">
+                  <img src="{{ st.web }}" alt="" style="display:block;width:72px;height:48px;object-fit:cover;object-position:top;border-radius:6px">
+                  <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><img src="{{ st.app }}" alt="" style="display:block;width:24px;height:48px;object-fit:cover;object-position:top;border-radius:6px"></sc-if>
+                </button>
+              </sc-for>
+            </div>
+            <div style="flex:none;display:flex;gap:8px">
+              <button type="button" aria-label="Previous screen" onClick="{{ ecoFlow.prev }}" disabled="{{ ecoFlow.atStart }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;transition:opacity .25s;opacity:{{ ecoFlow.prevOp }}"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+              <button type="button" aria-label="Next screen" onClick="{{ ecoFlow.next }}" disabled="{{ ecoFlow.atEnd }}" style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;transition:opacity .25s;opacity:{{ ecoFlow.nextOp }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="recommendations" data-sec="" data-screen-label="07 Recommendations" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">07</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Noteworthy recommendations</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">I’ve kept the attribution honest below. Some calls I originated, some I pushed back on, and some were business rules I had to make humane. The interesting part is usually what we did with each one.</p>
+        <div style="display:grid;gap:64px;margin-top:48px">
+          <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
+            <div>
+              <p style="font-size:13px;color:#7b7b7b">{{ r.n }}</p>
+              <h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.2">{{ r.title }}</h3>
+              <div style="display:grid;grid-template-columns:{{ recCols }};gap:12px;margin-top:20px">
+                <div style="padding:22px 24px;border-radius:14px;border:1px solid #e6e6e6;background:#fff">
+                  <p style="font-size:13px;color:#7b7b7b">Decision communicated to us</p>
+                  <p style="margin-top:10px;font-size:16px;line-height:1.6;color:#7b7b7b">{{ r.before }}</p>
+                </div>
+                <div style="padding:22px 24px;border-radius:14px;background:#222;color:#fff">
+                  <p style="font-size:13px;color:rgba(255,255,255,.6)">What I pushed for</p>
+                  <p style="margin-top:10px;font-size:16px;line-height:1.6">{{ r.after }}</p>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:{{ pairCols }};gap:16px;margin-top:16px">
+                <sc-for list="{{ r.screens }}" as="s" hint-placeholder-count="2">
+                  <figure onClick="{{ s.open }}" style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)">
+                    <div style="display:flex;gap:12px;height:clamp(170px, 18vw, 230px)">
+                      <div style="flex:1 1 0;min-width:0;height:100%;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e6e6e6"><img src="{{ s.web }}" alt="{{ s.title }}" loading="lazy" style="width:100%;height:100%;object-fit:{{ s.fit }};object-position:top"></div>
+                      <sc-if value="{{ s.hasApp }}" hint-placeholder-val="{{ true }}"><div style="flex:none;height:100%;aspect-ratio:9 / 19.5;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e6e6e6"><img src="{{ s.app }}" alt="{{ s.title }}, app" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top"></div></sc-if>
+                    </div>
+                    <figcaption><p style="font-size:16px;line-height:1.35">{{ s.title }}</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b">{{ s.desc }}</p></figcaption>
+                  </figure>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <figure data-reveal="" style="display:grid;place-items:center;aspect-ratio:{{ wideRatio }};margin-top:24px;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace;text-align:center">Diagram: one data model, two intake paths, field-level before and after</span></figure>
+      </section>
+
+      <section id="where" data-sec="" data-screen-label="08 Where it stands" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">08</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Where it stands</h2>
+        <div data-reveal="" style="padding:{{ hmwPad }};border-radius:16px;background:#f3f3f3">
+          <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">On hold</span>Signed off by the client</p>
+          <p style="margin-top:16px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Every module and its screens were signed off by the client, after the BA and dev reviewed and agreed. Several flows, including registration and the admin dashboard, reached dev completion.</p>
+          <p style="margin-top:14px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The client had other priorities to clear first, and the project was handed over to another company’s design team after I moved on to another project.</p>
+        </div>
+      </section>
+
+      <section id="learnings" data-sec="" data-screen-label="09 Learnings" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">09</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Learnings</h2>
+        <ul style="display:grid;gap:28px">
+          <li data-reveal="" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Leading means designing around your team, not just the screens</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">This was the first time my delivery ran largely through other people. It taught me to lean on each person’s strength: one drawn to integrating AI, one who could simplify UI beautifully, one with a strong UX base who could translate web to mobile, and one balancing early motherhood who needed flexibility to do her best work. Design leadership turned out to be resource design as much as screen design.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Coordination is the real design surface on a project like this</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">More of my impact came from clarifying a requirement with the BA or resequencing delivery with the dev manager than from any single screen. On a five-role ecosystem, keeping the whole thing coherent is the design work.</p></div></li>
+        </ul>
+      </section>
+
+      <section id="thanks" data-sec="" data-screen-label="10 Thanks" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">10</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Thanks</h2>
+        <figure data-reveal="" style="padding-left:24px;border-left:2px solid #222">
+          <p style="font-size:clamp(20px, 2vw, 26px);line-height:1.45;letter-spacing:-0.012em">To Aarti, Sowmya, Swati, Nirmit and Ajuma, who took decisions I’d made and turned them into real, buildable screens, often faster than the timeline had any right to expect. And to the BA and dev manager, whose pushback made the calls that stuck worth defending.</p>
+        </figure>
+      </section>
+    </div>
+  </div>
+
+  <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
+    <a data-reveal="" href="ZMW%20Case%20Study.dc.html" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+      <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
+        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">ZMW</p>
+        <p style="margin-top:8px;color:#7b7b7b">Automobile Company</p>
+      </div>
+      <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
+        <img src="images/cover-zmw-v2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
+      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
+      <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:72px 72px 24px">
+    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:1">×</button>
+    <sc-if value="{{ lbSingle }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbToggleZoom }}" style="max-width:100%;max-height:calc(100vh - 240px);overflow:auto;border-radius:12px;background:#fff">
+        <sc-if value="{{ lbFit }}" hint-placeholder-val="{{ true }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain;cursor:zoom-in"></sc-if>
+        <sc-if value="{{ lbZoomed }}" hint-placeholder-val="{{ false }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:min(240vw, 3200px);max-width:none;cursor:zoom-out"></sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="display:flex;gap:20px;align-items:flex-start;max-width:100%">
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">Web</p><div style="width:min(58vw, 900px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}, web" style="display:block;width:100%;height:auto"></div></div>
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
+      </div>
+    </sc-if>
+    <div onClick="{{ lbStop }}" style="max-width:640px;text-align:center;color:#fff">
+      <p style="font-size:16px;line-height:1.4">{{ lbTitle }}</p>
+      <p style="margin-top:6px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.7)">{{ lbDesc }}</p>
+      <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <sc-for list="{{ lbThumbs }}" as="t" hint-placeholder-count="0">
+            <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
+          </sc-for>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }} · Use ← → to navigate · Esc to close</p>
+      </sc-if>
+    </div>
+    <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Previous" onClick="{{ lbPrev }}" style="position:fixed;left:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
+      <button type="button" aria-label="Next" onClick="{{ lbNext }}" style="position:fixed;right:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
+    </sc-if>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const TOC = [
+  ['overview', 'Overview'], ['problem', 'Business problem'], ['challenge', 'Design challenge'], ['role', 'My role'],
+  ['approach', 'Work and approach'], ['users', 'The users'], ['recommendations', 'Recommendations'],
+  ['where', 'Where it stands'], ['learnings', 'Learnings'], ['thanks', 'Thanks'],
+];
+const D = 'images/dpcl/';
+const PERSONAS = [
+  { tag: 'C', name: 'Customer', desc: 'Checks and applies for PNG' },
+  { tag: 'DMA', name: 'Designated Metering Agency', desc: 'Signs up the customer and uploads documents' },
+  { tag: 'TPI', name: 'Third Party Inspector', desc: 'Verifies the site and documents' },
+  { tag: 'LMC', name: 'Last Mile Crew', desc: 'Physically installs the gas connection' },
+  { tag: 'FO', name: 'Field Officer', desc: 'Follows up and confirms billing' },
+];
+const MONTHS = [
+  { m: 'Oct', team: '2 designers', items: ['Kickoff', 'Service blueprints', 'Coordination set up'] },
+  { m: 'Nov', team: '2 designers', items: ['Screen estimation', 'Customer web screens begin'] },
+  { m: 'Dec', team: '2 designers', items: ['Partner web designs begin'] },
+  { m: 'Jan', team: '3 designers', items: ['Mobile screens scoped', 'Feedback on early work', '3rd designer joins'] },
+  { m: 'Feb', team: '3 designers', items: ['Formally asked to lead', 'UI from design system', 'System updated to new needs'] },
+  { m: 'Mar', team: '4 designers', items: ['Peak coordination with dev, QA, BA', 'Error scenarios', 'Scope pushback'] },
+  { m: 'Apr', team: '4 designers', items: ['Handover, KT, aligning all designs', 'Roll-off'] },
+];
+const APPROACH = [
+  { n: '01', label: 'Service blueprint', img: 'installation-blueprint.png', title: 'BRD to to-be service blueprint', text: 'The Business Analyst (BA) gave us an elaborate Business Requirement Document (BRD) signed off by the client. I decided to first create to-be service blueprints and validate our understanding with multiple stakeholders.' },
+  { n: '02', label: 'User flow mapping', img: 'userflow-current-tobe.png', title: 'Current and to-be user flows', text: 'We then tried to understand the difference between what current users are used to and what digitisation would change for them, by mapping user flows, questions and suggestions for the transition side by side.' },
+  { n: '03', label: 'Screen estimation', img: 'screen-estimation.png', title: 'Screen estimation', text: 'We then estimated the screens for each flow and the time required for UI and UX.' },
+  { n: '04', label: 'Competitor benchmark', img: 'benchmarking.png', title: 'Benchmarking', text: 'Then came analysing competitor screens, so we could bring what works into DPCL.' },
+  { n: '05', label: 'Component library', img: 'design-system-ux.png', title: 'Design system and lo-fi UX', text: 'We spent time understanding the design system and putting together the right components to start building web screens.' },
+  { n: '06', label: 'Wireframes and UI UX', img: 'wireframe-dashboard.png', title: 'Wireframes and UI UX', text: 'We then designed screens based on client, business and development priorities.' },
+];
+const USERS_CUST = [
+  { name: 'Self-serve applicant', desc: 'Applies online, on their own' },
+  { name: 'Agent-assisted customer', desc: 'Enrols with help from an on-ground agent' },
+  { name: 'Multi-connection owner', desc: 'Manages several connections from one login' },
+  { name: 'Remotely-managed household', desc: 'A family member applies and tracks on their behalf' },
+  { name: 'Customer who needs the offline path', desc: 'Applies in person, on paper' },
+];
+const CUST_SCREENS = [
+  ['c1', 'Check PNG availability'], ['c2', 'Register for a new connection'], ['c3', 'Review registration details'],
+  ['c4', 'Track registration'], ['c5', 'Changes to a registration request'],
+].map(([k, t], i) => ({ n: String(i + 1).padStart(2, '0'), title: t, desc: '', web: `${D}${k}-web.png`, app: `${D}${k}-app.png`, hasApp: true }));
+const ECO_SCREENS = [
+  ['ga', 'GA Admin', 'Oversees every contractor, supervisor and area mapped to a geographical area.', false],
+  ['tpis', 'TPI Sales', 'Reviews incoming customer applications and approves, rejects or sends them back.'],
+  ['tpie', 'TPI Engineer', 'Approves LMC feasibility, installation work and manual meter readings.'],
+  ['dmac', 'DMA Contractor', 'Tracks how each DMA supervisor is converting assigned customers into registrations.'],
+  ['dmas', 'DMA Supervisor', 'Registers customers on the ground and follows each application to approval.'],
+  ['lmcc', 'LMC Contractor', 'Monitors supervisors and connections across feasibility, installation and commissioning.'],
+  ['lmcs', 'LMC Supervisor', 'Schedules site visits and moves each customer ticket through its LMC stage.'],
+  ['foc', 'FO Contractor', 'Receives meter reading orders and assigns them to field officers.'],
+  ['fos', 'FO Supervisor', 'Works through the meter reading orders assigned across their areas.'],
+].map(([k, t, d, app], i) => ({ n: String(i + 1).padStart(2, '0'), title: t, desc: d, web: `${D}eco-${k}-web.png`, app: `${D}eco-${k}-app.png`, hasApp: app !== false }));
+const pair = (k, t, d, i) => ({ n: String(i + 1).padStart(2, '0'), title: t, desc: d, web: `${D}${k[0]}`, app: `${D}${k[1]}`, hasApp: true });
+const RECS = [
+  { n: '01', title: 'Two ways in, and an offline path kept',
+    before: 'We were asked to take only the connection availability check digital. Everyone else, including existing users, would keep using the familiar offline route.',
+    after: 'I pushed for self-serve and agent-assisted enrollment as equal paths, and for deliberately keeping the offline route available digitally for existing users instead of phasing it out.',
+    screens: [
+      pair(['p1-web-check.png', 'p1-app-check.png'], 'Check availability by pincode', 'One pincode field instead of a map. The same flow on web and app, whether the customer applies alone or with a DMA agent.', 0),
+      pair(['p1-web-areas.png', 'p1-app-areas.png'], 'Serviceable areas, listed plainly', 'A downloadable list of covered locations, so an agent can check offline or share it with the customer.', 1),
+    ] },
+  { n: '02', title: 'Multiple connections under one person',
+    before: 'The brief treated every account as one person with one connection, so each login would lead to a single account.',
+    after: 'I flagged that one person could hold several connections. Working with the BA, I added multiple account cards under one login so people pick which one to act on. That also covered remotely-managed households.',
+    screens: [
+      pair(['p2-web-accounts.png', 'p2-app-accounts.png'], 'Every connection, one login', 'Accounts and registrations sit together under one person, each with its status, so they can pick which one to act on.', 0),
+      pair(['p2-web-status.png', 'p2-app-status.png'], 'Status that says what to do next', 'Expanding a registration shows where it stands and the one action needed, with the deadline stated plainly.', 1),
+    ] },
+  { n: '03', title: 'Built for low bandwidth and low literacy',
+    before: 'Design everything in English only and roll it out first, with changes to follow later. Application status would live only on the DPCL app and website.',
+    after: 'A regional language option for Tier 2 and Tier 3 users, which wasn’t rolled out. And for low-bandwidth areas, status that reaches people without the app or internet, which was then surfaced across the website, email, WhatsApp and SMS.',
+    screens: [pair(['p3-web-hindi.png', 'p3-app-hindi.png'], 'Registration in Hindi', 'The full registration form in the local language, on web and app.', 0)] },
+  { n: '04', title: 'Aligning systems, not just UI',
+    before: 'Design a registration form from a list of data points given by the client, derived from the physical form plus additional business priorities for registering new users.',
+    after: 'New-customer data was being captured differently from existing and offline customers’ data, so one database held the same information in inconsistent shapes. I pushed for the online and physical forms to match, and gave feedback on the physical forms too, so the fix reached the data layer and not just the UI.',
+    screens: [
+      { n: '01', title: 'Paper form, submitted with the registration cheque', desc: '', web: `${D}paper-1.png`, hasApp: false, paper: true },
+      { n: '02', title: 'Paper registration form for offline customers', desc: '', web: `${D}paper-2.png`, hasApp: false, paper: true },
+      { n: '03', title: 'Digital form: connection address, matched to the paper fields', desc: '', web: `${D}web-address.png`, hasApp: false },
+      { n: '04', title: 'Digital form: document submission, matched to the paper list', desc: '', web: `${D}web-docs.png`, hasApp: false },
+    ] },
+];
+const P_ZONES = [
+  { l: 80.19, t: 20.02, w: 16.10, h: 26.69, clip: 44.23, img: 'customer', align: 'right' },
+  { l: 6.19, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'dma', align: 'left' },
+  { l: 23.53, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'tpi' },
+  { l: 41.80, t: 45.69, w: 19.81, h: 32.86, clip: 43.75, img: 'lmc', labelTop: 114 },
+  { l: 60.06, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'fo', align: 'right' },
+];
+const M_ZONES = [[8.26, 69.61], [21.30, 69.61], [33.07, 69.61], [45.16, 70.14], [58.13, 69.61], [71.53, 70.14], [84.21, 70.03]];
+const U_ZONES = [
+  { x: 636, y: 22, w: 316, h: 180, name: 'GA Admin', desc: 'Oversees the PNG network across the region', tip: 'below' },
+  { x: 22, y: 245, w: 212, h: 198, name: 'TPI Sales', desc: 'Brings inspection partners onboard', tip: 'below', align: 'left' },
+  { x: 272, y: 245, w: 208, h: 198, name: 'TPI Engineer', desc: 'Inspects and verifies quality', tip: 'below' },
+  { x: 530, y: 245, w: 208, h: 198, name: 'DMA Contractor', desc: 'Builds the distribution network', tip: 'below' },
+  { x: 792, y: 245, w: 212, h: 198, name: 'DMA Supervisor', desc: 'Oversees network work and quality', tip: 'below' },
+  { x: 1048, y: 245, w: 212, h: 198, name: 'LMC Contractor', desc: 'Connects PNG to the customer', tip: 'below' },
+  { x: 1298, y: 245, w: 218, h: 198, name: 'LMC Supervisor', desc: 'Oversees the customer connection', tip: 'below', align: 'right' },
+  { x: 248, y: 492, w: 250, h: 196, name: 'Self-serve applicant', desc: 'Applies online, on their own', tip: 'below' },
+  { x: 1036, y: 496, w: 246, h: 192, name: 'Multi-connection owner', desc: 'Manages several connections from one login', tip: 'below' },
+  { x: 374, y: 690, w: 258, h: 206, name: 'Agent-assisted customer', desc: 'Enrols with help from an on-ground agent', tip: 'above' },
+  { x: 648, y: 742, w: 240, h: 200, name: 'Customer who needs the offline path', desc: 'Applies in person, on paper', tip: 'above' },
+  { x: 906, y: 692, w: 280, h: 206, name: 'Remotely-managed household', desc: 'A family member applies and tracks on their behalf', tip: 'above', align: 'right' },
+];
+const CH_SPOTS = [{ x: 30, y: 270, w: 260, h: 400 }, { x: 285, y: 400, w: 60, h: 60 }, { x: 330, y: 140, w: 760, h: 560 }, { x: 1100, y: 255, w: 415, h: 360 }];
+const crop = (src, z) => {
+  const L = z.x / 1536 * 100, T = z.y / 1024 * 100, W = z.w / 1536 * 100, H = z.h / 1024 * 100;
+  return { l: L + '%', t: T + '%', w: W + '%', h: H + '%', bg: `url(${src})`, bgSize: `${10000 / W}% ${10000 / H}%`, bgPos: `${L / (100 - W) * 100}% ${T / (100 - H) * 100}%` };
+};
+const tipPos = (align, above) => ({
+  tipTop: above ? 'auto' : 'calc(100% + 10px)', tipBottom: above ? 'calc(100% + 10px)' : 'auto',
+  tipLeft: align === 'left' ? '0' : align === 'right' ? 'auto' : '50%', tipRight: align === 'right' ? '0' : 'auto',
+  tipX: align === 'left' || align === 'right' ? '0' : '-50%',
+});
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: 0, p: 0, menuOpen: false, nextHover: false };
+  bodyRef = React.createRef();
+  personaRef = React.createRef();
+  chRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => this.update());
+    this.onScroll = () => requestAnimationFrame(() => this.update());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.update();
+    this.setupReveal();
+    this.onKey = (e) => {
+      if (!this.state.lb) return;
+      if (e.key === 'Escape') this.closeLb();
+      if (e.key === 'ArrowRight') this.stepLb(1);
+      if (e.key === 'ArrowLeft') this.stepLb(-1);
+    };
+    document.addEventListener('keydown', this.onKey);
+    const watch = (ref, fn, th) => {
+      if (!ref.current || !('IntersectionObserver' in window)) return fn();
+      const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); fn(); } }, { threshold: th });
+      io.observe(ref.current);
+      (this.ios = this.ios || []).push(io);
+    };
+    const quick = reduced();
+    watch(this.personaRef, () => {
+      if (quick) return this.setState({ pAuto: -1 });
+      let i = 0;
+      const tick = () => { if (i >= P_ZONES.length) return this.setState({ pAuto: -1 }); this.setState({ pAuto: i++ }); this.pT = setTimeout(tick, 2600); };
+      this.pT = setTimeout(tick, 400);
+    }, 0.4);
+    watch(this.chRef, () => {
+      if (quick) return;
+      let p = 0;
+      const step = () => { p++; this.setState({ chPhase: p }); if (p < 5) this.chT = setTimeout(step, 1100); };
+      this.chT = setTimeout(step, 300);
+    }, 0.45);
+  }
+  openLb(items, i = 0) {
+    document.body.style.overflow = 'hidden';
+    this.setState({ lb: items, lbI: i, lbZoom: false });
+  }
+  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false }); }
+  stepLb(d) {
+    const n = (this.state.lb || []).length;
+    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false }));
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    clearTimeout(this.failT);
+    clearTimeout(this.pT); clearTimeout(this.chT);
+    (this.ios || []).forEach((io) => io.disconnect());
+    document.removeEventListener('keydown', this.onKey);
+    document.body.style.overflow = '';
+  }
+  update() {
+    const line = window.innerHeight * 0.3;
+    let active = 0;
+    TOC.forEach(([id], i) => { const s = document.getElementById(id); if (s && s.getBoundingClientRect().top <= line) active = i; });
+    let p = 0;
+    const b = this.bodyRef.current;
+    if (b) { const r = b.getBoundingClientRect(); p = Math.min(Math.max((line - r.top) / r.height, 0), 1); }
+    if (active !== this.state.active || Math.abs(p - this.state.p) > 0.002) this.setState({ active, p });
+  }
+  setupReveal() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && show(e.target)), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
+    this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
+  }
+  mkFlow(key, arr) {
+    const idx = (this.state.flow || {})[key] || 0, n = arr.length;
+    const lb = arr.map((x) => ({ src: x.web, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const setI = (i) => {
+      i = Math.max(0, Math.min(n - 1, i));
+      this.setState((s) => ({ flow: { ...(s.flow || {}), [key]: i } }));
+      const strip = document.querySelector(`[data-thumbs="${key}"]`);
+      const el = strip && strip.children[i];
+      if (el) strip.scrollTo({ left: el.offsetLeft - (strip.clientWidth - el.offsetWidth) / 2, behavior: reduced() ? 'auto' : 'smooth' });
+    };
+    return {
+      steps: arr.map((x, i) => ({
+        ...x, counter: `${String(i + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`,
+        op: i === idx ? 1 : 0.45,
+        click: () => (i === idx ? this.openLb(lb, i) : setI(i)),
+        go: () => setI(i),
+        thumbBorder: i === idx ? '#222' : '#e3e3e3', thumbOp: i === idx ? 1 : 0.6,
+        current: i === idx ? 'true' : undefined,
+      })),
+      track: `translateX(calc(${-idx} * (88% + 16px)))`,
+      prev: () => setI(idx - 1), next: () => setI(idx + 1),
+      prevOp: idx === 0 ? 0.35 : 1, nextOp: idx === n - 1 ? 0.35 : 1,
+      atStart: idx === 0, atEnd: idx === n - 1,
+      wheel: (e) => {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 12) return;
+        const now = Date.now(); if (now - (this.wheelT || 0) < 650) return; this.wheelT = now;
+        setI(idx + (e.deltaX > 0 ? 1 : -1));
+      },
+    };
+  }
+  interactiveVals(phone) {
+    const s = this.state;
+    const sel = (key, i) => ({
+      enter: () => this.setState({ [key]: i }),
+      leave: () => this.setState({ [key]: null }),
+      tap: () => this.setState((st) => ({ [key]: st[key] === i ? null : i })),
+    });
+    const toLb = (arr) => arr.map((x) => ({ src: x.web || x.src, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const screens = (arr) => { const lb = toLb(arr); return arr.map((x, i) => ({ ...x, fit: x.paper ? 'contain' : 'cover', open: () => this.openLb(lb, i) })); };
+    const pActive = s.pAuto >= 0 && s.pAuto != null ? s.pAuto : s.pHover;
+    const personaZones = P_ZONES.map((z, i) => {
+      const on = pActive === i;
+      return { ...PERSONAS[i], ...sel('pHover', i), ...tipPos(z.align, false),
+        l: z.l + '%', t: z.t + '%', w: z.w + '%', h: z.h + '%', clip: `circle(${z.clip}% at 50% 50%)`, img: `${D}persona-${z.img}.png`,
+        z: on ? 4 : 1, scale: on ? 'scale(1.1)' : 'none', shadow: on ? 'drop-shadow(0 14px 22px rgba(0,0,0,.22))' : 'none',
+        labelTop: `calc(${z.labelTop || 100}% + 6px)`, labelOp: on || phone ? 0 : 1, tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
+    });
+    const monthZones = M_ZONES.map(([l, t], i) => {
+      const on = s.mHover === i, m = MONTHS[i];
+      return { ...m, ...sel('mHover', i), ...tipPos(i === 0 ? 'left' : i === 6 ? 'right' : null, false),
+        l: l + '%', t: t + '%', img: `${D}month-${m.m.toLowerCase()}.png`, z: on ? 5 : 1,
+        halo: on ? 'scale(1.35)' : 'scale(1)', haloBg: on ? 'rgba(34,34,34,.12)' : 'rgba(34,34,34,.05)', iconScale: on ? 'scale(1.2)' : 'none',
+        tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
+    });
+    const userZones = U_ZONES.map((z, i) => {
+      const on = s.uHover === i;
+      return { ...z, ...sel('uHover', i), ...crop(`${D}users-ecosystem.png`, z), ...tipPos(z.align, z.tip === 'above'),
+        z: on ? 4 : 2, cropOp: on ? 1 : 0, cropT: on ? 'scale(1.045) translateY(-4px)' : 'none',
+        tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
+    });
+    const cp = s.chPhase || 0;
+    const chSpots = CH_SPOTS.map((z, i) => ({ ...crop(`${D}challenge.png`, z), op: cp === i + 1 ? 1 : 0, tf: cp === i + 1 ? 'scale(1.03)' : 'none' }));
+    const single = (src, title) => () => this.openLb([{ src, app: null, title, desc: '' }], 0);
+    const lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    return {
+      personas: PERSONAS, months: MONTHS, usersCust: USERS_CUST,
+      personaZones, monthZones, userZones, chSpots,
+      personaRef: this.personaRef, chRef: this.chRef, usersLeave: () => this.setState({ uHover: null }),
+      usersVeil: s.uHover != null ? 1 : 0, chVeil: cp >= 1 && cp <= 4 ? 1 : 0,
+      openPersonas: single(`${D}process-personas.png`, 'Current PNG application and installation process'),
+      openChallenge: single(`${D}challenge.png`, 'From requirements to a connected system'),
+      openTimeline: single(`${D}role-timeline.png`, 'My role and timeline'),
+      openUsers: single(`${D}users-ecosystem.png`, 'The PNG ecosystem'),
+      approach: (() => { const l = APPROACH.map((a) => ({ src: D + a.img, app: null, title: a.title, desc: a.text })); return APPROACH.map((a, i) => ({ ...a, img: D + a.img, dir: phone || i % 2 === 0 ? 'row' : 'row-reverse', open: () => this.openLb(l, i) })); })(),
+      custFlow: this.mkFlow('cust', CUST_SCREENS), ecoFlow: this.mkFlow('eco', ECO_SCREENS),
+      recs: RECS.map((r) => ({ ...r, screens: screens(r.screens) })),
+      lbOpen: !!lb, lbPair: !!(cur && cur.app), lbSingle: !!(cur && !cur.app), lbMulti: !!(lb && lb.length > 1),
+      lbSrc: cur ? cur.src : '', lbApp: cur ? cur.app : '', lbTitle: cur ? cur.title : '', lbDesc: cur ? cur.desc : '',
+      lbCount: lb ? `${s.lbI + 1} of ${lb.length}` : '',
+      lbZoomed: !!s.lbZoom, lbFit: !s.lbZoom,
+      lbClose: () => this.closeLb(), lbPrev: (e) => { e.stopPropagation(); this.stepLb(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepLb(1); },
+      lbStop: (e) => e.stopPropagation(), lbToggleZoom: (e) => { e.stopPropagation(); this.setState((st) => ({ lbZoom: !st.lbZoom })); },
+      lbThumbs: lb ? lb.map((x, i) => ({ src: x.src, go: (e) => { e.stopPropagation(); this.setState({ lbI: i, lbZoom: false }); }, op: i === s.lbI ? 1 : 0.45, border: i === s.lbI ? '#fff' : 'transparent' })) : [],
+    };
+  }
+  renderVals() {
+    const { w, active, p, menuOpen, nextHover } = this.state;
+    const narrow = w <= 960, phone = w <= 640;
+    return {
+      wide: !narrow, narrow, notPhone: !phone,
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      progress: `scaleX(${p})`,
+      topPadB: phone ? '48px' : '72px',
+      headMt: phone ? '28px' : '44px',
+      coverMt: phone ? '36px' : '56px',
+      coverRadius: phone ? '12px' : '16px',
+      coverRatio: phone ? '4 / 3' : '16 / 8',
+      layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
+      layoutPadT: phone ? '48px' : narrow ? '64px' : '96px',
+      toc: TOC.map(([id, label], i) => ({
+        id, label,
+        color: i === active ? '#222' : '#a3a3a3',
+        bar: i === active ? 'scaleY(1)' : 'scaleY(0)',
+        current: i === active ? 'true' : undefined,
+      })),
+      bodyRef: this.bodyRef,
+      ...this.interactiveVals(phone),
+      pairCols: phone ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))',
+      recCols: phone ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      secPad: phone ? '64px' : narrow ? '80px' : '112px',
+      titleMb: phone ? '22px' : '32px',
+      proseSize: phone ? '16px' : '18px',
+      hmwPad: phone ? '24px' : '30px 34px',
+      statN: phone ? '36px' : '44px',
+      insightCols: phone ? '1fr' : '56px 1fr',
+      flipDir: phone ? 'row' : 'row-reverse',
+      wideRatio: phone ? '4 / 3' : '16 / 8',
+      nextPadB: phone ? '72px' : '110px',
+      nextCardPad: phone ? '24px 12px 12px' : '14px 14px 14px 40px',
+      nextTextPad: phone ? '12px' : '0',
+      nextBorder: nextHover ? '#dcdcdc' : '#e3e3e3',
+      nextScale: nextHover ? 'scale(1.05)' : 'none',
+      nextBtnOpacity: nextHover || narrow ? 1 : 0,
+      nextBtnScale: nextHover ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+      nextIn: () => this.setState({ nextHover: true }),
+      nextOut: () => this.setState({ nextHover: false }),
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>
