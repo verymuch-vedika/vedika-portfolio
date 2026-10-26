@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Mature Money case study | Vedika</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff">
+
+<div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px"><span style="display:block;height:100%;background:#222;transform-origin:left;transform:{{ progress }}"></span></div>
+</div>
+
+<header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
+    <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 480px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Service Design Case Study</span>
+        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">Mature Money</h1>
+        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning identity verification across four channels of a bank mid-merger</p>
+      </div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service Designer</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Area</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Banking</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">4 months</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Status</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Concepts delivered, not shipped</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Me, a journey specialist and a junior designer</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service blueprinting, SME interviews, ideation workshops</dd></div>
+      </dl>
+    </div>
+    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:clamp(32px, 4vw, 48px);padding-top:20px;border-top:1px solid #222;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:18px 28px">
+      <p style="grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:13px"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
+      <div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Each channel verified customers differently, so people verified in one often had to start again in another.</p></div>
+      <div><p style="font-size:13px;color:#7b7b7b">What I did</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Mapped how ID&amp;V really worked with each SME, then ran channel-specific ideation into one cross-channel concept.</p></div>
+      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Three scored concepts, each with a 3-month and 3-year plan, handed to an accountable owner at the client.</p></div>
+    </div>
+    <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
+      <img src="images/placeholder-mature-money.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95)">
+    </figure>
+  </div>
+</header>
+
+<main style="background:#fff">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;display:grid;grid-template-columns:{{ layoutCols }};gap:clamp(40px, 6vw, 110px);padding:{{ layoutPadT }} 0 40px">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="On this page" style="position:sticky;top:136px;align-self:start">
+        <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
+        <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
+          <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:7px 0 7px 18px;font-size:14.5px;color:{{ t.color }};transition:color .3s">
+              <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
+            </a></li>
+          </sc-for>
+        </ol>
+      </nav>
+    </sc-if>
+
+    <div ref="{{ bodyRef }}" style="min-width:0;max-width:880px">
+      <p style="margin-bottom:56px;padding:18px 22px;border-radius:14px;border:1px solid #e6e6e6;font-size:14px;line-height:1.65;color:#7b7b7b"><span style="color:#222">Disclaimer.</span> To comply with my non-disclosure agreement, I’ve omitted confidential information and disguised the names of both the client and its merger partner. The insights shared here are my own and don’t necessarily represent the views of the client.</p>
+
+      <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">01</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
+          <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Branch, telephony, app and web each verified customers differently. Someone verified in one channel often had to start again in another.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Rebuilt how ID&amp;V actually worked, SME by SME, then ran channel-specific ideation before converging on one cross-channel concept.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Three scored concepts, each with a 3-month and 3-year plan, handed to an accountable owner at the client.</p></div>
+        </div>
+      </section>
+
+      <section id="problem" data-sec="" data-screen-label="02 The problem" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">02</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The problem</h2>
+        <div data-reveal="" style="display:grid;gap:18px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Mature Money was mid-merger with CBS (Countrywide Building Society). Identification and verification (ID&amp;V), the process that confirms who a customer is before they can transact, had grown fragmented across the bank’s channels.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Branch, telephony, app and web each handled ID&amp;V differently, with no unified view of a customer’s verification status. <span style="color:#222">A customer verified in one channel often had to re-verify from scratch in another.</span></p>
+        </div>
+        <ul data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr));gap:20px 16px;margin-top:36px">
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">1000+</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Customer complaints analysed</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">4</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Channels, four different processes</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">0</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Single source of truth</span></li>
+        </ul>
+        <p data-reveal="" style="margin-top:36px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">An early analysis of those complaints surfaced ID&amp;V as a recurring frustration across every channel. The deeper problem was that no one could say how ID&amp;V actually worked. That had to be reconstructed, within each channel and across them, largely from SME knowledge rather than documentation. Some of it ran alongside other undocumented ID&amp;V work already in flight, which I had to find and account for rather than duplicate.</p>
+      </section>
+
+      <section id="challenge" data-sec="" data-screen-label="03 The challenge" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">03</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The challenge</h2>
+        <ol style="display:grid;gap:12px">
+          <li data-reveal="" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Bring consistency to a fragmented experience</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">One ID&amp;V process, understood and applied the same way, whichever channel a customer walks into.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Protect the customers the merger puts most at risk</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Older and less digitally confident customers were most exposed to inconsistent branch identification across the two merging entities.</p></div></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Make telephony ID&amp;V less costly to run</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Every unnecessary re-verification on the phone cost time, and time meant operational cost and dissatisfied customers.</p></div></li>
+        </ol>
+      </section>
+
+      <section id="role" data-sec="" data-screen-label="04 My role" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">04</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">My role</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Service Designer, owning the ID&amp;V workstream largely independently and reporting to Darren, the Design Manager.</p>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px;margin-top:32px">
+          <div style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Customer journey specialist</span><h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Tom</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">Built the app and web blueprints from the client’s baseline. I reviewed and corrected them for service design rigour.</p></div>
+          <div style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Junior service designer</span><h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Mupi</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">Turned my content into weekly progress decks, scheduled sessions and took notes on research calls.</p></div>
+          <div style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Planning and stakeholder coach</span><h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Alicia</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">Helped with planning structure, navigating stakeholders and positioning with the client.</p></div>
+        </div>
+        <p style="margin-top:36px;font-size:13px;color:#7b7b7b">What I owned end to end</p>
+        <ul data-reveal="" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Branch and telephony service blueprints</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">SME identification and interviews</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Cross-verifying every blueprint with SMEs</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Designing and facilitating three ideation sessions</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Synthesising one cross-channel concept</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Concept development and scoring</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Workstream management and reporting</li>
+        </ul>
+      </section>
+
+      <section id="approach" data-sec="" data-screen-label="05 How I worked" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">05</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">How I worked</h2>
+        <ul data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr));gap:20px 16px">
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">10+ hrs</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">SME interviews</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">9</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Blueprints in 3 months</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">4</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Ideation and concept workshops</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">40+</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Ideas generated</span></li>
+        </ul>
+        <div style="display:grid;gap:40px;margin-top:48px">
+          <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center">
+            <figure style="flex:1.2 1 320px;display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Telephony service blueprint</span></figure>
+            <div style="flex:1 1 260px"><p style="font-size:13px;color:#7b7b7b">Step 01</p><h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.2">Reconstructing the as-is, channel by channel</h3><p style="margin-top:10px;font-size:16px;line-height:1.65;color:#7b7b7b">I mapped the branch and telephony journeys myself: five telephony blueprints alone (balance enquiry, bill payment, transaction enquiry, updating an email address and related queries), plus the branch journey. Each one was built by talking to SMEs, then looped back to them to confirm it before I treated it as ground truth.</p></div>
+          </div>
+          <div data-reveal="" style="display:flex;flex-wrap:wrap;flex-direction:{{ flipDir }};gap:18px 40px;align-items:center">
+            <figure style="flex:1.2 1 320px;display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Ideation session board</span></figure>
+            <div style="flex:1 1 260px"><p style="font-size:13px;color:#7b7b7b">Step 02</p><h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.2">Running the room, not just contributing to it</h3><p style="margin-top:10px;font-size:16px;line-height:1.65;color:#7b7b7b">I curated who needed to be in each session, shaped what a 1.5 to 2 hour session would cover, and facilitated all three separately, so each channel’s friction surfaced on its own terms.</p></div>
+          </div>
+          <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center">
+            <figure style="flex:1.2 1 320px;display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Weekly progress deck</span></figure>
+            <div style="flex:1 1 260px"><p style="font-size:13px;color:#7b7b7b">Step 03</p><h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.2">Keeping stakeholders inside the process, weekly</h3><p style="margin-top:10px;font-size:16px;line-height:1.65;color:#7b7b7b">Weekly decks covering progress, blockers and next steps gave the client and leadership continuous visibility, rather than a single reveal at the end.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ideation" data-sec="" data-screen-label="06 Ideation" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">06</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">From discovery to ideas</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Rather than one mixed-channel session, I ran three separate ones, so channel-specific friction could surface before being asked to converge into anything shared.</p>
+        <ol style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr));gap:16px;margin-top:32px">
+          <li data-reveal="" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Session 1</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Telephony</h3></li>
+          <li data-reveal="" data-d=".06" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Session 2</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Branch</h3></li>
+          <li data-reveal="" data-d=".12" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Session 3</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Digital</h3></li>
+        </ol>
+        <p data-reveal="" style="margin-top:36px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">From that output, plus what I knew was already in flight elsewhere and the group’s own additions, I synthesised a single unifying concept.</p>
+        <blockquote data-reveal="" style="margin-top:28px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+          <p style="font-size:13px;color:rgba(255,255,255,.6)">The unifying concept</p>
+          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em">One ID&amp;V identity, usable across products and channels, with step-up verification only when a customer’s risk tier actually changes.</p>
+        </blockquote>
+        <p data-reveal="" style="margin-top:36px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">A follow-on concept development session turned this into three concepts. Rather than scoring them on impact versus effort by team consensus alone, I took the scores back to SMEs in branch, telephony and digital, to check them against how those teams experienced the friction day to day.</p>
+      </section>
+
+      <section id="solution" data-sec="" data-screen-label="07 The solution" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">07</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The solution</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Three concepts, each scored on customer impact and business effort, and each with a short-term (3-month) and long-term (3-year) plan.</p>
+        <ol style="display:grid;gap:12px;margin-top:32px">
+          <li data-reveal="" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Awareness of ID&amp;V questions and documents</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Customers and colleagues often didn’t know in advance what a verification step would ask for. Surfacing it upfront reduces failed attempts and repeat contact.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">One customer ID&amp;V across the bank</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">One identity across products and channels. A customer verified at Tier 2 doesn’t start from zero when a Tier 3 product asks for more; they only add what the higher tier requires.</p></div></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Consistent language across channels and colleagues</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">The same question, asked the same way on the phone, in branch or in the app, removing a subtle but real source of confusion and mistrust.</p></div></li>
+        </ol>
+        <figure data-reveal="" style="display:grid;place-items:center;aspect-ratio:{{ wideRatio }};margin-top:24px;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace;text-align:center">Impact vs effort matrix, or 3-month and 3-year roadmap</span></figure>
+      </section>
+
+      <section id="scope" data-sec="" data-screen-label="08 Reaching past scope" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">08</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Reaching past scope</h2>
+        <div data-reveal="" style="display:grid;gap:18px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Any real unification concept had to account for both merging entities, not just Mature Money’s side. So I reached out to CBS’s design team. It wasn’t formally scoped, but it was necessary if the concept was going to hold up.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">They couldn’t answer. Key people were on leave, and CBS’s ID&amp;V process wasn’t documented in enough detail for their own team to explain how it would integrate after the merger.</p>
+        </div>
+        <figure data-reveal="" style="margin-top:36px;padding-left:24px;border-left:2px solid #222">
+          <blockquote style="font-size:clamp(22px, 2.2vw, 28px);line-height:1.35;letter-spacing:-0.015em">That wasn’t a dead end. It was a finding: the two entities weren’t yet able to say how their ID&amp;V would meet in the middle, so the concept had to be designed around that uncertainty.</blockquote>
+        </figure>
+      </section>
+
+      <section id="where" data-sec="" data-screen-label="09 Where it stands" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">09</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Where it stands</h2>
+        <div data-reveal="" style="padding:{{ hmwPad }};border-radius:16px;background:#f3f3f3">
+          <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Handed over</span>Concepts delivered, not shipped</p>
+          <p style="margin-top:16px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Designs and concepts were completed, but the workstream didn’t move into development before the engagement ended. As a service design engagement, the goal was to surface solutions and hand them to someone accountable for building them.</p>
+          <p style="margin-top:14px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">That handoff happened: three scored concepts and their implementation plans are in the client’s hands, with an owner identified to carry them forward.</p>
+        </div>
+      </section>
+
+      <section id="learnings" data-sec="" data-screen-label="10 Learnings" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">10</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Learnings</h2>
+        <ul style="display:grid;gap:28px">
+          <li data-reveal="" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Discovery is load-bearing, not a preamble</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">When no one has documented how a process works, finding out, SME by SME and loop by loop, isn’t the step before the real design work. It is the real design work.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Structure the room before you ask it a question</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">Three separate channel sessions before one converged concept meant each channel’s friction got heard, instead of being flattened by the loudest voice in a mixed room.</p></div></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">A finding you can’t resolve is still a finding</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">The CBS gap didn’t get designed away. Naming it clearly gave the client something real to act on, which is more useful than a concept that pretends the merger is already resolved.</p></div></li>
+        </ul>
+        <p style="margin-top:44px;font-size:13px;color:#7b7b7b">Smaller things I’m taking with me</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:12px;margin-top:14px">
+          <div data-reveal="" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Share a visible plan early</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">A plan everyone can see from day one makes scope conversations far easier later.</p></div>
+          <div data-reveal="" data-d=".04" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Document my own work weekly</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">A weekly record of what I did made progress visible and kept my own thinking sharp.</p></div>
+          <div data-reveal="" data-d=".08" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Adapt to different working cultures</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">People show their work differently. Some lead with metrics, others with substance, and both need room.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Ask for help sooner</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">Owning a workstream independently doesn’t mean solving everything alone.</p></div>
+          <div data-reveal="" data-d=".16" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Course-correct scope openly</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">When the work shows the scope is wrong, saying so early beats delivering to the wrong brief.</p></div>
+          <div data-reveal="" data-d=".2" style="padding:20px 22px;border-radius:14px;border:1px solid #e6e6e6"><h3 style="font-size:17px;font-weight:400;line-height:1.35">Design the service in a transient phase</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#7b7b7b">Mid-merger, the service designer’s job is the service, not the product, and holding it steady while everything shifts.</p></div>
+        </div>
+      </section>
+
+      <section id="thanks" data-sec="" data-screen-label="11 Thanks" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">11</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Thanks</h2>
+        <figure data-reveal="" style="padding-left:24px;border-left:2px solid #222">
+          <p style="font-size:clamp(20px, 2vw, 26px);line-height:1.45;letter-spacing:-0.012em">To Alicia, Tom and Mupi, and to the SMEs across branch, telephony and digital who gave their time to validate every blueprint and every score.</p>
+        </figure>
+      </section>
+    </div>
+  </div>
+
+  <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
+    <a data-reveal="" href="DPCL%20Case%20Study.dc.html" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+      <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
+        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">DPCL</p>
+        <p style="margin-top:8px;color:#7b7b7b">Oil &amp; Gas Company</p>
+      </div>
+      <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
+        <img src="images/cover-dpcl.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
+      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
+      <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const TOC = [
+  ['overview', 'Overview'], ['problem', 'The problem'], ['challenge', 'The challenge'], ['role', 'My role'],
+  ['approach', 'How I worked'], ['ideation', 'Ideation'], ['solution', 'The solution'], ['scope', 'Reaching past scope'],
+  ['where', 'Where it stands'], ['learnings', 'Learnings'], ['thanks', 'Thanks'],
+];
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: 0, p: 0, menuOpen: false, nextHover: false };
+  bodyRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => this.update());
+    this.onScroll = () => requestAnimationFrame(() => this.update());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.update();
+    this.setupReveal();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    clearTimeout(this.failT);
+  }
+  update() {
+    const line = window.innerHeight * 0.3;
+    let active = 0;
+    TOC.forEach(([id], i) => { const s = document.getElementById(id); if (s && s.getBoundingClientRect().top <= line) active = i; });
+    let p = 0;
+    const b = this.bodyRef.current;
+    if (b) { const r = b.getBoundingClientRect(); p = Math.min(Math.max((line - r.top) / r.height, 0), 1); }
+    if (active !== this.state.active || Math.abs(p - this.state.p) > 0.002) this.setState({ active, p });
+  }
+  setupReveal() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && show(e.target)), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
+    this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
+  }
+  renderVals() {
+    const { w, active, p, menuOpen, nextHover } = this.state;
+    const narrow = w <= 960, phone = w <= 640;
+    return {
+      wide: !narrow, narrow, notPhone: !phone,
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      progress: `scaleX(${p})`,
+      topPadB: phone ? '48px' : '72px',
+      headMt: phone ? '28px' : '44px',
+      coverMt: phone ? '36px' : '56px',
+      coverRadius: phone ? '12px' : '16px',
+      coverRatio: phone ? '4 / 3' : '16 / 8',
+      layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
+      layoutPadT: phone ? '48px' : narrow ? '64px' : '96px',
+      toc: TOC.map(([id, label], i) => ({
+        id, label,
+        color: i === active ? '#222' : '#a3a3a3',
+        bar: i === active ? 'scaleY(1)' : 'scaleY(0)',
+        current: i === active ? 'true' : undefined,
+      })),
+      bodyRef: this.bodyRef,
+      secPad: phone ? '64px' : narrow ? '80px' : '112px',
+      titleMb: phone ? '22px' : '32px',
+      proseSize: phone ? '16px' : '18px',
+      hmwPad: phone ? '24px' : '30px 34px',
+      statN: phone ? '36px' : '44px',
+      insightCols: phone ? '1fr' : '56px 1fr',
+      flipDir: phone ? 'row' : 'row-reverse',
+      wideRatio: phone ? '4 / 3' : '16 / 8',
+      nextPadB: phone ? '72px' : '110px',
+      nextCardPad: phone ? '24px 12px 12px' : '14px 14px 14px 40px',
+      nextTextPad: phone ? '12px' : '0',
+      nextBorder: nextHover ? '#dcdcdc' : '#e3e3e3',
+      nextScale: nextHover ? 'scale(1.05)' : 'none',
+      nextBtnOpacity: nextHover || narrow ? 1 : 0,
+      nextBtnScale: nextHover ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+      nextIn: () => this.setState({ nextHover: true }),
+      nextOut: () => this.setState({ nextHover: false }),
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>
