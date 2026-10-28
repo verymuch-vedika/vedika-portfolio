@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Digitising a piped-gas ecosystem for 1.7 lakh+ households in 62 districts.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vedika Merchant">
+<meta property="og:title" content="DPCL case study | Vedika Merchant">
+<meta property="og:description" content="Digitising a piped-gas ecosystem for 1.7 lakh+ households in 62 districts.">
+<meta property="og:url" content="https://vedikamerchant.com/DPCL%20Case%20Study.dc">
+<meta property="og:image" content="https://vedikamerchant.com/images/share-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vedikamerchant.com/images/share-preview.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -24,11 +35,13 @@ h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
 ul,ol{list-style:none;margin:0;padding:0}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
 :focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@supports not selector(::-webkit-scrollbar){[data-scroll]{scrollbar-width:thin;scrollbar-color:#b5b5b5 #f0f0f0}}
+[data-scroll]::-webkit-scrollbar{width:6px}[data-scroll]::-webkit-scrollbar-track{background:#f0f0f0;border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb{background:#b5b5b5;border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb:hover{background:#8a8a8a}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol><symbol id="i-expand" viewBox="0 0 16 16"><path d="M10 2h4v4M14 2 9.5 6.5M6 14H2v-4M2 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
 <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
 <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
 <symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
@@ -41,9 +54,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
-        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
         <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+        <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↓</a></li>
       </ul>
     </sc-if>
     <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
@@ -53,9 +67,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
       </button>
       <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
-        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="display:block;padding:14px 0">Resume (PDF)</a></li>
       </ul>
     </sc-if>
   </nav>
@@ -65,26 +80,20 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
   <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
     <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
-    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
-      <div data-reveal="" style="flex:1 1 480px">
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Service Design Case Study</span>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 360px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width: 9px; height: 9px; border-radius: 50%; background: rgb(34, 34, 34);"></span>Service &amp; UI/UX Design Case Study</span>
         <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">DPCL</h1>
         <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Digitising a PNG ecosystem for 1.7 lakh+ households in 62 districts</p>
       </div>
-      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Project Design Lead • Service and UI UX designer</dd></div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 600px;display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:0 24px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Project Design Lead</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Oil and natural gas</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">7 months, Oct'24 to Apr'25</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">5 designers, 3 BA's, 1 dev and 1 project manager</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service blueprinting, user flow mapping, benchmarking</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">7 months, Oct’24–Apr’25</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">5 designers, 3 BAs, 1 dev, 1 PM</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Agile, service blueprints, user flows, benchmarking</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">FigJam, Figma</dd></div>
       </dl>
-    </div>
-    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:clamp(32px, 4vw, 48px);padding-top:20px;border-top:1px solid #222;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:18px 28px">
-      <p style="grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:13px"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
-      <div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">One gas connection passed through five roles, all offline. No one in the chain could see the whole picture.</p></div>
-      <div><p style="font-size:13px;color:#7b7b7b">What I did</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Led 5 designers. Turned the BRD into service blueprints and one connected web and app system for customers and partners.</p></div>
-      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Every module was signed off by the client. Registration and the admin dashboard reached dev completion.</p></div>
     </div>
     <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
       <img src="images/dpcl/banner-team.png" alt="Illustration of a design team planning around a table, with gas pipelines running through a town behind them" style="width:100%;height:100%;object-fit:cover;object-position:50% 70%;filter:saturate(.85) contrast(.95)">
@@ -112,20 +121,22 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
       <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">01</p>
-        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <h2 style="margin:10px 0 0;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <p style="margin:8px 0 {{ titleMb }};font-size:17px;color:#7b7b7b">Too long; didn’t read</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
           <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Getting piped gas meant one application passing through five roles, entirely offline. Nobody in the chain could see the whole picture.</p></div>
-          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Turned the BRD into to-be service blueprints, mapped current against to-be flows, then designed one connected web and app system for customers and partners.</p></div>
-          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Every module was signed off by the client. Registration and the admin dashboard reached dev completion before the project was put on hold.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">What I did</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Turned the BRD into to-be blueprints, then designed and managed delivery of one connected web and app system.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Web and app screens for 6 personas were signed off by the client before the project was put on hold.</p></div>
         </div>
       </section>
 
       <section id="problem" data-sec="" data-screen-label="02 Business problem" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">02</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Business problem</h2>
-        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Piped natural gas reaches a home through a chain, not a transaction. Before gas ever flows, a single application passes through five different roles.</p>
-        <figure data-reveal="" ref="{{ personaRef }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fafafa;aspect-ratio:1615 / 974">
-          <img src="images/dpcl/process-personas.png" alt="Illustration of the current PNG application and installation process, passing from agent to inspector to installer to field officer and back to the customer" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+        
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">For DPCL’s piped-gas expansion into tier 2 and 3 cities, every handoff happened offline: over phone calls, in local offices, and hard-copy documents walked from desk to desk. The official process time was 2–4 weeks. <span style="color: rgb(34, 34, 34);">But because nothing was connected, no one in the chain could see the whole picture.</span></p>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><figure ref="{{ personaRef }}" style="position:relative;border-radius:13px 13px 0 0;background:#fafafa;aspect-ratio:1615 / 974">
+          <img src="images/dpcl/process-personas.png" alt="Illustration of the current PNG application and installation process, passing from agent to inspector to installer to field officer and back to the customer" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:13px 13px 0 0">
           <sc-for list="{{ personaZones }}" as="z" hint-placeholder-count="0">
             <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
               <img src="{{ z.img }}" alt="" style="width:100%;height:100%;display:block;clip-path:{{ z.clip }};transition:transform .45s cubic-bezier(.16,1,.3,1), filter .45s;transform:{{ z.scale }};filter:{{ z.shadow }}">
@@ -137,12 +148,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
               </div>
             </div>
           </sc-for>
-          <button type="button" aria-label="Expand image" onClick="{{ openPersonas }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+          <button type="button" aria-label="Expand image" onClick="{{ openPersonas }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button>
         </figure>
-        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap each role to see what they do.</p>
-        <div data-reveal="" style="display:grid;gap:18px;margin-top:36px">
-          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">For DPCL’s piped-gas expansion into tier 2 and 3 cities, every one of those handoffs happened offline: over phone calls, in local offices, and with hard-copy documents walked from desk to desk. The official process time was 2–4 weeks. <span style="color:#222">But because nothing was connected, no one in the chain could see the whole picture.</span></p>
-          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">It was an ecosystem that had to be thought through as a whole: customers who may never have filled in a form online, agents enrolling on their behalf, inspectors and installers coordinating physical work, and admins managing all of it across geographies. The redesign had to hold all of it at once.</p>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="font-size:14px;font-weight:500;color:#222">Current PNG application and installation process</span><span style="font-size:13px;color:#7b7b7b">Hover or tap each role</span></figcaption></div>
+        <div data-reveal="" style="display:grid;gap:18px;margin-top:32px">
+          
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">It was an ecosystem that had to be thought through as a whole: customers who may never have filled a form online, agents enrolling on their behalf, inspectors and installers coordinating physical work, and admins managing all of it across geographies. The redesign had to hold all of it at once.</p>
         </div>
       </section>
 
@@ -150,19 +161,20 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p style="font-size:13px;color:#7b7b7b">03</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Design challenge</h2>
         <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The brief was to replace the offline process with one connected digital system. The harder, unspoken part was doing it for the people the offline process actually served, in places where bandwidth and digital literacy can’t be assumed.</p>
-        <figure data-reveal="" ref="{{ chRef }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1536 / 1024">
-          <img src="images/dpcl/challenge.png" alt="Illustration of a designer turning a requirements document into a connected map of flows and a service blueprint" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
-          <div style="position:absolute;inset:0;border-radius:14px;background:rgba(250,250,250,.72);pointer-events:none;transition:opacity .45s;opacity:{{ chVeil }}"></div>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><figure ref="{{ chRef }}" style="position:relative;border-radius:13px 13px 0 0;background:#fff;aspect-ratio:1536 / 1024">
+          <img src="images/dpcl/challenge.png" alt="Illustration of a designer turning a requirements document into a connected map of flows and a service blueprint" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:13px 13px 0 0">
+          <div style="position:absolute;inset:0;border-radius:13px 13px 0 0;background:rgba(250,250,250,.72);pointer-events:none;transition:opacity .45s;opacity:{{ chVeil }}"></div>
           <sc-for list="{{ chSpots }}" as="c" hint-placeholder-count="0">
             <div style="position:absolute;left:{{ c.l }};top:{{ c.t }};width:{{ c.w }};height:{{ c.h }};border-radius:16px;background-image:{{ c.bg }};background-size:{{ c.bgSize }};background-position:{{ c.bgPos }};background-repeat:no-repeat;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;transition:opacity .45s, transform .5s cubic-bezier(.16,1,.3,1);opacity:{{ c.op }};transform:{{ c.tf }}"></div>
           </sc-for>
-          <button type="button" aria-label="Expand image" onClick="{{ openChallenge }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+          <button type="button" aria-label="Expand image" onClick="{{ openChallenge }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button>
         </figure>
-        <blockquote data-reveal="" style="margin-top:36px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="font-size:14px;font-weight:500;color:#222">Making sense of a complex BRD to user journeys</span><span style="font-size:13px;color:#7b7b7b">Click to expand</span></figcaption></div>
+        <blockquote data-reveal="" style="margin-top:32px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
           <p style="font-size:13px;color:rgba(255,255,255,.6)">How might we</p>
-          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em;color:rgba(255,255,255,.85);text-decoration:underline dotted rgba(255,255,255,.3);text-underline-offset:5px">…make [process] simple and transparent for [users] while keeping [constraint] intact?</p>
+          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em;color:rgba(255,255,255,.85);text-decoration:underline dotted rgba(255,255,255,.3);text-underline-offset:5px">…make getting and servicing a PNG connection simple and transparent for customers, employees and contractors while keeping offline processes intact?</p>
         </blockquote>
-        <p style="margin-top:36px;font-size:13px;color:#7b7b7b">Three goals shaped everything</p>
+        <p style="margin-top:32px;font-size:13px;color:#7b7b7b">Three goals shaped everything</p>
         <ol style="display:grid;gap:12px;margin-top:14px">
           <li data-reveal="" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Connect the five-role chain</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Give the whole approval process a single digital backbone, so no handoff happens blind.</p></div></li>
           <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em">Let people in, whichever way they arrive</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#7b7b7b">Let a customer start, save and track an application themselves, or hand it to an agent.</p></div></li>
@@ -173,9 +185,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <section id="role" data-sec="" data-screen-label="04 My role" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">04</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">My role</h2>
-        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Project Design Lead, owning the service design layer and leading a team of five designers. Most of my hands-on work sat on the layer that held the project together, and most of my time went into coordination: clarifying requirements and timelines with the business analyst (BA), and prioritising delivery with the dev manager as priorities shifted and deadlines tightened.</p>
-        <figure data-reveal="" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1672 / 941">
-          <img src="images/dpcl/role-timeline.png" alt="Project timeline from October to April, showing the design team growing from two to four designers" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Project Design Lead. I owned the service design layer and led a team of five designers. Most of my time went into coordination: aligning on requirements and timelines with the business analyst (BA), and prioritising delivery with the dev manager as deadlines tightened.</p>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><figure style="position:relative;border-radius:13px 13px 0 0;background:#fff;aspect-ratio:1672 / 941">
+          <img src="images/dpcl/role-timeline.png" alt="Project timeline from October to April, showing the design team growing from two to four designers" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:13px 13px 0 0">
           <img src="images/dpcl/cursor-affordance.png" alt="" style="position:absolute;left:13.5%;top:62%;width:5%;height:auto;pointer-events:none;z-index:3">
           <sc-for list="{{ monthZones }}" as="z" hint-placeholder-count="0">
             <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:6.58%;height:11.69%;z-index:{{ z.z }};cursor:pointer">
@@ -190,13 +202,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
               </div>
             </div>
           </sc-for>
-          <button type="button" aria-label="Expand image" onClick="{{ openTimeline }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+          <button type="button" aria-label="Expand image" onClick="{{ openTimeline }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button>
         </figure>
-        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap a month to see what happened.</p>
-        <p style="margin-top:36px;font-size:13px;color:#7b7b7b">What I owned end to end</p>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="font-size:14px;font-weight:500;color:#222">Team structure, timeline and delivery plan</span><span style="font-size:13px;color:#7b7b7b">Hover or tap a month</span></figcaption></div>
+        <p style="margin-top:32px;font-size:13px;color:#7b7b7b">What I owned end to end</p>
         <ul data-reveal="" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
           <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The service design layer: end-to-end journeys and user flow documentation</li>
-          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The team’s daily coordination logs</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The team’s delivery plan</li>
           <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Design QA reviews with developers</li>
           <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">The full customer registration flow, plus parts of partner and admin flows</li>
         </ul>
@@ -208,7 +220,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <sc-for list="{{ approach }}" as="a" hint-placeholder-count="6">
             <div style="display:flex;flex-wrap:wrap;flex-direction:{{ a.dir }};gap:18px 40px;align-items:center">
               <figure onClick="{{ a.open }}" style="flex:1.2 1 320px;min-width:0;border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#fff;cursor:zoom-in;transition:border-color .4s" style-hover="border-color:#dcdcdc">
-                <div style="position:relative;aspect-ratio:4 / 3;background:#f8f8f8;overflow:hidden"><img src="{{ a.img }}" alt="{{ a.label }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></div>
+                <div style="position:relative;aspect-ratio:4 / 3;background:#f8f8f8;overflow:hidden"><img src="{{ a.img }}" alt="{{ a.label }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"><span aria-hidden="true" style="position:absolute;right:10px;top:10px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:12px;height:12px"><use href="#i-expand"></use></svg></span></div>
                 <figcaption style="padding:10px 14px;border-top:1px solid #efefef;font-size:13px;color:#7b7b7b">{{ a.label }}</figcaption>
               </figure>
               <div style="flex:1 1 260px">
@@ -221,25 +233,25 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         </div>
       </section>
 
-      <section id="users" data-sec="" data-screen-label="06 The users" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+      <section id="users" data-sec="" data-screen-label="06 The users and screens delivered" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">06</p>
-        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The users</h2>
-        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The core design tension wasn’t a screen. It was that “the customer” was never one person. Working from the business requirements and the team’s open-questions board, we designed deliberately for the real range.</p>
-        <figure data-reveal="" onMouseLeave="{{ usersLeave }}" style="position:relative;margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff;aspect-ratio:1536 / 1024">
-          <img src="images/dpcl/users-ecosystem.png" alt="The PNG ecosystem: partner roles and customer types arranged around one connection" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:14px">
-          <div style="position:absolute;inset:0;z-index:3;border-radius:14px;background:rgba(250,250,250,.66);pointer-events:none;transition:opacity .3s;opacity:{{ usersVeil }}"></div>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The users and screens delivered</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The real challenge wasn’t a screen. “The customer” was never one person, so using the BRD and the team’s open-questions board, we designed for the full range of users.</p>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff"><figure onMouseLeave="{{ usersLeave }}" style="position:relative;border-radius:13px 13px 0 0;background:#fff;aspect-ratio:1536 / 1024">
+          <img src="images/dpcl/users-ecosystem.png" alt="The PNG ecosystem: partner roles and customer types arranged around one connection" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border-radius:13px 13px 0 0">
+          <div style="position:absolute;inset:0;z-index:3;border-radius:13px 13px 0 0;background:rgba(250,250,250,.66);pointer-events:none;transition:opacity .3s;opacity:{{ usersVeil }}"></div>
           <sc-for list="{{ userZones }}" as="z" hint-placeholder-count="0">
             <div onMouseEnter="{{ z.enter }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
-              <div style="position:absolute;inset:0;z-index:4;border-radius:20px;background-image:{{ z.bg }};background-size:{{ z.bgSize }};background-position:{{ z.bgPos }};background-repeat:no-repeat;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);transition:opacity .25s, transform .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.cropOp }};transform:{{ z.cropT }}"></div>
+              <div style="position:absolute;inset:0;z-index:4;border-radius:13px 13px 0 0;background-image:{{ z.bg }};background-size:{{ z.bgSize }};background-position:{{ z.bgPos }};background-repeat:no-repeat;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);transition:opacity .25s, transform .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.cropOp }};transform:{{ z.cropT }}"></div>
               <div style="position:absolute;z-index:6;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #e3e3e3;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
                 <p style="font-size:15px;line-height:1.3">{{ z.name }}</p>
                 <p style="margin-top:4px;font-size:13px;line-height:1.5;color:#7b7b7b">{{ z.desc }}</p>
               </div>
             </div>
           </sc-for>
-          <button type="button" aria-label="Expand image" onClick="{{ openUsers }}" style="position:absolute;right:12px;top:12px;z-index:7;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></button>
+          <button type="button" aria-label="Expand image" onClick="{{ openUsers }}" style="position:absolute;right:12px;top:12px;z-index:7;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button>
         </figure>
-        <p style="margin-top:12px;font-size:13px;color:#7b7b7b">Hover or tap anyone in the ecosystem.</p>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="font-size:14px;font-weight:500;color:#222">DPCL PNG stakeholders and customer ecosystem</span><span style="font-size:13px;color:#7b7b7b">Hover or tap different stakeholders<br></span></figcaption></div>
 
         <h3 style="margin-top:48px;font-size:26px;font-weight:400;letter-spacing:-0.015em">Customers</h3>        <div style="margin-top:16px">
           <div onWheel="{{ custFlow.wheel }}" style="overflow:hidden;border-radius:14px;overscroll-behavior-x:contain">
@@ -248,8 +260,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                 <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s cubic-bezier(.22,.61,.36,1);opacity:{{ st.op }}">
                   <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:17px;line-height:1.35">{{ st.title }}</p></figcaption>
                   <div style="display:flex;gap:16px;align-items:stretch">
-                    <div style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
-                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
+                    <div data-scroll="" style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
+                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div data-scroll="" style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
                   </div>
                 </figure>
               </sc-for>
@@ -279,8 +291,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                 <figure onClick="{{ st.click }}" style="flex:0 0 88%;min-width:0;display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:14px;background:#f3f3f3;cursor:zoom-in;transition:opacity .4s cubic-bezier(.22,.61,.36,1);opacity:{{ st.op }}">
                   <figcaption style="text-align:center"><p style="font-size:13px;color:#7b7b7b">{{ st.counter }}</p><p style="margin-top:4px;font-size:17px;line-height:1.35">{{ st.title }}</p><p style="margin-top:4px;font-size:14px;line-height:1.5;color:#7b7b7b;text-wrap:pretty">{{ st.desc }}</p></figcaption>
                   <div style="display:flex;gap:16px;align-items:stretch">
-                    <div style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
-                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
+                    <div data-scroll="" style="flex:1 1 0;min-width:0;aspect-ratio:1366 / 728;overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff;border:1px solid #e6e6e6"><img src="{{ st.web }}" alt="{{ st.title }}, web" draggable="false" style="display:block;width:100%;height:auto"></div>
+                    <sc-if value="{{ st.hasApp }}" hint-placeholder-val="{{ true }}"><div style="position:relative;flex:none;width:clamp(96px, 20%, 180px);border-radius:16px;background:#fff;border:1px solid #e6e6e6;overflow:hidden"><div data-scroll="" style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain"><img src="{{ st.app }}" alt="{{ st.title }}, app" draggable="false" style="display:block;width:100%;height:auto"></div></div></sc-if>
                   </div>
                 </figure>
               </sc-for>
@@ -305,8 +317,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <section id="recommendations" data-sec="" data-screen-label="07 Recommendations" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">07</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Noteworthy recommendations</h2>
-        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">I’ve kept the attribution honest below. Some calls I originated, some I pushed back on, and some were business rules I had to make humane. The interesting part is usually what we did with each one.</p>
-        <div style="display:grid;gap:64px;margin-top:48px">
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">I’ve kept the attribution honest below. Some calls I originated, some I pushed back on, and some were business rules I had to make humane.</p>
+        <div style="display:grid;gap:48px;margin-top:32px">
           <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
             <div>
               <p style="font-size:13px;color:#7b7b7b">{{ r.n }}</p>
@@ -335,15 +347,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             </div>
           </sc-for>
         </div>
-        <figure data-reveal="" style="display:grid;place-items:center;aspect-ratio:{{ wideRatio }};margin-top:24px;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace;text-align:center">Diagram: one data model, two intake paths, field-level before and after</span></figure>
       </section>
 
       <section id="where" data-sec="" data-screen-label="08 Where it stands" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">08</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Where it stands</h2>
         <div data-reveal="" style="padding:{{ hmwPad }};border-radius:16px;background:#f3f3f3">
-          <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">On hold</span>Signed off by the client</p>
-          <p style="margin-top:16px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Every module and its screens were signed off by the client, after the BA and dev reviewed and agreed. Several flows, including registration and the admin dashboard, reached dev completion.</p>
+          <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">SCREENS DELIVERED</span>Signed off by the client</p>
+          <p style="margin-top:16px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">Every module and its screens were signed off by the client, after the BA and dev reviewed and agreed. Several flows reached dev completion.</p>
           <p style="margin-top:14px;font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The client had other priorities to clear first, and the project was handed over to another company’s design team after I moved on to another project.</p>
         </div>
       </section>
@@ -352,8 +363,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p style="font-size:13px;color:#7b7b7b">09</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Learnings</h2>
         <ul style="display:grid;gap:28px">
-          <li data-reveal="" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Leading means designing around your team, not just the screens</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">This was the first time my delivery ran largely through other people. It taught me to lean on each person’s strength: one drawn to integrating AI, one who could simplify UI beautifully, one with a strong UX base who could translate web to mobile, and one balancing early motherhood who needed flexibility to do her best work. Design leadership turned out to be resource design as much as screen design.</p></div></li>
-          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Coordination is the real design surface on a project like this</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">More of my impact came from clarifying a requirement with the BA or resequencing delivery with the dev manager than from any single screen. On a five-role ecosystem, keeping the whole thing coherent is the design work.</p></div></li>
+          <li data-reveal="" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Lead by designing around your team</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">My first time delivering mostly through others. I matched the work to what each person did best: Cean UI, web-to-mobile translation, and flexibility for a new mother to do her best work. Leadership turned out to be resource design as much as screen design.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;line-height:1.3">Coordination is the design work</h3><p style="margin-top:8px;font-size:{{ proseSize }};line-height:1.7;color:#7b7b7b">My biggest impact came from clarifying requirements timely with the BA and re-prioritising delivery with the dev manager, not from any single screen.</p></div></li>
         </ul>
       </section>
 
@@ -361,7 +372,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p style="font-size:13px;color:#7b7b7b">10</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Thanks</h2>
         <figure data-reveal="" style="padding-left:24px;border-left:2px solid #222">
-          <p style="font-size:clamp(20px, 2vw, 26px);line-height:1.45;letter-spacing:-0.012em">To Aarti, Sowmya, Swati, Nirmit and Ajuma, who took decisions I’d made and turned them into real, buildable screens, often faster than the timeline had any right to expect. And to the BA and dev manager, whose pushback made the calls that stuck worth defending.</p>
+          <p style="font-size:clamp(20px, 2vw, 26px);line-height:1.45;letter-spacing:-0.012em">To Aarti, Sowmya, Swati, Nirmit and Ajuma, who trusted my decisions, questioned in constructive ways and turned the offline process into real, buildable screens, often faster than the timeline had any right to expect. And to the BA's and dev manager for trying their best to manage client expectations with the team's realistic timelines</p>
         </figure>
       </section>
     </div>
@@ -429,17 +440,25 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
   <div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:72px 72px 24px">
-    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:1">×</button>
-    <sc-if value="{{ lbSingle }}" hint-placeholder-val="{{ false }}">
-      <div onClick="{{ lbToggleZoom }}" style="max-width:100%;max-height:calc(100vh - 240px);overflow:auto;border-radius:12px;background:#fff">
-        <sc-if value="{{ lbFit }}" hint-placeholder-val="{{ true }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain;cursor:zoom-in"></sc-if>
-        <sc-if value="{{ lbZoomed }}" hint-placeholder-val="{{ false }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:min(240vw, 3200px);max-width:none;cursor:zoom-out"></sc-if>
+    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;line-height:0"><svg viewBox="0 0 16 16" style="display:block;width:16px;height:16px"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+    <sc-if value="{{ lbZoomable }}" hint-placeholder-val="{{ false }}">
+      <div data-pz="" onClick="{{ lbStop }}" onWheel="{{ lbWheel }}" onPointerDown="{{ lbDown }}" onPointerMove="{{ lbMove }}" onPointerUp="{{ lbUp }}" onPointerCancel="{{ lbUp }}" onDoubleClick="{{ lbDbl }}" style="position:relative;width:min(88vw, 1400px);height:calc(100vh - 260px);overflow:hidden;border-radius:12px;background:#fff;touch-action:none;user-select:none;cursor:{{ lbCursor }}">
+        <img src="{{ lbSrc }}" alt="{{ lbTitle }}" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform-origin:0 0;transform:{{ lbTf }};transition:{{ lbTr }};pointer-events:none">
+        <div onPointerDown="{{ lbStop }}" style="position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:4px;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(0,0,0,.12)">
+          <button type="button" aria-label="Zoom out" onClick="{{ lbZoomOut }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08)"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M3.5 8h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+          <span style="min-width:44px;text-align:center;font-size:13px;color:#222;font-variant-numeric:tabular-nums">{{ lbPct }}</span>
+          <button type="button" aria-label="Zoom in" onClick="{{ lbZoomIn }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08)"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M3.5 8h9M8 3.5v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+          <button type="button" aria-label="Fit to screen" onClick="{{ lbFitBtn }}" style="height:36px;padding:0 14px;border-radius:999px;background:#fff;color:#222;font-size:13px;box-shadow:0 0 0 1px rgba(0,0,0,.08);outline:none">Fit</button>
+        </div>
       </div>
+    </sc-if>
+    <sc-if value="{{ lbPlain }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="max-width:100%;max-height:calc(100vh - 240px);border-radius:12px;overflow:hidden;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain"></div>
     </sc-if>
     <sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}">
       <div onClick="{{ lbStop }}" style="display:flex;gap:20px;align-items:flex-start;max-width:100%">
-        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">Web</p><div style="width:min(58vw, 900px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}, web" style="display:block;width:100%;height:auto"></div></div>
-        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">Web</p><div data-scroll="" style="width:min(58vw, 900px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}, web" style="display:block;width:100%;height:auto"></div></div>
+        <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div data-scroll="" style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
       </div>
     </sc-if>
     <div onClick="{{ lbStop }}" style="max-width:640px;text-align:center;color:#fff">
@@ -451,8 +470,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
           </sc-for>
         </div>
-        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }} · Use ← → to navigate · Esc to close</p>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }}{{ lbHint }}<sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}"> · Scroll to view entire screen</sc-if> · Use ← → to navigate · Esc to close</p>
       </sc-if>
+      <sc-if value="{{ lbSolo }}" hint-placeholder-val="{{ false }}"><p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">Scroll or pinch to zoom · Drag to pan · Esc to close</p></sc-if>
     </div>
     <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
       <button type="button" aria-label="Previous" onClick="{{ lbPrev }}" style="position:fixed;left:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
@@ -466,7 +486,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 const EASE = 'cubic-bezier(.16,1,.3,1)';
 const TOC = [
   ['overview', 'Overview'], ['problem', 'Business problem'], ['challenge', 'Design challenge'], ['role', 'My role'],
-  ['approach', 'Work and approach'], ['users', 'The users'], ['recommendations', 'Recommendations'],
+  ['approach', 'Work and approach'], ['users', 'The users and screens delivered'], ['recommendations', 'Recommendations'],
   ['where', 'Where it stands'], ['learnings', 'Learnings'], ['thanks', 'Thanks'],
 ];
 const D = 'images/dpcl/';
@@ -487,12 +507,12 @@ const MONTHS = [
   { m: 'Apr', team: '4 designers', items: ['Handover, KT, aligning all designs', 'Roll-off'] },
 ];
 const APPROACH = [
-  { n: '01', label: 'Service blueprint', img: 'installation-blueprint.png', title: 'BRD to to-be service blueprint', text: 'The Business Analyst (BA) gave us an elaborate Business Requirement Document (BRD) signed off by the client. I decided to first create to-be service blueprints and validate our understanding with multiple stakeholders.' },
+  { n: '01', label: 'Service blueprint', img: 'installation-blueprint.png', title: 'BRD to to-be service blueprint', text: 'The Business Analyst (BA) gave us an elaborate Business Requirement Document (BRD) signed off by the client. I decided to first create to-be service blueprints and validate our understanding with key stakeholders.' },
   { n: '02', label: 'User flow mapping', img: 'userflow-current-tobe.png', title: 'Current and to-be user flows', text: 'We then tried to understand the difference between what current users are used to and what digitisation would change for them, by mapping user flows, questions and suggestions for the transition side by side.' },
-  { n: '03', label: 'Screen estimation', img: 'screen-estimation.png', title: 'Screen estimation', text: 'We then estimated the screens for each flow and the time required for UI and UX.' },
-  { n: '04', label: 'Competitor benchmark', img: 'benchmarking.png', title: 'Benchmarking', text: 'Then came analysing competitor screens, so we could bring what works into DPCL.' },
+  { n: '03', label: 'Screen estimation', img: 'screen-estimation.png', title: 'Screen estimation', text: 'We estimated the screens for each flow and the time required for UI and UX.' },
+  { n: '04', label: 'Competitor benchmark', img: 'benchmarking.png', title: 'Benchmarking', text: 'Then came analysing competitors, so we could bring what works best into DPCL.' },
   { n: '05', label: 'Component library', img: 'design-system-ux.png', title: 'Design system and lo-fi UX', text: 'We spent time understanding the design system and putting together the right components to start building web screens.' },
-  { n: '06', label: 'Wireframes and UI UX', img: 'wireframe-dashboard.png', title: 'Wireframes and UI UX', text: 'We then designed screens based on client, business and development priorities.' },
+  { n: '06', label: 'Wireframes and UI UX', img: 'wireframe-dashboard.png', title: 'Wireframes and UI UX', text: 'Finally we designed screens based on the approved UX and client priorities. These went through a round of QA during development.' },
 ];
 const USERS_CUST = [
   { name: 'Self-serve applicant', desc: 'Applies online, on their own' },
@@ -518,25 +538,7 @@ const ECO_SCREENS = [
 ].map(([k, t, d, app], i) => ({ n: String(i + 1).padStart(2, '0'), title: t, desc: d, web: `${D}eco-${k}-web.png`, app: `${D}eco-${k}-app.png`, hasApp: app !== false }));
 const pair = (k, t, d, i) => ({ n: String(i + 1).padStart(2, '0'), title: t, desc: d, web: `${D}${k[0]}`, app: `${D}${k[1]}`, hasApp: true });
 const RECS = [
-  { n: '01', title: 'Two ways in, and an offline path kept',
-    before: 'We were asked to take only the connection availability check digital. Everyone else, including existing users, would keep using the familiar offline route.',
-    after: 'I pushed for self-serve and agent-assisted enrollment as equal paths, and for deliberately keeping the offline route available digitally for existing users instead of phasing it out.',
-    screens: [
-      pair(['p1-web-check.png', 'p1-app-check.png'], 'Check availability by pincode', 'One pincode field instead of a map. The same flow on web and app, whether the customer applies alone or with a DMA agent.', 0),
-      pair(['p1-web-areas.png', 'p1-app-areas.png'], 'Serviceable areas, listed plainly', 'A downloadable list of covered locations, so an agent can check offline or share it with the customer.', 1),
-    ] },
-  { n: '02', title: 'Multiple connections under one person',
-    before: 'The brief treated every account as one person with one connection, so each login would lead to a single account.',
-    after: 'I flagged that one person could hold several connections. Working with the BA, I added multiple account cards under one login so people pick which one to act on. That also covered remotely-managed households.',
-    screens: [
-      pair(['p2-web-accounts.png', 'p2-app-accounts.png'], 'Every connection, one login', 'Accounts and registrations sit together under one person, each with its status, so they can pick which one to act on.', 0),
-      pair(['p2-web-status.png', 'p2-app-status.png'], 'Status that says what to do next', 'Expanding a registration shows where it stands and the one action needed, with the deadline stated plainly.', 1),
-    ] },
-  { n: '03', title: 'Built for low bandwidth and low literacy',
-    before: 'Design everything in English only and roll it out first, with changes to follow later. Application status would live only on the DPCL app and website.',
-    after: 'A regional language option for Tier 2 and Tier 3 users, which wasn’t rolled out. And for low-bandwidth areas, status that reaches people without the app or internet, which was then surfaced across the website, email, WhatsApp and SMS.',
-    screens: [pair(['p3-web-hindi.png', 'p3-app-hindi.png'], 'Registration in Hindi', 'The full registration form in the local language, on web and app.', 0)] },
-  { n: '04', title: 'Aligning systems, not just UI',
+  { n: '01', title: 'Aligning systems, not just UI',
     before: 'Design a registration form from a list of data points given by the client, derived from the physical form plus additional business priorities for registering new users.',
     after: 'New-customer data was being captured differently from existing and offline customers’ data, so one database held the same information in inconsistent shapes. I pushed for the online and physical forms to match, and gave feedback on the physical forms too, so the fix reached the data layer and not just the UI.',
     screens: [
@@ -545,13 +547,31 @@ const RECS = [
       { n: '03', title: 'Digital form: connection address, matched to the paper fields', desc: '', web: `${D}web-address.png`, hasApp: false },
       { n: '04', title: 'Digital form: document submission, matched to the paper list', desc: '', web: `${D}web-docs.png`, hasApp: false },
     ] },
+  { n: '02', title: 'Multiple connections under one person',
+    before: 'The brief treated every account as one person with one connection, so each login would lead to a single account.',
+    after: 'I flagged that one person could hold several connections or the account could be managed by another person than the account holder. Working with the BA, I added multiple account cards under one login so people pick which one to act on. ',
+    screens: [
+      pair(['p2-web-accounts.png', 'p2-app-accounts.png'], 'Every connection, one login', 'Accounts and registrations sit together under one person, each with its status, so they can pick which one to act on.', 0),
+      pair(['p2-web-status.png', 'p2-app-status.png'], 'Status that says what to do next', 'Expanding a registration shows where it stands and the one action needed, with the deadline stated plainly.', 1),
+    ] },
+  { n: '03', title: 'Built for low bandwidth and low literacy',
+    before: 'Design everything in English only and roll it out first, with changes to follow later. Application status would live only on the DPCL app and website.',
+    after: 'A regional language option for Tier 2 and Tier 3 users, which wasn’t rolled out. For low-bandwidth areas, I wanted the registration status to reaches people without the app or internet, which was then surfaced across the website, email, WhatsApp and SMS.',
+    screens: [pair(['p3-web-hindi.png', 'p3-app-hindi.png'], 'Registration in Hindi', 'The full registration form in the local language, on web and app.', 0)] },
+  { n: '04', title: 'Apply online yourself, with an agent, or offline',
+    before: 'We were asked to make the entire process digital. Everyone else, including existing users, were still used to the offline route.',
+    after: 'I pushed for self-serve and agent-assisted enrollment as equal paths, and for keeping the offline option visible digitally for existing users instead of phasing it out.',
+    screens: [
+      pair(['p1-web-check.png', 'p1-app-check.png'], 'Check availability by pincode', 'One pincode field instead of a map. The same flow on web and app, whether the customer applies alone or with a DMA agent.', 0),
+      pair(['p1-web-areas.png', 'p1-app-areas.png'], 'Serviceable areas, listed plainly', 'A downloadable list of covered locations, so an agent can check offline or share it with the customer.', 1),
+    ] },
 ];
 const P_ZONES = [
-  { l: 80.19, t: 20.02, w: 16.10, h: 26.69, clip: 44.23, img: 'customer', align: 'right' },
-  { l: 6.19, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'dma', align: 'left' },
-  { l: 23.53, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'tpi' },
-  { l: 41.80, t: 45.69, w: 19.81, h: 32.86, clip: 43.75, img: 'lmc', labelTop: 114 },
-  { l: 60.06, t: 50.31, w: 19.81, h: 32.86, clip: 43.75, img: 'fo', align: 'right' },
+  { l: 80.19, t: 20.02, w: 16.10, h: 26.69, clip: 41.5, cx: 44, cy: 45, img: 'customer', align: 'right' },
+  { l: 6.19, t: 50.31, w: 19.81, h: 32.86, clip: 41.5, cx: 51, cy: 44, img: 'dma', align: 'left' },
+  { l: 23.53, t: 50.31, w: 19.81, h: 32.86, clip: 41.5, cx: 53, cy: 44, img: 'tpi' },
+  { l: 41.80, t: 45.69, w: 19.81, h: 32.86, clip: 41.5, cx: 53, cy: 59, img: 'lmc', labelTop: 114 },
+  { l: 60.06, t: 50.31, w: 19.81, h: 32.86, clip: 41.5, cx: 51, cy: 44, img: 'fo', align: 'right' },
 ];
 const M_ZONES = [[8.26, 69.61], [21.30, 69.61], [33.07, 69.61], [45.16, 70.14], [58.13, 69.61], [71.53, 70.14], [84.21, 70.03]];
 const U_ZONES = [
@@ -622,12 +642,12 @@ class Component extends DCLogic {
   }
   openLb(items, i = 0) {
     document.body.style.overflow = 'hidden';
-    this.setState({ lb: items, lbI: i, lbZoom: false });
+    this.setState({ lb: items, lbI: i, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 });
   }
-  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false }); }
+  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }); }
   stepLb(d) {
     const n = (this.state.lb || []).length;
-    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false }));
+    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }));
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);
@@ -705,7 +725,7 @@ class Component extends DCLogic {
     const personaZones = P_ZONES.map((z, i) => {
       const on = pActive === i;
       return { ...PERSONAS[i], ...sel('pHover', i), ...tipPos(z.align, false),
-        l: z.l + '%', t: z.t + '%', w: z.w + '%', h: z.h + '%', clip: `circle(${z.clip}% at 50% 50%)`, img: `${D}persona-${z.img}.png`,
+        l: z.l + '%', t: z.t + '%', w: z.w + '%', h: z.h + '%', clip: `circle(${z.clip}% at ${z.cx}% ${z.cy}%)`, img: `${D}persona-${z.img}.png`,
         z: on ? 4 : 1, scale: on ? 'scale(1.1)' : 'none', shadow: on ? 'drop-shadow(0 14px 22px rgba(0,0,0,.22))' : 'none',
         labelTop: `calc(${z.labelTop || 100}% + 6px)`, labelOp: on || phone ? 0 : 1, tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
     });
@@ -724,27 +744,74 @@ class Component extends DCLogic {
     });
     const cp = s.chPhase || 0;
     const chSpots = CH_SPOTS.map((z, i) => ({ ...crop(`${D}challenge.png`, z), op: cp === i + 1 ? 1 : 0, tf: cp === i + 1 ? 'scale(1.03)' : 'none' }));
-    const single = (src, title) => () => this.openLb([{ src, app: null, title, desc: '' }], 0);
+    const single = (src, title, desc = '') => () => this.openLb([{ src, app: null, title, desc }], 0);
     const lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
     return {
       personas: PERSONAS, months: MONTHS, usersCust: USERS_CUST,
-      personaZones, monthZones, userZones, chSpots,
+      personaZones, monthZones, userZones, chSpots: [],
       personaRef: this.personaRef, chRef: this.chRef, usersLeave: () => this.setState({ uHover: null }),
-      usersVeil: s.uHover != null ? 1 : 0, chVeil: cp >= 1 && cp <= 4 ? 1 : 0,
-      openPersonas: single(`${D}process-personas.png`, 'Current PNG application and installation process'),
-      openChallenge: single(`${D}challenge.png`, 'From requirements to a connected system'),
-      openTimeline: single(`${D}role-timeline.png`, 'My role and timeline'),
-      openUsers: single(`${D}users-ecosystem.png`, 'The PNG ecosystem'),
+      usersVeil: s.uHover != null ? 1 : 0, chVeil: 0,
+      openPersonas: single(`${D}process-personas.png`, 'Current PNG application and installation process', 'Hover or tap each role to see what they do.'),
+      openChallenge: single(`${D}challenge.png`, 'Making sense of a complex BRD to user journeys'),
+      openTimeline: single(`${D}role-timeline.png`, 'Team structure, timeline and delivery plan', 'Hover or tap a month to see what happened.'),
+      openUsers: single(`${D}users-ecosystem.png`, 'DPCL PNG stakeholders and customer ecosystem', 'Hover or tap anyone in the ecosystem.'),
       approach: (() => { const l = APPROACH.map((a) => ({ src: D + a.img, app: null, title: a.title, desc: a.text })); return APPROACH.map((a, i) => ({ ...a, img: D + a.img, dir: phone || i % 2 === 0 ? 'row' : 'row-reverse', open: () => this.openLb(l, i) })); })(),
       custFlow: this.mkFlow('cust', CUST_SCREENS), ecoFlow: this.mkFlow('eco', ECO_SCREENS),
       recs: RECS.map((r) => ({ ...r, screens: screens(r.screens) })),
+      ...this.pzVals(),
+      lbZoomable: !!(cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)), lbPlain: !!(cur && !cur.app && !/installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)),
+      lbSolo: !!(lb && lb.length === 1 && cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)), lbHint: cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src) ? ' · Scroll or pinch to zoom · Drag to pan' : '',
       lbOpen: !!lb, lbPair: !!(cur && cur.app), lbSingle: !!(cur && !cur.app), lbMulti: !!(lb && lb.length > 1),
       lbSrc: cur ? cur.src : '', lbApp: cur ? cur.app : '', lbTitle: cur ? cur.title : '', lbDesc: cur ? cur.desc : '',
       lbCount: lb ? `${s.lbI + 1} of ${lb.length}` : '',
       lbZoomed: !!s.lbZoom, lbFit: !s.lbZoom,
       lbClose: () => this.closeLb(), lbPrev: (e) => { e.stopPropagation(); this.stepLb(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepLb(1); },
       lbStop: (e) => e.stopPropagation(), lbToggleZoom: (e) => { e.stopPropagation(); this.setState((st) => ({ lbZoom: !st.lbZoom })); },
-      lbThumbs: lb ? lb.map((x, i) => ({ src: x.src, go: (e) => { e.stopPropagation(); this.setState({ lbI: i, lbZoom: false }); }, op: i === s.lbI ? 1 : 0.45, border: i === s.lbI ? '#fff' : 'transparent' })) : [],
+      lbThumbs: lb ? lb.map((x, i) => ({ src: x.src, go: (e) => { e.stopPropagation(); this.setState({ lbI: i, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }); }, op: i === s.lbI ? 1 : 0.45, border: i === s.lbI ? '#fff' : 'transparent' })) : [],
+    };
+  }
+  pzTo(ns, px, py) {
+    this.setState((s) => {
+      const S = Math.min(6, Math.max(1, ns));
+      if (S === 1) return { pzS: 1, pzX: 0, pzY: 0 };
+      const k = S / (s.pzS || 1);
+      return { pzS: S, pzX: px - (px - (s.pzX || 0)) * k, pzY: py - (py - (s.pzY || 0)) * k };
+    });
+  }
+  pzCenter(f) { const r = this.pzBox; const w = r ? r.width : 0, h = r ? r.height : 0; this.pzTo((this.state.pzS || 1) * f, w / 2, h / 2); }
+  pzVals() {
+    const s = this.state;
+    const pts = this.pzPts || (this.pzPts = new Map());
+    const local = (e) => { const r = e.currentTarget.getBoundingClientRect(); this.pzBox = r; return [e.clientX - r.left, e.clientY - r.top]; };
+    const box = (e) => { const b = e.currentTarget.closest('[data-pz]'); if (b) this.pzBox = b.getBoundingClientRect(); };
+    return {
+      lbTf: `translate(${s.pzX || 0}px, ${s.pzY || 0}px) scale(${s.pzS || 1})`,
+      lbTr: this.pzDrag ? 'none' : 'transform .25s cubic-bezier(.16,1,.3,1)',
+      lbCursor: (s.pzS || 1) > 1 ? (this.pzDrag ? 'grabbing' : 'grab') : 'zoom-in',
+      lbPct: Math.round((s.pzS || 1) * 100) + '%',
+      lbWheel: (e) => { e.stopPropagation(); const [x, y] = local(e); const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo((this.state.pzS || 1) * f, x, y); },
+      lbDown: (e) => {
+        e.stopPropagation(); local(e);
+        e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
+        pts.set(e.pointerId, [e.clientX, e.clientY]);
+        if (pts.size === 2) { const [a, b] = [...pts.values()]; this.pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), s: this.state.pzS || 1 }; this.pzDrag = null; }
+        else this.pzDrag = { x: e.clientX, y: e.clientY, ox: this.state.pzX || 0, oy: this.state.pzY || 0 };
+      },
+      lbMove: (e) => {
+        if (!pts.has(e.pointerId)) return;
+        pts.set(e.pointerId, [e.clientX, e.clientY]);
+        if (this.pinch && pts.size === 2) {
+          const [a, b] = [...pts.values()]; const r = this.pzBox || e.currentTarget.getBoundingClientRect();
+          this.pzTo(this.pinch.s * Math.hypot(a[0] - b[0], a[1] - b[1]) / this.pinch.d, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); return;
+        }
+        const d = this.pzDrag; if (!d || (this.state.pzS || 1) <= 1) return;
+        this.setState({ pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y });
+      },
+      lbUp: (e) => { pts.delete(e.pointerId); if (pts.size < 2) this.pinch = null; this.pzDrag = null; this.forceUpdate(); },
+      lbDbl: (e) => { e.stopPropagation(); const [x, y] = local(e); this.pzTo((this.state.pzS || 1) > 1 ? 1 : 2.5, x, y); },
+      lbZoomIn: (e) => { e.stopPropagation(); box(e); this.pzCenter(1.5); },
+      lbZoomOut: (e) => { e.stopPropagation(); box(e); this.pzCenter(1 / 1.5); },
+      lbFitBtn: (e) => { e.stopPropagation(); this.setState({ pzS: 1, pzX: 0, pzY: 0 }); },
     };
   }
   renderVals() {
@@ -762,8 +829,8 @@ class Component extends DCLogic {
       menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
       progress: `scaleX(${p})`,
       topPadB: phone ? '48px' : '72px',
-      headMt: phone ? '28px' : '44px',
-      coverMt: phone ? '36px' : '56px',
+      headMt: phone ? '24px' : '24px',
+      coverMt: phone ? '32px' : '32px',
       coverRadius: phone ? '12px' : '16px',
       coverRatio: phone ? '4 / 3' : '16 / 8',
       layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',

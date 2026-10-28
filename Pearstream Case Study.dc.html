@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Redesigning login, credentials and user management for a B2B post-settlement portal.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vedika Merchant">
+<meta property="og:title" content="Pearstream case study | Vedika Merchant">
+<meta property="og:description" content="Redesigning login, credentials and user management for a B2B post-settlement portal.">
+<meta property="og:url" content="https://vedikamerchant.com/Pearstream%20Case%20Study.dc">
+<meta property="og:image" content="https://vedikamerchant.com/images/share-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vedikamerchant.com/images/share-preview.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -31,6 +42,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
 <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-expand" viewBox="0 0 16 16"><path d="M10 2h4v4M14 2 9.5 6.5M6 14H2v-4M2 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
 <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
 <symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
 </svg>
@@ -42,9 +54,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
-        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
         <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+        <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↓</a></li>
       </ul>
     </sc-if>
     <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
@@ -54,9 +67,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
       </button>
       <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
-        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="display:block;padding:14px 0">Resume (PDF)</a></li>
       </ul>
     </sc-if>
   </nav>
@@ -66,26 +80,26 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
   <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
     <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
-    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;margin-top:{{ headMt }}">
-      <div data-reveal="" style="flex:1 1 480px">
+    <div style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 360px">
         <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>UX Research Case Study</span>
         <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">Pearstream</h1>
         <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning identity and access management for Web Portal, a certificate-based post-trade connectivity channel</p>
       </div>
-      <dl data-reveal="" data-d=".1" style="flex:0 1 420px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 28px">
+      <dl data-reveal="" data-d=".1" style="flex:0 1 600px;display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:0 24px">
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">UX Researcher, UI UX</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Financial services, B2B</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">6 months, Mar to Aug 2026</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">6 months, Mar–Aug ’26</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. 1 design manager, FA, dev team</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Semi-structured interviews, synthesis, prototyping</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Interviews, synthesis, prototyping</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
       </dl>
     </div>
-    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:clamp(32px, 4vw, 48px);padding-top:20px;border-top:1px solid #222;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:18px 28px">
-      <p style="grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:13px"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
-      <div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Login, certificate and credential issues were the top driver of support tickets from Web Portal clients.</p></div>
+    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:32px;padding-top:18px;border-top:1px solid #222;display:flex;flex-wrap:wrap;gap:18px 28px">
+      <p style="flex:0 0 110px;display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.35"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
+      <div style="flex:1 1 600px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:18px 28px"><div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Login, certificate and credential issues were the top driver of support tickets from Web Portal clients.</p></div>
       <div><p style="font-size:13px;color:#7b7b7b">What I did</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Interviewed the support team, then redesigned login, self-service credentials and admin user management.</p></div>
-      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">The redesign releases in parts between November 2026 and February 2027.</p></div>
+      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">The redesign releases in parts between November 2026 and February 2027.</p></div></div>
     </div>
     <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};padding:clamp(4px, .5vw, 6px);border-radius:{{ coverRadius }};background:#222">
       <div style="position:relative;aspect-ratio:16 / 9;border-radius:12px;overflow:hidden;background:#fff">{{ coverScroll }}</div>
@@ -161,26 +175,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
               <li style="display:flex;gap:10px"><span style="color:#222;font-variant-numeric:tabular-nums">5</span>Opportunity areas</li>
             </ol></div>
         </div>
-        <figure data-reveal="" onClick="{{ openBoard }}" style="margin-top:36px;cursor:zoom-in">
-          <div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#f8f8f8"><img src="images/pearstream/research-board.png" alt="Synthesis board: question banks, raw notes and key insights for each of the four interviews" loading="lazy" style="width:100%;height:auto"></div>
-          <figcaption style="margin-top:12px;font-size:13px;line-height:1.6;color:#7b7b7b">The full support team interview board, one column set per interview, ending in combined high-confidence insights and opportunity areas. It’s here to show the working board behind the scenes. Click to zoom.</figcaption>
-        </figure>
-        <figure data-reveal="" onClick="{{ openInterview }}" style="margin-top:32px;cursor:zoom-in">
-          <div style="position:relative;max-height:520px;overflow:hidden;border-radius:14px;border:1px solid #e6e6e6;background:#f8f8f8">
-            <img src="images/pearstream/research-interview-detail.png" alt="One interview in detail: question bank, answers, raw notes and key insights" loading="lazy" style="display:block;width:185%;max-width:none;height:auto;margin-left:-4%">
-            <div style="position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);pointer-events:none"></div>
-          </div>
-          <figcaption style="margin-top:12px;font-size:13px;line-height:1.6;color:#7b7b7b">A single interview, unpacked: questions grouped by theme, answers, raw notes, and the key insights pulled out at the end. Click to zoom.</figcaption>
-        </figure>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff">
+          <figure onClick="{{ openBoard }}" style="position:relative;border-radius:13px 13px 0 0;overflow:hidden;background:#f8f8f8;cursor:zoom-in"><img src="images/pearstream/research-board.png" alt="Synthesis board: question banks, raw notes and key insights for each of the four interviews" loading="lazy" style="display:block;width:100%;height:auto"><button type="button" aria-label="Expand image" onClick="{{ openBoard }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button></figure>
+          <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="flex:1 1 320px;display:grid;gap:4px"><span style="font-size:14px;font-weight:500;color:#222">The full support team interview board</span><span style="font-size:13px;line-height:1.6;color:#7b7b7b">One column set per interview, ending in combined high-confidence insights and opportunity areas. It’s here to show the working board behind the scenes.</span></span><span style="font-size:13px;color:#7b7b7b">Click to expand</span></figcaption>
+        </div>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff">
+          <figure onClick="{{ openInterview }}" style="position:relative;border-radius:13px 13px 0 0;overflow:hidden;background:#f8f8f8;cursor:zoom-in"><div style="position:relative;max-height:520px;overflow:hidden"><img src="images/pearstream/research-interview-detail.png" alt="One interview in detail: question bank, answers, raw notes and key insights" loading="lazy" style="display:block;width:185%;max-width:none;height:auto;margin-left:-4%"><div style="position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);pointer-events:none"></div></div><button type="button" aria-label="Expand image" onClick="{{ openInterview }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button></figure>
+          <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="flex:1 1 320px;display:grid;gap:4px"><span style="font-size:14px;font-weight:500;color:#222">A single interview, unpacked</span><span style="font-size:13px;line-height:1.6;color:#7b7b7b">Questions grouped by theme, answers, raw notes, and the key insights pulled out at the end.</span></span><span style="font-size:13px;color:#7b7b7b">Click to expand</span></figcaption>
+        </div>
       </section>
       <section id="login" data-sec="" data-screen-label="04 Adaptive login" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">04 · What I designed</p>
         <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Adaptive multi-factor login</h2>
         <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">The core login flow had to move on from the legacy method and adapt to each client organisation’s setup: two-factor and three-factor paths through the same screens, with “Try another way” and “Use next verification method” links that only appear when a step is actually optional, and disappear entirely when an organisation has made a factor mandatory.</p>
-        <figure data-reveal="" onClick="{{ openOldNew }}" style="margin-top:32px;cursor:zoom-in">
-          <div style="border-radius:14px;overflow:hidden;border:1px solid #e6e6e6;background:#f8f8f8"><img src="images/pearstream/old-vs-new.png" alt="Web Portal login: the legacy 2016 screen behind the 2026 redesign, with numbered callouts and a What changed legend" loading="lazy" style="width:100%;height:auto"></div>
-          <figcaption style="margin-top:12px;font-size:13px;color:#7b7b7b">Web Portal login, legacy (2016) and redesign (2026). Click to zoom.</figcaption>
-        </figure>
+        <div data-reveal="" style="margin-top:32px;border-radius:14px;border:1px solid #e6e6e6;background:#fff">
+          <figure onClick="{{ openOldNew }}" style="position:relative;border-radius:13px 13px 0 0;overflow:hidden;background:#f8f8f8;cursor:zoom-in"><img src="images/pearstream/old-vs-new.png" alt="Web Portal login: the legacy 2016 screen behind the 2026 redesign, with numbered callouts and a What changed legend" loading="lazy" style="display:block;width:100%;height:auto"><button type="button" aria-label="Expand image" onClick="{{ openOldNew }}" style="position:absolute;right:12px;top:12px;z-index:6;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05)"><svg style="width:15px;height:15px"><use href="#i-expand"></use></svg></button></figure>
+          <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 20px;padding:12px 16px;border-top:1px solid #efefef"><span style="flex:1 1 320px;display:grid;gap:4px"><span style="font-size:14px;font-weight:500;color:#222">Web Portal login, legacy (2016) and redesign (2026)</span></span><span style="font-size:13px;color:#7b7b7b">Click to expand</span></figcaption>
+        </div>
 
         <p style="margin-top:48px;font-size:13px;color:#7b7b7b">What we heard</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:16px;margin-top:14px">
@@ -396,7 +407,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <button type="button" role="tab" onClick="{{ setNew }}" style="padding:8px 16px;border-radius:999px;font-size:14px;background:{{ newBg }};color:{{ newColor }};transition:background-color .3s, color .3s">New design (2026)</button>
           <button type="button" role="tab" onClick="{{ setOld }}" style="padding:8px 16px;border-radius:999px;font-size:14px;background:{{ oldBg }};color:{{ oldColor }};transition:background-color .3s, color .3s">Old design (2016)</button>
         </div>
-        <button type="button" aria-label="Close prototype" onClick="{{ closeProto }}" style="display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid #dcdcdc;font-size:20px;line-height:1">×</button>
+        <button type="button" aria-label="Close prototype" onClick="{{ closeProto }}" style="display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid #dcdcdc;line-height:1"><svg viewBox="0 0 16 16" style="display:block;width:16px;height:16px"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
       </div>
       <div style="position:relative;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;background:#f3f3f3">
         <div style="position:relative;display:inline-block;max-width:100%">
@@ -417,12 +428,20 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
   <div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:72px 72px 24px">
-    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:1">×</button>
-    <sc-if value="{{ lbSingle }}" hint-placeholder-val="{{ false }}">
-      <div onClick="{{ lbToggleZoom }}" style="max-width:100%;max-height:calc(100vh - 240px);overflow:auto;border-radius:12px;background:#fff">
-        <sc-if value="{{ lbFit }}" hint-placeholder-val="{{ true }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain;cursor:zoom-in"></sc-if>
-        <sc-if value="{{ lbZoomed }}" hint-placeholder-val="{{ false }}"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:min(240vw, 3200px);max-width:none;cursor:zoom-out"></sc-if>
+    <button type="button" aria-label="Close" onClick="{{ lbClose }}" style="position:fixed;top:20px;right:20px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222;line-height:0"><svg viewBox="0 0 16 16" style="display:block;width:16px;height:16px"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+    <sc-if value="{{ lbZoomable }}" hint-placeholder-val="{{ false }}">
+      <div data-pz="" onClick="{{ lbStop }}" onWheel="{{ lbWheel }}" onPointerDown="{{ lbDown }}" onPointerMove="{{ lbMove }}" onPointerUp="{{ lbUp }}" onPointerCancel="{{ lbUp }}" onDoubleClick="{{ lbDbl }}" style="position:relative;width:min(88vw, 1400px);height:calc(100vh - 260px);overflow:hidden;border-radius:12px;background:#fff;touch-action:none;user-select:none;cursor:{{ lbCursor }}">
+        <img src="{{ lbSrc }}" alt="{{ lbTitle }}" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform-origin:0 0;transform:{{ lbTf }};transition:{{ lbTr }};pointer-events:none">
+        <div onPointerDown="{{ lbStop }}" style="position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:4px;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(0,0,0,.12)">
+          <button type="button" aria-label="Zoom out" onClick="{{ lbZoomOut }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08)"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M3.5 8h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+          <span style="min-width:44px;text-align:center;font-size:13px;color:#222;font-variant-numeric:tabular-nums">{{ lbPct }}</span>
+          <button type="button" aria-label="Zoom in" onClick="{{ lbZoomIn }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:#222;box-shadow:0 0 0 1px rgba(0,0,0,.08)"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M3.5 8h9M8 3.5v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+          <button type="button" aria-label="Fit to screen" onClick="{{ lbFitBtn }}" style="height:36px;padding:0 14px;border-radius:999px;background:#fff;color:#222;font-size:13px;box-shadow:0 0 0 1px rgba(0,0,0,.08);outline:none">Fit</button>
+        </div>
       </div>
+    </sc-if>
+    <sc-if value="{{ lbPlain }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="max-width:100%;max-height:calc(100vh - 240px);border-radius:12px;overflow:hidden;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;max-width:min(88vw, 1400px);max-height:calc(100vh - 240px);object-fit:contain"></div>
     </sc-if>
     <sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}">
       <div onClick="{{ lbStop }}" style="display:flex;gap:20px;align-items:flex-start;max-width:100%">
@@ -439,8 +458,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
           </sc-for>
         </div>
-        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }} · Use ← → to navigate · Esc to close</p>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }}{{ lbHint }} · Use ← → to navigate · Esc to close</p>
       </sc-if>
+      <sc-if value="{{ lbSolo }}" hint-placeholder-val="{{ false }}"><p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">Scroll or pinch to zoom · Drag to pan · Esc to close</p></sc-if>
     </div>
     <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}">
       <button type="button" aria-label="Previous" onClick="{{ lbPrev }}" style="position:fixed;left:16px;top:50%;translate:0 -50%;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#222"><svg style="width:18px;height:18px;transform:rotate(180deg)"><use href="#i-right"></use></svg></button>
@@ -519,12 +539,12 @@ class Component extends DCLogic {
   }
   openLb(items, i = 0) {
     document.body.style.overflow = 'hidden';
-    this.setState({ lb: items, lbI: i, lbZoom: false });
+    this.setState({ lb: items, lbI: i, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 });
   }
-  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false }); }
+  closeLb() { document.body.style.overflow = ''; this.setState({ lb: null, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }); }
   stepLb(d) {
     const n = (this.state.lb || []).length;
-    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false }));
+    if (n > 1) this.setState((s) => ({ lbI: (s.lbI + d + n) % n, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }));
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);
@@ -632,10 +652,70 @@ class Component extends DCLogic {
       protoNext: () => { if (pHs.length) goProto(pHs[0][4]); },
     };
   }
+  pzTo(ns, px, py) {
+    this.setState((s) => {
+      const S = Math.min(6, Math.max(1, ns));
+      if (S === 1) return { pzS: 1, pzX: 0, pzY: 0 };
+      const k = S / (s.pzS || 1);
+      return { pzS: S, pzX: px - (px - (s.pzX || 0)) * k, pzY: py - (py - (s.pzY || 0)) * k };
+    });
+  }
+  pzCenter(f) { const r = this.pzBox; const w = r ? r.width : 0, h = r ? r.height : 0; this.pzTo((this.state.pzS || 1) * f, w / 2, h / 2); }
+  pzVals() {
+    const s = this.state;
+    const pts = this.pzPts || (this.pzPts = new Map());
+    const local = (e) => { const r = e.currentTarget.getBoundingClientRect(); this.pzBox = r; return [e.clientX - r.left, e.clientY - r.top]; };
+    const box = (e) => { const b = e.currentTarget.closest('[data-pz]'); if (b) this.pzBox = b.getBoundingClientRect(); };
+    return {
+      lbTf: `translate(${s.pzX || 0}px, ${s.pzY || 0}px) scale(${s.pzS || 1})`,
+      lbTr: this.pzDrag ? 'none' : 'transform .25s cubic-bezier(.16,1,.3,1)',
+      lbCursor: (s.pzS || 1) > 1 ? (this.pzDrag ? 'grabbing' : 'grab') : 'zoom-in',
+      lbPct: Math.round((s.pzS || 1) * 100) + '%',
+      lbWheel: (e) => { e.stopPropagation(); const [x, y] = local(e); const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo((this.state.pzS || 1) * f, x, y); },
+      lbDown: (e) => {
+        e.stopPropagation(); local(e);
+        e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
+        pts.set(e.pointerId, [e.clientX, e.clientY]);
+        if (pts.size === 2) { const [a, b] = [...pts.values()]; this.pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), s: this.state.pzS || 1 }; this.pzDrag = null; }
+        else this.pzDrag = { x: e.clientX, y: e.clientY, ox: this.state.pzX || 0, oy: this.state.pzY || 0 };
+      },
+      lbMove: (e) => {
+        if (!pts.has(e.pointerId)) return;
+        pts.set(e.pointerId, [e.clientX, e.clientY]);
+        if (this.pinch && pts.size === 2) {
+          const [a, b] = [...pts.values()]; const r = this.pzBox || e.currentTarget.getBoundingClientRect();
+          this.pzTo(this.pinch.s * Math.hypot(a[0] - b[0], a[1] - b[1]) / this.pinch.d, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); return;
+        }
+        const d = this.pzDrag; if (!d || (this.state.pzS || 1) <= 1) return;
+        this.setState({ pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y });
+      },
+      lbUp: (e) => { pts.delete(e.pointerId); if (pts.size < 2) this.pinch = null; this.pzDrag = null; this.forceUpdate(); },
+      lbDbl: (e) => { e.stopPropagation(); const [x, y] = local(e); this.pzTo((this.state.pzS || 1) > 1 ? 1 : 2.5, x, y); },
+      lbZoomIn: (e) => { e.stopPropagation(); box(e); this.pzCenter(1.5); },
+      lbZoomOut: (e) => { e.stopPropagation(); box(e); this.pzCenter(1 / 1.5); },
+      lbFitBtn: (e) => { e.stopPropagation(); this.setState({ pzS: 1, pzX: 0, pzY: 0 }); },
+    };
+  }
+  lbVals() {
+    const s = this.state, lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    return {
+      ...this.pzVals(),
+      lbZoomable: !!(cur && !cur.app && /research-board|research-interview-detail|old-vs-new/.test(cur.src)), lbPlain: !!(cur && !cur.app && !/research-board|research-interview-detail|old-vs-new/.test(cur.src)),
+      lbSolo: !!(lb && lb.length === 1 && cur && !cur.app && /research-board|research-interview-detail|old-vs-new/.test(cur.src)), lbHint: cur && !cur.app && /research-board|research-interview-detail|old-vs-new/.test(cur.src) ? ' · Scroll or pinch to zoom · Drag to pan' : '',
+      lbOpen: !!lb, lbPair: !!(cur && cur.app), lbSingle: !!(cur && !cur.app), lbMulti: !!(lb && lb.length > 1),
+      lbSrc: cur ? cur.src : '', lbApp: cur ? cur.app : '', lbTitle: cur ? cur.title : '', lbDesc: cur ? cur.desc : '',
+      lbCount: lb ? `${s.lbI + 1} of ${lb.length}` : '',
+      lbZoomed: !!s.lbZoom, lbFit: !s.lbZoom,
+      lbClose: () => this.closeLb(), lbPrev: (e) => { e.stopPropagation(); this.stepLb(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepLb(1); },
+      lbStop: (e) => e.stopPropagation(), lbToggleZoom: (e) => { e.stopPropagation(); this.setState((st) => ({ lbZoom: !st.lbZoom })); },
+      lbThumbs: lb ? lb.map((x, i) => ({ src: x.src, go: (e) => { e.stopPropagation(); this.setState({ lbI: i, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }); }, op: i === s.lbI ? 1 : 0.45, border: i === s.lbI ? '#fff' : 'transparent' })) : [],
+    };
+  }
   renderVals() {
     const { w, active, p, menuOpen, nextHover } = this.state;
     const narrow = w <= 960, phone = w <= 640;
     return {
+      ...this.lbVals(),
       wide: !narrow, narrow, notPhone: !phone,
       navH: phone ? '80px' : '100px',
       menuOpen: menuOpen ? 'true' : 'false',
@@ -647,8 +727,8 @@ class Component extends DCLogic {
       menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
       progress: `scaleX(${p})`,
       topPadB: phone ? '48px' : '72px',
-      headMt: phone ? '28px' : '44px',
-      coverMt: phone ? '36px' : '56px',
+      headMt: phone ? '24px' : '24px',
+      coverMt: phone ? '32px' : '32px',
       coverRadius: phone ? '12px' : '16px',
       coverRatio: phone ? '4 / 3' : '16 / 8',
       layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
