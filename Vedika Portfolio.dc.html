@@ -106,7 +106,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <h1 style="margin-top:{{ titleMt }};font-weight:300">
       <span data-reveal="" data-d=".1" style="display:block;margin-bottom:6px;font-size:22px;font-weight:400;letter-spacing:-0.01em">Hi, I’m</span>
       <span data-reveal="" data-d=".15" style="display:block;font-size:{{ helloSize }};line-height:.86;letter-spacing:-0.022em;margin-left:-.06em;font-weight:300">Vedika</span>
-      <span data-reveal="" data-d=".3" style="display:block;margin-top:{{ subMt }};font-size:18px;font-weight:400;letter-spacing:-0.01em">Optimist | Realist | Workist</span>
+      <span data-reveal="" data-d=".3" style="display:block;margin-top:{{ subMt }};font-size:18px;font-weight:400;letter-spacing:-0.01em">Optimist | Realist | Pragmatist</span>
     </h1>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <a href="#about" style="margin-top:auto;margin-bottom:64px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:15px">Scroll down <svg style="width:15px;height:15px;animation:nudge 2.2s cubic-bezier(.22,.61,.36,1) infinite"><use href="#i-down"></use></svg></a>
@@ -114,13 +114,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 
   <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-    <figure style="position:absolute;z-index:1;margin:0;right:9vw;bottom:0;height:min(calc((100% + 100px) * .86), 860px);aspect-ratio:876 / 1119">
-      <img src="images/hero.webp" width="876" height="1119" alt="Portrait of Vedika with arms crossed" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center top;animation:portraitIn 1.6s cubic-bezier(.16,1,.3,1) both .1s">
+    <figure style="position:absolute;z-index:1;margin:0;right:calc(-5vw + 80px);bottom:0;height:min(calc((100% + 100px) * .86), 860px, 58vw);aspect-ratio:1314 / 1678">
+      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" fetchpriority="high" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;mix-blend-mode:darken;filter:brightness(1.03);-webkit-mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);mask-composite:intersect;animation:portraitIn 1.6s cubic-bezier(.16,1,.3,1) both .1s">
     </figure>
   </sc-if>
   <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-    <figure style="position:relative;z-index:1;margin:{{ portraitMt }} 0 0 auto;width:{{ portraitW }};aspect-ratio:876 / 1119">
-      <img src="images/hero.webp" width="876" height="1119" alt="Portrait of Vedika with arms crossed" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+    <figure style="position:relative;z-index:1;margin:{{ portraitMt }} 0 0 auto;width:{{ portraitW }};aspect-ratio:1314 / 1678;translate:14% 0">
+      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;mix-blend-mode:darken;filter:brightness(1.03);-webkit-mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);mask-composite:intersect">
     </figure>
   </sc-if>
 </header>
@@ -129,7 +129,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <section id="about" data-screen-label="About" style="background:#f3f3f3;display:flex;flex-wrap:wrap;gap:48px clamp(32px, 4vw, 92px);padding:{{ aboutPad }} clamp(20px, 4.3vw, 62px) 60px;align-items:flex-start">
     <div data-reveal="" style="flex:1 1 320px;padding-top:20px;max-width:{{ introMax }}">
       <h2 style="font-size:clamp(34px, 3.2vw, 46px);font-weight:400;line-height:1.12;letter-spacing:-0.012em;text-wrap:balance">About Me</h2>
-      <p style="margin-top:22px;font-size:17px;line-height:1.75;color:#7b7b7b">I’m a service and experience designer and researcher with 6+ years of work experience. Since 2019 I’ve helped teams in energy, automotive, finance and banking turn tangled, offline processes into calm digital services, from research and workshops all the way to pixel-level UI.</p>
+      <p style="margin-top:22px;font-size:17px;line-height:1.75;color:#7b7b7b">I’m a service and experience designer and researcher with 6+ years of work experience. Since 2019 I’ve helped teams in energy, automotive, finance and banking turn tangled, offline processes into seamless digital services, from research and workshops all the way to pixel-level UI.</p>
       <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
         <svg viewBox="0 0 220 230" aria-hidden="true" style="width:clamp(170px, 15vw, 220px);height:auto;margin:76px 0 0 clamp(60px, 9vw, 140px);color:#e3e3e3">
           <path d="M14 222C2 150 44 64 196 36" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"></path>
@@ -412,7 +412,7 @@ const CASES = [
     facts: [{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Industry', v: 'Automotive' }, { k: 'Duration', v: '7 months' }] },
   { id: 'case-pearstream', num: '03', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.jpg', alt: 'Xact Web Portal user details and login screens',
     desc: 'Redesigning the Xact Web Portal, a post-trade connectivity channel for a financial infrastructure provider',
-    facts: [{ k: 'Role', v: 'UX Research & UI UX' }, { k: 'Area', v: 'Finance' }, { k: 'Duration', v: '6 months' }] },
+    facts: [{ k: 'Role', v: 'UX Researcher & UI UX Designer' }, { k: 'Area', v: 'Finance' }, { k: 'Duration', v: '6 months' }] },
   { id: 'case-mature-money', num: '04', name: 'Mature Money', sector: 'Banking', href: 'Mature%20Money%20Case%20Study.dc.html', img: 'images/placeholder-mature-money.jpg', alt: '',
     desc: 'Redesigning identity verification across four channels of a bank mid-merger',
     facts: [{ k: 'Role', v: 'Service Designer' }, { k: 'Area', v: 'Banking' }, { k: 'Duration', v: '4 months' }] },
