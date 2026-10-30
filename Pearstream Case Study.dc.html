@@ -81,9 +81,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
     <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
     <div style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-end;margin-top:{{ headMt }}">
-      <div data-reveal="" style="flex:1 1 360px">
+      <div data-reveal="" style="flex:1 1 360px;min-width:0">
         <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>UX Research Case Study</span>
-        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">Pearstream</h1>
+        <h1 style="margin-top:18px;font-size:clamp(56px, 7vw, 112px);font-weight:300;line-height:.9;letter-spacing:-0.035em">Pearstream</h1>
         <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning identity and access management for Web Portal, a certificate-based post-trade connectivity channel</p>
       </div>
       <dl data-reveal="" data-d=".1" style="flex:0 1 600px;display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:0 24px">
@@ -94,12 +94,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Interviews, synthesis, prototyping</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
       </dl>
-    </div>
-    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:32px;padding-top:18px;border-top:1px solid #222;display:flex;flex-wrap:wrap;gap:18px 28px">
-      <p style="flex:0 0 110px;display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.35"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
-      <div style="flex:1 1 600px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:18px 28px"><div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Login, certificate and credential issues were the top driver of support tickets from Web Portal clients.</p></div>
-      <div><p style="font-size:13px;color:#7b7b7b">What I did</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">Interviewed the support team, then redesigned login, self-service credentials and admin user management.</p></div>
-      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;text-wrap:pretty">The redesign releases in parts between November 2026 and February 2027.</p></div></div>
     </div>
     <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};padding:clamp(4px, .5vw, 6px);border-radius:{{ coverRadius }};background:#222">
       <div style="position:relative;aspect-ratio:16 / 9;border-radius:12px;overflow:hidden;background:#fff">{{ coverScroll }}</div>
@@ -127,10 +121,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
       <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
         <p style="font-size:13px;color:#7b7b7b">01</p>
-        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <h2 style="margin:10px 0 0;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <p style="margin:8px 0 {{ titleMb }};font-size:17px;color:#7b7b7b">Too long; didn’t read</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
           <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Complaints were rising from Web Portal clients, and login, certificate and credential issues were the number one support ticket driver.</p></div>
-          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Interviewed the support team, synthesised what they deal with every day, then redesigned login, self-service credentials and admin user management.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">What I did</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Interviewed the support team, synthesised what they deal with every day, then redesigned login, self-service credentials and admin user management.</p></div>
           <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">The redesign is planned to release in parts between November 2026 and February 2027.</p></div>
         </div>
       </section>
