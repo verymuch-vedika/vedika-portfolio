@@ -399,7 +399,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
       <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
       <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
-        <a href="mailto:hello@vedika.design" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="mailto:vkmatwork@gmail.com" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
         <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
       </div>
     </div>
@@ -426,14 +426,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
       <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
     </nav>
-    <a href="mailto:hello@vedika.design" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">hello@vedika.design</a>
+    <a href="mailto:vkmatwork@gmail.com" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">vkmatwork@gmail.com</a>
   </div>
   <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
     <p>© 2026 Vedika. All rights reserved.</p>
     <ul style="display:flex;gap:24px">
       <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
       <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
-      <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Medium</a></li>
     </ul>
   </div>
 </footer>
@@ -461,6 +460,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <div><p style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.6)">App</p><div data-scroll="" style="width:min(22vw, 300px);height:calc(100vh - 280px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;background:#fff"><img src="{{ lbApp }}" alt="{{ lbTitle }}, app" style="display:block;width:100%;height:auto"></div></div>
       </div>
     </sc-if>
+    <sc-if value="{{ lbScroll }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" data-scroll="" style="width:min(70vw, 1100px);max-width:100%;height:calc(100vh - 260px);overflow-y:auto;overscroll-behavior:contain;border-radius:12px;background:#fff"><img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="display:block;width:100%;height:auto"></div>
+    </sc-if>
     <div onClick="{{ lbStop }}" style="max-width:640px;text-align:center;color:#fff">
       <p style="font-size:16px;line-height:1.4">{{ lbTitle }}</p>
       <p style="margin-top:6px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.7)">{{ lbDesc }}</p>
@@ -470,7 +472,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <button type="button" aria-label="Go to image" onClick="{{ t.go }}" style="width:56px;height:40px;border-radius:6px;overflow:hidden;background:#fff;border:2px solid {{ t.border }};opacity:{{ t.op }};transition:opacity .25s"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"></button>
           </sc-for>
         </div>
-        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }}{{ lbHint }}<sc-if value="{{ lbPair }}" hint-placeholder-val="{{ false }}"> · Scroll to view entire screen</sc-if> · Use ← → to navigate · Esc to close</p>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">{{ lbCount }}{{ lbHint }}<sc-if value="{{ lbScrolly }}" hint-placeholder-val="{{ false }}"> · Scroll to view entire screen</sc-if> · Use ← → to navigate · Esc to close</p>
       </sc-if>
       <sc-if value="{{ lbSolo }}" hint-placeholder-val="{{ false }}"><p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)">Scroll or pinch to zoom · Drag to pan · Esc to close</p></sc-if>
     </div>
@@ -684,7 +686,7 @@ class Component extends DCLogic {
   }
   mkFlow(key, arr) {
     const idx = (this.state.flow || {})[key] || 0, n = arr.length;
-    const lb = arr.map((x) => ({ src: x.web, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const lb = arr.map((x) => ({ src: x.web, app: x.hasApp ? x.app : null, scroll: !x.hasApp && !x.paper && !!x.web, title: x.title, desc: x.desc || '' }));
     const setI = (i) => {
       i = Math.max(0, Math.min(n - 1, i));
       this.setState((s) => ({ flow: { ...(s.flow || {}), [key]: i } }));
@@ -719,7 +721,7 @@ class Component extends DCLogic {
       leave: () => this.setState({ [key]: null }),
       tap: () => this.setState((st) => ({ [key]: st[key] === i ? null : i })),
     });
-    const toLb = (arr) => arr.map((x) => ({ src: x.web || x.src, app: x.hasApp ? x.app : null, title: x.title, desc: x.desc || '' }));
+    const toLb = (arr) => arr.map((x) => ({ src: x.web || x.src, app: x.hasApp ? x.app : null, scroll: !x.hasApp && !x.paper && !!x.web, title: x.title, desc: x.desc || '' }));
     const screens = (arr) => { const lb = toLb(arr); return arr.map((x, i) => ({ ...x, fit: x.paper ? 'contain' : 'cover', open: () => this.openLb(lb, i) })); };
     const pActive = s.pAuto >= 0 && s.pAuto != null ? s.pAuto : s.pHover;
     const personaZones = P_ZONES.map((z, i) => {
@@ -759,8 +761,8 @@ class Component extends DCLogic {
       custFlow: this.mkFlow('cust', CUST_SCREENS), ecoFlow: this.mkFlow('eco', ECO_SCREENS),
       recs: RECS.map((r) => ({ ...r, screens: screens(r.screens) })),
       ...this.pzVals(),
-      lbZoomable: !!(cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)), lbPlain: !!(cur && !cur.app && !/installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)),
-      lbSolo: !!(lb && lb.length === 1 && cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src)), lbHint: cur && !cur.app && /installation-blueprint|userflow-current-tobe|screen-estimation|role-timeline|users-ecosystem/.test(cur.src) ? ' · Scroll or pinch to zoom · Drag to pan' : '',
+      lbZoomable: !!(cur && !cur.app && !cur.scroll), lbPlain: false, lbScroll: !!(cur && cur.scroll), lbScrolly: !!(cur && (cur.app || cur.scroll)),
+      lbSolo: !!(lb && lb.length === 1 && cur && !cur.app && !cur.scroll), lbHint: cur && !cur.app && !cur.scroll ? ' · Scroll or pinch to zoom · Drag to pan' : '',
       lbOpen: !!lb, lbPair: !!(cur && cur.app), lbSingle: !!(cur && !cur.app), lbMulti: !!(lb && lb.length > 1),
       lbSrc: cur ? cur.src : '', lbApp: cur ? cur.app : '', lbTitle: cur ? cur.title : '', lbDesc: cur ? cur.desc : '',
       lbCount: lb ? `${s.lbI + 1} of ${lb.length}` : '',
