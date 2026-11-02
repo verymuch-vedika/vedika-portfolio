@@ -19,7 +19,7 @@
 <body>
 <x-dc>
 <helmet>
-<title>Vedika | Service &amp; Experience Designer</title>
+<title>Vedika Merchant | Service &amp; Experience Designer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="peekaboo.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,11 +57,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
   <nav aria-label="Primary" style="position:relative;z-index:5;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
-    <a href="#top" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <a href="#top" aria-label="Vedika Merchant, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1;white-space:nowrap">Vedika Merchant</a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
         <li><a href="#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
-        <li><a href="#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Journey</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
         <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↓</a></li>
       </ul>
@@ -74,7 +74,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       </button>
       <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
         <li><a href="#work" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Work</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="#journey" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="#journey" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Journey</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Resume (PDF)</a></li>
       </ul>
@@ -99,14 +99,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Years designing</p>
       </div>
       <div data-reveal="" data-d=".1">
-        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="100">100</span>M<sup style="font-size: 0.5em; line-height: 1; margin-left: 2px; margin-top: 0.05em; font-weight: 400;">+</sup></p>
+        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="29">29</span>K<sup style="font-size: 0.5em; line-height: 1; margin-left: 2px; margin-top: 0.05em; font-weight: 400;">+</sup></p>
         <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Users impacted</p>
       </div>
     </div>
     <h1 style="margin-top:{{ titleMt }};font-weight:300">
       <span data-reveal="" data-d=".1" style="display:block;margin-bottom:6px;font-size:22px;font-weight:400;letter-spacing:-0.01em">Hi, I’m</span>
       <span data-reveal="" data-d=".15" style="display:block;font-size:{{ helloSize }};line-height:.86;letter-spacing:-0.022em;margin-left:-.06em;font-weight:300">Vedika</span>
-      <span data-reveal="" data-d=".3" style="display:block;margin-top:{{ subMt }};font-size:18px;font-weight:400;letter-spacing:-0.01em">Optimist | Realist | Pragmatist</span>
+      <span data-reveal="" data-d=".3" style="display:block;margin-top:{{ subMt }};font-size:18px;font-weight:400;letter-spacing:-0.01em">Service &amp; Experience Designer · Bangalore</span>
+      <span data-reveal="" data-d=".35" style="display:block;margin-top:6px;font-size:16px;font-weight:400;letter-spacing:-0.01em;color:#5e5e5e">Optimist | Realist | Pragmatist</span>
     </h1>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <a href="#about" style="margin-top:auto;margin-bottom:64px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:15px">Scroll down <svg style="width:15px;height:15px;animation:nudge 2.2s cubic-bezier(.22,.61,.36,1) infinite"><use href="#i-down"></use></svg></a>
@@ -155,11 +156,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <ul aria-label="How I work" style="margin:{{ pointsMargin }};display:grid;gap:40px;max-width:460px">
         <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
           <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
-          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I'm high on empathy and identifying strength's of people around me. I make sense of complexity quickly, whether it’s a workshop room or a web of systems.</p>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I'm high on empathy and good at working with the strengths of people around me. I make sense of complexity quickly, whether it’s a workshop room or a web of systems.</p>
         </li>
         <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
           <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
-          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I bring structure, strategic and analytical thinking, whilst picking up new domains early and implimenting timely.</p>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I bring structure, strategic and analytical thinking, whilst learning new industries quickly and turning insight into action on time.</p>
         </li>
       </ul>
     </div>
@@ -168,14 +169,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <sc-if value="{{ showTrusted }}" hint-placeholder-val="{{ true }}">
     <section aria-label="Trusted by teams at" style="background:#f3f3f3;display:flex;flex-wrap:wrap;align-items:center;gap:24px 48px;padding:36px clamp(20px, 4.3vw, 62px) 72px">
       <p style="flex:none;font-size:15px;color:#7b7b7b;max-width:{{ trustedLabelW }};line-height:1.35">Trusted by teams at</p>
-      <ul style="flex:1 1 600px;display:flex;align-items:center;justify-content:{{ logosJustify }};gap:28px 40px;flex-wrap:wrap">
-        <li><img src="images/logos/accenture.png" alt="Accenture" style="height:{{ logoWide }};width:auto"></li>
-        <li><img src="images/logos/bmw.png" alt="BMW" style="height:{{ logoBase }};width:auto"></li>
-        <li><img src="images/logos/virgin-money.png" alt="Virgin Money" style="height:{{ logoVm }};width:auto"></li>
-        <li><img src="images/logos/deutsche-boerse.png" alt="Deutsche Börse Group" style="height:{{ logoTall }};width:auto"></li>
-        <li><img src="images/logos/bpcl.png" alt="Bharat Petroleum" style="height:{{ logoBp }};width:auto"></li>
-        <li><img src="images/logos/roche.png" alt="Roche" style="height:{{ logoBase }};width:auto"></li>
-        <li><img src="images/logos/adnoc.png" alt="ADNOC" style="height:{{ logoTall }};width:auto"></li>
+      <ul style="flex:1 1 600px;display:flex;align-items:flex-start;justify-content:{{ logosJustify }};gap:28px 40px;flex-wrap:wrap">
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/accenture.png" alt="Accenture" style="height:{{ logoWide }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bmw.png" alt="BMW" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/virgin-money.png" alt="Virgin Money" style="height:{{ logoVm }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/deutsche-boerse.png" alt="Deutsche Börse Group" style="height:{{ logoTall }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bpcl.png" alt="Bharat Petroleum" style="height:{{ logoBp }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/roche.png" alt="Roche" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/adnoc.png" alt="ADNOC" style="height:{{ logoTall }};width:auto"></div></li>
       </ul>
     </section>
   </sc-if>
@@ -235,6 +236,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                 <p style="font-size:13px;font-variant-numeric:tabular-nums">{{ c.num }} <span style="color:#7b7b7b">/ 04</span></p>
                 <h3 style="margin-top:auto;padding-top:24px;font-size:clamp(26px, 2.4vw, 36px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">{{ c.name }} <span style="display:block;margin-top:6px;font-size:15px;letter-spacing:0;color:#7b7b7b">{{ c.sector }}</span></h3>
                 <p style="margin-top:14px;font-size:15.5px;line-height:1.6;color:#7b7b7b">{{ c.desc }}</p>
+                <sc-if value="{{ c.impact }}" hint-placeholder-val="{{ true }}">
+                  <p style="display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:16px;font-size:14.5px;line-height:1.4;white-space:nowrap"><span style="display:inline-flex;align-items:center;gap:7px;color:#555"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:{{ c.impact.dot }}"></span>{{ c.impact.status }}</span><span style="color:#cfcfcf">/</span><span style="color:#222">{{ c.impact.text }}</span></p>
+                </sc-if>
                 <ul style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
                   <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="3">
                     <li style="display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:4px 12px;border:1px solid #dcdcdc;border-radius:999px;font-size:13.5px"><span style="color:#7b7b7b">{{ f.k }}</span>{{ f.v }}</li>
@@ -301,7 +305,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <div style="aspect-ratio:{{ tlRatio }};overflow:hidden;background:#efefef"><img src="{{ j.img }}" alt="{{ j.alt }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;pointer-events:none"></div>
             <div style="padding:{{ tlBodyPad }}">
               <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ j.year }}</span>{{ j.place }}</p>
-              <h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.012em;line-height:1.25">{{ j.title }}</h3>
+              <h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.012em;line-height:1.25;white-space:pre-line">{{ j.title }}</h3>
               <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#7b7b7b">{{ j.text }}</p>
             </div>
           </article>
@@ -346,8 +350,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <figure data-peek="quotes" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;padding:30px 28px 32px;transition:transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-6px);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)">
           <svg aria-hidden="true" style="width:34px;height:26px;color:#e3e3e3;margin-bottom:26px"><use href="#i-quote"></use></svg>
           <p><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">Leadership</span></p>
-          <blockquote style="margin-top:16px;font-size:{{ quoteSize }};line-height:1.5;color:#444;letter-spacing:-0.01em">“Her leadership stands out through your ownership, clarity in direction, and ability to keep the team aligned.”</blockquote>
-          <figcaption style="margin-top:auto;padding-top:28px;font-size:14px;color:#7b7b7b">New joiner · AI initiative</figcaption>
+          <blockquote style="margin-top:16px;font-size:{{ quoteSize }};line-height:1.5;color:#444;letter-spacing:-0.01em">“Her leadership stands out through her ownership, clarity in direction, and ability to keep the team aligned.”</blockquote>
+          <figcaption style="margin-top:auto;padding-top:28px;font-size:14px;color:#7b7b7b">Initiative lead · Accenture</figcaption>
         </figure>
       </div>
     </div>
@@ -355,13 +359,27 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
   <section id="contact" data-peek="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
     <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
-    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
-    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
-      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
-      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
-      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
-        <a href="mailto:vkmatwork@gmail.com" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
-        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:conic-gradient(#e6e6e6 25%, transparent 0 50%, #e6e6e6 0 75%, transparent 0) 0 0 / calc(var(--t) * 2) calc(var(--t) * 2), conic-gradient(transparent 25%, #efefef 0 50%, transparent 0 75%, #efefef 0) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * 3.2) calc(var(--t) * 2.6);-webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, rgba(0,0,0,.25), #000 85%);mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, rgba(0,0,0,.25), #000 85%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;display:grid;grid-template-columns:{{ ctaCols }};gap:40px clamp(40px, 6vw, 96px);align-items:center;max-width:1180px;margin-inline:auto;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px)">
+      <div>
+        <h2 style="font-size:clamp(36px, 4vw, 60px);font-weight:400;line-height:1.05;letter-spacing:-0.03em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+        <p style="max-width:440px;margin-top:18px;font-size:17px;line-height:1.7;color:#7b7b7b;text-wrap:pretty">I read every message and try to reply within a couple of days.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;margin-top:36px">
+          <div style="display:flex;flex-direction:column">
+            <a href="{{ mailHref }}" onClick="{{ mailClick }}" style="display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;border-radius:999px;background:#222;color:#fff;font-size:16px;line-height:1;transition:background .3s" style-hover="background:#000">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+            <p style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:12px;padding-left:4px;font-size:15px;line-height:1.4;color:#7b7b7b">or <button type="button" onClick="{{ copyMail }}" aria-label="{{ copyAria }}" style="padding:0;border:0;background:none;color:#222;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:#bdbdbd" style-hover="text-decoration-color:#222">{{ mailShown }}</button><span style="font-size:13px;color:{{ copyColor }}">{{ copyLabel }}</span></p>
+          </div>
+          <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;border-radius:999px;background:#fff;border:1px solid #d6d6d6;color:#222;font-size:16px;line-height:1;transition:border-color .3s" style-hover="border-color:#222">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:20px;padding:{{ ctaCardPad }};box-shadow:0 24px 48px -32px rgba(0,0,0,.18)">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:8px">
+          <p style="font-size:20px;letter-spacing:-0.01em">Availability</p>
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#e7f4ec;color:#1d6b3d;font-size:14px;line-height:1.3"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#2e9e5b"></span>Available within a month</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(96px, 150px) minmax(0, 1fr);gap:4px 16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #ececec"><p style="font-size:14px;line-height:1.4;color:#7b7b7b">Roles</p><p style="font-size:17px;line-height:1.45;color:#222;text-wrap:pretty">Service design, Experience design, UX research, UX design</p></div>
+        <div style="display:grid;grid-template-columns:minmax(96px, 150px) minmax(0, 1fr);gap:4px 16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #ececec"><p style="font-size:14px;line-height:1.4;color:#7b7b7b">Full-time or contract</p><p style="font-size:17px;line-height:1.45;color:#222;text-wrap:pretty">Bangalore, abroad, remote</p></div>
+        <div style="display:grid;grid-template-columns:minmax(96px, 150px) minmax(0, 1fr);gap:4px 16px;align-items:baseline;padding:16px 0;"><p style="font-size:14px;line-height:1.4;color:#7b7b7b">Contract only</p><p style="font-size:17px;line-height:1.45;color:#222;text-wrap:pretty">Mumbai</p></div>
       </div>
     </div>
   </section>
@@ -382,19 +400,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
     <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
       <a href="#top" style="padding:8px 24px;border-radius:999px;background:#333">Home</a>
-      <a href="#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Journey</a>
       <a href="#work" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Work</a>
       <a href="#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
       <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
     </nav>
-    <a href="mailto:vkmatwork@gmail.com" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">vkmatwork@gmail.com</a>
   </div>
   <div data-peek="footer" style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
-    <p>© 2026 Vedika. All rights reserved.</p>
+    <p>© 2026 Vedika Merchant. All rights reserved.</p>
     <ul style="display:flex;gap:24px">
       <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
       <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="transition:color .3s" style-hover="color:#fff">Resume</a></li>
-      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Archive</a></li>
     </ul>
   </div>
 </footer>
@@ -403,25 +420,25 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <script type="text/x-dc" data-dc-script data-props="{&quot;stickyStack&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}, &quot;showTrusted&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}, &quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}, &quot;peekaboo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
 const EASE = 'cubic-bezier(.16,1,.3,1)';
 const CASES = [
-  { id: 'case-dpcl', num: '01', name: 'DPCL', sector: 'Oil & Gas Company', href: 'DPCL%20Case%20Study.dc.html', img: 'images/cover-dpcl.jpg', alt: 'Illustration of a team brainstorming with sticky notes',
-    desc: 'Digitising a PNG ecosystem for 1.7 lakh+ households and India’s second largest oil and gas company',
-    facts: [{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Industry', v: 'Oil and natural gas' }, { k: 'Duration', v: 'Oct’24, 7 months' }] },
-  { id: 'case-zmw', num: '02', name: 'ZMW', sector: 'Automobile Company', href: 'ZMW%20Case%20Study.dc.html', img: 'images/cover-zmw-v2.webp', alt: 'Isometric illustration of connected dealership workflow screens',
-    desc: 'A redesign of legacy systems for a German multinational, impacting workflows of 650+ dealerships and 50,000+ direct users',
-    facts: [{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Industry', v: 'Automotive' }, { k: 'Duration', v: '7 months' }] },
-  { id: 'case-pearstream', num: '03', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.png', alt: 'Xact Web Portal user details and login screens',
-    desc: 'Redesigning the Xact Web Portal, a post-trade connectivity channel for a financial infrastructure provider',
-    facts: [{ k: 'Role', v: 'UX Researcher & UI UX Designer' }, { k: 'Area', v: 'Finance' }, { k: 'Duration', v: '6 months' }] },
-  { id: 'case-mature-money', num: '04', name: 'Mature Money', sector: 'Banking', href: 'Mature%20Money%20Case%20Study.dc.html', img: 'images/placeholder-mature-money.jpg', alt: '',
+  { id: 'case-dpcl', impact: { status: 'In development', text: '173K+ users designed for', dot: '#d19a2a' }, num: '01', name: 'DPCL', sector: 'Oil & Gas Company', href: 'DPCL%20Case%20Study.dc.html', img: 'images/cover-dpcl.jpg', alt: 'Illustration of a team brainstorming with sticky notes',
+    desc: 'Digitising a PNG ecosystem for 1.5 lakh+ households and a national oil and gas company',
+    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Industry', v: 'Oil and natural gas' }, { k: 'Duration', v: '7 months' }] },
+  { id: 'case-zmw', impact: { status: 'Live', text: '18K+ users impacted', dot: '#2e9e5b' }, num: '02', name: 'ZMW', sector: 'Automobile Company', href: 'ZMW%20Case%20Study.dc.html', img: 'images/cover-zmw-v2.webp', alt: 'Isometric illustration of connected dealership workflow screens',
+    desc: 'A redesign of legacy systems for a global automotive brand, designed for 650+ dealerships',
+    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Industry', v: 'Automotive' }, { k: 'Duration', v: '7 months' }] },
+  { id: 'case-pearstream', impact: { status: 'In development', text: '2,500 client firms', dot: '#d19a2a' }, num: '03', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.png', alt: 'Xact Web Portal user details and login screens',
+    desc: 'Turning a dense, expert-only B2B finance portal into a clearer, faster tool for post-trade operations teams',
+    facts: [{ k: 'Role', v: 'UX Researcher & UI/UX Designer' }, { k: 'Industry', v: 'Finance' }, { k: 'Duration', v: '6 months' }] },
+  { id: 'case-mature-money', impact: { status: 'Rolling out', text: '6.6M customers', dot: '#2e9e5b' }, num: '04', soon: true, name: 'Mature Money', sector: 'Banking', href: 'Mature%20Money%20Case%20Study.dc.html', img: 'images/cover-mature-money.png', alt: 'Illustration of a bank branch, laptop, call centre and workshop connected to a central ID check',
     desc: 'Redesigning identity verification across four channels of a bank mid-merger',
-    facts: [{ k: 'Role', v: 'Service Designer' }, { k: 'Area', v: 'Banking' }, { k: 'Duration', v: '4 months' }] },
+    facts: [{ k: 'Role', v: 'Service Designer' }, { k: 'Industry', v: 'Banking' }, { k: 'Duration', v: '4 months' }] },
 ];
 const JOURNEY = [
   { year: '2015', place: 'Pearl Academy', title: 'Started design school', text: 'Joined Pearl Academy for a BA (Hons) in Communication Design.', img: 'images/journey/pearl-class.jpg', alt: 'Pearl Academy classmates' },
   { year: '2019', place: 'Graduation', title: 'Graduated in Interaction Design', text: 'Finished the BA specialising in Interaction Design (UI/UX).', img: 'images/journey/convocation.jpg', alt: 'Vedika at her convocation' },
   { year: '2019', place: 'Accenture', title: 'First job', text: 'Joined Accenture as an Experience Design Analyst and got promoted to Senior Analyst in 2021.', img: 'images/journey/accenture-first-job.jpg', alt: 'Accenture team photo' },
-  { year: '2022', place: 'Glasgow School of Art', title: 'Started an MDes in Service Design', text: 'Left Accenture for an MDes in Service Design and Innovation at the GSA, UK.', img: 'images/journey/glasgow.jpg', alt: 'Vedika in Glasgow' },
-  { year: '2023', place: 'Freelance', title: 'Came back, went solo', text: 'Came back and worked as a freelance designer.', img: 'images/journey/freelance-salon.jpg', alt: 'Vedika interviewing salon staff' },
+  { year: '2022', place: 'Glasgow School of Art', title: 'Started and graduated MDes in Service Design', text: 'Left Accenture for an MDes in Service Design and Innovation at the GSA, UK.', img: 'images/journey/glasgow.jpg', alt: 'Vedika in Glasgow' },
+  { year: '2023', place: 'Freelance', title: 'Graduated with an MDes,\nwent solo', text: 'Came back and worked as a freelance designer.', img: 'images/journey/freelance-salon.jpg', alt: 'Vedika interviewing salon staff' },
   { year: '2024', place: 'Accenture', title: 'Back at Accenture', text: 'Rejoined as a Service and Experience Designer.', img: 'images/journey/back-at-accenture-v2.jpg', alt: 'Vedika with the Accenture team at a Diwali celebration' },
 ];
 const YEARS = [...new Set(JOURNEY.map((j) => j.year))];
@@ -583,7 +600,8 @@ class Component extends DCLogic {
     if (tr) tr.scrollLeft = this.cardPos(FIRST_OF[yi]);
   }
 
-  renderVals() {
+  renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { ...this._rv0(), mailHref: '#', mailText: m, mailShown: this.state.revealed ? m : 'copy email address', copyAria: this.state.revealed ? 'Copy email address' : 'Show and copy email address', copyLabel: this.state.copied ? 'Copied' : this.state.revealed ? 'Copy' : '', copyColor: this.state.copied ? '#1d6b3d' : '#7b7b7b', copyMail: () => { const done = () => { this.setState({ copied: true, revealed: true }); clearTimeout(this._cpT); this._cpT = setTimeout(() => this.setState({ copied: false }), 1800); }; if (navigator.clipboard) navigator.clipboard.writeText(m).then(done, done); else done(); }, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
+  _rv0() {
     const { w, active, activeCase, hoverCase, menuOpen, cardH } = this.state;
     const narrow = w <= 960, phone = w <= 640, tablet = narrow && !phone;
     const sticky = this.isSticky();
@@ -763,6 +781,8 @@ class Component extends DCLogic {
       ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
       ctaTile: phone ? '90px' : '145px',
       ctaPad: phone ? '80px' : '108px',
+      ctaCols: narrow ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1.05fr)',
+      ctaCardPad: phone ? '20px 20px 8px' : '28px 32px 12px',
       footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
       footerDir: narrow ? 'column-reverse' : 'row',
       footerAlign: narrow ? 'flex-start' : 'center',

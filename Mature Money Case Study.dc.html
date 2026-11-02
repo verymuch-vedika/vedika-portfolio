@@ -304,7 +304,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
       <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
       <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
-        <a href="mailto:vkmatwork@gmail.com" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="{{ mailHref }}" onClick="{{ mailClick }}" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
         <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
       </div>
     </div>
@@ -331,7 +331,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
       <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
     </nav>
-    <a href="mailto:vkmatwork@gmail.com" style="font-size:clamp(30px, 4.4vw, 63px);font-weight:400;letter-spacing:-0.02em;line-height:1;padding-bottom:6px;border-bottom:1px solid transparent;transition:border-color .6s" style-hover="border-bottom-color:#fff">vkmatwork@gmail.com</a>
   </div>
   <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
     <p>© 2026 Vedika. All rights reserved.</p>
@@ -393,7 +392,8 @@ class Component extends DCLogic {
     requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
     this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
   }
-  renderVals() {
+  renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { ...this._rv0(), mailHref: '#', mailText: m, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
+  _rv0() {
     const { w, active, p, menuOpen, nextHover } = this.state;
     const narrow = w <= 960, phone = w <= 640;
     return {

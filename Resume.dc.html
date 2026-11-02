@@ -43,7 +43,7 @@ ul{padding:0;list-style:none}
     <ul style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:12.5px;color:#444">
       <li>Bangalore, India</li>
       <li>+91 77770 75395</li>
-      <li><a href="mailto:vkmatwork@gmail.com" style="text-decoration:none">vkmatwork@gmail.com</a></li>
+      <li><a href="{{ mailHref }}" onClick="{{ mailClick }}" style="text-decoration:none">{{ mailText }}</a></li>
       <li><a href="https://www.vedikamerchant.com" target="_blank" rel="noopener">vedikamerchant.com ↗</a></li>
       <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">linkedin.com/in/vedika-m ↗</a></li>
     </ul>
@@ -154,5 +154,10 @@ ul{padding:0;list-style:none}
   </section>
 </doc-page>
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { mailHref: '#', mailText: m, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
+}
+</script>
 </body>
 </html>
