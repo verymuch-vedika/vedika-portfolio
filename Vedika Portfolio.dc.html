@@ -37,6 +37,8 @@ ul,ol{list-style:none;margin:0;padding:0}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
 :focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes logoMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){[data-marquee]{animation:none!important}}
 @keyframes portraitIn{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 :root{color-scheme:light}@media print{:root{color-scheme:light}}@media print{img[src*="logos/"]{filter:none!important}}
@@ -64,7 +66,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <li><a href="#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
         <li><a href="#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Journey</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
-        <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↓</a></li>
+        <li><a href="Vedika%20Merchant%20Resume.pdf" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↗</a></li>
       </ul>
     </sc-if>
     <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
@@ -77,7 +79,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <li><a href="#work" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Work</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="#journey" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Journey</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Resume (PDF)</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:block;padding:14px 0 4px">Resume ↗</a><a href="Vedika%20Merchant%20Resume%20(ATS).pdf" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:block;padding:6px 0 14px;font-size:15px;color:#555">ATS version ↗</a></li>
       </ul>
     </sc-if>
   </nav>
@@ -116,13 +118,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 
   <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-    <figure style="position:absolute;z-index:1;margin:0;right:calc(-5vw + 80px);bottom:0;height:min(calc((100% + 100px) * .86), 860px, 58vw);aspect-ratio:1314 / 1678">
-      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" fetchpriority="high" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;mix-blend-mode:darken;filter:brightness(1.03);-webkit-mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);mask-composite:intersect;animation:portraitIn 1.6s cubic-bezier(.16,1,.3,1) both .1s">
+    <figure style="mix-blend-mode:darken;position:absolute;z-index:1;margin:0;right:calc(-5vw + 80px);bottom:0;height:min(calc((100% + 100px) * .86), 860px, 58vw);aspect-ratio:1314 / 1678">
+      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" fetchpriority="high" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;filter:brightness(1.05);-webkit-mask-image:linear-gradient(to bottom,transparent 4%,rgba(0,0,0,.25) 12%,rgba(0,0,0,.7) 22%,#000 32%),radial-gradient(ellipse 47% 80% at 53% 66%,#000 72%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.25) 93%,rgba(0,0,0,.07) 97.5%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 4%,rgba(0,0,0,.25) 12%,rgba(0,0,0,.7) 22%,#000 32%),radial-gradient(ellipse 47% 80% at 53% 66%,#000 72%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.25) 93%,rgba(0,0,0,.07) 97.5%,transparent 100%);mask-composite:intersect;animation:portraitIn 1.6s cubic-bezier(.16,1,.3,1) both .1s">
     </figure>
   </sc-if>
   <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-    <figure style="position:relative;z-index:1;margin:{{ portraitMt }} 0 0 auto;width:{{ portraitW }};aspect-ratio:1314 / 1678;translate:14% 0">
-      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;mix-blend-mode:darken;filter:brightness(1.03);-webkit-mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 6%,#000 20%),radial-gradient(ellipse 56% 72% at 53% 66%,#000 58%,transparent 100%);mask-composite:intersect">
+    <figure style="mix-blend-mode:darken;position:relative;z-index:1;margin:{{ portraitMt }} 0 0 auto;width:{{ portraitW }};aspect-ratio:1314 / 1678;translate:14% 0">
+      <img src="images/hero-v4.jpg" width="1095" height="1299" alt="Portrait of Vedika standing with hand on hip" style="position:absolute;left:-23.27%;top:-27.78%;width:137.74%;height:127.98%;max-width:none;object-fit:fill;filter:brightness(1.05);-webkit-mask-image:linear-gradient(to bottom,transparent 4%,rgba(0,0,0,.25) 12%,rgba(0,0,0,.7) 22%,#000 32%),radial-gradient(ellipse 47% 80% at 53% 66%,#000 72%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.25) 93%,rgba(0,0,0,.07) 97.5%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 4%,rgba(0,0,0,.25) 12%,rgba(0,0,0,.7) 22%,#000 32%),radial-gradient(ellipse 47% 80% at 53% 66%,#000 72%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.25) 93%,rgba(0,0,0,.07) 97.5%,transparent 100%);mask-composite:intersect">
     </figure>
   </sc-if>
 </header>
@@ -170,6 +172,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <sc-if value="{{ showTrusted }}" hint-placeholder-val="{{ true }}">
     <section aria-label="Trusted by teams at" style="background:#f3f3f3;display:flex;flex-wrap:wrap;align-items:center;gap:24px 48px;padding:36px clamp(20px, 4.3vw, 62px) 72px">
       <p style="flex:none;font-size:15px;color:#7b7b7b;max-width:{{ trustedLabelW }};line-height:1.35">Trusted by teams at</p>
+      <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
       <ul style="flex:1 1 600px;display:flex;align-items:flex-start;justify-content:{{ logosJustify }};gap:28px 40px;flex-wrap:wrap">
         <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/accenture.png" alt="Accenture" style="height:{{ logoWide }};width:auto"></div></li>
         <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bmw.png" alt="BMW" style="height:{{ logoBase }};width:auto"></div></li>
@@ -179,6 +182,31 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/roche.png" alt="Roche" style="height:{{ logoBase }};width:auto"></div></li>
         <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/adnoc.png" alt="ADNOC" style="height:{{ logoTall }};width:auto"></div></li>
       </ul>
+      </sc-if>
+      <sc-if value="{{ isPhone }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 100%;min-width:0;margin-inline:calc(-1 * clamp(20px, 4.3vw, 62px));overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)">
+        <div data-marquee="" style="display:flex;width:max-content;animation:logoMarquee 28s linear infinite">
+          <ul style="display:flex;align-items:center;gap:44px;padding-right:44px">
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/accenture.png" alt="Accenture" style="height:{{ logoWide }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bmw.png" alt="BMW" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/virgin-money.png" alt="Virgin Money" style="height:{{ logoVm }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/deutsche-boerse.png" alt="Deutsche Börse Group" style="height:{{ logoTall }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bpcl.png" alt="Bharat Petroleum" style="height:{{ logoBp }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/roche.png" alt="Roche" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/adnoc.png" alt="ADNOC" style="height:{{ logoTall }};width:auto"></div></li>
+          </ul>
+          <ul aria-hidden="true" style="display:flex;align-items:center;gap:44px;padding-right:44px">
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/accenture.png" alt="" style="height:{{ logoWide }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bmw.png" alt="" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/virgin-money.png" alt="" style="height:{{ logoVm }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/deutsche-boerse.png" alt="" style="height:{{ logoTall }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/bpcl.png" alt="" style="height:{{ logoBp }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/roche.png" alt="" style="height:{{ logoBase }};width:auto"></div></li>
+        <li style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="display:flex;align-items:center;height:{{ logoTall }}"><img src="images/logos/adnoc.png" alt="" style="height:{{ logoTall }};width:auto"></div></li>
+          </ul>
+        </div>
+      </div>
+      </sc-if>
     </section>
   </sc-if>
 
@@ -411,7 +439,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <p>© 2026 Vedika Merchant. All rights reserved.</p>
     <ul style="display:flex;gap:24px">
       <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
-      <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="transition:color .3s" style-hover="color:#fff">Resume</a></li>
+      <li><a href="Vedika%20Merchant%20Resume.pdf" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Resume</a></li>
       <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Archive</a></li>
     </ul>
   </div>
@@ -663,7 +691,7 @@ class Component extends DCLogic {
     });
 
     return {
-      wide: !narrow, narrow, notPhone: !phone, sticky,
+      wide: !narrow, narrow, notPhone: !phone, isPhone: phone, sticky,
       showTrusted: this.props.showTrusted ?? true,
       // nav + hero
       navH: phone ? '80px' : '100px',
