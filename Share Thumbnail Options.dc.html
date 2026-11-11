@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,sans-serif;color:#222;background:#e4e4e4;-webkit-font-smoothing:antialiased}p{margin:0}a{color:#222}a:hover{color:#555}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:28px">
+  <p style="font-size:16px;color:#555">Share thumbnail options · 1200 × 630 (LinkedIn, WhatsApp, Slack, X)</p>
+  <div style="display:flex;flex-wrap:wrap;gap:48px">
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p style="font-size:15px"><span style="padding:3px 9px;border-radius:999px;background:#222;color:#fff;font-size:13px">1a</span> Current layout, new B&amp;W photo</p>
+      <div id="1a" style="position:relative;width:1200px;height:630px;background:#f3f3f3;overflow:hidden;font-family:'Inter Tight',sans-serif;color:#222">
+        <p style="position:absolute;left:80px;top:72px;display:flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border-radius:999px;background:#fff;font-size:21px"><span style="width:10px;height:10px;border-radius:50%;background:#222"></span>Portfolio</p>
+        <p style="position:absolute;left:80px;top:178px;font-size:96px;font-weight:300;line-height:.98;letter-spacing:-0.035em">Vedika<br>Merchant</p>
+        <p style="position:absolute;left:80px;top:396px;font-size:29px;line-height:1.35;color:#5e5e5e">Service &amp; Experience Designer,<br>UX Researcher</p>
+        <div style="position:absolute;left:80px;top:510px;width:596px;height:1px;background:#222"></div>
+        <p style="position:absolute;left:80px;top:532px;width:596px;display:flex;justify-content:space-between;font-size:21px"><span>vedikamerchant.com</span><span style="color:#7b7b7b">6+ years · Bangalore</span></p>
+        <div style="position:absolute;left:740px;top:72px;width:380px;height:486px;border-radius:12px;overflow:hidden;background:#9a9996"><img src="images/share/photo-bw.png" alt="" style="position:absolute;width:646px;max-width:none;height:auto;left:-92px;top:-120px"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p style="font-size:15px"><span style="padding:3px 9px;border-radius:999px;background:#222;color:#fff;font-size:13px">1b</span> Current layout, colour photo</p>
+      <div id="1b" style="position:relative;width:1200px;height:630px;background:#f3f3f3;overflow:hidden;font-family:'Inter Tight',sans-serif;color:#222">
+        <p style="position:absolute;left:80px;top:72px;display:flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border-radius:999px;background:#fff;font-size:21px"><span style="width:10px;height:10px;border-radius:50%;background:#222"></span>Portfolio</p>
+        <p style="position:absolute;left:80px;top:178px;font-size:96px;font-weight:300;line-height:.98;letter-spacing:-0.035em">Vedika<br>Merchant</p>
+        <p style="position:absolute;left:80px;top:396px;font-size:29px;line-height:1.35;color:#5e5e5e">Service &amp; Experience Designer,<br>UX Researcher</p>
+        <div style="position:absolute;left:80px;top:510px;width:596px;height:1px;background:#222"></div>
+        <p style="position:absolute;left:80px;top:532px;width:596px;display:flex;justify-content:space-between;font-size:21px"><span>vedikamerchant.com</span><span style="color:#7b7b7b">6+ years · Bangalore</span></p>
+        <div style="position:absolute;left:740px;top:72px;width:380px;height:486px;border-radius:12px;overflow:hidden;background:#8d8a81"><img src="images/share/photo-color.png" alt="" style="position:absolute;width:560px;left:-62px;top:-40px"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p style="font-size:15px"><span style="padding:3px 9px;border-radius:999px;background:#222;color:#fff;font-size:13px">1c</span> Full bleed, B&amp;W, photo blends into backdrop</p>
+      <div id="1c" style="position:relative;width:1200px;height:630px;background:#9a9996;overflow:hidden;font-family:'Inter Tight',sans-serif;color:#111">
+        <img src="images/share/photo-bw.png" alt="" style="position:absolute;width:620px;left:600px;top:-20px;-webkit-mask-image:linear-gradient(to right, transparent 0, #000 30%);mask-image:linear-gradient(to right, transparent 0, #000 30%)">
+        <p style="position:absolute;left:80px;top:80px;font-size:21px;letter-spacing:.02em">Portfolio · vedikamerchant.com</p>
+        <p style="position:absolute;left:80px;top:196px;font-size:104px;font-weight:300;line-height:.96;letter-spacing:-0.038em">Vedika<br>Merchant</p>
+        <p style="position:absolute;left:80px;top:440px;font-size:29px;line-height:1.35;color:#1e1e1e">Service &amp; Experience Designer,<br>UX Researcher</p>
+        <p style="position:absolute;left:80px;bottom:64px;font-size:21px;color:#2a2a2a">6+ years · Bangalore</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p style="font-size:15px"><span style="padding:3px 9px;border-radius:999px;background:#222;color:#fff;font-size:13px">1d</span> Full bleed, colour, warmer</p>
+      <div id="1d" style="position:relative;width:1200px;height:630px;background:#8d8a81;overflow:hidden;font-family:'Inter Tight',sans-serif;color:#111">
+        <img src="images/share/photo-color.png" alt="" style="position:absolute;width:620px;left:600px;top:-20px;-webkit-mask-image:linear-gradient(to right, transparent 0, #000 30%);mask-image:linear-gradient(to right, transparent 0, #000 30%)">
+        <p style="position:absolute;left:80px;top:80px;display:flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border-radius:999px;background:#f3f3f3;font-size:21px"><span style="width:10px;height:10px;border-radius:50%;background:#2e9e5b"></span>Open to roles</p>
+        <p style="position:absolute;left:80px;top:196px;font-size:104px;font-weight:300;line-height:.96;letter-spacing:-0.038em">Vedika<br>Merchant</p>
+        <p style="position:absolute;left:80px;top:440px;font-size:29px;line-height:1.35;color:#1a1a1a">Service &amp; Experience Designer,<br>UX Researcher</p>
+        <p style="position:absolute;left:80px;bottom:64px;font-size:21px;color:#1a1a1a">vedikamerchant.com</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

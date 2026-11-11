@@ -35,11 +35,11 @@ h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
 ul,ol{list-style:none;margin:0;padding:0}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-@supports not selector(::-webkit-scrollbar){[data-scroll]{scrollbar-width:thin;scrollbar-color:#b5b5b5 transparent}}
+@supports not selector(::-webkit-scrollbar){[data-scroll]{scrollbar-width:thin;scrollbar-color:light-dark(#b5b5b5, #474747) transparent}}
 [data-scroll]::-webkit-scrollbar{width:6px}[data-scroll]::-webkit-scrollbar-track{background:var(--surface);border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb{background:#b5b5b5;border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb:hover{background:#8a8a8a}
-:root{color-scheme:light;--bg:#fff;--surface:#f3f3f3;--surface-2:#ececec;--tile-a:#e6e6e6;--tile-b:#efefef;--raised:#fff;--well:#fff;--ink:#222;--ink-2:#555;--muted:#666;--faint:#767676;--line:#e6e6e6;--line-2:#dcdcdc;--inv:#222;--footer:#222;--on-inv:#fff;--on-inv-muted:rgba(255,255,255,.6);--on-inv-line:rgba(255,255,255,.3);--nav:rgba(243,243,243,.9);--veil:rgba(250,250,250,.7);--dim:1}img{filter:brightness(var(--dim))}[role=dialog] img{filter:none}
+:root{color-scheme:light dark;--bg:#fff;--surface:#f3f3f3;--surface-2:#ececec;--tile-a:#e6e6e6;--tile-b:#efefef;--raised:#fff;--well:#fff;--ink:#222;--ink-2:#555;--muted:#666;--faint:#767676;--line:#e6e6e6;--line-2:#dcdcdc;--inv:#222;--footer:#222;--on-inv:#fff;--on-inv-muted:rgba(255,255,255,.6);--on-inv-line:rgba(255,255,255,.3);--nav:rgba(243,243,243,.9);--veil:rgba(250,250,250,.7);--dim:1}@media (prefers-color-scheme: dark){:root{--bg:#121212;--surface:#222;--surface-2:#262626;--tile-a:#242424;--tile-b:#2b2b2b;--raised:#2c2c2c;--well:#dadada;--ink:#ececec;--ink-2:#bdbdbd;--muted:#9e9e9e;--faint:#8a8a8a;--line:#363636;--line-2:#474747;--inv:#ececec;--footer:#1c1c1c;--on-inv:#121212;--on-inv-muted:rgba(18,18,18,.6);--on-inv-line:rgba(18,18,18,.3);--nav:rgba(27,27,27,.88);--veil:rgba(18,18,18,.55);--dim:.86}}img{filter:brightness(var(--dim))}[role=dialog] img{filter:none}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-@media print{:root{color-scheme:light}}@media print{img[src*="logos/"]{filter:none!important}}
+@media print{:root{color-scheme:light}}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -142,7 +142,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <sc-for list="{{ personaZones }}" as="z" hint-placeholder-count="0">
             <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
               <div style="width:100%;height:100%;display:block;background-image:{{ z.bgImg }};background-size:100% 100%;background-repeat:no-repeat;clip-path:{{ z.clip }};transition:transform .45s cubic-bezier(.16,1,.3,1), filter .45s;transform:{{ z.scale }};filter:{{ z.shadow }}"></div>
-              <p style="position:absolute;top:{{ z.labelTop }};left:0;right:0;text-align:center;font-size:clamp(10px, .95vw, 13px);line-height:1.3;color:#222;pointer-events:none;transition:opacity .25s;opacity:{{ z.labelOp }}">{{ z.name }}</p>
+              <p style="position:absolute;top:{{ z.labelTop }};left:0;right:0;text-align:center;font-size:clamp(10px, .95vw, 13px);line-height:1.3;color:light-dark(#222, #ececec);pointer-events:none;transition:opacity .25s;opacity:{{ z.labelOp }}">{{ z.name }}</p>
               <div style="position:absolute;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:var(--raised);border:1px solid var(--line);box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
                 <span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:var(--inv);color:var(--on-inv);font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ z.tag }}</span>
                 <p style="margin-top:10px;font-size:15px;line-height:1.3">{{ z.name }}</p>
@@ -740,7 +740,7 @@ class Component extends DCLogic {
       const on = s.mHover === i, m = MONTHS[i];
       return { ...m, ...sel('mHover', i), ...tipPos(i === 0 ? 'left' : i === 6 ? 'right' : null, false),
         l: l + '%', t: t + '%', img: `${D}month-${m.m.toLowerCase()}.png`, bgImg: `url('${D}month-${m.m.toLowerCase()}.png')`, z: on ? 5 : 1,
-        halo: on ? 'scale(1.35)' : 'scale(1)', haloBg: on ? 'rgba(34,34,34,.12)' : 'rgba(34,34,34,.05)', iconScale: on ? 'scale(1.2)' : 'none',
+        halo: on ? 'scale(1.35)' : 'scale(1)', haloBg: on ? 'light-dark(rgba(34,34,34,.12), rgba(255,255,255,0.12))' : 'light-dark(rgba(34,34,34,.05), rgba(255,255,255,0.05))', iconScale: on ? 'scale(1.2)' : 'none',
         tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
     });
     const userZones = U_ZONES.map((z, i) => {

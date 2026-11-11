@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DPCL case study | Vedika</title>
+    <meta name="description" content="Service design case study: digitising an offline process for a government-owned oil producer." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/case.css" />
+  </head>
+  <body>
+    <!-- Shared SVG symbols -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M4.5 8.5c2 .3 3 1.4 3.3 3 .3 1.5 1.6 2 2.7 2.5 1 .5 1.2 1.8.6 3.2-.4 1-.3 2 .4 3M14 3.4c-.6 1.2-.4 2.4.7 3 1.4.8 2.8.2 3.8 1.2.8.8.4 2.2 1.2 3 .5.4 1.2.5 1.8.4M15 20.2c-.2-1.6.4-2.8 1.6-3.4 1-.5 1.4-1.6 1-2.6"/></g></symbol>
+      <symbol id="i-quote" viewBox="0 0 32 24"><path d="M0 24V14C0 6 4 1.3 12 0l1.3 3.4C8.7 4.8 6.6 7.6 6.4 11.3H12V24H0Zm19 0V14c0-8 4-12.7 12-14l1 3.4c-4.6 1.4-6.7 4.2-6.9 7.9H31V24H19Z" fill="currentColor"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"/><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 27.5h6L20 34z" fill="#F3F3F3"/></symbol>
+    </svg>
+
+    <!-- ============ NAV ============ -->
+    <div class="cs-bar" id="top">
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__logo" href="/" aria-label="Vedika, home"><svg><use href="#i-logo" /></svg></a>
+          <ul class="nav__links">
+            <li><a href="/#journey">Highlights</a></li>
+            <li><a href="/#work">Work</a></li>
+            <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+          <a class="link-arrow nav__cta" href="#contact">Get in touch <svg><use href="#i-arrow" /></svg></a>
+          <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        </nav>
+        <div class="cs-progress" aria-hidden="true"><span></span></div>
+    </div>
+    <header class="cs-top">
+
+      <!-- ============ CASE HERO ============ -->
+      <div class="container cs-hero">
+        <a class="cs-back" href="/#work"><svg><use href="#i-right" /></svg> All case studies</a>
+        <div class="cs-hero__head">
+          <div class="reveal">
+            <span class="eyebrow">Service Design Case Study</span>
+            <h1 class="cs-hero__title">DPCL</h1>
+            <p class="cs-hero__sub">Digitising an offline process for India’s second-largest government-owned downstream oil producer</p>
+          </div>
+          <dl class="cs-meta reveal" style="--d:.1s">
+            <div><dt>Role</dt><dd>Service &amp; UI UX designer</dd></div>
+            <div><dt>Industry</dt><dd>Oil and natural gas</dd></div>
+            <div><dt>Duration</dt><dd>6 months</dd></div>
+            <div><dt>Team</dt><dd class="cs-fill">e.g. 2 designers, 1 PM, 6 engineers</dd></div>
+            <div><dt>Methods</dt><dd class="cs-fill">e.g. Interviews, shadowing, blueprinting</dd></div>
+            <div><dt>Tools</dt><dd class="cs-fill">e.g. Figma, Miro, Dovetail</dd></div>
+          </dl>
+        </div>
+        <figure class="cs-cover reveal" style="--d:.15s">
+          <img class="soft" src="/images/cover-dpcl.jpg" alt="Illustration of a team brainstorming with sticky notes" />
+        </figure>
+      </div>
+    </header>
+
+    <main class="cs">
+      <div class="container cs-layout">
+        <!-- ============ TABLE OF CONTENTS ============ -->
+        <nav class="cs-toc" aria-label="On this page">
+          <p class="cs-toc__label">On this page</p>
+          <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#challenge">Challenge</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#journey-map">Current journey</a></li>
+            <li><a href="#blueprint">Service blueprint</a></li>
+            <li><a href="#process">Co-design &amp; testing</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#reflection">Reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="cs-body">
+          <!-- 01 OVERVIEW -->
+          <section class="cs-sec" id="overview">
+            <p class="cs-sec__num">01</p>
+            <h2 class="cs-sec__title">Overview</h2>
+            <div class="cs-tldr">
+              <div class="reveal"><p class="cs-tldr__k">Problem</p><p class="cs-fill">One or two sentences on what was broken and who it hurt.</p></div>
+              <div class="reveal" style="--d:.06s"><p class="cs-tldr__k">Approach</p><p class="cs-fill">How you tackled it: research, co-design, blueprinting, pilots.</p></div>
+              <div class="reveal" style="--d:.12s"><p class="cs-tldr__k">Outcome</p><p class="cs-fill">The headline result, ideally with a number.</p></div>
+            </div>
+          </section>
+
+          <!-- 02 CHALLENGE -->
+          <section class="cs-sec" id="challenge">
+            <p class="cs-sec__num">02</p>
+            <h2 class="cs-sec__title">The challenge</h2>
+            <div class="cs-prose reveal">
+              <p class="cs-fill">Set the scene. What was the offline process, who took part in it (customers, field staff, back-office teams), and where did it break down? Mention the scale and any constraints, such as regulation, legacy systems or a mix of digital and paper.</p>
+              <p class="cs-fill">Close with the business goal and why it mattered now.</p>
+            </div>
+            <blockquote class="cs-hmw reveal">
+              <p class="cs-hmw__k">How might we</p>
+              <p class="cs-fill">…make [process] simple and transparent for [users] while keeping [constraint] intact?</p>
+            </blockquote>
+          </section>
+
+          <!-- 03 RESEARCH -->
+          <section class="cs-sec" id="research">
+            <p class="cs-sec__num">03</p>
+            <h2 class="cs-sec__title">Research</h2>
+            <div class="cs-prose reveal">
+              <p class="cs-fill">Explain what you needed to learn and how you went about it. Who did you speak to, and where did you go?</p>
+            </div>
+            <ul class="cs-stats reveal">
+              <li><span class="cs-stats__n">00</span><span class="cs-stats__l">Stakeholder interviews</span></li>
+              <li><span class="cs-stats__n">00</span><span class="cs-stats__l">Field visits</span></li>
+              <li><span class="cs-stats__n">00</span><span class="cs-stats__l">Co-design workshops</span></li>
+              <li><span class="cs-stats__n">00</span><span class="cs-stats__l">Users surveyed</span></li>
+            </ul>
+            <ul class="cs-tags reveal">
+              <li>Contextual inquiry</li><li>Stakeholder mapping</li><li>Shadowing</li><li>Process audit</li><li>Diary study</li><li>Affinity mapping</li>
+            </ul>
+            <div class="cs-gallery reveal">
+              <figure class="cs-ph"><span>Research photo</span></figure>
+              <figure class="cs-ph"><span>Affinity wall</span></figure>
+            </div>
+          </section>
+
+          <!-- 04 INSIGHTS -->
+          <section class="cs-sec" id="insights">
+            <p class="cs-sec__num">04</p>
+            <h2 class="cs-sec__title">Key insights</h2>
+            <ol class="cs-insights">
+              <li class="reveal"><span class="cs-insights__n">01</span><h3 class="cs-fill">Insight headline</h3><p class="cs-fill">What you observed, the evidence behind it, and why it matters.</p></li>
+              <li class="reveal" style="--d:.06s"><span class="cs-insights__n">02</span><h3 class="cs-fill">Insight headline</h3><p class="cs-fill">Keep each insight to a single idea backed by research.</p></li>
+              <li class="reveal" style="--d:.12s"><span class="cs-insights__n">03</span><h3 class="cs-fill">Insight headline</h3><p class="cs-fill">Link it to an opportunity you acted on later.</p></li>
+            </ol>
+            <figure class="cs-quote reveal">
+              <blockquote class="cs-fill">“A short, telling quote from a user or stakeholder.”</blockquote>
+              <figcaption class="cs-fill">Role, context</figcaption>
+            </figure>
+          </section>
+
+          <!-- 05 JOURNEY MAP -->
+          <section class="cs-sec" id="journey-map">
+            <p class="cs-sec__num">05</p>
+            <h2 class="cs-sec__title">Current-state journey</h2>
+            <div class="cs-prose reveal"><p class="cs-fill">Summarise the end-to-end experience and the moments where it hurts most.</p></div>
+            <div class="cs-journey reveal" role="table" aria-label="Current-state journey">
+              <div class="cs-journey__row cs-journey__row--head" role="row">
+                <span role="columnheader">Stage</span><span role="columnheader">Discover</span><span role="columnheader">Apply</span><span role="columnheader">Verify</span><span role="columnheader">Install</span><span role="columnheader">Use</span>
+              </div>
+              <div class="cs-journey__row" role="row">
+                <span role="rowheader">Doing</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span>
+              </div>
+              <div class="cs-journey__row" role="row">
+                <span role="rowheader">Thinking</span><span class="cs-fill">Thought</span><span class="cs-fill">Thought</span><span class="cs-fill">Thought</span><span class="cs-fill">Thought</span><span class="cs-fill">Thought</span>
+              </div>
+              <div class="cs-journey__row cs-journey__row--feel" role="row">
+                <span role="rowheader">Feeling</span>
+                <span class="cs-feel" style="--f:.7"></span><span class="cs-feel" style="--f:.45"></span><span class="cs-feel" style="--f:.15"></span><span class="cs-feel" style="--f:.3"></span><span class="cs-feel" style="--f:.6"></span>
+              </div>
+              <div class="cs-journey__row" role="row">
+                <span role="rowheader">Pain points</span><span class="cs-fill">—</span><span class="cs-fill">Pain point</span><span class="cs-fill">Pain point</span><span class="cs-fill">Pain point</span><span class="cs-fill">—</span>
+              </div>
+            </div>
+            <p class="cs-caption">Rename the stages and emotion values (<code>--f</code>, 0 to 1) to match your journey, or swap the table for an exported map image.</p>
+          </section>
+
+          <!-- 06 SERVICE BLUEPRINT -->
+          <section class="cs-sec" id="blueprint">
+            <p class="cs-sec__num">06</p>
+            <h2 class="cs-sec__title">Service blueprint</h2>
+            <div class="cs-prose reveal"><p class="cs-fill">Show what has to happen behind the scenes to deliver the new experience, and where the hand-offs fail today.</p></div>
+            <div class="cs-bp reveal" role="table" aria-label="Service blueprint">
+              <div class="cs-bp__row cs-bp__row--head" role="row"><span role="columnheader"></span><span role="columnheader">Apply</span><span role="columnheader">Verify</span><span role="columnheader">Approve</span><span role="columnheader">Install</span></div>
+              <div class="cs-bp__row" role="row"><span role="rowheader">Physical evidence</span><span class="cs-fill">Form, SMS</span><span class="cs-fill">Document list</span><span class="cs-fill">Approval notice</span><span class="cs-fill">Job card</span></div>
+              <div class="cs-bp__row" role="row"><span role="rowheader">Customer actions</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span><span class="cs-fill">Action</span></div>
+              <div class="cs-bp__line" aria-hidden="true">Line of interaction</div>
+              <div class="cs-bp__row" role="row"><span role="rowheader">Frontstage</span><span class="cs-fill">Staff action</span><span class="cs-fill">Staff action</span><span class="cs-fill">Staff action</span><span class="cs-fill">Staff action</span></div>
+              <div class="cs-bp__line" aria-hidden="true">Line of visibility</div>
+              <div class="cs-bp__row" role="row"><span role="rowheader">Backstage</span><span class="cs-fill">Process</span><span class="cs-fill is-pain">Manual check</span><span class="cs-fill">Process</span><span class="cs-fill">Process</span></div>
+              <div class="cs-bp__line" aria-hidden="true">Line of internal interaction</div>
+              <div class="cs-bp__row" role="row"><span role="rowheader">Support systems</span><span class="cs-fill">System</span><span class="cs-fill">System</span><span class="cs-fill is-pain">Legacy tool</span><span class="cs-fill">System</span></div>
+            </div>
+            <p class="cs-caption">Cells marked with a dot are failure points. Add the <code>is-pain</code> class to highlight a cell.</p>
+          </section>
+
+          <!-- 07 PROCESS -->
+          <section class="cs-sec" id="process">
+            <p class="cs-sec__num">07</p>
+            <h2 class="cs-sec__title">Co-design &amp; testing</h2>
+            <ol class="cs-steps">
+              <li class="reveal"><span class="cs-steps__n">Step 1</span><h3>Ideate</h3><p class="cs-fill">Workshops with stakeholders to generate and prioritise concepts.</p></li>
+              <li class="reveal" style="--d:.06s"><span class="cs-steps__n">Step 2</span><h3>Prototype</h3><p class="cs-fill">Low-fi flows and service scenarios to make ideas tangible.</p></li>
+              <li class="reveal" style="--d:.12s"><span class="cs-steps__n">Step 3</span><h3>Test</h3><p class="cs-fill">Sessions with real users and staff; what changed as a result.</p></li>
+              <li class="reveal" style="--d:.18s"><span class="cs-steps__n">Step 4</span><h3>Pilot</h3><p class="cs-fill">Where it ran, for how long, and what you measured.</p></li>
+            </ol>
+            <div class="cs-gallery cs-gallery--3 reveal">
+              <figure class="cs-ph"><span>Workshop</span></figure>
+              <figure class="cs-ph"><span>Paper prototype</span></figure>
+              <figure class="cs-ph"><span>Usability test</span></figure>
+            </div>
+          </section>
+
+          <!-- 08 SOLUTION -->
+          <section class="cs-sec" id="solution">
+            <p class="cs-sec__num">08</p>
+            <h2 class="cs-sec__title">The solution</h2>
+            <div class="cs-prose reveal"><p class="cs-fill">Describe the new service in one paragraph: what changed for customers, for staff, and behind the scenes.</p></div>
+            <div class="cs-feature reveal">
+              <figure class="cs-ph cs-ph--tall"><span>Key screen or service moment</span></figure>
+              <div><p class="cs-feature__k">01</p><h3 class="cs-fill">Feature or service change</h3><p class="cs-fill">What it does and which insight it answers.</p></div>
+            </div>
+            <div class="cs-feature cs-feature--flip reveal">
+              <figure class="cs-ph cs-ph--tall"><span>Key screen or service moment</span></figure>
+              <div><p class="cs-feature__k">02</p><h3 class="cs-fill">Feature or service change</h3><p class="cs-fill">What it does and which insight it answers.</p></div>
+            </div>
+            <figure class="cs-ph cs-ph--wide reveal"><span>Full-width hero visual, e.g. app flow or future-state blueprint</span></figure>
+          </section>
+
+          <!-- 09 IMPACT -->
+          <section class="cs-sec" id="impact">
+            <p class="cs-sec__num">09</p>
+            <h2 class="cs-sec__title">Impact</h2>
+            <ul class="cs-impact">
+              <li class="reveal"><span class="cs-impact__n">00%</span><span class="cs-fill">Reduction in processing time</span></li>
+              <li class="reveal" style="--d:.06s"><span class="cs-impact__n">00×</span><span class="cs-fill">Faster approvals</span></li>
+              <li class="reveal" style="--d:.12s"><span class="cs-impact__n">00K</span><span class="cs-fill">Applications moved online</span></li>
+            </ul>
+            <div class="cs-prose reveal"><p class="cs-fill">Add any qualitative impact: adoption by staff, feedback from leadership, or what was rolled out next.</p></div>
+          </section>
+
+          <!-- 10 REFLECTION -->
+          <section class="cs-sec" id="reflection">
+            <p class="cs-sec__num">10</p>
+            <h2 class="cs-sec__title">Reflection</h2>
+            <ul class="cs-learn">
+              <li class="reveal"><span class="spark"><svg><use href="#i-spark" /></svg></span><p class="cs-fill">What worked well, and why.</p></li>
+              <li class="reveal" style="--d:.06s"><span class="spark"><svg><use href="#i-spark" /></svg></span><p class="cs-fill">What you’d do differently next time.</p></li>
+              <li class="reveal" style="--d:.12s"><span class="spark"><svg><use href="#i-spark" /></svg></span><p class="cs-fill">What you’d explore if the project continued.</p></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <!-- ============ NEXT CASE ============ -->
+      <section class="container cs-next">
+        <a class="cs-next__card reveal" href="/#case-zmw">
+          <div>
+            <p class="cs-next__k">Next case study</p>
+            <p class="cs-next__t">ZMW</p>
+            <p class="muted">Automobile Company</p>
+          </div>
+          <div class="cs-next__media img-zoom"><img class="soft" src="/images/cover-zmw.jpg" alt="" loading="lazy" /><span class="circle-btn"><svg><use href="#i-arrow" /></svg></span></div>
+        </a>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="cta" id="contact">
+        <div class="cta__tiles" aria-hidden="true"></div>
+        <div class="cta__content reveal">
+          <h2 class="h2">Want to get in touch? Drop me a line</h2>
+          <p class="muted">I read every message and try to reply within a couple of days.</p>
+          <div class="cta__links">
+            <a class="link-arrow" href="mailto:hello@vedika.design">Email me <svg><use href="#i-arrow" /></svg></a>
+            <a class="link-arrow" href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">Message on LinkedIn <svg><use href="#i-arrow" /></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__tiles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="footer__main">
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/#journey">Highlights</a>
+          <a href="/#work">Work</a>
+          <a href="/#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <!-- DUMMY email: replace with the real address -->
+        <a class="footer__mail" href="mailto:hello@vedika.design">hello@vedika.design</a>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Vedika. All rights reserved.</p>
+        <ul class="footer__social">
+          <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener">Behance</a></li>
+          <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener">Medium</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

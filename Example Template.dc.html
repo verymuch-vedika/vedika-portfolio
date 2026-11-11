@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>DPCL case study | Vedika</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"></path></symbol>
+<symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"></path><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"></path><path d="M17 27.5h6L20 34z" fill="#F3F3F3"></path></symbol>
+</svg>
+
+<div style="font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;color:#222;background:#fff">
+
+<div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222"><svg style="width:38px;height:38px"><use href="#i-logo"></use></svg></a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
+        <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+    <a href="#contact" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-left:18px;margin-right:-8px;padding:10px">
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar1 }}"></span>
+        <span style="display:block;height:1.5px;background:#222;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ bar2 }}"></span>
+      </button>
+      <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
+        <li><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
+      </ul>
+    </sc-if>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px"><span style="display:block;height:100%;background:#222;transform-origin:left;transform:{{ progress }}"></span></div>
+</div>
+
+<header data-screen-label="Case hero" style="position:relative;background:#f3f3f3;padding-bottom:{{ topPadB }}">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding-top:28px">
+    <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-end;margin-top:{{ headMt }}">
+      <div data-reveal="" style="flex:1 1 360px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Service Design Case Study</span>
+        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">DPCL</h1>
+        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Digitising an offline process for India’s second-largest government-owned downstream oil producer</p>
+      </div>
+      <dl data-reveal="" data-d=".1" style="flex:0 1 600px;display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:0 24px">
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service &amp; UI UX designer</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Oil and natural gas</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">6 months</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. 2 designers, 1 PM, 6 engineers</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Interviews, shadowing, blueprinting</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;color:#9a9a9a">e.g. Figma, Miro, Dovetail</dd></div>
+      </dl>
+    </div>
+    <div data-reveal="" data-d=".12" aria-label="Summary" style="margin-top:32px;padding-top:18px;border-top:1px solid #222;display:flex;flex-wrap:wrap;gap:18px 28px">
+      <p style="flex:0 0 110px;display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.35"><abbr title="Too long; didn't read" style="font-weight:600;letter-spacing:.04em;text-decoration:none">TL;DR</abbr><span style="color:#7b7b7b">Too long; didn’t read</span></p>
+      <div style="flex:1 1 600px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:18px 28px"><div><p style="font-size:13px;color:#7b7b7b">Problem</p><p style="margin-top:4px;font-size:15px;line-height:1.5;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What was broken and who it hurt, in one sentence.</p></div>
+      <div><p style="font-size:13px;color:#7b7b7b">What I did</p><p style="margin-top:4px;font-size:15px;line-height:1.5;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Your role and the key moves you made.</p></div>
+      <div><p style="font-size:13px;color:#7b7b7b">Outcome</p><p style="margin-top:4px;font-size:15px;line-height:1.5;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">The headline result, ideally with a number.</p></div></div>
+    </div>
+    <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
+      <img src="images/cover-dpcl.jpg" alt="Illustration of a team brainstorming with sticky notes" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95)">
+    </figure>
+  </div>
+</header>
+
+<main style="background:#fff">
+  <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;display:grid;grid-template-columns:{{ layoutCols }};gap:clamp(40px, 6vw, 110px);padding:{{ layoutPadT }} 0 40px">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="On this page" style="position:sticky;top:136px;align-self:start">
+        <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
+        <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
+          <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:7px 0 7px 18px;font-size:14.5px;color:{{ t.color }};transition:color .3s">
+              <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
+            </a></li>
+          </sc-for>
+        </ol>
+      </nav>
+    </sc-if>
+
+    <div ref="{{ bodyRef }}" style="min-width:0;max-width:880px">
+      <section id="overview" data-sec="" data-screen-label="01 Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">01</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
+          <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">One or two sentences on what was broken and who it hurt.</p></div>
+          <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Approach</p><p style="font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">How you tackled it: research, co-design, blueprinting, pilots.</p></div>
+          <div data-reveal="" data-d=".12" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Outcome</p><p style="font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">The headline result, ideally with a number.</p></div>
+        </div>
+      </section>
+
+      <section id="challenge" data-sec="" data-screen-label="02 Challenge" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">02</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The challenge</h2>
+        <div data-reveal="" style="display:grid;gap:18px">
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Set the scene. What was the offline process, who took part in it (customers, field staff, back-office teams), and where did it break down? Mention the scale and any constraints, such as regulation, legacy systems or a mix of digital and paper.</p>
+          <p style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Close with the business goal and why it mattered now.</p>
+        </div>
+        <blockquote data-reveal="" style="margin-top:36px;padding:{{ hmwPad }};border-radius:16px;background:#222;color:#fff">
+          <p style="font-size:13px;color:rgba(255,255,255,.6)">How might we</p>
+          <p style="margin-top:10px;font-size:clamp(22px, 2.2vw, 30px);line-height:1.3;letter-spacing:-0.015em;color:rgba(255,255,255,.85);text-decoration:underline dotted rgba(255,255,255,.3);text-underline-offset:5px">…make [process] simple and transparent for [users] while keeping [constraint] intact?</p>
+        </blockquote>
+      </section>
+
+      <section id="research" data-sec="" data-screen-label="03 Research" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">03</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Research</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Explain what you needed to learn and how you went about it. Who did you speak to, and where did you go?</p>
+        <ul data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr));gap:20px 16px;margin-top:36px">
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">00</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Stakeholder interviews</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">00</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Field visits</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">00</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Co-design workshops</span></li>
+          <li style="padding-top:16px;border-top:1px solid #dcdcdc"><span style="display:block;font-size:{{ statN }};font-weight:300;letter-spacing:-0.03em;line-height:1">00</span><span style="display:block;margin-top:8px;font-size:14px;color:#7b7b7b">Users surveyed</span></li>
+        </ul>
+        <ul data-reveal="" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:28px">
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Contextual inquiry</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Stakeholder mapping</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Shadowing</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Process audit</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Diary study</li>
+          <li style="padding:7px 14px;border:1px solid #dcdcdc;border-radius:999px;font-size:14px">Affinity mapping</li>
+        </ul>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:16px;margin-top:36px">
+          <figure style="display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Research photo</span></figure>
+          <figure style="display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Affinity wall</span></figure>
+        </div>
+      </section>
+
+      <section id="insights" data-sec="" data-screen-label="04 Insights" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">04</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Key insights</h2>
+        <ol style="display:grid;gap:12px">
+          <li data-reveal="" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">01</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Insight headline</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What you observed, the evidence behind it, and why it matters.</p></div></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">02</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Insight headline</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Keep each insight to a single idea backed by research.</p></div></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:{{ insightCols }};column-gap:12px;row-gap:6px;padding:24px 26px;border-radius:14px;background:#f3f3f3"><span style="font-size:14px;color:#7b7b7b;padding-top:4px">03</span><div><h3 style="font-size:21px;font-weight:400;letter-spacing:-0.01em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Insight headline</h3><p style="margin-top:6px;font-size:16px;line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Link it to an opportunity you acted on later.</p></div></li>
+        </ol>
+        <figure data-reveal="" style="margin-top:40px;padding-left:24px;border-left:2px solid #222">
+          <blockquote style="font-size:clamp(22px, 2.2vw, 28px);line-height:1.35;letter-spacing:-0.015em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">“A short, telling quote from a user or stakeholder.”</blockquote>
+          <figcaption style="margin-top:12px;font-size:14px;color:#9a9a9a">Role, context</figcaption>
+        </figure>
+      </section>
+
+      <section id="journey-map" data-sec="" data-screen-label="05 Current journey" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">05</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Current-state journey</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Summarise the end-to-end experience and the moments where it hurts most.</p>
+        <div data-reveal="" role="table" aria-label="Current-state journey" style="overflow-x:auto;margin-top:32px;border:1px solid #e6e6e6;border-radius:14px;scrollbar-width:thin;font-size:14px;line-height:1.45">
+          <div role="row" style="display:grid;grid-template-columns:130px repeat(5, minmax(120px, 1fr));min-width:760px;background:#f3f3f3;font-size:13px">
+            <span role="columnheader" style="padding:14px 16px">Stage</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Discover</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Apply</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Verify</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Install</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Use</span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:130px repeat(5, minmax(120px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Doing</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:130px repeat(5, minmax(120px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Thinking</span><span style="padding:14px 16px;border-left:1px solid #efefef">Thought</span><span style="padding:14px 16px;border-left:1px solid #efefef">Thought</span><span style="padding:14px 16px;border-left:1px solid #efefef">Thought</span><span style="padding:14px 16px;border-left:1px solid #efefef">Thought</span><span style="padding:14px 16px;border-left:1px solid #efefef">Thought</span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:130px repeat(5, minmax(120px, 1fr));min-width:760px;border-top:1px solid #efefef">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa;height:64px">Feeling</span>
+            <span style="position:relative;height:64px;border-left:1px solid #efefef"><i style="position:absolute;left:50%;top:31%;width:12px;height:12px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 4px #fff"></i></span>
+            <span style="position:relative;height:64px;border-left:1px solid #efefef"><i style="position:absolute;left:50%;top:48.5%;width:12px;height:12px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 4px #fff"></i></span>
+            <span style="position:relative;height:64px;border-left:1px solid #efefef"><i style="position:absolute;left:50%;top:69.5%;width:12px;height:12px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 4px #fff"></i></span>
+            <span style="position:relative;height:64px;border-left:1px solid #efefef"><i style="position:absolute;left:50%;top:59%;width:12px;height:12px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 4px #fff"></i></span>
+            <span style="position:relative;height:64px;border-left:1px solid #efefef"><i style="position:absolute;left:50%;top:38%;width:12px;height:12px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 4px #fff"></i></span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:130px repeat(5, minmax(120px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Pain points</span><span style="padding:14px 16px;border-left:1px solid #efefef">None</span><span style="padding:14px 16px;border-left:1px solid #efefef">Pain point</span><span style="padding:14px 16px;border-left:1px solid #efefef">Pain point</span><span style="padding:14px 16px;border-left:1px solid #efefef">Pain point</span><span style="padding:14px 16px;border-left:1px solid #efefef">None</span>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:13px;color:#7b7b7b">Rename the stages and move the feeling dots to match your journey, or swap the table for an exported map image.</p>
+      </section>
+
+      <section id="blueprint" data-sec="" data-screen-label="06 Service blueprint" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">06</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Service blueprint</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Show what has to happen behind the scenes to deliver the new experience, and where the hand-offs fail today.</p>
+        <div data-reveal="" role="table" aria-label="Service blueprint" style="overflow-x:auto;margin-top:32px;border:1px solid #e6e6e6;border-radius:14px;scrollbar-width:thin;font-size:14px;line-height:1.45">
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;background:#f3f3f3;font-size:13px">
+            <span role="columnheader" style="padding:14px 16px"></span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Apply</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Verify</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Approve</span><span role="columnheader" style="padding:14px 16px;border-left:1px solid #efefef">Install</span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Physical evidence</span><span style="padding:14px 16px;border-left:1px solid #efefef">Form, SMS</span><span style="padding:14px 16px;border-left:1px solid #efefef">Document list</span><span style="padding:14px 16px;border-left:1px solid #efefef">Approval notice</span><span style="padding:14px 16px;border-left:1px solid #efefef">Job card</span>
+          </div>
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Customer actions</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Action</span>
+          </div>
+          <div aria-hidden="true" style="min-width:760px;padding:4px 16px;border-top:1px dashed #dcdcdc;font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:#a3a3a3">Line of interaction</div>
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Frontstage</span><span style="padding:14px 16px;border-left:1px solid #efefef">Staff action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Staff action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Staff action</span><span style="padding:14px 16px;border-left:1px solid #efefef">Staff action</span>
+          </div>
+          <div aria-hidden="true" style="min-width:760px;padding:4px 16px;border-top:1px dashed #dcdcdc;font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:#a3a3a3">Line of visibility</div>
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Backstage</span><span style="padding:14px 16px;border-left:1px solid #efefef">Process</span><span style="position:relative;padding:14px 28px 14px 16px;border-left:1px solid #efefef">Manual check<i style="position:absolute;right:10px;top:12px;width:8px;height:8px;border-radius:50%;background:#d94a3d"></i></span><span style="padding:14px 16px;border-left:1px solid #efefef">Process</span><span style="padding:14px 16px;border-left:1px solid #efefef">Process</span>
+          </div>
+          <div aria-hidden="true" style="min-width:760px;padding:4px 16px;border-top:1px dashed #dcdcdc;font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:#a3a3a3">Line of internal interaction</div>
+          <div role="row" style="display:grid;grid-template-columns:150px repeat(4, minmax(140px, 1fr));min-width:760px;border-top:1px solid #efefef;color:#9a9a9a">
+            <span role="rowheader" style="padding:14px 16px;font-size:13px;color:#7b7b7b;background:#fafafa">Support systems</span><span style="padding:14px 16px;border-left:1px solid #efefef">System</span><span style="padding:14px 16px;border-left:1px solid #efefef">System</span><span style="position:relative;padding:14px 28px 14px 16px;border-left:1px solid #efefef">Legacy tool<i style="position:absolute;right:10px;top:12px;width:8px;height:8px;border-radius:50%;background:#d94a3d"></i></span><span style="padding:14px 16px;border-left:1px solid #efefef">System</span>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:13px;color:#7b7b7b">Cells marked with a red dot are failure points.</p>
+      </section>
+
+      <section id="process" data-sec="" data-screen-label="07 Co-design" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">07</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Co-design &amp; testing</h2>
+        <ol style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr));gap:16px">
+          <li data-reveal="" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Step 1</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Ideate</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Workshops with stakeholders to generate and prioritise concepts.</p></li>
+          <li data-reveal="" data-d=".06" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Step 2</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Prototype</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Low-fi flows and service scenarios to make ideas tangible.</p></li>
+          <li data-reveal="" data-d=".12" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Step 3</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Test</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Sessions with real users and staff; what changed as a result.</p></li>
+          <li data-reveal="" data-d=".18" style="padding:22px 20px 24px;border-radius:14px;border:1px solid #e6e6e6"><span style="font-size:12px;color:#7b7b7b">Step 4</span><h3 style="margin-top:18px;font-size:21px;font-weight:400;letter-spacing:-0.01em">Pilot</h3><p style="margin-top:6px;font-size:15px;line-height:1.55;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Where it ran, for how long, and what you measured.</p></li>
+        </ol>
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px;margin-top:36px">
+          <figure style="display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Workshop</span></figure>
+          <figure style="display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Paper prototype</span></figure>
+          <figure style="display:grid;place-items:center;aspect-ratio:4 / 3;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Usability test</span></figure>
+        </div>
+      </section>
+
+      <section id="solution" data-sec="" data-screen-label="08 Solution" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">08</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">The solution</h2>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Describe the new service in one paragraph: what changed for customers, for staff, and behind the scenes.</p>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center;margin-top:40px">
+          <figure style="flex:1.2 1 320px;display:grid;place-items:center;aspect-ratio:4 / 3.4;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Key screen or service moment</span></figure>
+          <div style="flex:1 1 260px"><p style="font-size:13px;color:#7b7b7b">01</p><h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Feature or service change</h3><p style="margin-top:10px;font-size:16px;line-height:1.65;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What it does and which insight it answers.</p></div>
+        </div>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;flex-direction:{{ flipDir }};gap:18px 40px;align-items:center;margin-top:40px">
+          <figure style="flex:1.2 1 320px;display:grid;place-items:center;aspect-ratio:4 / 3.4;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace">Key screen or service moment</span></figure>
+          <div style="flex:1 1 260px"><p style="font-size:13px;color:#7b7b7b">02</p><h3 style="margin-top:10px;font-size:26px;font-weight:400;letter-spacing:-0.015em;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Feature or service change</h3><p style="margin-top:10px;font-size:16px;line-height:1.65;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What it does and which insight it answers.</p></div>
+        </div>
+        <figure data-reveal="" style="display:grid;place-items:center;aspect-ratio:{{ wideRatio }};margin-top:40px;border-radius:14px;background:repeating-linear-gradient(135deg, #f8f8f8 0 12px, #f2f2f2 12px 24px);border:1px dashed #dcdcdc"><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:13px;color:#7b7b7b;font-family:ui-monospace,Menlo,monospace;text-align:center">Full-width hero visual, e.g. app flow or future-state blueprint</span></figure>
+      </section>
+
+      <section id="impact" data-sec="" data-screen-label="09 Impact" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">09</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Impact</h2>
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px;margin-bottom:32px">
+          <li data-reveal="" style="padding:28px 24px;border-radius:14px;background:#222;color:#fff"><span style="display:block;font-size:clamp(44px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.035em;line-height:1">00%</span><span style="display:block;margin-top:12px;font-size:15px;color:rgba(255,255,255,.7)">Reduction in processing time</span></li>
+          <li data-reveal="" data-d=".06" style="padding:28px 24px;border-radius:14px;background:#222;color:#fff"><span style="display:block;font-size:clamp(44px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.035em;line-height:1">00×</span><span style="display:block;margin-top:12px;font-size:15px;color:rgba(255,255,255,.7)">Faster approvals</span></li>
+          <li data-reveal="" data-d=".12" style="padding:28px 24px;border-radius:14px;background:#222;color:#fff"><span style="display:block;font-size:clamp(44px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.035em;line-height:1">00K</span><span style="display:block;margin-top:12px;font-size:15px;color:rgba(255,255,255,.7)">Applications moved online</span></li>
+        </ul>
+        <p data-reveal="" style="font-size:{{ proseSize }};line-height:1.75;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">Add any qualitative impact: adoption by staff, feedback from leadership, or what was rolled out next.</p>
+      </section>
+
+      <section id="reflection" data-sec="" data-screen-label="10 Reflection" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
+        <p style="font-size:13px;color:#7b7b7b">10</p>
+        <h2 style="margin:10px 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Reflection</h2>
+        <ul style="display:grid;gap:18px">
+          <li data-reveal="" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:center"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="font-size:{{ proseSize }};line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What worked well, and why.</p></li>
+          <li data-reveal="" data-d=".06" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:center"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="font-size:{{ proseSize }};line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What you’d do differently next time.</p></li>
+          <li data-reveal="" data-d=".12" style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:center"><span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span><p style="font-size:{{ proseSize }};line-height:1.6;color:#9a9a9a;text-decoration:underline dotted #dcdcdc;text-underline-offset:5px">What you’d explore if the project continued.</p></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
+    <a data-reveal="" href="Vedika%20Portfolio.dc.html#case-zmw" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+      <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
+        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">ZMW</p>
+        <p style="margin-top:8px;color:#7b7b7b">Automobile Company</p>
+      </div>
+      <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
+        <img src="images/cover-zmw.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#ececec;border-radius:{{ ctaRadius }}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:{{ ctaRadius }};overflow:hidden;--t:{{ ctaTile }};background:linear-gradient(#e6e6e6, #e6e6e6) 0 calc(var(--t) * .55) / calc(var(--t) * .73) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(var(--t) * .73) calc(var(--t) * .55) / calc(var(--t) * .6) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(var(--t) * .73) 0 / var(--t) calc(var(--t) * .55) no-repeat, linear-gradient(#efefef, #efefef) 100% calc(var(--t) * .2) / calc(var(--t) * .87) var(--t) no-repeat, linear-gradient(#e6e6e6, #e6e6e6) calc(100% - var(--t) * .87) calc(var(--t) * .83) / var(--t) var(--t) no-repeat, linear-gradient(#efefef, #efefef) calc(100% - var(--t) * .45) 100% / var(--t) calc(var(--t) * .25) no-repeat;-webkit-mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%);mask-image:linear-gradient(90deg, #000 0 26%, transparent 34% 62%, #000 72%)"></div>
+    <div data-reveal="" style="position:relative;z-index:1;text-align:center;padding:{{ ctaPad }} clamp(20px, 4.3vw, 62px);max-width:960px;margin-inline:auto">
+      <h2 style="font-size:clamp(32px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.022em;text-wrap:balance">Want to get in touch? Drop me a line</h2>
+      <p style="max-width:640px;margin:12px auto 0;font-size:17px;line-height:1.75;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;margin-top:44px">
+        <a href="{{ mailHref }}" onClick="{{ mailClick }}" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Email me <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+        <a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Message on LinkedIn <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
+  <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true">
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+    </div>
+  </sc-if>
+  <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
+      <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
+      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
+      <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
+      <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
+    </nav>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:22px;border-top:1px solid #333;font-size:14px;color:#9a9a9a">
+    <p>© 2026 Vedika. All rights reserved.</p>
+    <ul style="display:flex;gap:24px">
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener" style="transition:color .3s" style-hover="color:#fff">Behance</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const TOC = [
+  ['overview', 'Overview'], ['challenge', 'Challenge'], ['research', 'Research'], ['insights', 'Insights'],
+  ['journey-map', 'Current journey'], ['blueprint', 'Service blueprint'], ['process', 'Co-design & testing'],
+  ['solution', 'Solution'], ['impact', 'Impact'], ['reflection', 'Reflection'],
+];
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: 0, p: 0, menuOpen: false, nextHover: false };
+  bodyRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => this.update());
+    this.onScroll = () => requestAnimationFrame(() => this.update());
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.update();
+    this.setupReveal();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    clearTimeout(this.failT);
+  }
+  update() {
+    const line = window.innerHeight * 0.3;
+    let active = 0;
+    TOC.forEach(([id], i) => { const s = document.getElementById(id); if (s && s.getBoundingClientRect().top <= line) active = i; });
+    let p = 0;
+    const b = this.bodyRef.current;
+    if (b) { const r = b.getBoundingClientRect(); p = Math.min(Math.max((line - r.top) / r.height, 0), 1); }
+    if (active !== this.state.active || Math.abs(p - this.state.p) > 0.002) this.setState({ active, p });
+  }
+  setupReveal() {
+    if ((this.props.motion ?? true) === false || reduced() || !('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && show(e.target)), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => {
+      const d = el.dataset.d || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 1s ${EASE} ${d}s, transform 1s ${EASE} ${d}s`;
+      this.io.observe(el);
+    });
+    requestAnimationFrame(() => els.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) show(el); }));
+    this.failT = setTimeout(() => els.forEach((el) => { if (el.style.opacity === '0') show(el); }), 1800);
+  }
+  renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { ...this._rv0(), mailHref: '#', mailText: m, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
+  _rv0() {
+    const { w, active, p, menuOpen, nextHover } = this.state;
+    const narrow = w <= 960, phone = w <= 640;
+    return {
+      wide: !narrow, narrow, notPhone: !phone,
+      navH: phone ? '80px' : '100px',
+      menuOpen: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      bar1: menuOpen ? 'translateY(3.75px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 'translateY(-3.75px) rotate(-45deg)' : 'none',
+      menuTop: phone ? '70px' : '84px',
+      menuOpacity: menuOpen ? 1 : 0, menuVis: menuOpen ? 'visible' : 'hidden', menuY: menuOpen ? 'none' : 'translateY(-8px)',
+      progress: `scaleX(${p})`,
+      topPadB: phone ? '48px' : '72px',
+      headMt: phone ? '24px' : '24px',
+      coverMt: phone ? '32px' : '32px',
+      coverRadius: phone ? '12px' : '16px',
+      coverRatio: phone ? '4 / 3' : '16 / 8',
+      layoutCols: narrow ? 'minmax(0, 1fr)' : w <= 1100 ? '180px minmax(0, 1fr)' : '220px minmax(0, 1fr)',
+      layoutPadT: phone ? '48px' : narrow ? '64px' : '96px',
+      toc: TOC.map(([id, label], i) => ({
+        id, label,
+        color: i === active ? '#222' : '#a3a3a3',
+        bar: i === active ? 'scaleY(1)' : 'scaleY(0)',
+        current: i === active ? 'true' : undefined,
+      })),
+      bodyRef: this.bodyRef,
+      secPad: phone ? '64px' : narrow ? '80px' : '112px',
+      titleMb: phone ? '22px' : '32px',
+      proseSize: phone ? '16px' : '18px',
+      hmwPad: phone ? '24px' : '30px 34px',
+      statN: phone ? '36px' : '44px',
+      insightCols: phone ? '1fr' : '56px 1fr',
+      flipDir: phone ? 'row' : 'row-reverse',
+      wideRatio: phone ? '4 / 3' : '16 / 8',
+      nextPadB: phone ? '72px' : '110px',
+      nextCardPad: phone ? '24px 12px 12px' : '14px 14px 14px 40px',
+      nextTextPad: phone ? '12px' : '0',
+      nextBorder: nextHover ? '#dcdcdc' : '#e3e3e3',
+      nextScale: nextHover ? 'scale(1.05)' : 'none',
+      nextBtnOpacity: nextHover || narrow ? 1 : 0,
+      nextBtnScale: nextHover ? 'scale(1)' : narrow ? 'scale(.8)' : 'scale(.6)',
+      nextIn: () => this.setState({ nextHover: true }),
+      nextOut: () => this.setState({ nextHover: false }),
+      ctaRadius: phone ? '32px 32px 0 0' : '54px 54px 0 0',
+      ctaTile: phone ? '90px' : '145px',
+      ctaPad: phone ? '80px' : '108px',
+      footerPad: phone ? '56px 24px' : '64px clamp(24px, 8.7vw, 125px) 32px',
+      footerDir: narrow ? 'column-reverse' : 'row',
+      footerAlign: narrow ? 'flex-start' : 'center',
+      footerNavMl: phone ? '-12px' : '0',
+    };
+  }
+}
+</script>
+</body>
+</html>

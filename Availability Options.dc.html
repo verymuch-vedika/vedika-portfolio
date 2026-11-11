@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,sans-serif;color:#222;background:#f3f3f3;-webkit-font-smoothing:antialiased}p,h2,h3{margin:0}a{color:#222}a:hover{color:#555}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <p style="font-size:15px;color:#7b7b7b">Availability block options. Each shown in context under the contact heading.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+    <div id="1a" style="width:760px;background:#fff;border-radius:20px;padding:56px 48px;text-align:center">
+      <span style="display:inline-block;padding:4px 10px;border-radius:999px;background:#222;color:#fff;font-size:13px">1a · Three columns</span>
+      <h2 style="margin-top:28px;font-size:40px;font-weight:400;letter-spacing:-0.022em;line-height:1.12">Want to get in touch? Drop me a line</h2>
+      <p style="margin-top:12px;font-size:17px;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));margin-top:36px;border-radius:14px;background:#f3f3f3;text-align:left">
+        <div style="padding:20px 22px;display:flex;flex-direction:column;gap:8px"><p style="font-size:13px;color:#7b7b7b">What</p><p style="font-size:16px;line-height:1.45">Service design<br>Experience design<br>UX research</p></div>
+        <div style="padding:20px 22px;display:flex;flex-direction:column;gap:8px;border-left:1px solid #e3e3e3"><p style="font-size:13px;color:#7b7b7b">Where</p><p style="font-size:16px;line-height:1.45">Bangalore, abroad, remote<span style="color:#7b7b7b"> · full-time or contract</span></p><p style="font-size:16px;line-height:1.45">Mumbai<span style="color:#7b7b7b"> · contract only</span></p></div>
+        <div style="padding:20px 22px;display:flex;flex-direction:column;gap:8px;border-left:1px solid #e3e3e3"><p style="font-size:13px;color:#7b7b7b">When</p><p style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.45"><span style="width:9px;height:9px;border-radius:50%;background:#2e9e5b"></span>Within a month</p></div>
+      </div>
+    </div>
+
+    <div id="1b" style="width:760px;background:#fff;border-radius:20px;padding:56px 48px;text-align:center">
+      <span style="display:inline-block;padding:4px 10px;border-radius:999px;background:#222;color:#fff;font-size:13px">1b · Chip rows</span>
+      <h2 style="margin-top:28px;font-size:40px;font-weight:400;letter-spacing:-0.022em;line-height:1.12">Want to get in touch? Drop me a line</h2>
+      <p style="margin-top:12px;font-size:17px;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:grid;grid-template-columns:110px minmax(0, 1fr);gap:14px 20px;align-items:center;max-width:580px;margin:36px auto 0;text-align:left">
+        <p style="font-size:14px;color:#7b7b7b">Roles</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:7px 14px;border-radius:999px;background:#f3f3f3;font-size:15px">Service design</span><span style="padding:7px 14px;border-radius:999px;background:#f3f3f3;font-size:15px">Experience design</span><span style="padding:7px 14px;border-radius:999px;background:#f3f3f3;font-size:15px">UX research</span></div>
+        <p style="font-size:14px;color:#7b7b7b">Full-time or contract</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:7px 14px;border-radius:999px;border:1px solid #d6d6d6;font-size:15px">Bangalore</span><span style="padding:7px 14px;border-radius:999px;border:1px solid #d6d6d6;font-size:15px">Abroad</span><span style="padding:7px 14px;border-radius:999px;border:1px solid #d6d6d6;font-size:15px">Remote</span></div>
+        <p style="font-size:14px;color:#7b7b7b">Contract only</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:7px 14px;border-radius:999px;border:1px solid #d6d6d6;font-size:15px">Mumbai</span></div>
+        <p style="font-size:14px;color:#7b7b7b">Available</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#e7f4ec;color:#1d6b3d;font-size:15px"><span style="width:8px;height:8px;border-radius:50%;background:#2e9e5b"></span>Within a month</span></div>
+      </div>
+    </div>
+
+    <div id="1c" style="width:760px;background:#fff;border-radius:20px;padding:56px 48px;text-align:center">
+      <span style="display:inline-block;padding:4px 10px;border-radius:999px;background:#222;color:#fff;font-size:13px">1c · Status strip</span>
+      <h2 style="margin-top:28px;font-size:40px;font-weight:400;letter-spacing:-0.022em;line-height:1.12">Want to get in touch? Drop me a line</h2>
+      <p style="margin-top:12px;font-size:17px;color:#7b7b7b">I read every message and try to reply within a couple of days.</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:36px">
+        <p style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:#e7f4ec;color:#1d6b3d;font-size:15px"><span style="width:8px;height:8px;border-radius:50%;background:#2e9e5b"></span>Available within a month</p>
+        <p style="font-size:20px;line-height:1.4;letter-spacing:-0.01em">Service design · Experience design · UX research</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 24px;font-size:16px;color:#555"><span><span style="color:#222">Bangalore, abroad, remote</span> — full-time or contract</span><span><span style="color:#222">Mumbai</span> — contract</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

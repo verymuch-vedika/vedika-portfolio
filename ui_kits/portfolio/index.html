@@ -1,0 +1,24 @@
+<!-- @dsCard group="Portfolio site" viewport="1440x900" name="Portfolio — Home → Case study" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Vedika portfolio — UI kit</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../components/_loader.js"></script></head>
+<body><div id="r"></div>
+<script>
+(async () => {
+  const NS = await loadVDS('../../');
+  const files = ['HomeScreen.jsx', 'CaseStudyScreen.jsx'];
+  const src = (await Promise.all(files.map((f) => fetch(f).then((r) => r.text())))).map((t) => t.replace(/^import .*$/mg, '').replace(/^export\s+/mg, '')).join('\n');
+  const pre = 'const {' + Object.keys(NS).join(',') + '} = NS;';
+  const code = Babel.transform('var __s=(function(){' + pre + src + '\nreturn {HomeScreen, CaseStudyScreen};})();', { presets: ['react'] }).code;
+  const { HomeScreen, CaseStudyScreen } = new Function('React', 'NS', code + '\nreturn __s;')(React, NS);
+  function App() {
+    const [view, setView] = React.useState({ s: 'home' });
+    const go = (s, c) => { setView({ s, c }); window.scrollTo(0, 0); };
+    return view.s === 'case' ? React.createElement(CaseStudyScreen, { go, c: view.c }) : React.createElement(HomeScreen, { go });
+  }
+  ReactDOM.createRoot(document.getElementById('r')).render(React.createElement(App));
+})();
+</script></body></html>

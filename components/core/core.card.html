@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Core" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Core</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../components/_loader.js"></script></head><body style="background:var(--surface-canvas);padding:28px"><div id="r"></div>
+<script type="text/babel">
+loadVDS('../../').then(({ TextLink, Eyebrow, Tag, FactChip, IconCircle, Icon }) => {
+  const Row = ({ children }) => <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16, marginBottom: 22 }}>{children}</div>;
+  ReactDOM.createRoot(document.getElementById('r')).render(<div>
+    <Row><TextLink>Get in touch</TextLink><TextLink size="l">View case study</TextLink><TextLink icon="arrow-right" iconLeft underline={false} size="s">All case studies</TextLink><TextLink icon="arrow-down" underline={false}>Scroll down</TextLink></Row>
+    <Row><Eyebrow>Selected Work</Eyebrow><Eyebrow>In their words</Eyebrow></Row>
+    <Row><Tag>2019</Tag><Tag>Leadership</Tag><Tag tone="light">Collaboration</Tag><FactChip label="Role" value="Service Designer" /><FactChip label="Duration" value="6 months" /></Row>
+    <Row><IconCircle icon="spark" /><IconCircle icon="arrow-up-right" variant="light" /><IconCircle icon="chevron-left" variant="outline" size={44} onClick={() => {}} label="Prev" /><IconCircle icon="chevron-right" variant="outline" size={44} disabled onClick={() => {}} label="Next" /><IconCircle size={76} />
+      {['arrow-up-right','arrow-down','chevron-left','chevron-right','arrow-right','spark','ask','expand'].map(n => <Icon key={n} name={n} size={20} />)}</Row>
+  </div>);
+});
+</script></body></html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cat lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+      body { margin: 0; font-family: 'Inter Tight', sans-serif; background: #f3f3f3; color: #222; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 300px 48px; padding: 300px 48px 48px; }
+      .ledge { position: relative; height: 120px; background: #fff; border: 1px solid #e3e3e3; border-radius: 20px; display: flex; align-items: flex-end; padding: 18px 24px; font-size: 22px; letter-spacing: -.01em; }
+      .ledge .cat { bottom: 100%; left: 42%; translate: -50% 1px; }
+      .dark { background: #222; padding: 220px 48px 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+      .dark .ledge { background: #222; border-color: #333; color: #aaa; font-size: 15px; height: 60px; }
+      .dark .ledge .cat { left: 50%; }
+      .controls { position: fixed; bottom: 16px; left: 50%; translate: -50% 0; display: flex; gap: 8px; z-index: 10; }
+      button.c { font: inherit; padding: 8px 14px; border-radius: 999px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <div class="grid" id="grid"></div>
+    <div class="dark" id="dark"></div>
+    <div class="controls">
+      <button class="c" id="peek">Peek</button><button class="c" id="duck">Duck</button><button class="c" id="startle">Startle</button>
+    </div>
+    <script type="module">
+      import { createCat, CAT_VARIANTS } from '/src/cat.js';
+      const names = { classic: '1 · Classic', silhouette: '2 · Silhouette', ginger: '2b · Ginger', line: '3 · Line', chubby: '4 · Chubby' };
+      const cats = [];
+      CAT_VARIANTS.forEach((v) => {
+        const l = document.createElement('div'); l.className = 'ledge'; l.textContent = names[v];
+        document.getElementById('grid').appendChild(l);
+        const c = createCat({ variant: v, size: '400px', tail: true }); l.appendChild(c.el); cats.push(c);
+        const d = document.createElement('div'); d.className = 'ledge'; d.textContent = names[v] + ' (dark)';
+        document.getElementById('dark').appendChild(d);
+        const cd = createCat({ variant: v, size: '170px', dark: true }); d.appendChild(cd.el); cats.push(cd);
+      });
+      cats.forEach((c) => c.onClick(() => c.startle()));
+      document.getElementById('peek').onclick = () => cats.forEach((c) => c.peek());
+      document.getElementById('duck').onclick = () => cats.forEach((c) => c.duck());
+      document.getElementById('startle').onclick = () => cats.forEach((c) => c.startle());
+      setTimeout(() => cats.forEach((c) => c.peek()), 300);
+    </script>
+  </body>
+</html>

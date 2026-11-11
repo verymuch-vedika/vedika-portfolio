@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="1000x1620" name="Cards" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cards</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../components/_loader.js"></script></head><body style="background:var(--surface-canvas);padding:28px"><div id="r"></div>
+<script type="text/babel">
+loadVDS('../../').then(({ CaseCard, QuoteCard, StatCard, TimelineCard, InfoCard, BannerQuote, MetaList }) => {
+  const A = '../../assets/images/';
+  ReactDOM.createRoot(document.getElementById('r')).render(<div style={{ display: 'grid', gap: 24 }}>
+    <CaseCard num="01" name="DPCL" sector="Oil & Gas Company" img={A + 'cover-dpcl.jpg'} desc="Digitising a PNG ecosystem for 1.7 lakh+ households and India’s second largest oil and gas company" facts={[{ k: 'Role', v: 'Service & UI UX designer' }, { k: 'Duration', v: '7 months' }]} />
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, alignItems: 'start' }}>
+      <QuoteCard tag="Leadership" quote="Her leadership stands out through ownership, clarity in direction, and ability to keep the team aligned." cite="New joiner · AI initiative" />
+      <TimelineCard year="2022" place="Glasgow School of Art" title="Started an MDes in Service Design" text="Left Accenture for an MDes in Service Design and Innovation." img={A + 'glasgow.jpg'} width="100%" />
+      <StatCard value={98} caption="Chance I’ll ask a “why?” or “how?” one more time" />
+    </div>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+      <InfoCard label="Problem">One application passed through five roles, entirely offline.</InfoCard>
+      <InfoCard label="Outcome">Web and app screens for 6 personas were signed off.</InfoCard>
+      <InfoCard variant="outline" label="Disclaimer.">Confidential information omitted to comply with my NDA.</InfoCard>
+    </div>
+    <div style={{ background: '#fff', padding: 24, borderRadius: 14 }}><MetaList items={[{ k: 'Role', v: 'Project Design Lead' }, { k: 'Industry', v: 'Oil and natural gas' }, { k: 'Duration', v: '7 months' }, { k: 'Tools', v: 'FigJam, Figma' }]} /></div>
+    <BannerQuote quote="Your work can be trusted without the need for micromanagement." cite="Design lead · BMW" img={A + 'banner-workshop.jpg'} />
+  </div>);
+});
+</script></body></html>

@@ -1,0 +1,27 @@
+:root {
+  --gutter: clamp(20px, 4.3vw, 62px);
+  --container: 1280px;
+  --container-narrow: 1200px;
+  --nav-h: 100px;
+  --nav-h-phone: 80px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 56px;
+  --space-9: 72px;
+  --space-10: 110px;
+  --space-11: 136px;
+
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-media: 12px;
+  --radius-card: 14px;
+  --radius-feature: 20px;
+  --radius-cta: 54px;
+  --radius-pill: 999px;
+}

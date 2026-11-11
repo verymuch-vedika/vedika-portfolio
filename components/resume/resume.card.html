@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="800x560" name="Resume" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Resume</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../components/_loader.js"></script></head><body style="background:#fff;padding:32px;font-size:13px;line-height:1.5"><div id="r"></div>
+<script type="text/babel">
+loadVDS('../../').then(({ ResumeHeader, ResumeSection, RoleHeading, EntryList }) => {
+  ReactDOM.createRoot(document.getElementById('r')).render(<div>
+    <ResumeHeader title="Service & Experience Designer · Design Researcher" portrait="../../assets/images/resume-photo-v4.png" contacts={[{ label: 'Bangalore, India' }, { label: 'vkmatwork@gmail.com', href: 'mailto:vkmatwork@gmail.com' }, { label: 'linkedin.com/in/vedika-m ↗', href: '#', underline: true }]} />
+    <ResumeSection first title="Experience">
+      <RoleHeading title="Senior Experience Designer" dates="Sep 2024 – Aug 2026" org="Accenture Song · Bangalore (hybrid)" />
+      <EntryList items={[{ label: 'BMW', meta: 'Automotive\nSep 2025 · 5 months', text: 'Designed UI/UX and user flows for Retail Delivery Reporting (RDR); live for 500+ BMW North America dealers.' }, { label: 'Virgin Money UK', meta: 'Banking\nMay 2025 · 4 months', text: 'Led the ID&V service design stream and a small team; delivered cross-channel blueprints and a prioritised roadmap.' }]} />
+    </ResumeSection>
+    <ResumeSection title="Skills">
+      <EntryList items={[{ label: 'Service design', text: 'Service blueprints, journey mapping, workshop facilitation' }, { label: 'AI in practice', text: 'ChatGPT, Claude, Gemini, Figma Make', sub: 'For domain ramp-up, synthesis and prototyping' }]} />
+    </ResumeSection>
+  </div>);
+});
+</script></body></html>

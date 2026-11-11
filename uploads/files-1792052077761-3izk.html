@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedika | Service &amp; Experience Designer</title>
+    <meta name="description" content="Vedika is a service and experience designer who turns complex, offline processes into calm digital services." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Shared SVG symbols -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="currentColor"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M4.5 8.5c2 .3 3 1.4 3.3 3 .3 1.5 1.6 2 2.7 2.5 1 .5 1.2 1.8.6 3.2-.4 1-.3 2 .4 3M14 3.4c-.6 1.2-.4 2.4.7 3 1.4.8 2.8.2 3.8 1.2.8.8.4 2.2 1.2 3 .5.4 1.2.5 1.8.4M15 20.2c-.2-1.6.4-2.8 1.6-3.4 1-.5 1.4-1.6 1-2.6"/></g></symbol>
+      <symbol id="i-quote" viewBox="0 0 32 24"><path d="M0 24V14C0 6 4 1.3 12 0l1.3 3.4C8.7 4.8 6.6 7.6 6.4 11.3H12V24H0Zm19 0V14c0-8 4-12.7 12-14l1 3.4c-4.6 1.4-6.7 4.2-6.9 7.9H31V24H19Z" fill="currentColor"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 40 40"><path d="M3 5h9.5L20 22.5 27.5 5H37L24.6 35h-9.2L3 5Z" fill="currentColor"/><path d="M14.2 5 20 18.4 25.8 5" fill="none" stroke="#F3F3F3" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 27.5h6L20 34z" fill="#F3F3F3"/></symbol>
+    </svg>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="#top" aria-label="Vedika, home"><svg><use href="#i-logo" /></svg></a>
+        <ul class="nav__links">
+          <li><a href="#journey">Highlights</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <a class="link-arrow nav__cta" href="#contact">Get in touch <svg><use href="#i-arrow" /></svg></a>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </nav>
+
+      <div class="hero__rail" aria-hidden="true">
+        <span class="hero__rail-text">Service designer</span>
+        <span class="hero__rail-line"></span>
+        <span class="hero__rail-text">2026</span>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__stats">
+          <div class="stat reveal">
+            <p class="stat__num"><sup>+</sup><span data-count="7">7</span></p>
+            <p class="stat__label">Years designing</p>
+          </div>
+          <div class="stat reveal" style="--d:.1s">
+            <p class="stat__num"><sup>+</sup><span data-count="50">50</span>K</p>
+            <p class="stat__label">Users impacted</p>
+          </div>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="hero__hi reveal" style="--d:.1s">Hi, I’m</span>
+          <span class="hero__hello reveal" style="--d:.15s">Vedika</span>
+          <span class="hero__sub reveal" style="--d:.3s">Optimist | Realist | Workist</span>
+        </h1>
+
+        <a class="hero__scroll" href="#about">Scroll down <svg><use href="#i-down" /></svg></a>
+      </div>
+
+      <figure class="hero__portrait">
+        <!-- Pre-processed cutout: silvertone grade + bottom fade baked in (transparent WebP) -->
+        <img src="/images/hero.webp" width="876" height="1119" alt="Portrait of Vedika with arms crossed" fetchpriority="high" />
+      </figure>
+    </header>
+
+    <main>
+      <!-- ============ ABOUT ============ -->
+      <section class="about" id="about">
+        <div class="about__intro reveal">
+          <h2 class="h2">About Me</h2>
+          <p class="muted">I’m a service and experience designer at Accenture. Since 2019 I’ve helped teams in energy, automotive, finance and banking turn tangled, offline processes into calm digital services, from research and workshops all the way to pixel-level UI.</p>
+          <svg class="about__arrow" viewBox="0 0 220 230" aria-hidden="true">
+            <path d="M14 222C2 150 44 64 196 36" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+            <path d="M150 8c18 10 34 18 50 28-16 9-28 22-38 40" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <article class="stat-card reveal" style="--d:.1s">
+          <span class="icon-chip"><svg><use href="#i-globe" /></svg></span>
+          <p class="stat-card__num"><span data-count="650">650</span>+</p>
+          <p class="muted stat-card__text">Dealerships whose day-to-day workflows I helped redesign</p>
+          <div class="stat-card__photo img-zoom"><img class="silvertone silvertone--card" src="/images/journey/thumbs-up.jpg" alt="Vedika giving two thumbs up" loading="lazy" /></div>
+        </article>
+
+        <div class="about__side reveal" style="--d:.2s">
+          <a class="about__thumb img-zoom" href="#journey" aria-label="See my journey">
+            <img class="silvertone silvertone--card" src="/images/journey/freelance.jpg" alt="Vedika working on her laptop" loading="lazy" />
+            <span class="circle-btn circle-btn--light circle-btn--sm"><svg><use href="#i-arrow" /></svg></span>
+          </a>
+          <ul class="about__points">
+            <li><span class="spark"><svg><use href="#i-spark" /></svg></span><p class="muted">Trained in Communication Design at Pearl Academy and Service Design at the Glasgow School of Art, I connect what users need with how organisations actually work.</p></li>
+            <li><span class="spark"><svg><use href="#i-spark" /></svg></span><p class="muted">I love a good workshop. I create space for teams to brainstorm, align and decide quickly, then deliver the final output on time.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ TRUSTED BY ============ -->
+      <section class="trusted" aria-label="Trusted by teams at">
+        <p class="trusted__label">Trusted by teams at</p>
+        <ul class="trusted__logos">
+          <li><img src="/images/logos/accenture.png" alt="Accenture" class="logo--wide" /></li>
+          <li><img src="/images/logos/bmw.png" alt="BMW" /></li>
+          <li><img src="/images/logos/virgin-money.png" alt="Virgin Money" /></li>
+          <li><img src="/images/logos/deutsche-boerse.png" alt="Deutsche Börse Group" /></li>
+          <li><img src="/images/logos/bpcl.png" alt="Bharat Petroleum" /></li>
+          <li><img src="/images/logos/roche.png" alt="Roche" /></li>
+          <li><img src="/images/logos/adnoc.png" alt="ADNOC" /></li>
+        </ul>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section class="work-section" id="work">
+        <div class="container work-head">
+          <div class="reveal">
+            <span class="eyebrow">Selected Work</span>
+            <h2 class="h2">Case Studies</h2>
+          </div>
+        </div>
+
+        <!-- Sticky text nav + stacked cards -->
+        <div class="container">
+          <div class="case-stack">
+            <nav class="case-nav" aria-label="Case studies">
+              <div class="case-nav__head" aria-hidden="true"><span class="eyebrow">Selected Work</span><p class="h2">Case Studies</p></div>
+              <ol>
+              <li><a href="#case-dpcl" data-case-link="case-dpcl"><span class="case-nav__num">01</span><span class="case-nav__name">DPCL</span><span class="case-nav__sector">Oil &amp; Gas Company</span></a></li>
+              <li><a href="#case-zmw" data-case-link="case-zmw"><span class="case-nav__num">02</span><span class="case-nav__name">ZMW</span><span class="case-nav__sector">Automobile Company</span></a></li>
+              <li><a href="#case-pearstream" data-case-link="case-pearstream"><span class="case-nav__num">03</span><span class="case-nav__name">Pearstream</span><span class="case-nav__sector">Financial infrastructure</span></a></li>
+              <li><a href="#case-mature-money" data-case-link="case-mature-money"><span class="case-nav__num">04</span><span class="case-nav__name">Mature Money</span><span class="case-nav__sector">Banking</span></a></li>
+              </ol>
+            </nav>
+            <div class="case-stack__cards">
+            <a class="stack-card" id="case-dpcl" style="--i:0" href="/case-study.html">
+              <div class="stack-card__media img-zoom"><img class="soft" src="/images/cover-dpcl.jpg" alt="Illustration of a team brainstorming with sticky notes" loading="lazy" /><span class="circle-btn"><svg><use href="#i-arrow" /></svg></span></div>
+              <div class="stack-card__body">
+                <p class="stack-card__index">01 <span>/ 04</span></p>
+                <h3>DPCL <span>Oil &amp; Gas Company</span></h3>
+                <p class="muted">Digitising an offline process for India’s second-largest government-owned downstream oil producer</p>
+                <ul class="facts"><li><span>Role</span>Service &amp; UI UX designer</li><li><span>Industry</span>Oil and natural gas</li><li><span>Duration</span>6 months</li></ul>
+                <span class="link-arrow stack-card__link">View case study <svg><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+            <a class="stack-card" id="case-zmw" style="--i:1" href="#work">
+              <div class="stack-card__media img-zoom"><img class="soft" src="/images/cover-zmw.jpg" alt="Isometric illustration of connected dealership workflow screens" loading="lazy" /><span class="circle-btn"><svg><use href="#i-arrow" /></svg></span></div>
+              <div class="stack-card__body">
+                <p class="stack-card__index">02 <span>/ 04</span></p>
+                <h3>ZMW <span>Automobile Company</span></h3>
+                <p class="muted">A redesign of legacy systems for a German multinational, impacting workflows of 650+ dealerships and 50,000+ direct users</p>
+                <ul class="facts"><li><span>Role</span>Service &amp; UI UX designer</li><li><span>Industry</span>Automotive</li><li><span>Duration</span>6 months</li></ul>
+                <span class="link-arrow stack-card__link">View case study <svg><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+            <a class="stack-card" id="case-pearstream" style="--i:2" href="#work">
+              <div class="stack-card__media img-zoom"><img class="soft" src="/images/cover-pearstream.jpg" alt="Xact Web Portal user details and login screens" loading="lazy" /><span class="circle-btn"><svg><use href="#i-arrow" /></svg></span></div>
+              <div class="stack-card__body">
+                <p class="stack-card__index">03 <span>/ 04</span></p>
+                <h3>Pearstream <span>Financial infrastructure</span></h3>
+                <p class="muted">Redesigning the Xact Web Portal, a post-trade connectivity channel for a financial infrastructure provider</p>
+                <ul class="facts"><li><span>Role</span>UX Research &amp; UI UX</li><li><span>Area</span>Finance</li><li><span>Duration</span>6 months</li></ul>
+                <span class="link-arrow stack-card__link">View case study <svg><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+            <div class="stack-card is-soon" id="case-mature-money" style="--i:3">
+              <div class="stack-card__media img-zoom"><img class="soft" src="/images/placeholder-mature-money.jpg" alt="" loading="lazy" /><span class="soon-pill">Coming soon</span></div>
+              <div class="stack-card__body">
+                <p class="stack-card__index">04 <span>/ 04</span></p>
+                <h3>Mature Money <span>Banking</span></h3>
+                <p class="muted">A complete user-testing flow that helps teams spot friction and make informed improvements</p>
+                <ul class="facts"><li><span>Focus</span>Service Design</li><li><span>Industry</span>Banking</li><li><span>Duration</span>5 months</li></ul>
+                <span class="stack-card__link is-muted">Coming soon</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ JOURNEY ============ -->
+      <section class="experience" id="journey">
+        <div class="container">
+          <div class="split-head">
+            <div class="reveal">
+              <span class="eyebrow">Highlights</span>
+              <h2 class="h2">My Journey</h2>
+            </div>
+            <div class="split-head__aside reveal" style="--d:.1s">
+              <p class="muted">From design school to service design in Glasgow and back. These are the moments that shaped how I work.</p>
+              <a class="link-arrow" href="#contact">Get in touch <svg><use href="#i-arrow" /></svg></a>
+            </div>
+          </div>
+
+          <!-- Cards + draggable timeline -->
+          <div class="tl" data-timeline>
+            <p class="tl__hint muted">Flick the cards or drag the timeline.</p>
+            <div class="tl__bar" role="slider" tabindex="0" aria-label="Journey timeline" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+              <div class="tl__line"><div class="tl__progress"></div></div>
+              <ol class="tl__years"></ol>
+              <span class="tl__handle"></span>
+            </div>
+            <div class="tl__cards">
+              <article class="tl-card" data-year="2015"><div class="tl-card__media"><img src="/images/journey/pearl-class.jpg" alt="Pearl Academy classmates" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2015</span> Pearl Academy</p><h3>Started design school</h3><p class="muted">Joined Pearl Academy for a BA (Hons) in Communication Design.</p></div></article>
+              <article class="tl-card" data-year="2019"><div class="tl-card__media"><img src="/images/journey/convocation.jpg" alt="Vedika at her convocation" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2019</span> Graduation</p><h3>Graduated in Interaction Design</h3><p class="muted">Finished the BA specialising in Interaction Design (UI/UX).</p></div></article>
+              <article class="tl-card" data-year="2019"><div class="tl-card__media"><img src="/images/journey/accenture-team.jpg" alt="Accenture team photo" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2019</span> Accenture</p><h3>First job</h3><p class="muted">Joined Accenture as an Experience Design Analyst.</p></div></article>
+              <article class="tl-card" data-year="2021"><div class="tl-card__media"><img src="/images/journey/accenture-team-2.jpg" alt="Accenture team photo" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2021</span> Accenture</p><h3>Promoted</h3><p class="muted">Stepped up to Senior Experience Designer.</p></div></article>
+              <article class="tl-card" data-year="2022"><div class="tl-card__media"><img src="/images/journey/glasgow.jpg" alt="Vedika in Glasgow" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2022</span> Glasgow School of Art</p><h3>Started an MDes in Service Design</h3><p class="muted">Left Accenture for an MDes in Service Design and Innovation at the GSA, UK.</p></div></article>
+              <article class="tl-card" data-year="2023"><div class="tl-card__media"><img src="/images/journey/freelance.jpg" alt="Vedika working on her laptop" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2023</span> Freelance</p><h3>Came back, went solo</h3><p class="muted">Came back and worked as a freelance designer.</p></div></article>
+              <article class="tl-card" data-year="2024"><div class="tl-card__media"><img src="/images/journey/workshop.jpg" alt="Vedika running a workshop" loading="lazy" draggable="false" /></div><div class="tl-card__body"><p class="tl-card__meta"><span class="mini-pill">2024</span> Accenture</p><h3>Back at Accenture</h3><p class="muted">Rejoined as a Service and Experience Designer.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FEATURED TESTIMONIAL (banner) ============ -->
+      <section class="promo-wrap" id="testimonials">
+        <figure class="promo reveal">
+          <div class="promo__media"><img class="promo__bg" src="/images/banner-workshop.jpg" alt="" loading="lazy" /></div>
+          <div class="promo__content">
+            <p class="promo__caption">In their words: Trust</p>
+            <blockquote class="promo__title">“Your work can be trusted without the need for micromanagement.”</blockquote>
+            <figcaption class="promo__text">Design lead · ZMW</figcaption>
+          </div>
+        </figure>
+      </section>
+
+      <!-- ============ TESTIMONIALS ============ -->
+      <section class="blogs">
+        <div class="container container--narrow">
+          <div class="center-head reveal">
+            <span class="eyebrow">In their words</span>
+            <h2 class="h2 h2--xl">What people I’ve worked with say</h2>
+          </div>
+          <div class="blogs__grid">
+            <figure class="quote-card reveal">
+              <svg class="quote-card__mark"><use href="#i-quote" /></svg>
+              <p class="post__meta"><span class="mini-pill">Leading a team</span></p>
+              <blockquote class="quote-card__text">“She effectively guided the team through the synthesis process … and delivered the final output on time.”</blockquote>
+              <figcaption class="quote-card__by">Workshop lead · Energy client</figcaption>
+            </figure>
+            <figure class="quote-card reveal" style="--d:.08s">
+              <svg class="quote-card__mark"><use href="#i-quote" /></svg>
+              <p class="post__meta"><span class="mini-pill">Collaboration</span></p>
+              <blockquote class="quote-card__text">“…created space for brainstorming, which helped team members working on different flows finalize design decisions quickly.”</blockquote>
+              <figcaption class="quote-card__by">Experience designer · DPCL</figcaption>
+            </figure>
+            <figure class="quote-card reveal" style="--d:.16s">
+              <svg class="quote-card__mark"><use href="#i-quote" /></svg>
+              <p class="post__meta"><span class="mini-pill">Leadership</span></p>
+              <blockquote class="quote-card__text">“Her leadership stands out through your ownership, clarity in direction, and ability to keep the team aligned.”</blockquote>
+              <figcaption class="quote-card__by">New joiner · Internal initiative</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="cta" id="contact">
+        <div class="cta__tiles" aria-hidden="true"></div>
+        <div class="cta__content reveal">
+          <h2 class="h2">Want to get in touch? Drop me a line</h2>
+          <p class="muted">I read every message and try to reply within a couple of days.</p>
+          <div class="cta__links">
+            <a class="link-arrow" href="mailto:hello@vedika.design">Email me <svg><use href="#i-arrow" /></svg></a>
+            <a class="link-arrow" href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">Message on LinkedIn <svg><use href="#i-arrow" /></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__tiles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="footer__main">
+        <nav class="footer__nav" aria-label="Footer">
+          <a class="is-active" href="#top">Home</a>
+          <a href="#journey">Highlights</a>
+          <a href="#work">Work</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <!-- DUMMY email: replace with the real address -->
+        <a class="footer__mail" href="mailto:hello@vedika.design">hello@vedika.design</a>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Vedika. All rights reserved.</p>
+        <ul class="footer__social">
+          <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/vedikamerchant" target="_blank" rel="noopener">Behance</a></li>
+          <li><a href="https://medium.com/@verymuchvedika" target="_blank" rel="noopener">Medium</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

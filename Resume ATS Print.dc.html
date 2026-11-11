@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Service &amp; Experience Designer · UX Researcher">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vedika Merchant">
+<meta property="og:title" content="Vedika Merchant | Resume">
+<meta property="og:description" content="Service &amp; Experience Designer · UX Researcher">
+<meta property="og:url" content="https://vedikamerchant.com/Resume.dc">
+<meta property="og:image" content="https://vedikamerchant.com/images/share-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vedikamerchant.com/images/share-preview.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Vedika Merchant · Resume</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined){visibility:hidden}
+doc-page[data-v="designed"]{font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif !important;color:#222}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:13px;line-height:1.5;color:#222;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:underline;text-decoration-color:#c4c4c4;text-underline-offset:3px}
+a:hover{color:#000;text-decoration-color:#222}
+h1,h2,h3,p,ul,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+doc-page[data-v="ats"]{font-family:Arial,Helvetica,sans-serif !important;color:#111}
+doc-page[data-v="ats"] a{color:#111;text-decoration:none}
+doc-page[data-v="ats"] a:hover{color:#000;text-decoration:underline}
+doc-page[data-v="ats"] ul{list-style:disc}
+[data-printonly]{display:none}
+@media print{[data-noprint]{display:none !important}[data-printonly]{display:revert !important}}
+</style>
+</helmet>
+<nav data-noprint="" aria-label="Resume version" style="position:fixed;z-index:10;top:16px;left:50%;translate:-50% 0;display:flex;gap:4px;padding:4px;border-radius:999px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:13px;white-space:nowrap;width:max-content;max-width:calc(100vw - 16px);overflow-x:auto">
+  <button type="button" onClick="{{ showDesigned }}" aria-pressed="{{ isDesigned }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ designedBg }};color:{{ designedFg }}">Designed</button>
+  <button type="button" onClick="{{ showAts }}" aria-pressed="{{ isAts }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ atsBg }};color:{{ atsFg }}">ATS</button>
+  <button type="button" onClick="{{ showShare }}" aria-pressed="{{ isShare }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ shareBg }};color:{{ shareFg }}">Share image</button>
+</nav>
+<sc-if value="{{ isDesigned }}" hint-placeholder-val="{{ true }}">
+<doc-page data-v="designed" size="a4" margin="0.45in" style="font-size:13px;line-height:1.44">
+  <header style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:stretch;gap:8px 24px;padding-bottom:10px"><div style="display:flex;align-items:center;gap:18px"><div style="flex:none;align-self:stretch;width:72px;border-radius:6px;overflow:hidden;background:#efefef"><img src="images/resume-photo-v4.png" alt="Vedika Merchant" style="display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.12) contrast(1.2) brightness(1.4)"></div><div style="display:grid;gap:8px">
+    <h1 style="font-size:38px;font-weight:300;line-height:.95;letter-spacing:-0.035em;text-wrap:nowrap">Vedika Merchant</h1>
+    <p style="font-size:14px;line-height:1.35;color:#555">Service &amp; Experience Designer · UX Researcher · UI/UX Designer</p></div></div>
+    <ul style="display:flex;flex-direction:column;align-items:flex-end;gap:1px;font-size:12.5px;color:#444">
+      <li>Bangalore, India</li>
+      <li data-printonly="">+91 77770 75395</li>
+      <li><a href="{{ mailHref }}" onClick="{{ mailClick }}" style="text-decoration:none">{{ mailText }}</a></li>
+      <li><a href="https://www.vedikamerchant.com" target="_blank" rel="noopener">vedikamerchant.com ↗</a></li>
+      <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener">linkedin.com/in/vedika-m ↗</a></li>
+    </ul>
+  </header>
+  <div style="display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.6fr) auto;align-items:stretch;margin-bottom:10px;border-radius:6px;background:#f3f3f3;break-inside:avoid-page"><div style="display:flex;align-items:center;gap:7px;padding:6px 12px;font-size:12.5px;font-weight:500;color:#1d6b3d"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#2e9e5b"></span>Open to work</div><div style="display:grid;gap:2px;padding:6px 12px;border-left:1px solid #e2e2e2"><span style="font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#7b7b7b">Type</span><span style="font-size:12.5px;line-height:1.35;color:#222">Full-time or contract</span></div><div style="display:grid;gap:2px;padding:6px 12px;border-left:1px solid #e2e2e2"><span style="font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#7b7b7b">Where</span><span style="font-size:12.5px;line-height:1.35;color:#222">Bangalore, abroad, remote · Mumbai (contract only)</span></div><div style="display:grid;gap:2px;padding:6px 12px;border-left:1px solid #e2e2e2"><span style="font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#7b7b7b">Start</span><span style="font-size:12.5px;line-height:1.35;color:#222">Within a month</span></div></div>
+
+  <p style="padding:10px 0 12px;border-top:1px solid #222;font-size:13px;line-height:1.5;color:#444;text-wrap:pretty">Service and experience (UI/UX) designer and researcher with 6+ years turning complex, multi-stakeholder systems into dev-ready products. Works end to end, from research to design-system UI, and has led small teams through delivery. Uses AI daily to learn new domains fast, synthesise research and prototype, while owning the design decisions.</p>
+
+  <section style="padding-top:9px;border-top:1px solid #222">
+    <h2 style="font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase">Experience</h2>
+
+    <div style="margin-top:8px;break-inside:avoid-page">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px">
+        <h3 style="font-size:15px;font-weight:500;letter-spacing:-0.01em">Senior Experience Designer, Accenture Song</h3>
+        <p style="font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">Sep 2024 - Aug 2026 · 2 years</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">Client projects · Bangalore (hybrid)</p>
+    </div>
+    <dl style="margin-top:5px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Clearstream</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Financial services<br><span style="white-space:nowrap">Mar - Jul 2026 · 5 months</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">UX research and UI/UX for a post-settlement B2B portal used by 2,500+ institutions in 110 countries. Interviews traced daily support calls to login and certificate issues; a VIMM-based heuristic evaluation helped the client prioritise a full redesign. Redesigned login, credentials and user management on a legacy codebase, with dev and business buy-in; ships from Jan 2027.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">BMW</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Automotive<br><span style="white-space:nowrap">Sep 2025 - Jan 2026 · 5 months</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">UI/UX and flows for Retail Delivery Reporting (RDR), now live for 650+ BMW North America dealers. Built 2 client POCs, including an AI-assisted workflow in Figma Make.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Virgin Money UK</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Banking<br><span style="white-space:nowrap">May - Aug 2025 · 4 months</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Sole service designer on identity and verification (ID&amp;V), working with 2 support designers. Research with 6-7 SMEs, complaints and competitor analysis, and 4 workshops shaped cross-channel blueprints and a prioritised roadmap, now rolling out to 6.6M customers.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">BPCL</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Energy<br><span style="white-space:nowrap">Dec 2024 - Apr 2025 · 5 months</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Led service design and UI/UX, managing 2-4 designers, to digitise piped-gas services (B2C and B2B) for 170,000+ households in Tier 2 and 3 Indian cities. Delivered blueprints, flows and 900+ dev-ready screens for 6 personas. Managed the design team’s daily priorities and blockers, cutting each person’s calls by over an hour a day.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">BMW M Motorsport</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Automotive<br><span style="white-space:nowrap">Oct 2024 · 1 month</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Co-facilitated 4-5 workshops and interviews for a North America B2B parts-portal migration; epics and user stories for 4 personas set the plan for moving the portal from an agency to BMW’s in-house designers.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Studio initiative</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">AI × Service design</span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Co-mentored 6-7 designers to build an internal service design × AI agent.</dd>
+    </dl>
+
+    <div style="margin-top:14px;break-inside:avoid-page">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px">
+        <h3 style="font-size:15px;font-weight:500;letter-spacing:-0.01em">Independent Consultant</h3>
+        <p style="font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">Jan - Aug 2024 · 8 months</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">Mumbai (hybrid)</p>
+    </div>
+    <dl style="margin-top:5px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Glory Salon</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Beauty and wellness<br><span style="white-space:nowrap">Apr - Aug 2024 · 5 months</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Research with the owner, staff and clients shaped a growth strategy and an end-to-end rebrand; the owner has since opened a premium salon in a more upmarket area.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Ecole</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Design education<br><span style="white-space:nowrap">Aug 2024 · Bangalore</span></span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Visiting faculty; taught a digital culture module to Year 2 design students.</dd>
+    </dl>
+
+    <div style="margin-top:14px;break-inside:avoid-page">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px">
+        <h3 style="font-size:15px;font-weight:500;letter-spacing:-0.01em">Senior Design Analyst, Accenture</h3>
+        <p style="font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">May 2021 - Jul 2022 · 1 year 3 months</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">Mumbai &amp; Bangalore (onsite and remote)</p>
+    </div>
+    <dl style="margin-top:5px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">ADNOC</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Energy, Enterprise</span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Research, benchmarking, IA and wireframes for a redesigned intranet landing page for ADNOC’s IT employees; praised by the client and taken into build.</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">Roche Diagnostics</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Healthcare</span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Sole UI/UX designer on a Salesforce Lightning sales tool for ordering diagnostic equipment, used in 100+ countries; owned key design decisions through build.</dd>
+    </dl>
+    <div style="margin-top:14px;break-inside:avoid-page">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px">
+        <h3 style="font-size:15px;font-weight:500;letter-spacing:-0.01em">UX Design Analyst, Accenture</h3>
+        <p style="font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">Jul 2019 - Apr 2021 · 1 year 10 months</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">Mumbai &amp; Bangalore (onsite and remote)</p>
+    </div>
+    <dl style="margin-top:5px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4"><span style="display:block;font-weight:500">myConcerto Builder</span><span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;color:#7b7b7b">Internal enterprise tool</span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Research-led UI/UX for a “Canva for sales teams”, cutting pitch-microsite builds from 4 days to 1.</dd>
+    </dl>
+    <dl style="margin-top:16px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Mondezvous<span style="display:block;margin-top:0;font-size:11.5px;line-height:1.35;font-weight:400;color:#7b7b7b">Accenture studio initiative<br>2019 - 2022</span></dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Started a weekly studio forum for 300+ designers that ran every Monday for 3 years, helping colleagues discover each other’s strengths and work.</dd>
+    </dl>
+  </section>
+
+  <section style="margin-top:14px;padding-top:9px;border-top:1px solid #222">
+    <h2 style="font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase">Education</h2>
+    <div style="margin-top:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+        <h3 style="flex:1 1 auto;min-width:0;font-size:15px;font-weight:500;letter-spacing:-0.01em">MDes Service Design</h3>
+        <p style="flex:none;font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">2022 - 2023</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">The Glasgow School of Art, UK · Innovation School Postgraduate Scholarship</p>
+      <p style="margin-top:4px;text-wrap:pretty"><span style="font-weight: 500;">Thesis, The Food We Waste:</span> a hypothetical community-fridge service for surplus household food, aligned with Scotland’s 2025 food-waste goals; a Scottish government lead confirmed they had reached the same solution.</p>
+    </div>
+    <div style="padding-left:24px;border-left:1px solid #e4e4e4">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+        <h3 style="flex:1 1 auto;min-width:0;font-size:15px;font-weight:500;letter-spacing:-0.01em">BA (Hons) Communication Design</h3>
+        <p style="flex:none;font-size:12px;color:#7b7b7b;font-variant-numeric:tabular-nums">2015 - 2019</p>
+      </div>
+      <p style="font-size:12.5px;color:#555">Pearl Academy, Mumbai · Interactive and Digital · Interaction Design major</p>
+      <p style="margin-top:4px">Academic Excellence Award, 2016 and 2019</p>
+    </div>
+    </div>
+  </section>
+
+  <section style="margin-top:14px;padding-top:9px;border-top:1px solid #222">
+    <h2 style="font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase">Skills</h2>
+    <dl style="margin-top:5px;display:grid;grid-template-columns:178px minmax(0,1fr);gap:0 18px">
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Service design</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Blueprints, journey mapping, opportunity assessment, workshops, synthesis, storytelling</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Research</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Stakeholder and SME interviews, heuristic evaluation, benchmarking, competitor and complaints analysis</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Design</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Requirement translation, user flows, dev-ready UI, design systems, specs and handover, prototyping, user stories</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">AI in practice</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">ChatGPT, Claude, Gemini, Copilot, Figma Make<span style="display:block;margin-top:0;font-size:11.5px;color:#7b7b7b">For vibe coding, learning new domains, large-dataset analysis, synthesis, visualisation and prototyping</span></dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Tools</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">Figma, FigJam, Miro, Jira, Microsoft Office</dd>
+      <dt style="padding:5px 0;border-top:1px solid #e4e4e4;font-weight:500">Languages</dt>
+      <dd style="padding:5px 0;border-top:1px solid #e4e4e4">English, Hindi, Gujarati</dd>
+    </dl>
+  </section>
+</doc-page>
+</sc-if>
+<sc-if value="{{ isAts }}" hint-placeholder-val="{{ false }}">
+<doc-page data-v="ats" size="a4" margin="0.6in" style="font-size:10.5pt;line-height:1.4">
+  <header style="display:flex;flex-direction:column;gap:3px">
+    <h1 style="font-size:20pt;font-weight:700;line-height:1.15">Vedika Merchant</h1>
+    <p style="font-size:11.5pt">Service &amp; Experience Designer | UX Researcher | UI/UX Designer</p>
+    <p>Open to full-time and contract roles | Bangalore, abroad, remote | Mumbai (contract only) | Available within a month</p>
+    <p>Bangalore, India | <span data-printonly="">+91 77770 75395 | </span><a href="{{ mailHref }}" onClick="{{ mailClick }}">{{ mailText }}</a></p>
+    <p>Portfolio: <a href="https://www.vedikamerchant.com">www.vedikamerchant.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/vedika-m/">linkedin.com/in/vedika-m</a></p>
+  </header>
+
+  <h2 style="margin-top:14px;padding-bottom:3px;border-bottom:1px solid #111;font-size:11pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Summary</h2>
+  <p style="margin-top:6px">Service and experience (UI/UX) designer and researcher with 6+ years turning complex, multi-stakeholder systems into dev-ready products. Works end to end, from research to design-system UI, and has led small teams through delivery. Uses AI daily to learn new domains fast, synthesise research and prototype, while owning the design decisions.</p>
+
+  <h2 style="margin-top:14px;padding-bottom:3px;border-bottom:1px solid #111;font-size:11pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Experience</h2>
+
+  <div style="margin-top:8px">
+    <h3 style="font-size:11pt;font-weight:700">Senior Experience Designer, Accenture Song</h3>
+    <p>Bangalore, India (Hybrid) | Sep 2024 - Aug 2026</p>
+    <ul style="margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px">
+      <li><strong>Clearstream (Financial services), Mar 2026 - Jul 2026:</strong> UX research and UI/UX for a post-settlement B2B portal used by 2,500+ institutions in 110 countries. Interviews traced daily support calls to login and certificate issues; a VIMM-based heuristic evaluation helped the client prioritise a full redesign. Redesigned login, credentials and user management on a legacy codebase, with dev and business buy-in; ships from Jan 2027.</li>
+      <li><strong>BMW (Automotive), Sep 2025 - Jan 2026:</strong> UI/UX and flows for Retail Delivery Reporting (RDR), now live for 650+ BMW North America dealers. Built 2 client POCs, including an AI-assisted workflow in Figma Make.</li>
+      <li><strong>Virgin Money UK (Banking), May 2025 - Aug 2025:</strong> Sole service designer on identity and verification (ID&amp;V), working with 2 support designers. Research with 6-7 SMEs, complaints and competitor analysis, and 4 workshops shaped cross-channel blueprints and a prioritised roadmap, now rolling out to 6.6M customers.</li>
+      <li><strong>BPCL (Energy), Dec 2024 - Apr 2025:</strong> Led service design and UI/UX, managing 2-4 designers, to digitise piped-gas services (B2C and B2B) for 170,000+ households in Tier 2 and 3 Indian cities. Delivered blueprints, flows and 900+ dev-ready screens for 6 personas. Managed the design team’s daily priorities and blockers, cutting each person’s calls by over an hour a day.</li>
+      <li><strong>BMW M Motorsport (Automotive), Oct 2024:</strong> Co-facilitated 4-5 workshops and interviews for a North America B2B parts-portal migration; epics and user stories for 4 personas set the plan for moving the portal from an agency to BMW’s in-house designers.</li>
+      <li><strong>Studio initiative:</strong> Co-mentored 6-7 designers to build an internal service design × AI agent.</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px">
+    <h3 style="font-size:11pt;font-weight:700">Independent Consultant</h3>
+    <p>Mumbai, India (Hybrid) | Jan 2024 - Aug 2024</p>
+    <ul style="margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px">
+      <li><strong>Glory Salon (Beauty and wellness), Apr 2024 - Aug 2024:</strong> Research with the owner, staff and clients shaped a growth strategy and an end-to-end rebrand; the owner has since opened a premium salon in a more upmarket area.</li>
+      <li><strong>Ecole (Design education), Bangalore, Aug 2024:</strong> Visiting faculty; taught a digital culture module to Year 2 design students.</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px">
+    <h3 style="font-size:11pt;font-weight:700">Senior Design Analyst, Accenture</h3>
+    <p>Mumbai and Bangalore, India (Onsite and Remote) | May 2021 - Jul 2022</p>
+    <ul style="margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px">
+      <li><strong>ADNOC (Energy, Enterprise):</strong> Research, benchmarking, IA and wireframes for a redesigned intranet landing page for ADNOC’s IT employees; praised by the client and taken into build.</li>
+      <li><strong>Roche Diagnostics (Healthcare):</strong> Sole UI/UX designer on a Salesforce Lightning sales tool for ordering diagnostic equipment, used in 100+ countries; owned key design decisions through build.</li>
+      <li><strong>Mondezvous (Studio initiative, 2019 - 2022):</strong> Started a weekly studio forum for 300+ designers that ran every Monday for 3 years, helping colleagues discover each other’s strengths and work.</li>
+    </ul>
+  </div>
+  <div style="margin-top:10px">
+    <h3 style="font-size:11pt;font-weight:700">UX Design Analyst, Accenture</h3>
+    <p>Mumbai and Bangalore, India (Onsite and Remote) | Jul 2019 - Apr 2021</p>
+    <ul style="margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px">
+      <li><strong>myConcerto Builder (Internal enterprise tool):</strong> Research-led UI/UX for a “Canva for sales teams”, cutting pitch-microsite builds from 4 days to 1.</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:14px;padding-bottom:3px;border-bottom:1px solid #111;font-size:11pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Education</h2>
+  <div style="margin-top:8px">
+    <h3 style="font-size:11pt;font-weight:700">MDes Service Design, The Glasgow School of Art, UK</h3>
+    <p>2022 - 2023 | Innovation School Postgraduate Scholarship</p>
+    <ul style="margin:4px 0 0;padding-left:18px">
+      <li>Thesis, The Food We Waste: a hypothetical community-fridge service for surplus household food, aligned with Scotland’s 2025 food-waste goals; a Scottish government lead confirmed they had reached the same solution.</li>
+    </ul>
+  </div>
+  <div style="margin-top:8px">
+    <h3 style="font-size:11pt;font-weight:700">BA (Hons) Communication Design, Pearl Academy, Mumbai</h3>
+    <p>2015 - 2019 | Interactive and Digital, Interaction Design major</p>
+    <ul style="margin:4px 0 0;padding-left:18px">
+      <li>Academic Excellence Award, 2016 and 2019</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:14px;padding-bottom:3px;border-bottom:1px solid #111;font-size:11pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Skills</h2>
+  <ul style="margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px">
+    <li><strong>Service design:</strong> Blueprints, journey mapping, opportunity assessment, workshops, synthesis, storytelling</li>
+    <li><strong>Research:</strong> Stakeholder and SME interviews, heuristic evaluation, benchmarking, competitor and complaints analysis</li>
+    <li><strong>Design:</strong> Requirement translation, user flows, dev-ready UI, design systems, specs and handover, prototyping, user stories</li>
+    <li><strong>AI in practice:</strong> ChatGPT, Claude, Gemini, Copilot, Figma Make, for vibe coding, learning new domains, large-dataset analysis, synthesis, visualisation and prototyping</li>
+    <li><strong>Tools:</strong> Figma, FigJam, Miro, Jira, Microsoft Office</li>
+  </ul>
+
+
+  <h2 style="margin-top:14px;padding-bottom:3px;border-bottom:1px solid #111;font-size:11pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Languages</h2>
+  <p style="margin-top:6px">English, Hindi, Gujarati</p>
+</doc-page>
+</sc-if>
+<sc-if value="{{ isShare }}" hint-placeholder-val="{{ false }}">
+<div style="min-height:100vh;padding:88px 24px 48px;display:grid;place-items:center;overflow-x:auto;background:#dcdcdc">
+<div id="og" style="flex:none;box-shadow:0 4px 24px rgba(0,0,0,.1);width:1200px;height:630px;background:#f3f3f3;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:64px;padding:72px 80px;font-family:'Inter Tight',ui-sans-serif,system-ui,sans-serif;color:#222">
+  <div style="display:flex;flex-direction:column">
+    <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 14px;border-radius:999px;background:#fff;font-size:22px;line-height:1.2"><span style="width:11px;height:11px;border-radius:50%;background:#222"></span>Portfolio</span>
+    <h1 style="margin-top:auto;font-size:104px;font-weight:300;line-height:.92;letter-spacing:-0.04em">Vedika<br>Merchant</h1>
+    <p style="margin-top:26px;font-size:30px;line-height:1.3;color:#555">Service &amp; Experience Designer,<br>UX Researcher</p>
+    <p style="margin-top:36px;padding-top:20px;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:22px"><span>vedikamerchant.com</span><span style="color:#7b7b7b">6+ years · Bangalore</span></p>
+  </div>
+  <div style="border-radius:12px;overflow:hidden;background:#e6e6e6">
+    <img src="images/resume-photo-v4.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) sepia(.12) contrast(1.2) brightness(1.4)">
+  </div>
+</div>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { v: 'ats' };
+  setV(v) {
+    this.setState({ v });
+    const u = new URL(location.href);
+    v === 'designed' ? u.searchParams.delete('v') : u.searchParams.set('v', v);
+    history.replaceState(null, '', u);
+    document.title = { designed: 'Vedika Merchant · Resume', ats: 'Vedika Merchant Resume (ATS)', share: 'Share thumbnail' }[v];
+  }
+  componentDidMount() { document.title = 'Vedika Merchant Resume (ATS)'; }
+  renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { ...this._rv0(), mailHref: '#', mailText: m, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
+  _rv0() {
+    const v = this.state.v, on = k => v === k;
+    const bg = k => on(k) ? '#222' : 'transparent', fg = k => on(k) ? '#fff' : '#555';
+    return { isDesigned: on('designed'), isAts: on('ats'), isShare: on('share'),
+      showDesigned: () => this.setV('designed'), showAts: () => this.setV('ats'), showShare: () => this.setV('share'),
+      designedBg: bg('designed'), designedFg: fg('designed'), atsBg: bg('ats'), atsFg: fg('ats'), shareBg: bg('share'), shareFg: fg('share') };
+  }
+}
+</script>
+</body>
+</html>

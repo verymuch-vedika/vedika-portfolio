@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="1000x720" name="Navigation" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Navigation</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../components/_loader.js"></script></head><body style="background:var(--surface-canvas)"><div id="r"></div>
+<script type="text/babel">
+loadVDS('../../').then(({ NavBar, SectionNav, PillTabs, Footer }) => {
+  function Demo() {
+    const [a, setA] = React.useState(0); const [t, setT] = React.useState(1);
+    const cases = [{ num: '01', label: 'DPCL', sub: 'Oil & Gas Company' }, { num: '02', label: 'ZMW', sub: 'Automobile Company' }, { num: '03', label: 'Pearstream', sub: 'Financial infrastructure' }];
+    return <div>
+      <NavBar links={[{ label: 'Work' }, { label: 'Highlights' }, { label: 'LinkedIn' }, { label: 'Resume ↓' }]} />
+      <div style={{ display: 'flex', gap: 56, padding: '10px 62px 40px', alignItems: 'flex-start' }}>
+        <div style={{ width: 260 }}><SectionNav items={cases} active={a} onSelect={setA} /></div>
+        <div style={{ width: 200 }}><p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 14 }}>On this page</p><SectionNav variant="toc" items={[{ label: 'Overview' }, { label: 'Business problem' }, { label: 'Research' }, { label: 'Outcome' }]} active={t} onSelect={setT} /></div>
+        <div style={{ flex: 1, minWidth: 0 }}><PillTabs items={cases} active={a} onSelect={setA} /></div>
+      </div>
+      <Footer links={[{ label: 'Home' }, { label: 'Highlights' }, { label: 'Work' }, { label: 'Contact' }]} social={[{ label: 'LinkedIn' }, { label: 'Resume' }, { label: 'Behance' }, { label: 'Medium' }]} />
+    </div>;
+  }
+  ReactDOM.createRoot(document.getElementById('r')).render(<Demo />);
+});
+</script></body></html>

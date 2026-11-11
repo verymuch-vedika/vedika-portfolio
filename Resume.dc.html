@@ -42,7 +42,7 @@ doc-page[data-v="ats"] ul{list-style:disc}
 @media print{[data-noprint]{display:none !important}[data-printonly]{display:revert !important}}
 </style>
 </helmet>
-<nav data-noprint="" aria-label="Resume version" style="position:fixed;z-index:10;top:16px;left:50%;translate:-50% 0;display:flex;gap:4px;padding:4px;border-radius:999px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:13px">
+<nav data-noprint="" aria-label="Resume version" style="position:fixed;z-index:10;top:16px;left:50%;translate:-50% 0;display:flex;gap:4px;padding:4px;border-radius:999px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:13px;white-space:nowrap;width:max-content;max-width:calc(100vw - 16px);overflow-x:auto">
   <button type="button" onClick="{{ showDesigned }}" aria-pressed="{{ isDesigned }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ designedBg }};color:{{ designedFg }}">Designed</button>
   <button type="button" onClick="{{ showAts }}" aria-pressed="{{ isAts }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ atsBg }};color:{{ atsFg }}">ATS</button>
   <button type="button" onClick="{{ showShare }}" aria-pressed="{{ isShare }}" style="padding:8px 16px;border:0;border-radius:999px;font:inherit;cursor:pointer;background:{{ shareBg }};color:{{ shareFg }}">Share image</button>

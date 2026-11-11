@@ -1,0 +1,53 @@
+:root {
+  /* Ink scale */
+  --ink-900: #151515;
+  --ink-800: #222222;
+  --ink-700: #333333;
+  --ink-650: #2f2f2f;
+  --ink-600: #3a3a3a;
+  --ink-500: #444444;
+  --ink-450: #555555;
+  --ink-400: #5e5e5e;
+  --ink-300: #7b7b7b;
+  --ink-250: #9a9a9a;
+  --ink-200: #a3a3a3;
+  /* Greys / surfaces */
+  --grey-100: #dcdcdc;
+  --grey-90: #e3e3e3;
+  --grey-85: #e4e4e4;
+  --grey-80: #e6e6e6;
+  --grey-70: #ececec;
+  --grey-60: #efefef;
+  --grey-50: #f2f2f2;
+  --grey-40: #f3f3f3;
+  --grey-20: #fafafa;
+  --white: #ffffff;
+  /* Ambient glows (Journey section only) */
+  --glow-sand: rgba(244, 232, 210, .45);
+  --glow-mint: rgba(220, 240, 226, .5);
+
+  /* Semantic */
+  --text-primary: var(--ink-800);
+  --text-quote: var(--ink-500);
+  --text-lede: var(--ink-450);
+  --text-secondary: var(--ink-300);
+  --text-tertiary: var(--ink-200);
+  --text-on-dark: var(--white);
+  --text-on-dark-muted: var(--ink-250);
+  --surface-page: var(--white);
+  --surface-canvas: var(--grey-40);
+  --surface-section: var(--grey-50);
+  --surface-soft: var(--grey-20);
+  --surface-card: var(--white);
+  --surface-media: var(--grey-60);
+  --surface-inverse: var(--ink-800);
+  --surface-inverse-raised: var(--ink-700);
+  --surface-inverse-hover: var(--ink-650);
+  --surface-banner: var(--ink-900);
+  --border-default: var(--grey-100);
+  --border-subtle: var(--grey-90);
+  --border-card: var(--grey-80);
+  --border-on-dark: var(--ink-700);
+  --line-on-dark: var(--ink-600);
+  --accent: var(--ink-800);
+}
