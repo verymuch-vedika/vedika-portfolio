@@ -35,11 +35,11 @@ h1,h2,h3,p,blockquote,figure,dl,dd{margin:0}
 ul,ol{list-style:none;margin:0;padding:0}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-@supports not selector(::-webkit-scrollbar){[data-scroll]{scrollbar-width:thin;scrollbar-color:light-dark(#b5b5b5, #474747) transparent}}
+@supports not selector(::-webkit-scrollbar){[data-scroll]{scrollbar-width:thin;scrollbar-color:#b5b5b5 transparent}}
 [data-scroll]::-webkit-scrollbar{width:6px}[data-scroll]::-webkit-scrollbar-track{background:var(--surface);border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb{background:#b5b5b5;border-radius:6px}[data-scroll]::-webkit-scrollbar-thumb:hover{background:#8a8a8a}
-:root{color-scheme:light dark;--bg:#fff;--surface:#f3f3f3;--surface-2:#ececec;--tile-a:#e6e6e6;--tile-b:#efefef;--raised:#fff;--well:#fff;--ink:#222;--ink-2:#555;--muted:#666;--faint:#767676;--line:#e6e6e6;--line-2:#dcdcdc;--inv:#222;--footer:#222;--on-inv:#fff;--on-inv-muted:rgba(255,255,255,.6);--on-inv-line:rgba(255,255,255,.3);--nav:rgba(243,243,243,.9);--veil:rgba(250,250,250,.7);--dim:1}@media (prefers-color-scheme: dark){:root{--bg:#121212;--surface:#222;--surface-2:#262626;--tile-a:#242424;--tile-b:#2b2b2b;--raised:#2c2c2c;--well:#dadada;--ink:#ececec;--ink-2:#bdbdbd;--muted:#9e9e9e;--faint:#8a8a8a;--line:#363636;--line-2:#474747;--inv:#ececec;--footer:#1c1c1c;--on-inv:#121212;--on-inv-muted:rgba(18,18,18,.6);--on-inv-line:rgba(18,18,18,.3);--nav:rgba(27,27,27,.88);--veil:rgba(18,18,18,.55);--dim:.86}}img{filter:brightness(var(--dim))}[role=dialog] img{filter:none}
+:root{color-scheme:light;--bg:#fff;--surface:#f3f3f3;--surface-2:#ececec;--tile-a:#e6e6e6;--tile-b:#efefef;--raised:#fff;--well:#fff;--ink:#222;--ink-2:#555;--muted:#666;--faint:#767676;--line:#e6e6e6;--line-2:#dcdcdc;--inv:#222;--footer:#222;--on-inv:#fff;--on-inv-muted:rgba(255,255,255,.6);--on-inv-line:rgba(255,255,255,.3);--nav:rgba(243,243,243,.9);--veil:rgba(250,250,250,.7);--dim:1}img{filter:brightness(var(--dim))}[role=dialog] img{filter:none}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-@media print{:root{color-scheme:light}}
+@media print{:root{color-scheme:light}}@media print{img[src*="logos/"]{filter:none!important}}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -142,7 +142,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <sc-for list="{{ personaZones }}" as="z" hint-placeholder-count="0">
             <div onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" onClick="{{ z.tap }}" style="position:absolute;left:{{ z.l }};top:{{ z.t }};width:{{ z.w }};height:{{ z.h }};z-index:{{ z.z }};cursor:pointer">
               <div style="width:100%;height:100%;display:block;background-image:{{ z.bgImg }};background-size:100% 100%;background-repeat:no-repeat;clip-path:{{ z.clip }};transition:transform .45s cubic-bezier(.16,1,.3,1), filter .45s;transform:{{ z.scale }};filter:{{ z.shadow }}"></div>
-              <p style="position:absolute;top:{{ z.labelTop }};left:0;right:0;text-align:center;font-size:clamp(10px, .95vw, 13px);line-height:1.3;color:light-dark(#222, #ececec);pointer-events:none;transition:opacity .25s;opacity:{{ z.labelOp }}">{{ z.name }}</p>
+              <p style="position:absolute;top:{{ z.labelTop }};left:0;right:0;text-align:center;font-size:clamp(10px, .95vw, 13px);line-height:1.3;color:#222;pointer-events:none;transition:opacity .25s;opacity:{{ z.labelOp }}">{{ z.name }}</p>
               <div style="position:absolute;top:{{ z.tipTop }};bottom:{{ z.tipBottom }};left:{{ z.tipLeft }};right:{{ z.tipRight }};translate:{{ z.tipX }} {{ z.tipY }};width:220px;padding:14px 16px;border-radius:14px;background:var(--raised);border:1px solid var(--line);box-shadow:0 18px 40px -24px rgba(0,0,0,.35);pointer-events:none;text-align:left;transition:opacity .25s, translate .35s cubic-bezier(.16,1,.3,1);opacity:{{ z.tipOp }};visibility:{{ z.tipVis }}">
                 <span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:var(--inv);color:var(--on-inv);font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ z.tag }}</span>
                 <p style="margin-top:10px;font-size:15px;line-height:1.3">{{ z.name }}</p>
@@ -740,7 +740,7 @@ class Component extends DCLogic {
       const on = s.mHover === i, m = MONTHS[i];
       return { ...m, ...sel('mHover', i), ...tipPos(i === 0 ? 'left' : i === 6 ? 'right' : null, false),
         l: l + '%', t: t + '%', img: `${D}month-${m.m.toLowerCase()}.png`, bgImg: `url('${D}month-${m.m.toLowerCase()}.png')`, z: on ? 5 : 1,
-        halo: on ? 'scale(1.35)' : 'scale(1)', haloBg: on ? 'light-dark(rgba(34,34,34,.12), rgba(255,255,255,0.12))' : 'light-dark(rgba(34,34,34,.05), rgba(255,255,255,0.05))', iconScale: on ? 'scale(1.2)' : 'none',
+        halo: on ? 'scale(1.35)' : 'scale(1)', haloBg: on ? 'rgba(34,34,34,.12)' : 'rgba(34,34,34,.05)', iconScale: on ? 'scale(1.2)' : 'none',
         tipOp: on ? 1 : 0, tipVis: on ? 'visible' : 'hidden', tipY: on ? '0px' : '6px' };
     });
     const userZones = U_ZONES.map((z, i) => {
@@ -777,6 +777,33 @@ class Component extends DCLogic {
       lbThumbs: lb ? lb.map((x, i) => ({ src: x.src, go: (e) => { e.stopPropagation(); this.setState({ lbI: i, lbZoom: false, pzS: 1, pzX: 0, pzY: 0 }); }, op: i === s.lbI ? 1 : 0.45, border: i === s.lbI ? '#fff' : 'transparent' })) : [],
     };
   }
+  pzClamp(v) {
+    // Keep a zoomed image within its own edges (no panning into empty space).
+    const r = this.pzBox; const S = v.pzS || 1; if (!r || S <= 1) return v;
+    const W = r.width, H = r.height, img = document.querySelector('[data-pz] img');
+    const ar = img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : W / H;
+    const wide = ar > W / H, w0 = wide ? W : H * ar, h0 = wide ? W / ar : H, ox = (W - w0) / 2, oy = (H - h0) / 2;
+    const axis = (p, dim, o, len) => { const lo = dim - S * (o + len), hi = -S * o; return lo > hi ? (dim - S * len) / 2 - S * o : Math.min(hi, Math.max(lo, p)); };
+    return { ...v, pzX: axis(v.pzX, W, ox, w0), pzY: axis(v.pzY, H, oy, h0) };
+  }
+  pzAuto() {
+    // Wide images (flows, blueprints) open zoomed so they fill the viewer's height, starting at the left.
+    const s = this.state, lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    const src = cur && !cur.app ? cur.src : null;
+    if (src === this._pzSrc) return;
+    this._pzSrc = src; if (!src) return;
+    const im = new Image();
+    im.onload = () => setTimeout(() => {
+      if (this._pzSrc !== src) return;
+      const box = document.querySelector('[data-pz]'); if (!box) return;
+      const r = box.getBoundingClientRect(); this.pzBox = r;
+      const ar = im.naturalWidth / im.naturalHeight, W = r.width, H = r.height;
+      if (!W || !H || ar <= (W / H) * 1.15) return;
+      const h0 = W / ar, sc = Math.min(H / h0, 6);
+      this.setState({ pzS: sc, pzX: 0, pzY: -sc * (H - h0) / 2 });
+    }, 60);
+    im.src = src;
+  }
   pzTo(ns, px, py) {
     this.setState((s) => {
       const S = Math.min(6, Math.max(1, ns));
@@ -788,6 +815,7 @@ class Component extends DCLogic {
   pzCenter(f) { const r = this.pzBox; const w = r ? r.width : 0, h = r ? r.height : 0; this.pzTo((this.state.pzS || 1) * f, w / 2, h / 2); }
   pzVals() {
     const s = this.state;
+    setTimeout(() => this.pzAuto(), 0);
     const pts = this.pzPts || (this.pzPts = new Map());
     const local = (e) => { const r = e.currentTarget.getBoundingClientRect(); this.pzBox = r; return [e.clientX - r.left, e.clientY - r.top]; };
     const box = (e) => { const b = e.currentTarget.closest('[data-pz]'); if (b) this.pzBox = b.getBoundingClientRect(); };
@@ -796,7 +824,15 @@ class Component extends DCLogic {
       lbTr: this.pzDrag ? 'none' : 'transform .25s cubic-bezier(.16,1,.3,1)',
       lbCursor: (s.pzS || 1) > 1 ? (this.pzDrag ? 'grabbing' : 'grab') : 'zoom-in',
       lbPct: Math.round((s.pzS || 1) * 100) + '%',
-      lbWheel: (e) => { e.stopPropagation(); const [x, y] = local(e); const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo((this.state.pzS || 1) * f, x, y); },
+      lbWheel: (e) => {
+        e.stopPropagation(); const [x, y] = local(e); const S = this.state.pzS || 1;
+        // Zoomed in: scroll and two-finger swipe move the image (Shift+scroll moves sideways). Pinch or ctrl+scroll zooms.
+        if (!e.ctrlKey && S > 1) {
+          const side = e.shiftKey && !e.deltaX; const dx = side ? e.deltaY : e.deltaX, dy = side ? 0 : e.deltaY;
+          this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: (st.pzX || 0) - dx, pzY: (st.pzY || 0) - dy })); return;
+        }
+        const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo(S * f, x, y);
+      },
       lbDown: (e) => {
         e.stopPropagation(); local(e);
         e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
@@ -812,7 +848,7 @@ class Component extends DCLogic {
           this.pzTo(this.pinch.s * Math.hypot(a[0] - b[0], a[1] - b[1]) / this.pinch.d, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); return;
         }
         const d = this.pzDrag; if (!d || (this.state.pzS || 1) <= 1) return;
-        this.setState({ pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y });
+        this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y }));
       },
       lbUp: (e) => { pts.delete(e.pointerId); if (pts.size < 2) this.pinch = null; this.pzDrag = null; this.forceUpdate(); },
       lbDbl: (e) => { e.stopPropagation(); const [x, y] = local(e); this.pzTo((this.state.pzS || 1) > 1 ? 1 : 2.5, x, y); },

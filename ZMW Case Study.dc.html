@@ -40,6 +40,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
 @keyframes psScroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(-58%)}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+:root{color-scheme:light}@media print{:root{color-scheme:light}}@media print{img[src*="logos/"]{filter:none!important}}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -154,7 +155,7 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
         <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:12px">
           <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Design</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Swapnita <span style="color:#7b7b7b">Design Manager</span></li><li>Vedika <span style="color:#7b7b7b">UI UX and Service Designer</span></li><li>Aroma <span style="color:#7b7b7b">UI UX Designer</span></li></ul></div>
           <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Delivery</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Chiru <span style="color:#7b7b7b">Project and Dev Lead</span></li><li>Amartya <span style="color:#7b7b7b">Scrum Master</span></li></ul></div>
-          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Stephan <span style="color:#7b7b7b">Senior stakeholder</span></li><li>Butiu Jun <span style="color:#7b7b7b">Client stakeholder</span></li><li>Sanjeev <span style="color:#7b7b7b">ZMW point of contact</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Senior stakeholder</li><li>Client stakeholder</li><li>ZMW point of contact</li></ul></div>
         </div>
         <div id="rdr-role" data-sec="" data-screen-label="RDR · My role" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">My role</h3>
           <div data-reveal=""><p style="font-size:{{ proseSize }};line-height:1.75;color:#7b7b7b">UI UX and Service Designer, co-owning the RDR workstream and reporting to Swapnita, the Design Manager. I owned and shared design work across:</p></div>
@@ -278,7 +279,7 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
         <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr));gap:12px">
           <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Design</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Swapnita <span style="color:#7b7b7b">Design Manager</span></li><li>Vedika <span style="color:#7b7b7b">UI UX and Service Designer</span></li><li>Aroma <span style="color:#7b7b7b">UI UX Designer</span></li></ul></div>
           <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Delivery</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Chiru <span style="color:#7b7b7b">Project and Dev Lead</span></li><li>Amartya <span style="color:#7b7b7b">Scrum Master</span></li></ul></div>
-          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Stephan <span style="color:#7b7b7b">Senior stakeholder</span></li><li>3 others from the BVD team <span style="color:#7b7b7b">BRAMs</span></li><li>Sanjeev <span style="color:#7b7b7b">ZMW point of contact</span></li></ul></div>
+          <div style="padding:20px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;color:#7b7b7b">Client</p><ul style="display:grid;gap:6px;margin-top:10px;font-size:15px;line-height:1.4"><li>Senior stakeholder</li><li>3 others from the BVD team <span style="color:#7b7b7b">BRAMs</span></li><li>ZMW point of contact</li></ul></div>
         </div>
         <div id="bvd-context" data-sec="" data-screen-label="BVD · Context" style="margin-top:72px;scroll-margin-top:130px"><h3 style="margin-bottom:24px;font-size:clamp(24px, 2.4vw, 30px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Context</h3>
           <div data-reveal="" style="display:grid;gap:18px">
@@ -660,6 +661,33 @@ class Component extends DCLogic {
       ...this.lbVals(),
     };
   }
+  pzClamp(v) {
+    // Keep a zoomed image within its own edges (no panning into empty space).
+    const r = this.pzBox; const S = v.pzS || 1; if (!r || S <= 1) return v;
+    const W = r.width, H = r.height, img = document.querySelector('[data-pz] img');
+    const ar = img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : W / H;
+    const wide = ar > W / H, w0 = wide ? W : H * ar, h0 = wide ? W / ar : H, ox = (W - w0) / 2, oy = (H - h0) / 2;
+    const axis = (p, dim, o, len) => { const lo = dim - S * (o + len), hi = -S * o; return lo > hi ? (dim - S * len) / 2 - S * o : Math.min(hi, Math.max(lo, p)); };
+    return { ...v, pzX: axis(v.pzX, W, ox, w0), pzY: axis(v.pzY, H, oy, h0) };
+  }
+  pzAuto() {
+    // Wide images (flows, blueprints) open zoomed so they fill the viewer's height, starting at the left.
+    const s = this.state, lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    const src = cur && !cur.app ? cur.src : null;
+    if (src === this._pzSrc) return;
+    this._pzSrc = src; if (!src) return;
+    const im = new Image();
+    im.onload = () => setTimeout(() => {
+      if (this._pzSrc !== src) return;
+      const box = document.querySelector('[data-pz]'); if (!box) return;
+      const r = box.getBoundingClientRect(); this.pzBox = r;
+      const ar = im.naturalWidth / im.naturalHeight, W = r.width, H = r.height;
+      if (!W || !H || ar <= (W / H) * 1.15) return;
+      const h0 = W / ar, sc = Math.min(H / h0, 6);
+      this.setState({ pzS: sc, pzX: 0, pzY: -sc * (H - h0) / 2 });
+    }, 60);
+    im.src = src;
+  }
   pzTo(ns, px, py) {
     this.setState((s) => {
       const S = Math.min(6, Math.max(1, ns));
@@ -679,7 +707,15 @@ class Component extends DCLogic {
       lbTr: this.pzDrag ? 'none' : 'transform .25s cubic-bezier(.16,1,.3,1)',
       lbCursor: (s.pzS || 1) > 1 ? (this.pzDrag ? 'grabbing' : 'grab') : 'zoom-in',
       lbPct: Math.round((s.pzS || 1) * 100) + '%',
-      lbWheel: (e) => { e.stopPropagation(); const [x, y] = local(e); const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo((this.state.pzS || 1) * f, x, y); },
+      lbWheel: (e) => {
+        e.stopPropagation(); const [x, y] = local(e); const S = this.state.pzS || 1;
+        // Zoomed in: scroll and two-finger swipe move the image (Shift+scroll moves sideways). Pinch or ctrl+scroll zooms.
+        if (!e.ctrlKey && S > 1) {
+          const side = e.shiftKey && !e.deltaX; const dx = side ? e.deltaY : e.deltaX, dy = side ? 0 : e.deltaY;
+          this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: (st.pzX || 0) - dx, pzY: (st.pzY || 0) - dy })); return;
+        }
+        const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo(S * f, x, y);
+      },
       lbDown: (e) => {
         e.stopPropagation(); local(e);
         e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
@@ -695,7 +731,7 @@ class Component extends DCLogic {
           this.pzTo(this.pinch.s * Math.hypot(a[0] - b[0], a[1] - b[1]) / this.pinch.d, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); return;
         }
         const d = this.pzDrag; if (!d || (this.state.pzS || 1) <= 1) return;
-        this.setState({ pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y });
+        this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y }));
       },
       lbUp: (e) => { pts.delete(e.pointerId); if (pts.size < 2) this.pinch = null; this.pzDrag = null; this.forceUpdate(); },
       lbDbl: (e) => { e.stopPropagation(); const [x, y] = local(e); this.pzTo((this.state.pzS || 1) > 1 ? 1 : 2.5, x, y); },
@@ -706,6 +742,7 @@ class Component extends DCLogic {
   }
   lbVals() {
     const s = this.state, lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    setTimeout(() => this.pzAuto(), 0);
     return {
       ...this.pzVals(),
       lbZoomable: !!(cur && !cur.app && /bp-corporate|bp-preowned|bvd-scenarios|bvd-new-flow|rdr-role|va-dia/.test(cur.src)), lbPlain: !!(cur && !cur.app && !/bp-corporate|bp-preowned|bvd-scenarios|bvd-new-flow|rdr-role|va-dia/.test(cur.src)),

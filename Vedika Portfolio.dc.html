@@ -339,7 +339,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             </div>
           </article>
         </sc-for>
-        <div aria-hidden="true" style="flex:none;height:1px;width:{{ spacerW }}"></div>
+        <aside data-tl-card="" aria-label="Open to work" style="flex:none;align-self:flex-start;height:{{ endH }};width:{{ endW }};overflow:hidden;background:#222;color:#fff;border-radius:14px;transition:opacity .5s;opacity:{{ endOpacity }}">
+          <div style="height:100%;display:flex;flex-direction:column;justify-content:center;padding:{{ endPad }}">
+            <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#fff;color:#222;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">2026</span>Open to work</p>
+            <h3 style="margin-top:14px;font-size:clamp(22px, 1.8vw, 26px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Service design and UX research roles</h3>
+            <p style="margin-top:10px;max-width:520px;font-size:15px;line-height:1.6;color:#c8c8c8">Where I can untangle complex, multi-stakeholder services. Full-time or contract, remote or relocating.</p>
+            <a href="#contact" style="margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -469,6 +476,7 @@ const JOURNEY = [
   { year: '2022', place: 'Glasgow School of Art', title: 'Started and graduated MDes in Service Design', text: 'Left Accenture for an MDes in Service Design and Innovation at the GSA, UK.', img: 'images/journey/glasgow.jpg', alt: 'Vedika in Glasgow' },
   { year: '2023', place: 'Freelance', title: 'Graduated with an MDes,\nwent solo', text: 'Came back and worked as a freelance designer.', img: 'images/journey/freelance-salon.jpg', alt: 'Vedika interviewing salon staff' },
   { year: '2024', place: 'Accenture', title: 'Back at Accenture', text: 'Rejoined as a Service and Experience Designer.', img: 'images/journey/back-at-accenture-v2.jpg', alt: 'Vedika with the Accenture team at a Diwali celebration' },
+  { year: '2026', place: 'Open to work', title: 'Service design and UX research roles', text: '', end: true },
 ];
 const YEARS = [...new Set(JOURNEY.map((j) => j.year))];
 const YEAR_OF = JOURNEY.map((j) => YEARS.indexOf(j.year));
@@ -494,6 +502,26 @@ class Component extends DCLogic {
       const start = () => window.initPeekaboo ? window.initPeekaboo() : setTimeout(start, 200);
       setTimeout(start, 300);
     }
+    // Arriving with a #section link (e.g. a case study's "All case studies" button):
+    // the page renders after the browser's own jump, so scroll there once laid out.
+    if (location.hash.length > 1) {
+      const stop = () => { this.hashDone = true; };
+      ['wheel', 'touchstart', 'keydown'].forEach((t) => window.addEventListener(t, stop, { once: true, passive: true }));
+      const go = () => { if (!this.hashDone) this.scrollToHash(); };
+      [0, 150, 500, 1200].forEach((ms) => setTimeout(go, ms));
+      window.addEventListener('load', go, { once: true });
+      document.fonts && document.fonts.ready.then(go);
+    }
+  }
+  scrollToHash() {
+    let id = '';
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    if (!id || id === 'top') return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const bar = document.getElementById('top');
+    const off = bar ? bar.offsetHeight : 0;
+    window.scrollTo({ top: Math.max(el.getBoundingClientRect().top + window.scrollY - off, 0), behavior: 'auto' });
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);
@@ -559,6 +587,9 @@ class Component extends DCLogic {
       const cs = getComputedStyle(tr);
       const cards = [...tr.querySelectorAll('[data-tl-card]')];
       const last = cards[cards.length - 1];
+      const arts = [...tr.querySelectorAll('article[data-tl-card]')];
+      if (arts.length) next.lastH = arts[arts.length - 1].offsetHeight;
+      next.rowW = tr.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
       if (last) next.spacer = Math.max(tr.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0) - last.offsetWidth - (parseFloat(cs.columnGap) || 0), 0);
     }
     this.setState(next, () => { this.goTo(this.state.active, false); this.updateCase(); });
@@ -592,12 +623,13 @@ class Component extends DCLogic {
     const tr = this.trackRef.current;
     if (!tr) return 0;
     const cards = tr.querySelectorAll('[data-tl-card]');
-    return cards[i] ? cards[i].offsetLeft - cards[0].offsetLeft : 0;
+    const raw = cards[i] ? cards[i].offsetLeft - cards[0].offsetLeft : 0;
+    return Math.min(raw, Math.max(tr.scrollWidth - tr.clientWidth, 0));
   }
   nearest() {
     const tr = this.trackRef.current;
     if (!tr) return 0;
-    let best = 0, d = Infinity;
+    let best = this.state.active, d = Math.abs(this.cardPos(best) - tr.scrollLeft);
     JOURNEY.forEach((_, i) => { const dd = Math.abs(this.cardPos(i) - tr.scrollLeft); if (dd < d) { d = dd; best = i; } });
     return best;
   }
@@ -605,11 +637,13 @@ class Component extends DCLogic {
     const tr = this.trackRef.current;
     if (!tr) return;
     i = Math.max(0, Math.min(JOURNEY.length - 1, i));
+    this.target = Math.abs(tr.scrollLeft - this.cardPos(i)) > 1 ? i : null;
     tr.scrollTo({ left: this.cardPos(i), behavior: smooth && !reduced() ? 'smooth' : 'auto' });
     if (i !== this.state.active) this.setState({ active: i });
   }
   onTrackScroll() {
     if (this.drag || this.barDrag) { const n = this.nearest(); if (n !== this.state.active) this.setState({ active: n }); return; }
+    if (this.target != null) { clearTimeout(this.settleT); this.settleT = setTimeout(() => { this.target = null; }, 300); return; }
     const n = this.nearest();
     if (n !== this.state.active && !this.programmatic) this.setState({ active: n });
     clearTimeout(this.settleT);
@@ -674,7 +708,7 @@ class Component extends DCLogic {
       ...j,
       opacity: i === active ? 1 : narrow ? 0.5 : 0.55,
       shadow: i === active ? '0 18px 40px -26px rgba(0,0,0,.3)' : 'none',
-    }));
+    })).filter((j) => !j.end);
     const years = YEARS.map((y, yi) => {
       const idx = JOURNEY.map((_, ci) => ci).filter((ci) => YEAR_OF[ci] === yi);
       return {
@@ -756,11 +790,16 @@ class Component extends DCLogic {
       tlFilter: ({ Monochrome: 'grayscale(1) sepia(.08) contrast(1.18) brightness(1.08)', 'Muted warm': 'saturate(.5) sepia(.22) contrast(1.04) brightness(1.04)' })[this.props.journeyPhotos ?? 'Muted warm'] || 'none',
       tlBodyPad: narrow ? '16px 18px 20px' : '22px 24px 28px',
       spacerW: `${this.state.spacer}px`,
+      endH: this.state.lastH ? `${this.state.lastH}px` : 'auto',
+      endW: narrow ? 'calc(100vw - 2 * clamp(20px, 4.3vw, 62px) - 40px)' : 'clamp(270px, 28vw, 380px)',
+      endPad: narrow ? '20px 18px' : '28px 26px',
+      endOpacity: active === JOURNEY.length - 1 ? 1 : narrow ? 0.5 : 0.9,
       trackRef: this.trackRef,
       trackScroll: () => requestAnimationFrame(() => this.onTrackScroll()),
       trackDown: (e) => {
-        if (e.pointerType !== 'mouse') return;
+        if (e.pointerType !== 'mouse' || e.target.closest('a, button')) return;
         const tr = this.trackRef.current;
+        this.target = null;
         this.drag = { x: e.clientX, left: tr.scrollLeft, start: this.nearest(), last: e.clientX, v: 0 };
         tr.setPointerCapture(e.pointerId);
       },
@@ -782,6 +821,7 @@ class Component extends DCLogic {
         if (e.key in map) { e.preventDefault(); this.goTo(map[e.key]); }
       },
       barDown: (e) => {
+        this.target = null;
         if (e.target.closest('button')) return;
         this.barDrag = true;
         e.currentTarget.setPointerCapture(e.pointerId);
