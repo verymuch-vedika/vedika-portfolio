@@ -64,7 +64,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
         <li><a href="#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
-        <li><a href="#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Journey</a></li>
+        <li><a href="About%20Me.dc.html" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">About me</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
         <li><a href="Vedika%20Merchant%20Resume.pdf" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↗</a></li>
       </ul>
@@ -77,7 +77,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       </button>
       <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
         <li><a href="#work" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Work</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="#journey" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">Journey</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="About%20Me.dc.html" onClick="{{ closeMenu }}" style="display:block;padding:14px 0">About me</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:block;padding:14px 0 4px">Resume ↗</a><a href="Vedika%20Merchant%20Resume%20(ATS).pdf" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:block;padding:6px 0 14px;font-size:15px;color:#555">ATS version ↗</a></li>
       </ul>
@@ -87,23 +87,26 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <header data-screen-label="Hero" style="position:relative;min-height:calc(max(100svh, 760px) - {{ navH }});max-height:{{ heroMaxH }};background:#f3f3f3;overflow:hidden;isolation:isolate">
 
-  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-    <div aria-hidden="true" style="position:absolute;z-index:2;left:calc(clamp(20px, 4.3vw, 62px) - 2px);top:68px;bottom:60px;display:flex;flex-direction:column;align-items:center;gap:26px;color:#a3a3a3;font-size:14px">
-      <span style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap">Service and Experience designer</span>
-      <span style="flex:1;width:1px;background:#dcdcdc"></span>
-      <span style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap">2026</span>
-    </div>
-  </sc-if>
-
   <div style="position:relative;z-index:2;padding-left:{{ heroPadL }};padding-right:clamp(20px, 4.3vw, 62px);padding-top:{{ heroPadT }};min-height:{{ heroContentMinH }};display:flex;flex-direction:column">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <a href="#contact" aria-label="Open to work. Get in touch" style="position:absolute;left:calc(clamp(20px, 4.3vw, 62px) - 2px);top:calc({{ heroPadT }} + 4px);bottom:72px;display:flex;flex-direction:column;align-items:center;gap:14px;color:#222;font-size:14px;text-decoration:none">
+        <span style="flex:1;width:1px;background:#dcdcdc;margin-bottom:-6px"></span>
+        <span style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-weight:500">Open to work</span>
+        <span style="width:8px;height:8px;flex:none;border-radius:50%;background:#2e9e5b;box-shadow:0 0 0 4px rgba(46,158,91,.16)"></span>
+      </a>
+    </sc-if>
     <div style="display:flex;gap:{{ statGap }}">
       <div data-reveal="">
         <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="6">6</span><sup style="font-size: 0.5em; line-height: 1; margin-left: 2px; margin-top: 0.05em; font-weight: 400;">+</sup></p>
         <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Years designing</p>
       </div>
       <div data-reveal="" data-d=".1">
-        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="29">29</span>K<sup style="font-size: 0.5em; line-height: 1; margin-left: 2px; margin-top: 0.05em; font-weight: 400;">+</sup></p>
-        <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Users impacted</p>
+        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="7">7</span></p>
+        <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Industries</p>
+      </div>
+      <div data-reveal="" data-d=".2">
+        <p style="font-size:{{ statSize }};font-weight:300;line-height:1;letter-spacing:-0.03em;display:flex;align-items:flex-start"><span data-count="6.8">6.8</span>M<sup style="font-size: 0.5em; line-height: 1; margin-left: 2px; margin-top: 0.05em; font-weight: 400;">+</sup></p>
+        <p style="margin-top:8px;font-size:14px;color:#5e5e5e">Customers designed for</p>
       </div>
     </div>
     <h1 style="margin-top:{{ titleMt }};font-weight:300">
@@ -132,8 +135,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <main>
   <section id="about" data-screen-label="About" style="background:#f3f3f3;display:flex;flex-wrap:wrap;gap:48px clamp(32px, 4vw, 92px);padding:{{ aboutPad }} clamp(20px, 4.3vw, 62px) 60px;align-items:flex-start">
     <div data-reveal="" style="flex:1 1 320px;padding-top:20px;max-width:{{ introMax }}">
-      <h2 style="font-size:clamp(34px, 3.2vw, 46px);font-weight:400;line-height:1.12;letter-spacing:-0.012em;text-wrap:balance">About Me</h2>
-      <p style="margin-top:22px;font-size:17px;line-height:1.75;color:#7b7b7b">I’m a service and experience designer and researcher with 6+ years of work experience. Since 2019 I’ve helped teams in energy, automotive, finance and banking turn tangled, offline processes into seamless digital services, from research and workshops all the way to pixel-level UI.</p>
+      <h2 style="font-size:clamp(34px, 3.2vw, 46px);font-weight:400;line-height:1.12;letter-spacing:-0.012em;text-wrap:balance">So, what do I actually do?</h2>
+      <p style="margin-top:22px;font-size:17px;line-height:1.75;color:#7b7b7b">Most services break in the gaps: between teams and channels, between online and offline; that’s where I work. I shape the plan with the business, lead the research, run the workshops, do the UX and get the UI delivered, until the service works for people, products and processes.</p>
       <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
         <svg viewBox="0 0 220 230" aria-hidden="true" style="width:clamp(170px, 15vw, 220px);height:auto;margin:76px 0 0 clamp(60px, 9vw, 140px);color:#e3e3e3">
           <path d="M14 222C2 150 44 64 196 36" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"></path>
@@ -152,18 +155,22 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     </article>
 
     <div data-reveal="" data-d=".2" style="flex:1 1 320px;display:flex;flex-direction:{{ sideDir }}">
-      <a href="#journey" aria-label="See my journey" onMouseEnter="{{ thumbIn }}" onMouseLeave="{{ thumbOut }}" style="position:relative;align-self:flex-start;margin-left:{{ thumbMl }};width:{{ thumbW }};max-width:400px;aspect-ratio:{{ thumbRatio }};border-radius:6px;background:#7b7b7b;overflow:hidden">
+      <a href="About%20Me.dc.html" aria-label="About me: see my journey" onMouseEnter="{{ thumbIn }}" onMouseLeave="{{ thumbOut }}" style="position:relative;align-self:flex-start;margin-left:{{ thumbMl }};width:{{ thumbW }};max-width:400px;aspect-ratio:{{ thumbRatio }};border-radius:6px;background:#7b7b7b;overflow:hidden">
         <img src="images/journey/freelance-crop-v2.jpg" alt="Vedika working on her laptop" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) sepia(.08) contrast(1.18) brightness(1.08);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ thumbScale }}">
         <span style="position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.12)"><svg style="width:15px;height:15px"><use href="#i-arrow"></use></svg></span>
       </a>
       <ul aria-label="How I work" style="margin:{{ pointsMargin }};display:grid;gap:40px;max-width:460px">
         <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
           <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
-          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I'm high on empathy and good at working with the strengths of people around me. I make sense of complexity quickly, whether it’s a workshop room or a web of systems.</p>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I’m great at bringing out the strengths of the people around me.</p>
         </li>
         <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
           <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
-          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I bring structure, strategic and analytical thinking, whilst learning new industries quickly and turning insight into action on time.</p>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I enjoy making sense of complexity, whether it’s a workshop room or a web of systems.</p>
+        </li>
+        <li style="display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start">
+          <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#222;color:#fff"><svg style="width:17px;height:17px"><use href="#i-spark"></use></svg></span>
+          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">I think strategically and analytically, and turn insight into structured action on time.</p>
         </li>
       </ul>
     </div>
@@ -230,8 +237,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                 <li><a href="#{{ c.id }}" onClick="{{ c.go }}" aria-current="{{ c.current }}" style="position:relative;display:grid;grid-template-columns:34px 1fr;column-gap:6px;padding:12px 0 12px 20px;color:{{ c.navColor }};transition:color .35s cubic-bezier(.22,.61,.36,1)">
                   <span style="position:absolute;left:-1px;top:10px;bottom:10px;width:2px;background:#222;transform-origin:center;transition:transform .45s cubic-bezier(.16,1,.3,1);transform:{{ c.navBar }}"></span>
                   <span style="font-size:13px;padding-top:5px;font-variant-numeric:tabular-nums">{{ c.num }}</span>
-                  <span style="font-size:22px;letter-spacing:-0.012em;line-height:1.25">{{ c.name }}</span>
-                  <span style="grid-column:2;font-size:13px;opacity:.8">{{ c.sector }}</span>
+                  <span style="font-size:22px;letter-spacing:-0.012em;line-height:1.25;white-space:nowrap">{{ c.navLabel }}</span>
                 </a></li>
               </sc-for>
             </ol>
@@ -242,7 +248,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <ol style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none">
               <sc-for list="{{ cases }}" as="c" hint-placeholder-count="4">
                 <li><a href="#{{ c.id }}" onClick="{{ c.go }}" style="display:flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:999px;white-space:nowrap;background:{{ c.pillBg }};color:{{ c.pillColor }};transition:background-color .3s, color .3s">
-                  <span style="font-size:11px">{{ c.num }}</span><span style="font-size:15px">{{ c.name }}</span>
+                  <span style="font-size:11px">{{ c.num }}</span><span style="font-size:15px">{{ c.navLabel }}</span>
                 </a></li>
               </sc-for>
             </ol>
@@ -263,8 +269,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
               </div>
               <div style="flex:1 1 300px;display:flex;flex-direction:column;padding:{{ bodyPad }}">
                 <p style="font-size:13px;font-variant-numeric:tabular-nums">{{ c.num }} <span style="color:#7b7b7b">/ 04</span></p>
-                <h3 style="margin-top:auto;padding-top:24px;font-size:clamp(26px, 2.4vw, 36px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">{{ c.name }} <span style="display:block;margin-top:6px;font-size:15px;letter-spacing:0;color:#7b7b7b">{{ c.sector }}</span></h3>
-                <p style="margin-top:14px;font-size:15.5px;line-height:1.6;color:#7b7b7b">{{ c.desc }}</p>
+                <h3 style="margin-top:auto;padding-top:24px;font-size:clamp(22px, 1.9vw, 28px);font-weight:400;letter-spacing:-0.015em;line-height:1.25">{{ c.desc }}</h3>
                 <sc-if value="{{ c.impact }}" hint-placeholder-val="{{ true }}">
                   <p style="display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:16px;font-size:14.5px;line-height:1.4;white-space:nowrap"><span style="display:inline-flex;align-items:center;gap:7px;color:#555"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:{{ c.impact.dot }}"></span>{{ c.impact.status }}</span><span style="color:#cfcfcf">/</span><span style="color:#222">{{ c.impact.text }}</span></p>
                 </sc-if>
@@ -273,80 +278,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                     <li style="display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:4px 12px;border:1px solid #dcdcdc;border-radius:999px;font-size:13.5px"><span style="color:#7b7b7b">{{ f.k }}</span>{{ f.v }}</li>
                   </sc-for>
                 </ul>
-                <span style="margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;color:{{ c.linkColor }};text-decoration:{{ c.linkDeco }};text-underline-offset:4px;text-decoration-thickness:1px">{{ c.linkText }}<sc-if value="{{ c.live }}" hint-placeholder-val="{{ true }}"><svg style="width:16px;height:16px;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ c.arrowShift }}"><use href="#i-arrow"></use></svg></sc-if></span>
+                <span style="margin-top:22px;margin-bottom:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:15px;line-height:1;color:{{ c.linkColor }};text-decoration:{{ c.linkDeco }};text-underline-offset:4px;text-decoration-thickness:1px">{{ c.linkText }}<sc-if value="{{ c.live }}" hint-placeholder-val="{{ true }}"><svg style="width:16px;height:16px;transition:transform .35s cubic-bezier(.16,1,.3,1);transform:{{ c.arrowShift }}"><use href="#i-arrow"></use></svg></sc-if></span>
               </div>
             </a>
           </sc-for>
           <sc-if value="{{ sticky }}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="height:22vh"></div></sc-if>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="journey" data-screen-label="Journey" style="position:relative;padding:{{ journeyPad }};background:radial-gradient(60% 50% at 100% 15%, rgba(244, 232, 210, .45), transparent 70%), radial-gradient(55% 45% at 0% 70%, rgba(220, 240, 226, .5), transparent 70%), #fafafa;overflow-x:clip">
-    <div style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto">
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 40px;align-items:flex-start;margin-bottom:{{ splitMb }}">
-        <div data-reveal="">
-          <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width:9px;height:9px;border-radius:50%;background:#222"></span>Highlights</span>
-          <h2 style="margin-top:14px;font-size:clamp(34px, 3.3vw, 48px);font-weight:400;line-height:1.12;letter-spacing:-0.012em">My Journey</h2>
-        </div>
-        <div data-reveal="" data-d=".1" style="flex:0 1 515px">
-          <p style="font-size:17px;line-height:1.72;color:#7b7b7b">From design school to service design in Glasgow and back. These are the moments that shaped how I work.</p>
-          <a href="#contact" style="margin-top:34px;display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
-        </div>
-      </div>
-
-      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-        <p style="font-size:15px;color:#7b7b7b">Flick the cards or drag the timeline.</p>
-        <div role="slider" tabindex="0" aria-label="Journey timeline" aria-valuemin="0" aria-valuemax="{{ tlMax }}" aria-valuenow="{{ active }}" aria-valuetext="{{ activeText }}" onKeyDown="{{ barKey }}" onPointerDown="{{ barDown }}" onPointerMove="{{ barMove }}" onPointerUp="{{ barUp }}" onPointerCancel="{{ barUp }}" style="position:relative;height:72px;margin:18px 0 26px;cursor:grab;touch-action:none;user-select:none">
-          <div style="position:absolute;left:0;right:0;top:18px;height:1px;background:#dcdcdc"><div style="height:100%;background:#222;transition:width .5s cubic-bezier(.16,1,.3,1);width:{{ handleLeft }}"></div></div>
-          <ol style="position:absolute;inset:0">
-            <sc-for list="{{ years }}" as="y" hint-placeholder-count="6">
-              <li style="position:absolute;top:0;translate:-50% 0;left:{{ y.left }}">
-                <button type="button" aria-label="{{ y.label }}" onClick="{{ y.go }}" style="display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:13px;font-size:14px;color:{{ y.color }};transition:color .3s">
-                  <span style="width:11px;height:11px;border-radius:50%;background:{{ y.dotBg }};border:1px solid {{ y.dotBorder }};transition:background-color .3s, border-color .3s"></span>{{ y.year }}
-                </button>
-                <sc-if value="{{ y.hasPips }}" hint-placeholder-val="{{ false }}">
-                  <span style="position:absolute;left:50%;top:58px;translate:-50% 0;display:flex;gap:4px">
-                    <sc-for list="{{ y.pips }}" as="p" hint-placeholder-count="2"><i style="width:5px;height:5px;border-radius:50%;background:{{ p.bg }};transition:background-color .3s"></i></sc-for>
-                  </span>
-                </sc-if>
-              </li>
-            </sc-for>
-          </ol>
-          <span style="position:absolute;top:18px;width:22px;height:22px;translate:-50% -50%;border-radius:50%;background:#222;box-shadow:0 0 0 5px #fafafa, 0 4px 10px rgba(0,0,0,.2);pointer-events:none;transition:left .5s cubic-bezier(.16,1,.3,1);left:{{ handleLeft }}"></span>
-        </div>
-      </sc-if>
-      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 20px">
-          <button type="button" aria-label="Previous milestone" onClick="{{ prev }}" disabled="{{ atStart }}" style="flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ prevOpacity }}"><svg style="width:18px;height:18px"><use href="#i-left"></use></svg></button>
-          <div aria-live="polite" style="flex:1;text-align:center">
-            <p style="font-size:28px;letter-spacing:-0.02em;line-height:1">{{ activeYear }}</p>
-            <p style="margin-top:4px;font-size:12px;color:#7b7b7b">{{ stepCount }}</p>
-          </div>
-          <button type="button" aria-label="Next milestone" onClick="{{ next }}" disabled="{{ atEnd }}" style="flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #dcdcdc;background:#fff;opacity:{{ nextOpacity }}"><svg style="width:18px;height:18px"><use href="#i-right"></use></svg></button>
-        </div>
-      </sc-if>
-
-      <div ref="{{ trackRef }}" onScroll="{{ trackScroll }}" onPointerDown="{{ trackDown }}" onPointerMove="{{ trackMove }}" onPointerUp="{{ trackUp }}" onPointerCancel="{{ trackUp }}" style="position:relative;display:flex;gap:{{ tlGap }};align-items:flex-start;overflow-x:auto;scrollbar-width:none;margin-inline:calc((100% - 100vw) / 2);padding:8px calc((100vw - 100%) / 2) 56px;margin-bottom:-40px;cursor:grab;user-select:none">
-        <sc-for list="{{ journey }}" as="j" hint-placeholder-count="4">
-          <article data-tl-card="" style="flex:none;width:{{ tlCardW }};background:#fff;border-radius:14px;overflow:hidden;transition:box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .5s;opacity:{{ j.opacity }};box-shadow:{{ j.shadow }}">
-            <div style="aspect-ratio:{{ tlRatio }};overflow:hidden;background:#efefef"><img src="{{ j.img }}" alt="{{ j.alt }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;pointer-events:none;filter:{{ tlFilter }};transition:filter .6s cubic-bezier(.16,1,.3,1)"></div>
-            <div style="padding:{{ tlBodyPad }}">
-              <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#222;color:#fff;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">{{ j.year }}</span>{{ j.place }}</p>
-              <h3 style="margin-top:14px;font-size:21px;font-weight:400;letter-spacing:-0.012em;line-height:1.25;white-space:pre-line">{{ j.title }}</h3>
-              <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#7b7b7b">{{ j.text }}</p>
-            </div>
-          </article>
-        </sc-for>
-        <aside data-tl-card="" aria-label="Open to work" style="flex:none;align-self:flex-start;height:{{ endH }};width:{{ endW }};overflow:hidden;background:#222;color:#fff;border-radius:14px;transition:opacity .5s;opacity:{{ endOpacity }}">
-          <div style="height:100%;display:flex;flex-direction:column;justify-content:center;padding:{{ endPad }}">
-            <p style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#fff;color:#222;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase">2026</span>Open to work</p>
-            <h3 style="margin-top:14px;font-size:clamp(22px, 1.8vw, 26px);font-weight:400;letter-spacing:-0.015em;line-height:1.2">Service design and UX research roles</h3>
-            <p style="margin-top:10px;max-width:520px;font-size:15px;line-height:1.6;color:#c8c8c8">Where I can untangle complex, multi-stakeholder services. Full-time or contract, remote or relocating.</p>
-            <a href="#contact" style="margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px">Get in touch <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
@@ -436,7 +373,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
     <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
       <a href="#top" style="padding:8px 24px;border-radius:999px;background:#333">Home</a>
-      <a href="#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Journey</a>
+      <a href="About%20Me.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">About me</a>
       <a href="#work" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Work</a>
       <a href="#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
       <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
@@ -456,18 +393,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <script type="text/x-dc" data-dc-script>
 const EASE = 'cubic-bezier(.16,1,.3,1)';
 const CASES = [
-  { id: 'case-dpcl', impact: { status: 'In development', text: '173K+ users designed for', dot: '#d19a2a' }, num: '01', name: 'DPCL', sector: 'Oil & Gas Company', href: 'DPCL%20Case%20Study.dc.html', img: 'images/cover-dpcl.jpg', alt: 'Illustration of a team brainstorming with sticky notes',
-    desc: 'Digitising a PNG ecosystem for 1.5 lakh+ households and a national oil and gas company',
-    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Industry', v: 'Oil and natural gas' }, { k: 'Duration', v: '7 months' }] },
-  { id: 'case-zmw', impact: { status: 'Live', text: '18K+ users impacted', dot: '#2e9e5b' }, num: '02', name: 'ZMW', sector: 'Automobile Company', href: 'ZMW%20Case%20Study.dc.html', img: 'images/cover-zmw-v2.webp', alt: 'Isometric illustration of connected dealership workflow screens',
-    desc: 'A redesign of legacy systems for a global automotive brand, designed for 650+ dealerships',
-    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Industry', v: 'Automotive' }, { k: 'Duration', v: '7 months' }] },
-  { id: 'case-pearstream', impact: { status: 'In development', text: '2,500 client firms', dot: '#d19a2a' }, num: '03', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.png', alt: 'Xact Web Portal user details and login screens',
-    desc: 'Turning a dense, expert-only B2B finance portal into a clearer, faster tool for post-trade operations teams',
-    facts: [{ k: 'Role', v: 'UX Researcher & UI/UX Designer' }, { k: 'Industry', v: 'Finance' }, { k: 'Duration', v: '5 months' }] },
-  { id: 'case-mature-money', impact: { status: 'Rolling out', text: '6.6M customers', dot: '#2e9e5b' }, num: '04', soon: true, name: 'Mature Money', sector: 'Banking', href: 'Mature%20Money%20Case%20Study.dc.html', img: 'images/cover-mature-money.png', alt: 'Illustration of a bank branch, laptop, call centre and workshop connected to a central ID check',
-    desc: 'Redesigning identity verification across four channels of a bank mid-merger',
-    facts: [{ k: 'Role', v: 'Service Designer' }, { k: 'Industry', v: 'Banking' }, { k: 'Duration', v: '4 months' }] },
+  { id: 'case-dpcl', impact: { status: 'Shipped', text: '170K+ households', dot: '#d19a2a' }, num: '01', navLabel: 'Oil & Gas', industry: 'Oil and natural gas', name: 'DPCL', sector: 'Oil & Gas Company', href: 'DPCL%20Case%20Study.dc.html', img: 'images/cover-dpcl.jpg', alt: 'Illustration of a team brainstorming with sticky notes',
+    desc: 'Led the design team to digitise an offline domestic gas connection ecosystem for a national gas company',
+    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Duration', v: '7 months' }] },
+  { id: 'case-zmw', impact: { status: 'Shipped', text: '650+ dealerships', dot: '#d19a2a' }, num: '02', navLabel: 'Automotive', industry: 'Automotive', name: 'ZMW', sector: 'Automobile Company', href: 'ZMW%20Case%20Study.dc.html', img: 'images/cover-zmw-v2.webp', alt: 'Isometric illustration of connected dealership workflow screens',
+    desc: 'Transformed inefficient legacy modules into a unified system for a global automotive brand',
+    facts: [{ k: 'Role', v: 'Service & UI/UX designer' }, { k: 'Duration', v: '7 months' }] },
+  { id: 'case-pearstream', impact: { status: 'Live', text: '2,500+ institutions', dot: '#2e9e5b' }, num: '03', navLabel: 'Finance', industry: 'Finance', name: 'Pearstream', sector: 'Financial infrastructure', href: 'Pearstream%20Case%20Study.dc.html', img: 'images/cover-pearstream.png', alt: 'Xact Web Portal user details and login screens',
+    desc: 'Redesigned login and credential management for a global B2B finance portal',
+    facts: [{ k: 'Role', v: 'UX Researcher & UI/UX Designer' }, { k: 'Duration', v: '5 months' }] },
+  { id: 'case-mature-money', impact: { status: 'Live', text: '6.6M+ customers', dot: '#2e9e5b' }, num: '04', soon: true, navLabel: 'Banking', industry: 'Banking', name: 'Mature Money', sector: 'Banking', href: 'Mature%20Money%20Case%20Study.dc.html', img: 'images/cover-mature-money.png', alt: 'Illustration of a bank branch, laptop, call centre and workshop connected to a central ID check',
+    desc: 'Unified how a UK bank verifies customers across 3 channels',
+    facts: [{ k: 'Role', v: 'Service Designer' }, { k: 'Duration', v: '4 months' }] },
 ];
 const JOURNEY = [
   { year: '2015', place: 'Pearl Academy', title: 'Started design school', text: 'Joined Pearl Academy for a BA (Hons) in Communication Design.', img: 'images/journey/pearl-class.jpg', alt: 'Pearl Academy classmates' },
@@ -553,7 +490,7 @@ class Component extends DCLogic {
       const el = e.target, target = Number(el.dataset.count), start = performance.now();
       const tick = (now) => {
         const p = Math.min((now - start) / 1600, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4)));
+        const dec = (el.dataset.count.split('.')[1] || '').length; el.textContent = (target * (1 - Math.pow(1 - p, 4))).toFixed(dec);
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
@@ -611,7 +548,14 @@ class Component extends DCLogic {
     const tops = this.caseTops();
     let act = 0;
     tops.forEach((t, i) => { if (t.top - t.stick <= window.innerHeight * 0.35) act = i; });
-    if (act !== this.state.activeCase) this.setState({ activeCase: act });
+    if (act !== this.state.activeCase) { this.setState({ activeCase: act }); this.followPill(act); }
+  }
+  followPill(i) {
+    const ol = [...document.querySelectorAll('nav[aria-label="Case studies"] ol')].find((o) => o.scrollWidth > o.clientWidth);
+    const li = ol && ol.children[i];
+    if (!li) return;
+    const left = ol.scrollLeft + li.getBoundingClientRect().left - ol.getBoundingClientRect().left - 8;
+    ol.scrollTo({ left: Math.max(0, left), behavior: reduced() ? 'auto' : 'smooth' });
   }
   goCase(i, e) {
     e && e.preventDefault();
@@ -676,6 +620,7 @@ class Component extends DCLogic {
       const on = activeCase === i;
       return {
         ...c, live: !c.soon, soon: !!c.soon,
+        facts: phone ? [c.facts[0], { k: 'Industry', v: c.industry }, ...c.facts.slice(1)] : c.facts,
         href: c.soon ? undefined : c.href,
         go: (e) => this.goCase(i, e),
         enter: () => this.setState({ hoverCase: i }),
@@ -741,8 +686,9 @@ class Component extends DCLogic {
       heroPadL: narrow ? 'clamp(20px, 4.3vw, 62px)' : 'calc(clamp(20px, 4.3vw, 62px) + 121px)',
       heroPadT: narrow ? (phone ? '16px' : '28px') : '108px',
       heroContentMinH: narrow ? '0' : 'calc(max(100svh, 760px) - 100px)',
-      statGap: phone ? '36px' : '58px',
-      statSize: phone ? '38px' : '46px',
+      statGap: w <= 360 ? '20px' : phone ? '36px' : '58px',
+      navSize: w >= 1400 ? '20px' : w >= 1150 ? '18px' : w > 1100 ? '16px' : '15px',
+      statSize: w <= 360 ? '34px' : phone ? '38px' : '46px',
       titleMt: narrow ? '40px' : 'clamp(32px, 8.5vh, 96px)',
       helloSize: narrow ? 'clamp(96px, 27vw, 200px)' : 'clamp(104px, 14.4vw, 220px)',
       subMt: narrow ? '18px' : '30px',
@@ -753,7 +699,7 @@ class Component extends DCLogic {
       introMax: narrow ? '640px' : '470px',
       sideDir: phone ? 'column-reverse' : 'column',
       thumbMl: w > 1200 ? 'clamp(0px, 9vw, 132px)' : '0px',
-      thumbW: phone ? '100%' : '214px',
+      thumbW: phone ? '100%' : '272px',
       thumbRatio: phone ? '4 / 3' : '214 / 188',
       thumbScale: this.state.thumbHover ? 'scale(1.05)' : 'none',
       thumbIn: () => this.setState({ thumbHover: true }),

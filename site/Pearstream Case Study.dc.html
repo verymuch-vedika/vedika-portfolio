@@ -52,11 +52,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <div id="top" style="position:sticky;top:0;z-index:30;background:rgba(243,243,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
   <nav aria-label="Primary" style="position:relative;display:flex;align-items:center;height:{{ navH }};padding-inline:clamp(20px, 4.3vw, 62px)">
-    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1">Vedika</a>
+    <a href="Vedika%20Portfolio.dc.html" aria-label="Vedika Merchant, home" style="display:inline-flex;color:#222;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1;white-space:nowrap">Vedika Merchant</a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <ul style="display:flex;gap:30px;margin-left:60px;font-size:14px">
         <li><a href="Vedika%20Portfolio.dc.html#work" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Work</a></li>
-        <li><a href="Vedika%20Portfolio.dc.html#journey" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Highlights</a></li>
+        <li><a href="About%20Me.dc.html" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">About me</a></li>
         <li><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">LinkedIn</a></li>
         <li><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="border-bottom:1px solid transparent;padding-bottom:2px" style-hover="border-bottom-color:#222">Resume ↓</a></li>
       </ul>
@@ -69,7 +69,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       </button>
       <ul style="position:absolute;top:{{ menuTop }};left:clamp(20px, 4.3vw, 62px);right:clamp(20px, 4.3vw, 62px);display:flex;flex-direction:column;padding:10px 22px;background:#fff;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);font-size:20px;transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1), visibility .3s;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuY }}">
         <li><a href="Vedika%20Portfolio.dc.html#work" style="display:block;padding:14px 0">Work</a></li>
-        <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Portfolio.dc.html#journey" style="display:block;padding:14px 0">Highlights</a></li>
+        <li style="border-top:1px solid #e4e4e4"><a href="About%20Me.dc.html" style="display:block;padding:14px 0">About me</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="https://www.linkedin.com/in/vedika-m/" target="_blank" rel="noopener" style="display:block;padding:14px 0">LinkedIn</a></li>
         <li style="border-top:1px solid #e4e4e4"><a href="Vedika%20Merchant%20Resume.pdf" download="Vedika Merchant Resume.pdf" style="display:block;padding:14px 0">Resume (PDF)</a></li>
       </ul>
@@ -336,17 +336,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 
   <section style="width:min(1280px, 100% - 2 * clamp(20px, 4.3vw, 62px));margin-inline:auto;padding:8px 0 {{ nextPadB }}">
-    <div data-reveal="" aria-disabled="true" style="cursor:default;display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
+    <a data-reveal="" href="ZMW%20Case%20Study.dc.html" onMouseEnter="{{ nextIn }}" onMouseLeave="{{ nextOut }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:{{ nextCardPad }};border-radius:20px;border:1px solid {{ nextBorder }};background:#fff;transition:border-color .4s">
       <div style="flex:1 1 240px;padding-inline:{{ nextTextPad }}">
-        <p style="font-size:13px;color:#7b7b7b">Next case study</p>
-        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">Mature Money</p>
-        <p style="margin-top:8px;color:#7b7b7b">Banking</p>
+        <p style="font-size:13px;color:#7b7b7b">Previous case study</p>
+        <p style="margin-top:10px;font-size:clamp(40px, 4.4vw, 64px);font-weight:300;letter-spacing:-0.03em;line-height:1">ZMW</p>
+        <p style="margin-top:8px;color:#7b7b7b">Automobile Company</p>
       </div>
       <div style="flex:1.2 1 320px;position:relative;aspect-ratio:16 / 10;border-radius:12px;overflow:hidden;background:#efefef">
-        <img src="images/cover-mature-money-next.png" alt="Illustration of a bank branch, laptop, headset and workshop table linked to a central verified ID card" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
-        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;padding:10px 20px;border-radius:999px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);font-size:15px">Coming soon</span>
+        <img src="images/cover-zmw-v2.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.95);transition:transform 1.2s cubic-bezier(.16,1,.3,1);transform:{{ nextScale }}">
+        <span style="position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#222;color:#fff;transition:opacity .4s, transform .55s cubic-bezier(.16,1,.3,1);opacity:{{ nextBtnOpacity }};transform:{{ nextBtnScale }}"><svg style="width:38%;height:38%"><use href="#i-arrow"></use></svg></span>
       </div>
-    </div>
+    </a>
+    <p style="margin-top:16px;padding-inline:4px;font-size:13px;color:#7b7b7b">Coming soon: a banking case study on Mature Money.</p>
   </section>
 
   <section id="contact" data-screen-label="Contact" style="position:relative;background:#f2f2f2;overflow:hidden">
@@ -378,7 +379,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
     <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px;font-size:16px;margin-left:{{ footerNavMl }}">
       <a href="Vedika%20Portfolio.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Home</a>
-      <a href="Vedika%20Portfolio.dc.html#journey" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Highlights</a>
+      <a href="About%20Me.dc.html" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">About me</a>
       <a href="Vedika%20Portfolio.dc.html#work" style="padding:8px 24px;border-radius:999px;background:#333">Work</a>
       <a href="Vedika%20Portfolio.dc.html#testimonials" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Testimonials</a>
       <a href="#contact" style="padding:8px 15px;border-radius:999px;transition:background-color .3s" style-hover="background:#2f2f2f">Contact</a>
@@ -646,6 +647,33 @@ class Component extends DCLogic {
       protoNext: () => { if (pHs.length) goProto(pHs[0][4]); },
     };
   }
+  pzClamp(v) {
+    // Keep a zoomed image within its own edges (no panning into empty space).
+    const r = this.pzBox; const S = v.pzS || 1; if (!r || S <= 1) return v;
+    const W = r.width, H = r.height, img = document.querySelector('[data-pz] img');
+    const ar = img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : W / H;
+    const wide = ar > W / H, w0 = wide ? W : H * ar, h0 = wide ? W / ar : H, ox = (W - w0) / 2, oy = (H - h0) / 2;
+    const axis = (p, dim, o, len) => { const lo = dim - S * (o + len), hi = -S * o; return lo > hi ? (dim - S * len) / 2 - S * o : Math.min(hi, Math.max(lo, p)); };
+    return { ...v, pzX: axis(v.pzX, W, ox, w0), pzY: axis(v.pzY, H, oy, h0) };
+  }
+  pzAuto() {
+    // Wide images (flows, blueprints) open zoomed so they fill the viewer's height, starting at the left.
+    const s = this.state, lb = s.lb, cur = lb ? lb[s.lbI] || lb[0] : null;
+    const src = cur && !cur.app ? cur.src : null;
+    if (src === this._pzSrc) return;
+    this._pzSrc = src; if (!src) return;
+    const im = new Image();
+    im.onload = () => setTimeout(() => {
+      if (this._pzSrc !== src) return;
+      const box = document.querySelector('[data-pz]'); if (!box) return;
+      const r = box.getBoundingClientRect(); this.pzBox = r;
+      const ar = im.naturalWidth / im.naturalHeight, W = r.width, H = r.height;
+      if (!W || !H || ar <= (W / H) * 1.15) return;
+      const h0 = W / ar, sc = Math.min(H / h0, 6);
+      this.setState({ pzS: sc, pzX: 0, pzY: -sc * (H - h0) / 2 });
+    }, 60);
+    im.src = src;
+  }
   pzTo(ns, px, py) {
     this.setState((s) => {
       const S = Math.min(6, Math.max(1, ns));
@@ -657,6 +685,7 @@ class Component extends DCLogic {
   pzCenter(f) { const r = this.pzBox; const w = r ? r.width : 0, h = r ? r.height : 0; this.pzTo((this.state.pzS || 1) * f, w / 2, h / 2); }
   pzVals() {
     const s = this.state;
+    setTimeout(() => this.pzAuto(), 0);
     const pts = this.pzPts || (this.pzPts = new Map());
     const local = (e) => { const r = e.currentTarget.getBoundingClientRect(); this.pzBox = r; return [e.clientX - r.left, e.clientY - r.top]; };
     const box = (e) => { const b = e.currentTarget.closest('[data-pz]'); if (b) this.pzBox = b.getBoundingClientRect(); };
@@ -665,7 +694,15 @@ class Component extends DCLogic {
       lbTr: this.pzDrag ? 'none' : 'transform .25s cubic-bezier(.16,1,.3,1)',
       lbCursor: (s.pzS || 1) > 1 ? (this.pzDrag ? 'grabbing' : 'grab') : 'zoom-in',
       lbPct: Math.round((s.pzS || 1) * 100) + '%',
-      lbWheel: (e) => { e.stopPropagation(); const [x, y] = local(e); const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo((this.state.pzS || 1) * f, x, y); },
+      lbWheel: (e) => {
+        e.stopPropagation(); const [x, y] = local(e); const S = this.state.pzS || 1;
+        // Zoomed in: scroll and two-finger swipe move the image (Shift+scroll moves sideways). Pinch or ctrl+scroll zooms.
+        if (!e.ctrlKey && S > 1) {
+          const side = e.shiftKey && !e.deltaX; const dx = side ? e.deltaY : e.deltaX, dy = side ? 0 : e.deltaY;
+          this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: (st.pzX || 0) - dx, pzY: (st.pzY || 0) - dy })); return;
+        }
+        const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0025)); this.pzTo(S * f, x, y);
+      },
       lbDown: (e) => {
         e.stopPropagation(); local(e);
         e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
@@ -681,7 +718,7 @@ class Component extends DCLogic {
           this.pzTo(this.pinch.s * Math.hypot(a[0] - b[0], a[1] - b[1]) / this.pinch.d, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); return;
         }
         const d = this.pzDrag; if (!d || (this.state.pzS || 1) <= 1) return;
-        this.setState({ pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y });
+        this.setState((st) => this.pzClamp({ pzS: st.pzS, pzX: d.ox + e.clientX - d.x, pzY: d.oy + e.clientY - d.y }));
       },
       lbUp: (e) => { pts.delete(e.pointerId); if (pts.size < 2) this.pinch = null; this.pzDrag = null; this.forceUpdate(); },
       lbDbl: (e) => { e.stopPropagation(); const [x, y] = local(e); this.pzTo((this.state.pzS || 1) > 1 ? 1 : 2.5, x, y); },
