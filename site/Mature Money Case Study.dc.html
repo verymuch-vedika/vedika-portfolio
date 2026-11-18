@@ -315,13 +315,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
   <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
     <div aria-hidden="true">
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:157px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:144px;top:-10px;width:146px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:157px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:144px;top:72px;width:146px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px;left:calc(round(down, 100% - 40px, 145px) - 146px);width:146px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px;left:calc(round(down, 100% - 40px, 145px) - 1px);width:calc(100% + 13px - round(down, 100% - 40px, 145px))"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px;left:calc(round(down, 100% - 40px, 145px) - 146px);width:146px"></i>
     </div>
   </sc-if>
   <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">

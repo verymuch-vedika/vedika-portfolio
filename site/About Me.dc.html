@@ -70,6 +70,29 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:760px){[data-doodle]{display:none}}
 @media (max-width:1100px){[data-slot="travel"]{width:min(70%, 220px)}[data-bb-tile="spaces"] [data-polaroid]{margin-right:8px!important}}
 @media (max-width:640px){[data-doodle]{display:none}[data-polaroid][data-tilt="l"]{margin-right:0}[data-kid-row]{flex-direction:column}[data-polaroid][data-tilt="r"]{width:min(78%, 260px);margin:8px 0 0;align-self:flex-end}}
+
+/* fill remaining tile space with photos */
+[data-bb] [data-bb-tile]{min-height:0!important}
+[data-polaroid][data-tilt="s"],[data-polaroid][data-tilt="l"]{flex:1 1 auto;display:flex;flex-direction:column;align-self:flex-end;width:clamp(153px, 14.4vw, 207px)!important;margin:auto -6px -10px auto!important}
+[data-polaroid][data-tilt="s"] img,[data-polaroid][data-tilt="l"] img{flex:1 1 auto;height:0!important;min-height:171px;object-fit:cover}
+[data-bb-tile="cats"] [data-polaroid] img{object-position:50% 70%}
+[data-bb-tile="early"] [data-polaroid] img{object-position:72% 50%}
+[data-bb-tile="spaces"] [data-polaroid] img{object-position:50% 80%}
+[data-polaroid][data-tilt="r"]{width:clamp(189px, 18vw, 261px)!important;align-self:stretch!important;display:flex;flex-direction:column;margin:4px -18px 4px 0!important}
+[data-polaroid][data-tilt="r"] img{flex:1 1 auto;height:0!important;min-height:180px;object-fit:cover;object-position:50% 60%}
+[data-slot="cook"]{width:min(80%, clamp(140px, 12.5vw, 185px))!important;margin:auto -4px -6px auto!important}
+[data-fill]{position:relative;flex:1 1 auto;min-height:227px;margin:4px 10% 9%;border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -16px rgba(0,0,0,.35);transform:rotate(-1.5deg);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+[data-bb-tile]:hover [data-fill]{transform:rotate(0) scale(1.02)}
+[data-fill] img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+[data-fill-heart]{position:absolute;right:14px;top:14px;width:30px;height:28px;color:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+@media (max-width:640px){[data-polaroid][data-tilt="s"],[data-polaroid][data-tilt="l"]{width:min(72%, 260px)!important;margin:8px 0 0 auto!important}[data-polaroid][data-tilt="s"] img,[data-polaroid][data-tilt="l"] img{height:auto!important;min-height:0;aspect-ratio:1}[data-bb-tile="cats"] [data-polaroid] img{aspect-ratio:4 / 5}[data-fill]{min-height:0;aspect-ratio:4 / 5;margin:8px 0 0}[data-polaroid][data-tilt="r"]{margin:8px 0 0!important;align-self:flex-end!important;width:min(78%, 260px)!important}[data-polaroid][data-tilt="r"] img{height:auto!important;min-height:0}}
+[data-doodle-kid]{position:absolute;left:calc(100% - clamp(189px, 18vw, 261px) - 150px);bottom:26px;width:118px;height:auto;color:#6f7f8a;transform:rotate(-6deg);pointer-events:none}
+[data-doodle-food]{position:absolute;right:clamp(150px, 13vw, 200px);bottom:clamp(110px, 10vw, 150px);width:112px;height:auto;color:#6c7a62;transform:rotate(-4deg);pointer-events:none}
+@media (max-width:1100px){[data-doodle-kid]{left:auto;right:clamp(220px, 24vw, 300px)}}
+@media (max-width:640px){[data-doodle-kid]{left:22px;right:auto;bottom:40px;width:90px}[data-doodle-food]{right:auto;left:22px;bottom:30px;width:80px}}
+[data-doodle-travel]{order:1;align-self:flex-end;width:118px;aspect-ratio:360 / 99;background:currentColor;-webkit-mask:url(images/beyond/plane-doodle.png) center/contain no-repeat;mask:url(images/beyond/plane-doodle.png) center/contain no-repeat;margin:-6px 6% 2px 0;color:#8a7d58;transform:rotate(-4deg);pointer-events:none}
+[data-bb-tile="travel"] [data-fill]{order:2}
+@media (max-width:640px){[data-doodle-travel]{width:96px}}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -157,7 +180,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         </div>
       </sc-if>
 
-      <div ref="{{ trackRef }}" onScroll="{{ trackScroll }}" onPointerDown="{{ trackDown }}" onPointerMove="{{ trackMove }}" onPointerUp="{{ trackUp }}" onPointerCancel="{{ trackUp }}" style="position:relative;display:flex;gap:{{ tlGap }};align-items:flex-start;overflow-x:auto;scrollbar-width:none;margin-inline:calc((100% - 100vw) / 2);padding:8px calc((100vw - 100%) / 2) 56px;margin-bottom:-40px;cursor:grab;user-select:none">
+      <div ref="{{ trackRef }}" onScroll="{{ trackScroll }}" onWheel="{{ trackWheel }}" onPointerDown="{{ trackDown }}" onPointerMove="{{ trackMove }}" onPointerUp="{{ trackUp }}" onPointerCancel="{{ trackUp }}" style="position:relative;display:flex;gap:{{ tlGap }};align-items:flex-start;overflow-x:auto;scrollbar-width:none;margin-inline:calc((100% - 100vw) / 2);padding:8px calc((100vw - 100%) / 2) 56px;margin-bottom:-40px;cursor:grab;user-select:none">
         <sc-for list="{{ journey }}" as="j" hint-placeholder-count="4">
           <article data-tl-card="" style="flex:none;width:{{ tlCardW }};background:#fff;border-radius:14px;overflow:hidden;transition:box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .5s;opacity:{{ j.opacity }};box-shadow:{{ j.shadow }}">
             <div style="aspect-ratio:{{ tlRatio }};overflow:hidden;background:#efefef"><img src="{{ j.img }}" alt="{{ j.alt }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;pointer-events:none;filter:{{ tlFilter }};transition:filter .6s cubic-bezier(.16,1,.3,1)"></div>
@@ -193,9 +216,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <div data-kid-row="">
             <div style="display:flex;flex-direction:column;flex:1;min-width:0"><p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">01 / Early days</p>
             <h3 style="margin-top:14px;font-size:clamp(26px, 2.4vw, 34px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Creative since I was a kid</h3>
-            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Why buy powder when you can grate chalk? My first user: a very patient grandparent.</p><div style="margin-top:auto"></div></div>
+            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Why buy powder when you can grate chalk? My first user: a very patient grandparent. Tools used: my fingers to draw and his bald canvas.</p><div style="margin-top:auto"></div></div>
             <div data-polaroid="" data-tilt="r"><img src="images/beyond/childhood.jpg" alt="Vedika as a toddler, mid-experiment with a bowl of powder" loading="lazy" width="600" height="592"></div>
-          </div>
+          </div><svg data-doodle-kid="" viewBox="0 0 120 90" aria-hidden="true"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M30 20 C 18 22, 10 34, 12 48 C 14 64, 30 74, 46 70 C 62 66, 70 52, 66 36 C 62 22, 46 16, 30 20" stroke-width="2.2"/><path d="M26 40 C 28 36, 32 36, 34 40" stroke-width="2.2"/><path d="M44 38 C 46 34, 50 34, 52 38" stroke-width="2.2"/><path d="M26 50 C 32 62, 48 62, 54 48 C 46 52, 34 53, 26 50 Z" stroke-width="2.2"/><path d="M78 22 L 88 14" stroke-width="2.2"/><path d="M82 36 L 96 34" stroke-width="2.2"/><path d="M78 50 L 90 56" stroke-width="2.2"/><path d="M74 70 C 80 66, 86 74, 92 70 C 98 66, 104 74, 110 70" stroke-width="1.8" opacity=".7"/></g></svg>
           </div>
           <div data-bb-tile="early" style="position:relative;background:#efdcdc;color:#222;border-radius:20px;padding:26px 26px 24px;display:flex;flex-direction:column;min-height:250px">
             <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">02 / Early light</p>
@@ -205,22 +228,22 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <div data-bb-tile="travel" style="position:relative;background:#e6dfcc;color:#222;border-radius:20px;padding:26px 26px 24px;display:flex;flex-direction:column;min-height:250px">
             <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">03 / Travel</p>
             <h3 style="margin-top:14px;font-size:clamp(21px, 1.7vw, 25px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Explore with my eyes open</h3>
-            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Every new place blurs the lines between right and wrong. I come back with fewer answers and better questions.</p><div data-slot="travel" data-shape="heart"><img src="images/beyond/croatia.jpg" alt="Vedika on the old city walls in Dubrovnik, Croatia" loading="lazy" width="360" height="360"></div>
+            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Every new place blurs the lines between right and wrong. I come back with fewer answers and better questions.</p><div data-fill=""><img src="images/beyond/croatia-tall.jpg" alt="Vedika on the old city walls in Dubrovnik, Croatia" loading="lazy" width="448" height="800"><svg data-fill-heart="" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21C11.6 21 11.2 20.8 10.8 20.5 5.6 16.4 1.5 12.9 1.5 7.6 1.5 4.2 4.1 1.5 7.3 1.5 9.3 1.5 10.9 2.6 12 4.2 13.1 2.6 14.7 1.5 16.7 1.5 19.9 1.5 22.5 4.2 22.5 7.6 22.5 12.9 18.4 16.4 13.2 20.5 12.8 20.8 12.4 21 12 21Z" fill="currentColor"/></svg></div><span data-doodle-travel="" aria-hidden="true"></span>
           </div>
           <div data-bb-tile="cats" style="position:relative;background:#efd8bf;color:#222;border-radius:20px;padding:26px 26px 24px;display:flex;flex-direction:column;min-height:250px">
             <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">04 / Animals</p>
-            <h3 style="margin-top:14px;font-size:clamp(21px, 1.7vw, 25px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Soft spot for cats</h3>
-            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Cool, calm and confident? And squishy and playful too?!</p><div data-polaroid="" data-tilt="s"><img src="images/beyond/cat-feet.jpg" alt="A calico cat curled up in a shoebox at Vedika’s feet" loading="lazy" width="360" height="360"></div>
+            <h3 style="margin-top:14px;font-size:clamp(21px, 1.7vw, 25px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Soft spot for all non‑human beings</h3>
+            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">And cats! Cool, calm and confident. And squishy and playful too?!</p><div data-polaroid="" data-tilt="s"><img src="images/beyond/cat-feet.jpg" alt="A calico cat curled up in a shoebox at Vedika’s feet" loading="lazy" width="360" height="360"></div>
           </div>
           <div data-bb-tile="cook" style="position:relative;background:#bcc8b2;color:#222;border-radius:20px;padding:26px 26px 24px;display:flex;flex-direction:column;min-height:250px">
             <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">05 / Food</p>
             <h3 style="margin-top:14px;font-size:clamp(21px, 1.7vw, 25px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Food is so experiential!</h3>
-            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Chopping, cooking and eating engage every sense. It’s an experience waiting to be designed.</p><div data-slot="cook" data-shape="circle"><img src="images/beyond/cake.jpg" alt="A mango cake Vedika made, topped with rose petals" loading="lazy" width="360" height="360"></div>
+            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">Chopping, cooking and eating engage every sense. It can be meditative and fun, all at the same time.</p><div data-slot="cook" data-shape="circle"><img src="images/beyond/cake.jpg" alt="A mango cake Vedika made, topped with rose petals" loading="lazy" width="360" height="360"></div><svg data-doodle-food="" viewBox="0 0 130 110" aria-hidden="true"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M30 70 C 22 58, 38 52, 30 40 C 22 28, 36 22, 30 10" stroke-width="2.2"/><path d="M54 74 C 46 62, 62 56, 54 44 C 46 32, 60 26, 54 14" stroke-width="2.2"/><path d="M78 70 C 70 58, 86 52, 78 40 C 70 30, 82 24, 78 16" stroke-width="2.2"/><path d="M104 30 L 104 46 M 96 38 L 112 38" stroke-width="2"/><path d="M98 60 L 110 72 M 110 60 L 98 72" stroke-width="1.6" opacity=".7"/><path d="M8 92 C 30 86, 60 98, 90 90" stroke-width="1.6" opacity=".6"/></g></svg>
           </div>
           <div data-bb-tile="spaces" style="position:relative;background:#ddd3e3;color:#222;border-radius:20px;padding:26px 26px 24px;display:flex;flex-direction:column;min-height:250px">
             <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(34,34,34,.66)">06 / Spaces</p>
             <h3 style="margin-top:14px;font-size:clamp(21px, 1.7vw, 25px);font-weight:400;line-height:1.15;letter-spacing:-0.015em">Spaces change our moods</h3>
-            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">I notice how a space makes people feel, and rearrange it until it flows.</p><div data-polaroid="" data-tilt="s"><img src="images/beyond/space-full.jpg" alt="Vedika’s mirror selfie above a styled console with plants and a speaker" loading="lazy" width="360" height="360"></div>
+            <p style="margin-top:8px;margin-bottom:18px;font-size:15px;line-height:1.55;color:rgba(34,34,34,.66)">I notice how a space makes people feel and how they behave in it, and keep uplifting it.</p><div data-polaroid="" data-tilt="s"><img src="images/beyond/space-full.jpg" alt="Vedika’s mirror selfie above a styled console with plants and a speaker" loading="lazy" width="360" height="360"></div>
           </div>
       </div>
     </div>
@@ -257,13 +280,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <footer style="position:relative;background:#222;color:#fff;min-height:218px;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:{{ footerPad }};overflow:hidden">
   <sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
     <div aria-hidden="true">
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:100px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:88px;top:-10px;width:145px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:100px;height:145px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:88px;top:72px;width:145px;height:145px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px"></i>
-      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:-10px;width:157px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-top-color:transparent;border-radius:8px;left:144px;top:-10px;width:146px;height:82px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:-12px;top:72px;width:157px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;left:144px;top:72px;width:146px;height:145px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:-10px;width:145px;height:82px;left:calc(round(down, 100% - 40px, 145px) - 146px);width:146px"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:-12px;top:72px;width:92px;height:160px;left:calc(round(down, 100% - 40px, 145px) - 1px);width:calc(100% + 13px - round(down, 100% - 40px, 145px))"></i>
+      <i style="position:absolute;border:1px solid #3a3a3a;border-radius:8px;right:80px;top:72px;width:145px;height:160px;left:calc(round(down, 100% - 40px, 145px) - 146px);width:146px"></i>
     </div>
   </sc-if>
   <div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:{{ footerDir }};align-items:{{ footerAlign }};justify-content:space-between;gap:28px 32px">
@@ -482,7 +505,8 @@ class Component extends DCLogic {
     if (i !== this.state.active) this.setState({ active: i });
   }
   onTrackScroll() {
-    if (this.drag || this.barDrag) { const n = this.nearest(); if (n !== this.state.active) this.setState({ active: n }); return; }
+    if (this.barDrag) return;
+    if (this.drag) { const n = this.nearest(); if (n !== this.state.active) this.setState({ active: n }); return; }
     if (this.target != null) { clearTimeout(this.settleT); this.settleT = setTimeout(() => { this.target = null; }, 300); return; }
     const n = this.nearest();
     if (n !== this.state.active && !this.programmatic) this.setState({ active: n });
@@ -500,7 +524,10 @@ class Component extends DCLogic {
     const q = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
     const yi = Math.round(q * (YEARS.length - 1));
     const tr = this.trackRef.current;
-    if (tr) tr.scrollLeft = this.cardPos(FIRST_OF[yi]);
+    const i = FIRST_OF[yi];
+    this.barTarget = i;
+    if (tr) tr.scrollLeft = this.cardPos(i);
+    if (i !== this.state.active) this.setState({ active: i });
   }
 
   renderVals() { const m = ['vkmatwork', 'gmail.com'].join(String.fromCharCode(64)); return { ...this._rv0(), mailHref: '#', mailText: m, mailShown: this.state.revealed ? m : 'copy email address', copyAria: this.state.revealed ? 'Copy email address' : 'Show and copy email address', copyLabel: this.state.copied ? 'Copied' : this.state.revealed ? 'Copy' : '', copyColor: this.state.copied ? '#1d6b3d' : '#7b7b7b', copyMail: () => { const done = () => { this.setState({ copied: true, revealed: true }); clearTimeout(this._cpT); this._cpT = setTimeout(() => this.setState({ copied: false }), 1800); }; if (navigator.clipboard) navigator.clipboard.writeText(m).then(done, done); else done(); }, mailClick: (e) => { e.preventDefault(); window.location.href = ['mail','to:'].join('') + m; } }; }
@@ -640,6 +667,20 @@ class Component extends DCLogic {
       endOpacity: active === JOURNEY.length - 1 ? 1 : narrow ? 0.5 : 0.9,
       trackRef: this.trackRef,
       trackScroll: () => requestAnimationFrame(() => this.onTrackScroll()),
+      trackWheel: (e) => {
+        const tr = this.trackRef.current;
+        if (!tr || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        const max = Math.max(tr.scrollWidth - tr.clientWidth, 0);
+        if (tr.scrollLeft < max - 2) { this.wAcc = 0; return; }
+        this.wAcc = (this.wAcc || 0) + e.deltaX;
+        if (Math.abs(this.wAcc) < 60) return;
+        const dir = Math.sign(this.wAcc); this.wAcc = 0;
+        const now = Date.now(); if (now - (this.wT || 0) < 320) return; this.wT = now;
+        const firstMax = JOURNEY.findIndex((_, i) => this.cardPos(i) >= max - 1);
+        const a = this.state.active + dir;
+        if (dir > 0 && a <= JOURNEY.length - 1) this.setState({ active: a });
+        else if (dir < 0 && this.state.active > firstMax) this.setState({ active: a });
+      },
       trackDown: (e) => {
         if (e.pointerType !== 'mouse' || e.target.closest('a, button')) return;
         const tr = this.trackRef.current;
@@ -666,13 +707,12 @@ class Component extends DCLogic {
       },
       barDown: (e) => {
         this.target = null;
-        if (e.target.closest('button')) return;
         this.barDrag = true;
         e.currentTarget.setPointerCapture(e.pointerId);
         this.barFromPointer(e);
       },
       barMove: (e) => { if (this.barDrag) this.barFromPointer(e); },
-      barUp: () => { if (!this.barDrag) return; this.barDrag = false; this.goTo(this.nearest(), true); },
+      barUp: () => { if (!this.barDrag) return; this.barDrag = false; this.goTo(this.barTarget ?? this.state.active, true); },
       // promo
       promoPad: phone ? '12px 12px 32px' : 'clamp(24px, 3.6vw, 52px) clamp(20px, 4.3vw, 62px)',
       promoMinH: w <= 720 ? '0' : 'clamp(400px, 36vw, 500px)',
