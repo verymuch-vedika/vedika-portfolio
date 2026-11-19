@@ -86,17 +86,17 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
     <a href="Vedika%20Portfolio.dc.html#work" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#7b7b7b;transition:color .3s" style-hover="color:#222"><svg style="width:16px;height:16px;transform:rotate(180deg)"><use href="#i-right"></use></svg> All case studies</a>
     <div style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-end;margin-top:{{ headMt }}">
       <div data-reveal="" style="flex:1 1 360px">
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width: 9px; height: 9px; border-radius: 50%; background: rgb(34, 34, 34);"></span>Service &amp; UI/UX Design Case Study</span>
-        <h1 style="margin-top:18px;font-size:clamp(64px, 9vw, 136px);font-weight:300;line-height:.9;letter-spacing:-0.035em">ZMW</h1>
-        <p style="margin-top:24px;max-width:620px;font-size:clamp(19px, 1.6vw, 24px);line-height:1.4;letter-spacing:-0.01em;color:#555;text-wrap:pretty">Redesigning and redefining legacy systems: three workflows for dealers, reviewers and specialists at a German automotive multinational</p>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 10px;border-radius:999px;background:#fff;font-size:17px;line-height:1.2"><span style="width: 9px; height: 9px; border-radius: 50%; background: rgb(34, 34, 34);"></span>World’s best-selling luxury car brand</span>
+        <h1 style="margin-top:22px;font-size:clamp(44px, 5.2vw, 80px);font-weight:300;line-height:1;letter-spacing:-0.035em;text-wrap:balance">Integrated scattered legacy modules</h1>
+        <p style="margin-top:16px;max-width:620px;font-size:clamp(20px, 1.8vw, 26px);line-height:1.35;letter-spacing:-0.01em;color:#7b7b7b;text-wrap:pretty">into one unified system for a global car brand</p>
       </div>
       <dl data-reveal="" data-d=".1" style="flex:0 1 600px;display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:0 24px">
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service &amp; UI/UX Designer</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Industry</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Automotive</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Role</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service &amp; UI/UX designer</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Impact</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">650+ dealerships</dd></div>
+        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Status</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#2e9e5b"></span>Live</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Duration</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">7 months, 4 workstreams, Sept' 25</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Team</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">1 PM, 1 Design Manager, 2 designers, 1 dev lead</dd></div>
         <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Methods</dt><dd style="margin-top:4px;font-size:15px;line-height:1.4">Service blueprints, journey and stakeholder mapping</dd></div>
-        <div style="padding:14px 0;border-top:1px solid #dcdcdc"><dt style="font-size:13px;color:#7b7b7b">Tools</dt><dd style="margin-top: 4px; font-size: 15px; line-height: 1.4; color: #3B3B3B">Figma, FigJam, Figma Make, Notebook, CoPilot</dd></div>
       </dl>
     </div>
     <figure data-reveal="" data-d=".15" style="margin-top:{{ coverMt }};border-radius:{{ coverRadius }};overflow:hidden;aspect-ratio:{{ coverRatio }};background:#e6e6e6">
@@ -112,7 +112,7 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
         <p style="font-size:13px;color:#7b7b7b;margin-bottom:14px">On this page</p>
         <ol style="display:grid;gap:2px;border-left:1px solid #e3e3e3">
           <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
-            <li><a href="#{{ t.id }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:{{ t.pad }};font-size:{{ t.size }};color:{{ t.color }};transition:color .3s">
+            <li><a href="#{{ t.id }}" onClick="{{ t.go }}" aria-current="{{ t.current }}" style="position:relative;display:block;padding:{{ t.pad }};font-size:{{ t.size }};color:{{ t.color }};transition:color .3s">
               <span style="position:absolute;left:-1px;top:8px;bottom:8px;width:2px;background:#222;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:{{ t.bar }}"></span>{{ t.label }}
             </a></li>
           </sc-for>
@@ -124,8 +124,7 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
       <p style="margin-bottom:56px;padding:18px 22px;border-radius:14px;border:1px solid #e6e6e6;font-size:14px;line-height:1.65;color:#7b7b7b"><span style="color:#222">Disclaimer.</span> To comply with my non-disclosure agreement, I’ve omitted confidential information and renamed the client. The insights shared here are my own and don’t necessarily represent the views of the client.</p>
 
       <section id="summary" data-sec="" data-screen-label="Overview" style="padding-bottom:{{ secPad }};scroll-margin-top:130px">
-        <h2 style="margin:0;font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Overview</h2>
-        <p style="margin:8px 0 {{ titleMb }};font-size:17px;color:#7b7b7b">Too long; didn’t read</p>
+        <h2 style="margin:0 0 {{ titleMb }};font-size:clamp(32px, 3vw, 44px);font-weight:400;letter-spacing:-0.02em;line-height:1.1">Quick read</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:16px">
           <div data-reveal="" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">Problem</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Dealers, reviewers and specialists at a German automaker relied on legacy, manual and spreadsheet-based systems reducing internal efficieny</p></div>
           <div data-reveal="" data-d=".06" style="padding:24px;border-radius:14px;background:#f3f3f3"><p style="font-size:13px;margin-bottom:10px">What I did</p><p style="font-size:16px;line-height:1.6;color:#7b7b7b">Designed across four workstreams, from service blueprints and journey maps to UI and an AI prototype.</p></div>
@@ -478,10 +477,10 @@ body,h1,h2,h3,h4,p,li,figcaption,dt,dd,span{text-wrap:pretty}
 </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{}">
 const EASE = 'cubic-bezier(.16,1,.3,1)';
 const TOC = [
-  ['summary', 'Overview', null], ['overview', 'Workstreams', null], ['ws-rdr', 'RDR', 'rdr'], ['rdr-role', 'My role', 'rdr', 1], ['rdr-challenge', 'Challenges and solutions', 'rdr', 1], ['rdr-learnings', 'Learnings', 'rdr', 1],
+  ['summary', 'Quick read', null], ['overview', 'Workstreams', null], ['ws-rdr', 'RDR', 'rdr'], ['rdr-role', 'My role', 'rdr', 1], ['rdr-challenge', 'Challenges and solutions', 'rdr', 1], ['rdr-learnings', 'Learnings', 'rdr', 1],
   ['ws-bvd', 'BVD', 'bvd'], ['bvd-context', 'Context', 'bvd', 1], ['bvd-role', 'My role', 'bvd', 1], ['bvd-challenge', 'Challenges and solutions', 'bvd', 1], ['bvd-learnings', 'Learnings', 'bvd', 1],
   ['ws-va', 'VA', 'va'], ['va-context', 'Context', 'va', 1], ['va-challenge', 'The challenge', 'va', 1], ['va-role', 'My role', 'va', 1], ['va-solution', 'The proposal', 'va', 1], ['va-outcome', 'Outcome', 'va', 1],
   ['ws-ms', 'Motorsport', 'ms'],
@@ -524,6 +523,21 @@ const AUTOMATE = [
   ['Fleet analytics on demand', 'Answers leasing questions with live data.'],
   ['Campaign ideas', 'Suggests incentive campaigns from current fleet data.'],
 ].map(([t, d], i) => ({ n: String(i + 1).padStart(2, '0'), t, d }));
+const goToSec = (id) => (e) => {
+  const el = document.getElementById(id); if (!el) return;
+  e.preventDefault();
+  const bar = document.getElementById('top');
+  const off = (bar ? bar.getBoundingClientRect().height : 100) + 30;
+  let sp = el.parentElement;
+  while (sp && sp !== document.body && sp !== document.documentElement) {
+    const o = getComputedStyle(sp).overflowY;
+    if ((o === 'auto' || o === 'scroll') && sp.scrollHeight > sp.clientHeight) break;
+    sp = sp.parentElement;
+  }
+  const smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (sp && sp !== document.body && sp !== document.documentElement) sp.scrollTo({ top: sp.scrollTop + el.getBoundingClientRect().top - sp.getBoundingClientRect().top - off, behavior: smooth });
+  else window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - off, behavior: smooth });
+};
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 class Component extends DCLogic {
@@ -631,7 +645,7 @@ class Component extends DCLogic {
     const act = this.state.active || 0, ws = TOC[act][2];
     return TOC.map(([id, label, w, sub], i) => ({ id, label, w, sub, i })).filter((t) => !t.sub || t.w === ws).map((t) => {
       const on = t.i === act || (!t.sub && t.w && t.w === ws);
-      return { id: t.id, label: t.label, pad: t.sub ? '5px 0 5px 32px' : '8px 0 8px 18px', size: t.sub ? '13.5px' : '15px',
+      return { id: t.id, go: goToSec(t.id), label: t.label, pad: t.sub ? '5px 0 5px 32px' : '8px 0 8px 18px', size: t.sub ? '13.5px' : '15px',
         color: on ? '#222' : t.sub ? '#7b7b7b' : '#a3a3a3', bar: on && !t.sub ? 'scaleY(1)' : 'scaleY(0)', current: t.i === act ? 'true' : undefined };
     });
   }
@@ -784,7 +798,7 @@ class Component extends DCLogic {
       pairCols: phone ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))',
       recCols: phone ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
       secPad: phone ? '64px' : narrow ? '80px' : '112px',
-      titleMb: phone ? '22px' : '32px',
+      titleMb: phone ? '14px' : '20px',
       proseSize: phone ? '16px' : '18px',
       hmwPad: phone ? '24px' : '30px 34px',
       statN: phone ? '36px' : '44px',
